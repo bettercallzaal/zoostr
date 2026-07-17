@@ -87,6 +87,7 @@ export default function LaunchForm() {
   const [step, setStep] = useState(0)
   const [cfg, setCfg] = useState<LaunchConfig>(DEFAULT_CONFIG)
   const [exported, setExported] = useState<{ config: string; thread: string; xThread: string } | null>(null)
+  const [zaoConsent, setZaoConsent] = useState(false)
 
   const update = useCallback(
     (patch: Partial<LaunchConfig>) => setCfg((prev) => ({ ...prev, ...patch })),
@@ -112,7 +113,7 @@ export default function LaunchForm() {
     cfg.communityPct >= 25 && cfg.communityPct <= 75,
     cfg.creatorPct >= 10 && treasury >= 0,
     true,
-    true,
+    zaoConsent,
   ][step]
 
   function handleExport() {
@@ -376,7 +377,8 @@ export default function LaunchForm() {
                 <input
                   type="checkbox"
                   className="mt-1 accent-gold-500"
-                  onChange={() => {}}
+                  checked={zaoConsent}
+                  onChange={(e) => setZaoConsent(e.target.checked)}
                 />
                 <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">
                   I understand ZAO holds {cfg.zaoStakePct}% of {cfg.tokenName || 'the token'} for {cfg.zaoLockMonths} months with a 3-month cliff. This is publicly disclosed at launch.
@@ -461,7 +463,7 @@ export default function LaunchForm() {
             </div>
 
             <button
-              onClick={() => { setExported(null); setStep(0); setCfg(DEFAULT_CONFIG) }}
+              onClick={() => { setExported(null); setStep(0); setCfg(DEFAULT_CONFIG); setZaoConsent(false) }}
               className="text-sm text-slate-500 hover:text-slate-400 transition-colors"
             >
               Start over ↩
