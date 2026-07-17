@@ -318,8 +318,99 @@ async function postCast() {
   const hash = data?.cast?.hash ?? '(no hash)'
   console.log(`\n✓ Cast posted! Hash: ${hash}`)
   console.log(`  https://warpcast.com/~/conversations/${hash}`)
-  console.log(`\n⏭️  Next: watch for Community Swarm remixes (quote-casts + replies) over the next 24h.`)
-  console.log(`   Top remixers get flagged for the next snapshot's points bonus.`)
+
+  // Save cast hash for track-remix
+  const lastCastPath = path.join(process.cwd(), 'last-cast.json')
+  fs.writeFileSync(lastCastPath, JSON.stringify({ hash, date: today, variantNum }, null, 2))
+  console.log(`\n⏭️  Next: run "npm run track-remix" after 24h to capture Community Swarm remixes.`)
+}
+
+// ── Main: track-remix ─────────────────────────────────────────────────────────
+
+async function trackRemix() {
+  const lastCastPath = path.join(process.cwd(), 'last-cast.json')
+  if (!fs.existsSync(lastCastPath)) {
+    console.error('No last-cast.json found. Run npm run post-cast first.')
+    process.exit(1)
+  }
+
+  const { hash: castHash, date: castDate } = JSON.parse(fs.readFileSync(lastCastPath, 'utf-8'))
+  console.log(`\n🔁 Tracking remixes for cast ${castHash} (posted ${castDate})\n`)
+
+  if (!NEYNAR_API_KEY) {
+    console.error('NEYNAR_API_KEY not set. Cannot fetch replies without it.')
+    process.exit(1)
+  }
+
+  // Fetch cast reactions (likes + recasts) and replies
+  const [reactionsRes, repliesRes] = await Promise.all([
+    fetch(`https://api.neynar.com/v2/farcaster/cast/reactions?hash=${castHash}&types=likes,recasts&limit=100`, {
+      headers: { 'api_key': NEYNAR_API_KEY },
+    }),
+    fetch(`https://api.neynar.com/v2/farcaster/cast/conversation?identifier=${castHash}&type=hash&reply_depth=1&limit=50`, {
+      headers: { 'api_key': NEYNAR_API_KEY },
+    }),
+  ])
+
+  type RemixEntry = { fid: number; username: string; score: number; type: 'recast' | 'reply' | 'like' }
+  const remixers = new Map<number, RemixEntry>()
+
+  if (reactionsRes.ok) {
+    const rd = await reactionsRes.json()
+    // Recasts score 5, likes score 1
+    for (const r of (rd?.reactions?.recasts ?? [])) {
+      const fid = r.user?.fid
+      if (!fid) continue
+      const entry = remixers.get(fid) ?? { fid, username: r.user?.username ?? '', score: 0, type: 'recast' as const }
+      entry.score += 5
+      remixers.set(fid, entry)
+    }
+    for (const r of (rd?.reactions?.likes ?? [])) {
+      const fid = r.user?.fid
+      if (!fid) continue
+      const entry = remixers.get(fid) ?? { fid, username: r.user?.username ?? '', score: 0, type: 'like' as const }
+      entry.score += 1
+      remixers.set(fid, entry)
+    }
+  } else {
+    console.warn(`⚠ Reactions API error: ${reactionsRes.status}`)
+  }
+
+  if (repliesRes.ok) {
+    const cd = await repliesRes.json()
+    const replies = cd?.conversation?.cast?.direct_replies ?? []
+    for (const reply of replies) {
+      const fid = reply.author?.fid
+      if (!fid) continue
+      const entry = remixers.get(fid) ?? { fid, username: reply.author?.username ?? '', score: 0, type: 'reply' as const }
+      // Replies score 3 base + 1 per like they got
+      entry.score += 3 + (reply.reactions?.likes_count ?? 0)
+      entry.type = 'reply'
+      remixers.set(fid, entry)
+    }
+  } else {
+    console.warn(`⚠ Replies API error: ${repliesRes.status}`)
+  }
+
+  const top = [...remixers.values()]
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10)
+
+  console.log(`📊 Top remixers (${remixers.size} total):`)
+  top.forEach((r, i) => console.log(`  ${i + 1}. @${r.username} (FID ${r.fid}) — score ${r.score} [${r.type}]`))
+
+  const remixRewardsPath = path.join(process.cwd(), `remix-rewards-${today}.json`)
+  fs.writeFileSync(remixRewardsPath, JSON.stringify({
+    castHash,
+    castDate,
+    trackedDate: today,
+    topRemixers: top,
+    totalRemixers: remixers.size,
+  }, null, 2))
+
+  console.log(`\n✓ Remix report written: ${remixRewardsPath}`)
+  console.log(`   Top remixers will receive a bonus in the next snapshot.`)
+  console.log(`   Run npm run snapshot to include remix bonuses in the next split update.\n`)
 }
 
 // ── Entry point ───────────────────────────────────────────────────────────────
@@ -328,6 +419,8 @@ const cmd = process.env.MEME_CMD ?? 'detect'
 
 if (cmd === 'post') {
   postCast().catch(e => { console.error(e); process.exit(1) })
+} else if (cmd === 'remix') {
+  trackRemix().catch(e => { console.error(e); process.exit(1) })
 } else {
   detectAndDraft().catch(e => { console.error(e); process.exit(1) })
 }

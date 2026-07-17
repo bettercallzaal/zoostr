@@ -11,7 +11,8 @@
     "resolve-wallets": "npx tsx scripts/fid-to-wallet.ts",
     "receipt": "npx tsx scripts/receipt-cast.ts",
     "detect-moment": "MEME_CMD=detect npx tsx scripts/meme-engine.ts",
-    "post-cast": "MEME_CMD=post npx tsx scripts/meme-engine.ts"
+    "post-cast": "MEME_CMD=post npx tsx scripts/meme-engine.ts",
+    "track-remix": "MEME_CMD=remix npx tsx scripts/meme-engine.ts"
   },
   "dependencies": {
     "autoprefixer": "^10.5.4",

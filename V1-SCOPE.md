@@ -47,9 +47,9 @@ The only Meme Engine module shipped in v1. Full protocol is the north star; this
 - **Flag moment:** `npm run detect-moment` — checks Boostr stats for weekly receipt ready, milestone crossings (new #1, total likes thresholds), leaderboard changes vs last week
 - **Draft 3:** generates 3 cast variants (announcement angle / proof/leaderboard angle / personal anthem angle)
 - **Approve:** ZOL presents drafts in `meme-engine-draft-YYYY-MM-DD.md` — Zaal picks one, optionally edits inline
-- **Post:** `npm run post-cast --approve <1|2|3>` — calls Neynar API with the approved draft (requires `NEYNAR_API_KEY`; never posts autonomously)
-- **Community Swarm remix:** after posting, ZOL tracks quote-casts and replies for the next 24h
-- **Reward + receipt:** top remixers are noted in the next week's receipt; their FIDs flagged for points bonus in the next snapshot
+- **Post:** `npm run post-cast --approve <1|2|3>` — calls Neynar API with the approved draft; saves `last-cast.json`; never posts autonomously
+- **Community Swarm remix:** `npm run track-remix` (run 24h after posting) — fetches quote-casts, replies, and likes via Neynar; scores remixers (recast=5, reply=3+likes, like=1); writes `remix-rewards-YYYY-MM-DD.json`
+- **Reward + receipt:** top remixers in `remix-rewards-*.json` get bonus points in the next snapshot; noted in the weekly receipt cast
 
 **Script:** `scripts/meme-engine.ts`
 **Deps:** `NEYNAR_API_KEY`, `NEYNAR_SIGNER_UUID`, `SPLITS_ADDRESS` (optional for receipt link)
