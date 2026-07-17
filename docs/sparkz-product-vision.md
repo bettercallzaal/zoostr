@@ -128,14 +128,55 @@ Never say price. Never say returns. Never say investment.
 
 ---
 
-## Open questions for Sparkz product (not this launch, next)
+## What's been built (Zoostr as Sparkz v1 proof of concept)
 
-1. **What's the minimum viable launcher UI?** A form wizard? A Farcaster mini-app? Just a CLI + config doc?
-2. **How does community metric plug in?** Leaderboard (Boostr) is one source. What's the abstract interface for "points" so any creator with any metric can plug in?
-3. **Can the Splits update be automated on-chain?** If the leaderboard data were an oracle, the Splits contract could update itself trustlessly. What would that oracle look like for Boostr?
-4. **What does a Sparkz creator onboarding flow look like?** A creator fills in 5 fields (community size, engagement type, goals, ZAO stake consent, fee preference) and gets a pre-filled `deploy-config.md`.
-5. **Is $ZOOSTR the launchpad token?** Should Sparkz itself eventually have a token that coordinates ZAO stakes and launcher governance?
+| Q | Status | Where |
+|---|--------|-------|
+| **Q1 — minimum viable launcher UI** | ✅ Built | `/launch` at zoostr.xyz — 5-step form, exports deploy-config.md + Farcaster + X threads |
+| **Q2 — community metric abstraction** | ✅ Built | `CommunityMetric` type in `src/lib/launcher.ts` — leaderboard / NFT / staking / equal, each with labels, descriptions, optional API URL |
+| **Q3 — trustless Splits update** | ⏳ Design below | Still manual keeper. Sketch for v2. |
+| **Q4 — creator onboarding flow** | ✅ Built | 5-step `/launch` form with dynamic ZOL advisor projections; system prompt in `docs/ai-advisor-prompt.md` |
 
 ---
 
-*ZOL keeps this doc alive between sessions. Add to it; never delete. The Zoostr launch answers questions 1–4 in practice.*
+## Open question 3: Trustless 0xSplits Update (v2 design sketch)
+
+**Goal:** Remove the trusted multisig from the weekly `updateSplit()` call. Anyone can trigger the update; weights are derivable from on-chain-verifiable data.
+
+**Current (Sparkz v1):** Off-chain keeper reads `/api/boostr` weekly, computes weights, calls `updateSplit()` via controller multisig. Trust assumption: the controller wallet is honest.
+
+**Paths to trustless:**
+
+```
+Option A — Attestation-based keeper (recommended)
+  1. Boostr publishes a signed weekly attestation
+     (EIP-712 or EAS: {fid, username, points, epoch})
+  2. A public keeper contract verifies the signature, derives weights,
+     calls updateSplit() — no permissioned role needed
+  3. Anyone can call the keeper
+  Trust model: Boostr's attestation key (publicly auditable, socially slashable)
+
+Option B — EAS (Ethereum Attestation Service) per contributor
+  1. Boostr makes EAS attestations on Base per contributor per epoch
+  2. A resolver contract reads attestations, materializes weights
+  3. Splits controller = the resolver (immutable)
+  Trust model: Boostr's EAS attester key (revocable, on-chain history)
+
+Option C — Chainlink oracle (overkill for v1)
+  Chainlink node publishes leaderboard on-chain; Automation job calls updateSplit.
+  High cost, unnecessary infrastructure for initial scale.
+```
+
+**Recommendation for v2:** Option A. Lowest complexity, no new infrastructure, socially accountable. Requires Boostr to sign weekly attestations — a conversation between ZAO and Aziz, not a unilateral Sparkz decision.
+
+---
+
+## Open questions (still open)
+
+5. **Is there a Sparkz token?** Should Sparkz itself eventually have a token that aggregates ZAO stakes and launcher governance across all launched creator tokens? Or does ZAO accrue value through its per-launch token stakes portfolio instead?
+
+6. **Receipt NFTs?** Each weekly distribution could mint a collectible proof-of-earn NFT (DreamNet / Brandon's RECEIPTS pattern). Low priority for v1; would add social virality.
+
+---
+
+*ZOL keeps this doc alive between sessions. Add to it; never delete.*
