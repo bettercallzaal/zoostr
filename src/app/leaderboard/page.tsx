@@ -89,6 +89,14 @@ export default async function LeaderboardPage() {
               Every booster ranked by points. Your share of the leaderboard pool = your points ÷ total
               points. Fees flow to your wallet automatically — no claiming.
             </p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-medium">
+                ⚡ 50% of every trading fee
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zao-violet/10 border border-zao-violet/20 text-zao-violet text-xs font-medium">
+                🎖 Weekly proof-of-contribution collectable (v2)
+              </span>
+            </div>
           </div>
 
           {contributors.length > 0 && (
