@@ -117,7 +117,7 @@ Immediately after the token deploys:
 1. **Pin the contract address** — share in Farcaster cast, update Zoostr site with the real token address
 2. **First leaderboard snapshot** — run the snapshot within 24h of deploy, compute weights, update the 0xSplits contract
 3. **Verify the split** — confirm fee recipient on the token matches the Splits address (readable on basescan)
-4. **Announce** — post the 5-cast Farcaster thread (see `docs/launch-thread-farcaster.md`)
+4. **Announce** — run `npm run receipt` for live numbers, then post the 5-cast Farcaster thread (see `docs/launch-thread-farcaster.md`) and X thread (`docs/launch-thread-x.md`)
 5. **ZAO transfer** — send ZAO's stake allocation to the lock address
 
 ---
@@ -128,7 +128,7 @@ Immediately after the token deploys:
 |------|---------|-----|-----|
 | Leaderboard snapshot | Weekly (Monday 00:00 UTC) | ZOL agent (review-gated) | Fetch `/api/zabaal/stats`, compute weights, call `updateSplit()` |
 | Fee distribution | Continuous (pull model) | Recipients self-serve | Call `distributeERC20()` on Splits or use the Splits UI |
-| Distribution receipt | Weekly, same day | ZOL agent | Post a DreamNet-style receipt cast (see receipts pattern) |
+| Distribution receipt | Weekly, same day | ZOL agent | `npm run receipt` → copy output → post to Farcaster (review-gated) |
 | Split audit | Monthly | Zaal | Verify on-chain weights match leaderboard snapshot |
 
 ---
