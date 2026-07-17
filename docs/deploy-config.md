@@ -9,6 +9,42 @@
 
 ---
 
+## PR merge sequence (do this first)
+
+Merge each PR to `main` in order before deploying. They are stacked and depend on each other.
+
+| # | Branch | What it adds |
+|---|--------|-------------|
+| 1 | `feat/zoostr-site-v1` | Core site: live leaderboard, tokenomics, launch info, receipts |
+| 2 | `feat/launch-prep` | Deploy config (this doc), Farcaster thread, X thread, ops runbook |
+| 3 | `feat/sparkz-spec` | Sparkz launcher spec + ZOL AI advisor prompt |
+| 4 | `feat/spark-lifecycle` | Spark lifecycle model + Culture Circles composable backing |
+| 5 | `feat/viniapp-spec` | Viniapp × Sparkz miniapp integration spec |
+| 6 | `feat/meme-engine-v1b` | V1-SCOPE + Meme Engine scripts + /zol admin page |
+| 7 | `feat/ops-meme-update` | ZOL ops runbook with Meme Engine weekly cycle |
+
+After all 7 PRs are merged to `main`:
+- Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
+- Set env vars (see "Vercel env vars" below)
+- Then proceed to Steps 1–6 in this doc
+
+---
+
+## Vercel environment variables
+
+| Variable | Value | Required for |
+|----------|-------|-------------|
+| `NEXT_PUBLIC_BASE_URL` | `https://zoostr.xyz` | OG images, sitemap canonical URLs |
+| `NEXT_PUBLIC_TOKEN_ADDRESS` | `0x...` (from Clanker deploy) | "Token Live" banner; set AFTER Step 3 |
+| `NEXT_PUBLIC_SPLITS_ADDRESS` | `0x...` (from Step 1) | Receipt page splits link; set AFTER Step 1 |
+| `NEYNAR_API_KEY` | `...` | `npm run post-cast` and `npm run track-remix` |
+| `NEYNAR_SIGNER_UUID` | `...` | `npm run post-cast` (Neynar developer portal) |
+
+The site deploys and runs in pre-token mode without `NEXT_PUBLIC_TOKEN_ADDRESS`.
+Set that env var after the Clanker deploy and redeploy Vercel.
+
+---
+
 ## Pre-flight: decisions to lock before deploy
 
 | # | Decision | Options | Recommended |
