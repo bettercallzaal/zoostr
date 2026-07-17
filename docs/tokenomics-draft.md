@@ -57,6 +57,11 @@ This is Sparkz's core architectural pattern for "configurable fee distributions.
 
 **Receipt framing (DreamNet-style):** Each weekly distribution is logged as a public on-chain event and can be formatted as a human-readable receipt — "You earned 0.0042 ETH this week from Zoostr trades based on 1,240 boost points (12.4% of pool)." Brandon's RECEIPTS tool pattern applies here.
 
+**Tooling (built):**
+- `npm run snapshot` — fetches live leaderboard, computes integer weights summing to 1,000,000, writes `splits-update.json` (paste into splits.org UI) + `receipt-<date>.md` (Farcaster-ready receipt). NEVER signs anything.
+- `npm run receipt` — generates a cast-ready 2-cast receipt with top-5 earners and projected $/week at any volume (`VOLUME=50000 npm run receipt`).
+- `/leaderboard` on zoostr.xyz — live per-contributor earnings projection at selectable daily volumes.
+
 ---
 
 ## ZAO's Stake
