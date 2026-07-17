@@ -5,9 +5,21 @@
 
 ---
 
+## FRAMING — LOCKED 2026-07-17
+
+These principles govern every Sparkz launch and all public copy. Never override them.
+
+- **Start with a spark, not a token.** No token required to get started. Lead with this on day 1. The boost engine, leaderboard, community backing — all of that runs before any coin exists. The token is extra. Opt-in. If and when it makes sense.
+- **Feature-first, coin-last.** Sell the features: collectables, the boost engine, fee splits, community backing. The coin is an extra on top. Never open with "here's a token."
+- **The problem word is "coin," not "creator."** Downplay the coin — coin = FUD/speculation. Frame = "back the album," not "buy a coin."
+- **The differentiator = multi-recipient 0xSplits (music-native).** A collab song splits fees between both artists — both have reason to share it. A group tour fund splits by crowdfunders, who make proposals, holders vote — "a light Nouns DAO with liquid tokens." Single-recipient fee splits are everywhere. Multi-recipient, live, adjustable is the Sparkz pitch.
+- **Non-technical framing for artists.** Legal-safe: "monetization mechanism," never "raise." Perks = what backers enjoy today, not promises. ZAO-curated, not a permissionless farm.
+
+---
+
 ## What Sparkz is
 
-A configurable creator-token launcher with an AI advisor. A creator comes in with an empire (audience, community, a story), and Sparkz turns that empire into a token — with sensible defaults, on-chain transparency, and ZAO's alignment baked in.
+A configurable creator-token launcher with an AI advisor. A creator comes in with an empire (audience, community, a story), and Sparkz gives them a spark — community backing, a boost engine, fee splits — and a token only if and when they want one.
 
 The Zoostr launch is Sparkz's first live example. Every pattern here should be derivable from Zoostr.
 
@@ -57,11 +69,15 @@ The advisor never deploys. It hands off a complete config doc (like `docs/deploy
 
 ## The 0xSplits architectural pattern
 
-This is Sparkz's core technical contribution. Every Sparkz launch inherits it.
+This is Sparkz's core technical contribution — and the product differentiator. Every Sparkz launch inherits it.
 
 **Problem:** Clanker v4 `rewardBps` freeze at deploy. Any "configurable split" promise breaks immediately.
 
 **Solution:** Single fee recipient = a 0xSplits contract. The split lives inside Splits, where it stays adjustable and publicly readable. Clanker sees one immutable address; Splits handles the distribution.
+
+**Why this is music-native:** A collab song with two artists sets up a split where both artists share trading fees proportionally. Both are financially incentivized to share the song — not just post it. A group crowdfund (e.g. Farcaster-to-Devcon) splits fees by contribution weight; crowdfunders make proposals, holders vote. This is "a light Nouns DAO with liquid tokens" without the governance overhead.
+
+**The pitch in one line:** Single-recipient fee splits are everywhere. Multi-recipient, live, adjustable on-chain is Sparkz.
 
 **Generalizes to:** Any protocol that has an immutable fee recipient. Zora, Uniswap hooks, etc. Sparkz can wrap any of them with a Splits layer.
 
