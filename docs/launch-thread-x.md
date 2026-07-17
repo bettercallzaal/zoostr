@@ -10,17 +10,19 @@
 
 ---
 
-introducing $ZOOSTR ↓
+ZABAL ran the empire before there was a token
 
-a creator token where the people who built the empire actually own a piece of it
+34 people boosted. 655 likes generated. 36 casts liked.
 
-50% of every trading fee flows to the @boostr leaderboard — by points
+they showed up without asking what they'd get.
 
-you boosted @bettercallzaal before there was a token
+$ZOOSTR is what the empire pays back with — 50% of every trading fee → @boostr leaderboard → by points, every week
 
-now there is one
+no token required to start boosting.
 
 [zoostr.xyz]
+
+[UPDATE NUMBERS ON LAUNCH DAY: run `npm run receipt` from the repo]
 
 ---
 
@@ -82,10 +84,14 @@ back the empire ↓
 
 $ZOOSTR is a Sparkz launch
 
-Sparkz is building a creator-token launcher where:
+start with a spark, not a token — the community, the boost engine,
+the leaderboard — all of that runs before any coin exists.
+the token is extra. opt-in. the empire pays back with it.
+
+Sparkz is building the launcher where:
 → you set your community's fee split
 → ZAO stakes (doesn't extract)
-→ the launch is one click
+→ one click to launch when you're ready
 
 this is the first. more are coming.
 
@@ -101,11 +107,13 @@ if you're a creator with a loyal community, stay close
 
 ---
 
-**$ZOOSTR is live — ZABAL × Boostr creator token**
+**Back the empire — $ZOOSTR · ZABAL × Boostr**
 
-50% of every trading fee flows to the Boostr leaderboard by points. Your points = your share of every trade, weekly, forever.
+The empire was running before the token. No token required to boost or earn a fee share — the engine runs with or without a coin.
 
-This is a Sparkz launch — the first creator token where the community that built the empire earns from it.
+$ZOOSTR is the payback mechanism: 50% of every trading fee → Boostr leaderboard → by points, weekly, forever.
+
+This is a Sparkz launch — back the community that built the empire.
 
 → Live leaderboard: [zoostr.xyz]
 → Token: $ZOOSTR on Base

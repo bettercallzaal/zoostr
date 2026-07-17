@@ -9,21 +9,27 @@
 
 ## Cast 1 — Announcement
 
-> Hook: what it is, who it's for, the promise.
+> Hook: the empire came first. the token is how it pays back.
 
 ---
 
-introducing $ZOOSTR — ZABAL × Boostr
+ZABAL ran the empire before there was a token
 
-the first creator token where the people who BUILT the empire get paid for it
+34 people showed up. 655 total likes. 36 casts.
 
-→ 50% of every trading fee flows to the Boostr leaderboard
-→ your share = your points
+they built it without asking what they'd get.
+
+$ZOOSTR is what the empire pays back with
+
+→ 50% of every trading fee → Boostr leaderboard → by points, every week
 → no claiming. it lands in your wallet
 
-you boosted. you earned this.
+you didn't need a token to show up.
+now the token shows up for you.
 
 [zoostr.xyz]
+
+[UPDATE NUMBERS ON LAUNCH DAY: run `npm run receipt` from the repo to get the cast-ready snapshot]
 
 ---
 
@@ -100,14 +106,14 @@ back the empire.
 
 this is a Sparkz launch
 
-the first of a new shape:
-creator tokens that reward the community who built it — not just the people who buy the dip
+start with a spark, not a token. the boost engine, the leaderboard,
+the community backing — all of that runs before any coin exists.
+the token is extra. opt-in. the empire pays back with it.
 
-if you're a creator with an empire—
-people who show up for you every day—
+if you're a creator with people who show up for you every day—
 and you want to give them a real financial stake—
 
-Sparkz is building the launcher
+Sparkz is building the launcher.
 
 stay close. this is just cast one.
 
@@ -129,17 +135,17 @@ stay close. this is just cast one.
 
 **Cast 1 alt opener (shorter):**
 ```
-$ZOOSTR is live
+the empire was already running
 
-50% of every trade fee goes to the people who boosted ZABAL
+$ZOOSTR is how it pays back
 
-if you're on the Boostr leaderboard, you're already earning
+50% of every trading fee → Boostr leaderboard → by points
+if you're already boosting, you're already earning
 ```
 
 **Cast 4 alt closer:**
 ```
-you didn't need a token to show up
-but now the token shows up for you
+back the album, not the coin
 
-$ZOOSTR
+$ZOOSTR is what the empire pays back with
 ```

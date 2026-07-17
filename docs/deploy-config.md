@@ -86,7 +86,7 @@ Fill in these exact values:
 |-------|-------|
 | **Token Name** | `Zoostr` |
 | **Symbol** | `ZOOSTR` |
-| **Description** | `ZABAL × Boostr creator token. 50% of every trading fee goes to the Boostr leaderboard by points — the people who built the empire earn from every trade. A Sparkz launch.` |
+| **Description** | `Back the empire. 50% of every $ZOOSTR trading fee goes to the Boostr leaderboard by points — the community that built ZABAL earns from every trade. No token required to boost. A Sparkz launch.` |
 | **Image** | Upload the 1000×1000 PNG from Step 2 |
 | **Fee Tier** | **1%** (select 1% in the fee tier dropdown) |
 | **Fee Recipient** | `[0xSplits contract address from Step 1]` |
