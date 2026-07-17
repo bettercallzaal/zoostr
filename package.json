@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "snapshot": "npx tsx scripts/snapshot-split.ts"
+    "snapshot": "npx tsx scripts/snapshot-split.ts",
+    "resolve-wallets": "npx tsx scripts/fid-to-wallet.ts"
   },
   "dependencies": {
     "autoprefixer": "^10.5.4",

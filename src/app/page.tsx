@@ -2,6 +2,8 @@ import { fetchBoostrStats } from '@/lib/boostr'
 import LiveLeaderboard from '@/components/LiveLeaderboard'
 import type { BoostrStats } from '@/lib/types'
 
+const TOKEN_ADDRESS = process.env.NEXT_PUBLIC_TOKEN_ADDRESS ?? null
+
 async function getStats(): Promise<BoostrStats | null> {
   try {
     return await fetchBoostrStats()
@@ -88,6 +90,29 @@ export default async function Home() {
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">The Token</h2>
           <p className="text-slate-400 mb-8">Everything you need to know about the launch.</p>
 
+          {/* Contract address banner — hidden until NEXT_PUBLIC_TOKEN_ADDRESS is set */}
+          {TOKEN_ADDRESS ? (
+            <div className="mb-8 p-4 rounded-xl bg-green-950/40 border border-green-700/40 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div className="text-xs text-green-400 uppercase tracking-widest mb-1 font-semibold">Token Live on Base</div>
+                <code className="text-sm text-white font-mono break-all">{TOKEN_ADDRESS}</code>
+              </div>
+              <a
+                href={`https://basescan.org/token/${TOKEN_ADDRESS}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-green-400 hover:text-green-300 font-medium whitespace-nowrap"
+              >
+                Verify on Basescan ↗
+              </a>
+            </div>
+          ) : (
+            <div className="mb-8 p-4 rounded-xl bg-zao-dark border border-zao-border flex items-center gap-3">
+              <span className="h-2 w-2 rounded-full bg-gold-400 animate-pulse flex-shrink-0" />
+              <span className="text-sm text-slate-400">Contract deploying soon — check back after launch</span>
+            </div>
+          )}
+
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="space-y-4">
               <InfoRow label="Token Name" value="Zoostr" />
@@ -100,7 +125,10 @@ export default async function Home() {
               <InfoRow label="Creator" value="Zaal · @zaal / @bettercallzaal" link="https://warpcast.com/zaal" />
               <InfoRow label="Co-builder" value="Aziz · @cashlessman.eth" link="https://warpcast.com/cashlessman.eth" />
               <InfoRow label="Platform" value="Boostr · boostr.itscashless.com" link="https://boostr.itscashless.com" />
-              <InfoRow label="Status" value="Launching soon — Zaal deploys" />
+              <InfoRow
+                label="Status"
+                value={TOKEN_ADDRESS ? 'Live on Base ✓' : 'Launching soon — Zaal deploys'}
+              />
             </div>
           </div>
 
