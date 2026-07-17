@@ -93,6 +93,8 @@ every week. every trade. your share.
 boost on ZABAL → earn from $ZOOSTR
 boostr.itscashless.com
 
+full receipt + all earners → zoostr.xyz/receipt
+
 not financial advice. projections at assumed volume.`
 
   console.log('=== CAST 1 (receipt) ===')
