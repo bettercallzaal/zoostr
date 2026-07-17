@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback } from 'react'
+import Link from 'next/link'
 import type { BoostrStats } from '@/lib/types'
 import { sortedContributors, totalPoints } from '@/lib/boostr'
 import EmpireStats from './EmpireStats'
@@ -80,10 +81,16 @@ export default function LiveLeaderboard({ initialData }: Props) {
 
       {/* Full table */}
       <div className="card-dark overflow-hidden">
-        <div className="px-6 py-4 border-b border-zao-border">
+        <div className="px-6 py-4 border-b border-zao-border flex items-center justify-between">
           <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-widest">
             Full Leaderboard · {sorted.length} boosters
           </h2>
+          <Link
+            href="/leaderboard"
+            className="text-xs text-gold-400 hover:text-gold-300 font-semibold transition-colors"
+          >
+            See earnings projections →
+          </Link>
         </div>
         <LeaderboardTable contributors={sorted} totalPoints={total} />
       </div>
