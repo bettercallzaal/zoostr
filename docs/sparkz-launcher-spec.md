@@ -1,8 +1,24 @@
 # Sparkz Launcher — Product Spec
 
-> Status: draft · design reference for building the configurable creator-token launcher
-> Zoostr is the first live example. Every pattern here is derived from it.
+> Status: IMPLEMENTED — all 5 HIGH tasks + MEDIUM tasks shipped (2026-07-17)
+> Live: bettercallzaal/sparkz, PR stack #1–#4 (draft, pending Zaal deploy to sparkz.xyz)
+> Zoostr (zoostr.xyz) is the first live launch using this stack.
 > Last updated: 2026-07-17
+
+## What's live (sparkz.xyz after deploy)
+
+| Route | What it does |
+|-------|--------------|
+| `/advisor` | 3-question advisor → recommended split + token timing (pre-fills from `/examples/[slug]`) |
+| `/split-wizard` | 4-step split sheet (pre-fills from advisor via URL params) |
+| `/tiers` | Patronage tier config wizard ($5/$25/$100) |
+| `/back` | Fan backing form — Stripe checkout when `STRIPE_SECRET_KEY` set |
+| `/vetted` | ZAO vetting application — Resend email when `RESEND_API_KEY` set |
+| `/collectables` | Proof-of-contribution ERC-1155 spec + UI mock |
+| `/examples` | 5 spark templates (leaderboard, collab, crowdfund, PFP, DAO) |
+| `/audius` | Audius catalog → split weight integration |
+| `/how-it-works` | 0xSplits → Clanker technical walkthrough |
+| `/launches` | Discoverable launch registry (Zoostr as first entry) |
 
 ---
 
