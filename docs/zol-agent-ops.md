@@ -20,9 +20,14 @@ A human reviews and executes every on-chain or outbound action.
 
 | Day | Action | Who | Status |
 |-----|--------|-----|--------|
-| Monday 00:00 UTC | Run `npm run snapshot` | ZOL generates, Zaal/Aziz reviews + calls `updateSplit()` | Human-gated |
+| Monday 00:00 UTC | Run `npm run detect-moment` | ZOL detects moments, generates 3 cast variants → `/zol` | ZOL |
+| Monday 00:00 UTC | Run `npm run snapshot` | ZOL generates split weights | ZOL |
+| Monday 09:00 UTC | Review snapshot + approve cast variant at `/zol` | Zaal/Aziz reviews → selects variant → opens Warpcast compose | Human-gated |
+| Monday 09:00 UTC | Call `updateSplit()` via splits.org | Zaal/Aziz executes on-chain | Human-gated |
 | Monday 12:00 UTC | Confirm new split live on basescan | ZOL checks, posts confirmation note | ZOL |
 | Monday 12:00 UTC | Run `npm run receipt`, present casts | ZOL generates, Zaal/Aziz approves, ZOL posts | Human-gated |
+| Tuesday 12:00 UTC | Run `npm run track-remix` | ZOL captures Community Swarm remixes, writes remix-rewards JSON | ZOL |
+| Next Monday | `npm run snapshot` includes remix bonuses | Top 3 remixers +50 pts; positions 4-10 +25 pts | ZOL |
 | Continuous | Monitor `/api/boostr` for API errors | ZOL watches build health, alerts on failures | ZOL |
 
 ---
@@ -178,6 +183,80 @@ ZOL posts both casts as a thread from the designated account.
 
 ---
 
+### 2.6 Meme Engine cycle (Monday–Tuesday loop)
+
+The Meme Engine runs a human-gated social loop every week: detect → draft → approve → post → swarm → reward → repeat.
+
+#### Step 1: Detect moment + generate drafts (Monday 00:00 UTC)
+
+```bash
+cd ~/sparkz
+npm run detect-moment
+# Reads Boostr stats
+# Detects: weekly-receipt (always), milestone-likes, milestone-contributors
+# Writes: meme-drafts/draft-<date>-<type>-<variant>.json  (3 variants)
+```
+
+Moment types and scoring:
+- `weekly-receipt` — always triggered; priority = high
+- `milestone-likes` — 1k/5k/10k/25k total likes crossed; priority = medium/high
+- `milestone-contributors` — 10/20/30/50 unique boosters; priority = medium
+
+Draft variants generated for each moment:
+1. **announcement/stats** — numbers-first, achievement framing
+2. **proof/leaderboard** — calls out the #1 booster by name, social proof
+3. **anthem/back the work** — "back the album not buy a coin" brand voice
+
+#### Step 2: Review + approve at `/zol` (Monday 09:00 UTC)
+
+ZOL presents all 3 variants on the `/zol` admin page (unlisted, robots noindex).
+
+**Zaal/Aziz workflow:**
+1. Open `https://zoostr.xyz/zol`
+2. See live empire stats (top-5 earners preview, pool size)
+3. Read 3 draft variants side by side
+4. Edit inline if needed (textarea on each card)
+5. Click "Open in Warpcast" on the approved variant
+6. Warpcast opens pre-filled — **manually click Send** (ZOL never calls Neynar from the UI)
+
+No Neynar API call is made from the `/zol` page. The human gate is physical: Warpcast compose, not a button that auto-posts.
+
+#### Step 3: Track Community Swarm remixes (Tuesday 12:00 UTC)
+
+After the post is live ~24h, capture what the community remixed:
+
+```bash
+npm run track-remix
+# Reads: last-cast.json (hash + timestamp of the approved cast)
+# Fetches: Neynar reactions + replies
+# Scoring: recast = 5 pts, reply = 3 pts + (likes on reply), like = 1 pt
+# Writes: meme-engine/remix-rewards-<date>.json
+```
+
+Output format:
+```json
+{
+  "castHash": "0x...",
+  "scoredAt": "2026-07-22T12:00:00Z",
+  "topRemixers": [
+    { "fid": 12345, "username": "booster1", "score": 47, "bonusPoints": 50 },
+    ...
+  ]
+}
+```
+
+Positions 1–3 earn `+50 bonus pts`; positions 4–10 earn `+25 bonus pts`.
+These bonuses are applied to `effectivePoints` in the **next Monday's** `npm run snapshot`.
+
+#### Step 4: Next snapshot includes remix bonuses (following Monday)
+
+`npm run snapshot` automatically reads the most recent `remix-rewards-*.json`:
+- Adds bonus points to each FID's `effectivePoints`
+- Notes bonus in the receipt output: `@username [pts] pts + 50 remix bonus → [pct]%`
+- No extra steps needed — bonus is baked in automatically
+
+---
+
 ## Phase 3: Monitoring
 
 ### What ZOL watches
@@ -203,6 +282,7 @@ ZOL posts both casts as a thread from the designated account.
 | Token address | `NEXT_PUBLIC_TOKEN_ADDRESS=0x...` | Zaal — set on Vercel |
 | 0xSplits contract | `SPLITS_ADDRESS=0x...` | Zaal/Aziz — deploy on splits.org |
 | Neynar API key | `NEYNAR_API_KEY=...` | Zaal — set in shell env or .env |
+| Neynar signer UUID | `NEYNAR_SIGNER_UUID=...` | Zaal — from Neynar developer portal (for `npm run post-cast` path) |
 | Posting account | TBD | Zaal decision |
 | Assumed daily volume (for receipts) | `VOLUME=10000` default | Zaal can adjust any week |
 
@@ -216,6 +296,20 @@ SPLITS_ADDRESS=0x... npm run snapshot
 
 # Weekly receipt casts
 VOLUME=50000 npm run receipt
+
+# Meme Engine: detect moment + draft 3 cast variants
+npm run detect-moment
+# Output: meme-drafts/draft-<date>-*.json  (3 variants)
+# Next: open zoostr.xyz/zol to approve
+
+# Meme Engine: post approved cast via Warpcast (human opens Warpcast compose)
+# Variant 1 = announcement/stats, 2 = proof/leaderboard, 3 = anthem
+npm run post-cast --approve 1   # or 2 or 3
+
+# Meme Engine: track Community Swarm remixes (run ~24h after post)
+npm run track-remix
+# Output: meme-engine/remix-rewards-<date>.json
+# Bonuses applied automatically in next snapshot
 
 # Resolve new wallets
 NEYNAR_API_KEY=... npm run resolve-wallets
