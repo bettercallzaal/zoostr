@@ -147,6 +147,10 @@ VOLUME=<assumed_daily_volume> npm run receipt
 # Output: 2 Farcaster-ready casts (copy to clipboard for posting)
 ```
 
+Cast 2 includes `zoostr.xyz/receipt` — the live web receipt page with all earners,
+empire stats, and splits contract link. It's Farcaster-frameable: share the URL in
+Warpcast for an inline frame boosters can navigate without leaving the app.
+
 **ZOL presents for approval:**
 ```
 RECEIPT CASTS READY — [date]
@@ -159,6 +163,9 @@ Cast 1:
 
 Cast 2:
   [empire stats + CTA]
+  full receipt + all earners → zoostr.xyz/receipt
+
+Live receipt page: zoostr.xyz/receipt (ISR, always current)
 
 ACTION: approve to post? (Zaal/Aziz: reply "post" or "edit: [changes]")
 ```
