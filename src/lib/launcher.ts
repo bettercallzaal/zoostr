@@ -173,15 +173,13 @@ export function generateXThread(cfg: LaunchConfig): string {
 
 ## Tweet 1 — Announcement
 
-introducing ${ticker} ↓
+@${cfg.creatorHandle || '[creator]'}'s community built the empire before there was a token
 
-a creator token where the people who built the empire actually own a piece of it
+[FILL: community size, activity numbers — run \`npm run receipt\` for live snapshot]
 
-${cfg.communityPct}% of every trading fee flows to the community (${METRIC_LABELS[cfg.communityMetric]}) — by points
+they showed up first. without asking what they'd get.
 
-you showed up for @${cfg.creatorHandle || '[creator]'} before there was a token
-
-now there is one
+${ticker} is what the empire pays back with — ${cfg.communityPct}% of every trading fee → community → by points
 
 [SITE_URL]
 
@@ -193,9 +191,10 @@ this launch is backed by real numbers, not hype
 
 [FILL: community size, activity numbers — run \`npm run receipt\` for live snapshot]
 
-they built the empire before any token existed
-
+the boost engine was running before ${ticker} existed.
 the leaderboard is live: [SITE_URL/leaderboard]
+
+the people who showed up first already have a fee share waiting.
 
 ---
 
@@ -248,9 +247,11 @@ if you're a creator with a loyal community, stay close
 
 **${ticker} is live — ${cfg.tokenName}**
 
-${cfg.communityPct}% of every trading fee flows to the community by ${METRIC_LABELS[cfg.communityMetric]}. Your points = your share of every trade, weekly, forever.
+The community was already running before the token. No token required to boost, back the empire, or earn a fee share — the engine runs with or without a coin.
 
-This is a Sparkz launch — the first creator token where the community that built the empire earns from it.
+${ticker} is the payback mechanism: ${cfg.communityPct}% of every trading fee → community → by ${METRIC_LABELS[cfg.communityMetric]}, weekly, forever.
+
+This is a Sparkz launch — back the community that built the empire, not just the token.
 
 → Live leaderboard + earnings calculator: [SITE_URL/leaderboard]
 → Token: ${ticker} on Base
@@ -281,15 +282,21 @@ export function generateLaunchThread(cfg: LaunchConfig): string {
 
 ## Cast 1 — Announcement
 
-introducing ${ticker} — ${cfg.description || '[description]'}
+@${cfg.creatorHandle || '[creator]'}'s community built the empire before there was a token
 
-the first creator token where the people who built the empire get paid for it
+[FILL: community size, activity numbers — run \`npm run receipt\` for live snapshot]
 
-→ ${cfg.communityPct}% of every trading fee flows to the community (${METRIC_LABELS[cfg.communityMetric]})
-→ your share = your points
+they showed up before any token existed. that's the proof.
+
+${ticker} is what the empire pays back with
+
+→ ${cfg.communityPct}% of every trading fee → community (${METRIC_LABELS[cfg.communityMetric]}) → by points
 → no claiming. it lands in your wallet
 
-you showed up. you earned this.
+you didn't need a token to show up.
+now the token shows up for you.
+
+[SITE_URL]
 
 ---
 
@@ -301,9 +308,10 @@ it's a launch on receipts
 
 [FILL: community size, activity numbers]
 
-they showed up before any token existed. that's the proof.
+the boost engine was running before ${ticker} existed.
+the leaderboard is live: [SITE_URL/leaderboard]
 
-leaderboard: [SITE_URL]
+the people who showed up first already have a fee share waiting.
 
 ---
 
@@ -336,9 +344,13 @@ back the empire. ${ticker}
 
 this is a Sparkz launch
 
-creator tokens that reward the community who built it — not just people who buy the dip
+no token required to get started — the boost engine, the leaderboard, the community backing —
+all of that runs without a coin.
 
-if you're a creator with an empire and you want to give them a real stake—
+the token is extra. opt-in. the empire pays back with it.
+
+if you're a creator with people who show up for you every day
+and you want to give them a real financial stake—
 
 Sparkz is building the launcher.
 

@@ -58,7 +58,7 @@ export default async function Home() {
         </h1>
 
         <p className="text-xl sm:text-2xl font-semibold text-slate-300 mb-3">
-          ZABAL × Boostr Creator Token
+          ZABAL × Boostr
         </p>
 
         <p className="text-2xl sm:text-3xl font-black text-gradient-gold mb-6">
@@ -66,9 +66,10 @@ export default async function Home() {
         </p>
 
         <p className="text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
-          You showed up for ZABAL before there was a token. You boosted. You built it.
-          Now 50% of every trading fee flows straight to the leaderboard —
-          by your points, every week, forever. No claiming. It just lands.
+          The boost engine was already running before any token existed. You showed up for ZABAL.
+          You boosted. You built the empire. Now $ZOOSTR is how it pays back — 50% of every
+          trading fee, straight to the leaderboard by your points, every week, forever.
+          No claiming. It just lands.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3">
@@ -98,7 +99,7 @@ export default async function Home() {
       <section id="token" className="max-w-5xl mx-auto px-4 pb-20">
         <div className="card-dark p-8 sm:p-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">The Token</h2>
-          <p className="text-slate-400 mb-8">Everything you need to know about the launch.</p>
+          <p className="text-slate-400 mb-8">The boost engine runs without it. $ZOOSTR is how the empire pays back.</p>
 
           {/* Contract address banner — hidden until NEXT_PUBLIC_TOKEN_ADDRESS is set */}
           {TOKEN_ADDRESS ? (

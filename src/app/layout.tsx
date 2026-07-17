@@ -5,20 +5,20 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
 const OG_IMAGE = `${BASE_URL}/api/og`
 
 export const metadata: Metadata = {
-  title: 'Zoostr — ZABAL × Boostr Creator Token',
+  title: 'Zoostr — Back the Empire · ZABAL × Boostr',
   description:
-    'The first Sparkz launch: a creator token co-built with Boostr. 50% of trading fees flow to the leaderboard — earn your share by boosting the empire.',
+    'The empire was running before the token. Boost ZABAL on Boostr, earn your share of every $ZOOSTR trading fee — by points, weekly, forever. A Sparkz launch.',
   openGraph: {
-    title: 'Zoostr — ZABAL × Boostr Creator Token',
-    description: '50% of all trading fees go to the Boostr leaderboard by points.',
+    title: 'Zoostr — Back the Empire · ZABAL × Boostr',
+    description: 'Boost the empire. Earn 50% of every trading fee by points. No token required to start.',
     type: 'website',
     url: BASE_URL,
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Zoostr Live Leaderboard' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zoostr — ZABAL × Boostr',
-    description: 'Earn trading fees by boosting the empire.',
+    title: 'Zoostr — Back the Empire · ZABAL × Boostr',
+    description: 'Boost the empire. Earn your share of every $ZOOSTR trading fee — weekly, forever.',
     images: [OG_IMAGE],
   },
   // Farcaster Frame v1 meta — shows live leaderboard OG when URL is shared in Warpcast
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     'fc:frame:button:1': '🏆 Live Leaderboard',
     'fc:frame:button:1:action': 'link',
     'fc:frame:button:1:target': BASE_URL,
-    'fc:frame:button:2': '💰 Tokenomics',
+    'fc:frame:button:2': '⚡ How it works',
     'fc:frame:button:2:action': 'link',
     'fc:frame:button:2:target': `${BASE_URL}/#tokenomics`,
   },
