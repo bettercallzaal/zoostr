@@ -270,7 +270,7 @@ export default async function Home() {
       {/* Footer */}
       <footer className="border-t border-zao-border bg-zao-card">
         <div className="max-w-5xl mx-auto px-4 py-12">
-          <div className="grid sm:grid-cols-3 gap-8 mb-8">
+          <div className="grid sm:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="font-black text-lg mb-2">
                 <span className="text-gradient-gold">ZOO</span>
@@ -279,6 +279,14 @@ export default async function Home() {
               <p className="text-sm text-slate-500">
                 A Sparkz launch · co-built with Boostr · powered by ZAO
               </p>
+            </div>
+            <div>
+              <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Site</h4>
+              <div className="space-y-2">
+                <SocialLink href="/leaderboard" label="Leaderboard" internal />
+                <SocialLink href="/receipt" label="Weekly receipt" internal />
+                <SocialLink href="/launch" label="Creator launch" internal />
+              </div>
             </div>
             <div>
               <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Creator</h4>
@@ -343,7 +351,14 @@ function FeeBar({ label, pct, color, note }: { label: string; pct: number; color
   )
 }
 
-function SocialLink({ href, label }: { href: string; label: string }) {
+function SocialLink({ href, label, internal }: { href: string; label: string; internal?: boolean }) {
+  if (internal) {
+    return (
+      <a href={href} className="text-sm text-slate-400 hover:text-gold-400 transition-colors block">
+        {label}
+      </a>
+    )
+  }
   return (
     <a
       href={href}
