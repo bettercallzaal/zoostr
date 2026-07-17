@@ -163,6 +163,114 @@ ${cfg.minThreshold > 0 ? `Minimum eligibility threshold: **${cfg.minThreshold} p
 `
 }
 
+export function generateXThread(cfg: LaunchConfig): string {
+  const ticker = `$${cfg.tokenTicker.toUpperCase().replace(/^\$/, '') || 'TOKEN'}`
+  const treasury = treasuryPct(cfg)
+
+  return `# ${cfg.tokenName} X (Twitter) Launch Thread
+
+---
+
+## Tweet 1 — Announcement
+
+introducing ${ticker} ↓
+
+a creator token where the people who built the empire actually own a piece of it
+
+${cfg.communityPct}% of every trading fee flows to the community (${METRIC_LABELS[cfg.communityMetric]}) — by points
+
+you showed up for @${cfg.creatorHandle || '[creator]'} before there was a token
+
+now there is one
+
+[SITE_URL]
+
+---
+
+## Tweet 2 — Proof
+
+this launch is backed by real numbers, not hype
+
+[FILL: community size, activity numbers — run \`npm run receipt\` for live snapshot]
+
+they built the empire before any token existed
+
+the leaderboard is live: [SITE_URL/leaderboard]
+
+---
+
+## Tweet 3 — Mechanics
+
+how the 1% trading fee splits:
+
+🟡 ${cfg.communityPct}% → ${METRIC_LABELS[cfg.communityMetric]} (points = share)
+🟣 ${cfg.creatorPct}% → @${cfg.creatorHandle || '[creator]'} / operations
+⬜ ${treasury}% → treasury (${GOV_LABELS[cfg.treasuryGov]})
+
+the leaderboard split lives in a @0xSplits contract
+
+on-chain. public. updates weekly from the real leaderboard.
+
+verify yourself: [basescan link after deploy]
+
+---
+
+## Tweet 4 — Anthem
+
+@${cfg.creatorHandle || '[creator]'} built this so the people who showed up would have a real stake in what they helped build
+
+they didn't wait for permission
+
+${ticker} is what happens when the empire starts paying back
+
+back the empire ↓
+
+---
+
+## Tweet 5 — "A world opening" / Sparkz frame
+
+${ticker} is a Sparkz launch
+
+Sparkz is building a creator-token launcher where:
+→ you set your community's fee split
+→ ZAO stakes alongside you (doesn't extract)
+→ the launch is one click
+
+this is the first. more are coming.
+
+if you're a creator with a loyal community, stay close
+
+[@bettercallzaal]
+
+---
+
+## Standalone announcement (Discord / community channels)
+
+**${ticker} is live — ${cfg.tokenName}**
+
+${cfg.communityPct}% of every trading fee flows to the community by ${METRIC_LABELS[cfg.communityMetric]}. Your points = your share of every trade, weekly, forever.
+
+This is a Sparkz launch — the first creator token where the community that built the empire earns from it.
+
+→ Live leaderboard + earnings calculator: [SITE_URL/leaderboard]
+→ Token: ${ticker} on Base
+→ How it works: [SITE_URL/#tokenomics]
+
+Back the empire. 🟡
+
+---
+
+## Notes
+
+- Fill [SITE_URL] with deployed domain before posting
+- Fill leaderboard numbers from \`npm run receipt\` on launch day
+- Fill basescan link once token contract is deployed
+- Schedule X thread ~30 min after Farcaster thread goes live
+- Tag co-builders in Tweet 4 if applicable
+- Outbound stays review-gated — review before posting
+`
+}
+
 export function generateLaunchThread(cfg: LaunchConfig): string {
   const ticker = `$${cfg.tokenTicker.toUpperCase().replace(/^\$/, '') || 'TOKEN'}`
   const treasury = treasuryPct(cfg)

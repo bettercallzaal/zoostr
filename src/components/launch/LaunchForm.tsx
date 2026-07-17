@@ -9,6 +9,7 @@ import {
   treasuryPct,
   generateDeployConfig,
   generateLaunchThread,
+  generateXThread,
   type LaunchConfig,
   type CommunityMetric,
   type TreasuryGov,
@@ -48,7 +49,7 @@ const advisorTips: Record<number, string> = {
 export default function LaunchForm() {
   const [step, setStep] = useState(0)
   const [cfg, setCfg] = useState<LaunchConfig>(DEFAULT_CONFIG)
-  const [exported, setExported] = useState<{ config: string; thread: string } | null>(null)
+  const [exported, setExported] = useState<{ config: string; thread: string; xThread: string } | null>(null)
 
   const update = useCallback(
     (patch: Partial<LaunchConfig>) => setCfg((prev) => ({ ...prev, ...patch })),
@@ -80,7 +81,8 @@ export default function LaunchForm() {
   function handleExport() {
     const config = generateDeployConfig(cfg)
     const thread = generateLaunchThread(cfg)
-    setExported({ config, thread })
+    const xThread = generateXThread(cfg)
+    setExported({ config, thread, xThread })
   }
 
   function downloadFile(content: string, filename: string) {
@@ -363,7 +365,7 @@ export default function LaunchForm() {
               onClick={handleExport}
               className="w-full py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-black text-lg transition-colors"
             >
-              Generate deploy config + launch thread ↓
+              Generate deploy config + launch threads ↓
             </button>
           </>
         )}
@@ -393,19 +395,31 @@ export default function LaunchForm() {
 
               <button
                 onClick={() =>
-                  downloadFile(exported.thread, `${ticker.toLowerCase() || 'token'}-launch-thread.md`)
+                  downloadFile(exported.thread, `${ticker.toLowerCase() || 'token'}-launch-thread-farcaster.md`)
                 }
                 className="w-full py-3 px-5 rounded-lg border border-zao-border text-slate-300 hover:border-slate-500 font-semibold text-sm transition-colors flex items-center justify-between"
               >
-                <span>launch-thread.md</span>
+                <span>launch-thread-farcaster.md</span>
                 <span className="text-xs text-slate-500">5-cast Farcaster thread</span>
+                <span>↓</span>
+              </button>
+
+              <button
+                onClick={() =>
+                  downloadFile(exported.xThread, `${ticker.toLowerCase() || 'token'}-launch-thread-x.md`)
+                }
+                className="w-full py-3 px-5 rounded-lg border border-zao-border text-slate-300 hover:border-slate-500 font-semibold text-sm transition-colors flex items-center justify-between"
+              >
+                <span>launch-thread-x.md</span>
+                <span className="text-xs text-slate-500">5-tweet X thread + standalone</span>
                 <span>↓</span>
               </button>
             </div>
 
             <div className="mt-6 p-4 rounded-xl bg-zao-dark border border-zao-border/50 text-xs text-slate-500 space-y-1">
               <p>• deploy-config.md has the exact Clanker fields and 0xSplits setup steps</p>
-              <p>• Edit the launch thread with your real community numbers before posting</p>
+              <p>• Fill [SITE_URL] and community numbers in both threads before posting</p>
+              <p>• Run <code className="text-slate-400">npm run receipt</code> from the repo for a cast-ready live snapshot</p>
               <p>• The deploy itself is a human action — the config just removes all the guesswork</p>
             </div>
 
