@@ -46,6 +46,26 @@ type BoostrApiResponse = {
   }
 }
 
+const REMIX_BONUS_POINTS = 50 // flat bonus added to a top-remixer's points
+
+// Load the most recent remix-rewards-*.json if any
+function loadRemixBonuses(): Map<number, number> {
+  const files = fs.readdirSync(process.cwd())
+    .filter(f => f.startsWith('remix-rewards-') && f.endsWith('.json'))
+    .sort()
+    .reverse()
+  if (files.length === 0) return new Map()
+  const latest = JSON.parse(fs.readFileSync(path.join(process.cwd(), files[0]), 'utf-8'))
+  const bonuses = new Map<number, number>()
+  const top = latest.topRemixers ?? []
+  // Top 3 remixers get the full bonus; 4-10 get half
+  for (let i = 0; i < top.length; i++) {
+    bonuses.set(top[i].fid, i < 3 ? REMIX_BONUS_POINTS : Math.floor(REMIX_BONUS_POINTS / 2))
+  }
+  console.log(`Loaded remix bonuses from ${files[0]}: ${bonuses.size} remixers`)
+  return bonuses
+}
+
 async function main() {
   // Load optional fid → wallet mapping (from fid-to-wallet.ts)
   const walletsPath = path.join(process.cwd(), 'fid-wallets.json')
@@ -60,6 +80,8 @@ async function main() {
         'Proceeding with placeholder addresses (splits-update.json will have WALLET_FOR_FID_xxx).\n'
     )
   }
+
+  const remixBonuses = loadRemixBonuses()
 
   console.log('Fetching Boostr leaderboard…')
   const res = await fetch(BOOSTR_URL, { headers: { Accept: 'application/json' } })
@@ -90,24 +112,32 @@ async function main() {
     process.exit(1)
   }
 
-  const totalPts = eligible.reduce((s, u) => s + u.zabalLikesCount, 0)
-  console.log(`Eligible: ${eligible.length} boosters · ${totalPts} total points`)
+  // Apply remix bonuses — adds bonus points to top remixers from last week's cast
+  const effectivePoints = eligible.map(u => ({
+    ...u,
+    effectivePts: u.zabalLikesCount + (remixBonuses.get(u.fid) ?? 0),
+    remixBonus: remixBonuses.get(u.fid) ?? 0,
+  }))
+
+  const totalPts = effectivePoints.reduce((s, u) => s + u.effectivePts, 0)
+  console.log(`Eligible: ${eligible.length} boosters · ${totalPts} total points (incl. remix bonuses)`)
 
   // Compute integer weights summing to SCALE
-  const weights = eligible.map((u) => Math.floor((u.zabalLikesCount / totalPts) * SCALE))
+  const weights = effectivePoints.map((u) => Math.floor((u.effectivePts / totalPts) * SCALE))
   weights[0] += SCALE - weights.reduce((s, w) => s + w, 0) // fix rounding residual to #1
 
   // Build splits-update.json payload
   const splitsPayload = {
     _comment: `Generated ${date} · min ${MIN_POINTS} pts · weights sum to ${SCALE} · NEVER send without human review`,
     splitsContract: SPLITS_ADDRESS,
-    recipients: eligible.map((u, i) => ({
+    recipients: effectivePoints.map((u, i) => ({
       address: fidWallets[u.fid] ?? `WALLET_FOR_FID_${u.fid}`,
       percentAllocation: ((weights[i] / SCALE) * 100).toFixed(4),
       weight: weights[i],
       username: u.username,
       fid: u.fid,
       points: u.zabalLikesCount,
+      ...(u.remixBonus > 0 ? { remixBonus: u.remixBonus, effectivePoints: u.effectivePts } : {}),
     })),
     totalWeight: SCALE,
   }
@@ -161,6 +191,7 @@ async function main() {
   }
 
   // Build DreamNet-style weekly receipt
+  const remixBonusHolders = effectivePoints.filter(u => u.remixBonus > 0)
   const receipt = [
     `ZOOSTR WEEKLY RECEIPT · ${date}`,
     ``,
@@ -172,11 +203,13 @@ async function main() {
     `Leaderboard pool (50% of all $ZOOSTR trading fees this week):`,
     `  → Split across ${eligible.length} eligible boosters by points`,
     `  → Minimum threshold: ${MIN_POINTS} points`,
+    remixBonusHolders.length > 0 ? `  → Community Swarm bonus: +${REMIX_BONUS_POINTS} pts for top remixers (top 3), +${Math.floor(REMIX_BONUS_POINTS/2)} for the rest` : '',
     ``,
     `Distribution weights (top 10):`,
-    ...eligible.slice(0, 10).map((u, i) => {
+    ...effectivePoints.slice(0, 10).map((u, i) => {
       const pct = ((weights[i] / SCALE) * 100).toFixed(2)
-      return `  #${String(i + 1).padStart(2)} @${u.username.padEnd(22)} ${String(u.zabalLikesCount).padStart(3)} pts  →  ${pct}% of pool`
+      const bonus = u.remixBonus > 0 ? ` +${u.remixBonus} remix bonus` : ''
+      return `  #${String(i + 1).padStart(2)} @${u.username.padEnd(22)} ${String(u.zabalLikesCount).padStart(3)} pts${bonus}  →  ${pct}% of pool`
     }),
     eligible.length > 10 ? `       … and ${eligible.length - 10} more boosters` : '',
     ``,
