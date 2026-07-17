@@ -38,12 +38,49 @@ function Field({
 const inputCls =
   'w-full px-4 py-2.5 rounded-lg bg-zao-dark border border-zao-border text-white placeholder:text-slate-600 focus:outline-none focus:border-gold-500 transition-colors text-sm'
 
-const advisorTips: Record<number, string> = {
-  0: 'Pick a name that says something about what you and your community are building together. The ticker should be short and unmistakable — 4–6 chars.',
-  1: 'The default 50% to community is the right starting point. Below 30% and the per-member amount starts to feel like dust. Above 60% leaves less for operations.',
-  2: "This is your ongoing income from the empire you built. Not a grant, not a one-time drop — it runs as long as people trade. Make sure it covers what you need to keep building.",
-  3: 'The treasury is your community\'s collective wallet. Even at 10%, it accumulates over time. Give it a governance model so the community knows it\'s theirs.',
-  4: 'ZAO takes a locked token stake — not a fee cut. ZAO holds the token just like your community does. If the empire wins, everyone wins.',
+const ASSUMED_DAILY_VOL = 10_000
+
+function getAdvisorTip(step: number, cfg: LaunchConfig): string {
+  const weeklyVol = ASSUMED_DAILY_VOL * 7
+  const fee = 0.01
+
+  switch (step) {
+    case 0: {
+      if (cfg.creatorHandle) {
+        const base = cfg.creatorHandle.replace(/[^a-zA-Z0-9]/g, '')
+        const suggested = base.charAt(0).toUpperCase() + base.slice(1) + 'r'
+        const tick = (base + 'r').toUpperCase().slice(0, 6)
+        return `Based on @${cfg.creatorHandle}: consider "${suggested}" / $${tick}. Pick a name that says what you and your community are building. The ticker should be unmistakable — 4–6 chars.`
+      }
+      return 'Pick a name that says something about what you and your community are building together. The ticker should be short and unmistakable — 4–6 chars.'
+    }
+    case 1: {
+      const weeklyPool = weeklyVol * fee * (cfg.communityPct / 100)
+      const flag =
+        cfg.communityPct < 30
+          ? ' ⚠ Below 30% the per-member amount starts to feel like dust.'
+          : cfg.communityPct > 60
+          ? ' Note: above 60% leaves less for operations and treasury.'
+          : ''
+      return `At $${ASSUMED_DAILY_VOL.toLocaleString()}/day, the community pool is ~$${weeklyPool.toFixed(0)}/week.${flag}`
+    }
+    case 2: {
+      const weeklyCreator = weeklyVol * fee * (cfg.creatorPct / 100)
+      return `At $${ASSUMED_DAILY_VOL.toLocaleString()}/day, your creator share generates ~$${weeklyCreator.toFixed(0)}/week. Not a grant, not a one-time drop — it runs as long as people trade.`
+    }
+    case 3: {
+      const tPct = treasuryPct(cfg)
+      const monthlyTreasury = ASSUMED_DAILY_VOL * 30 * fee * (tPct / 100)
+      const flag = tPct < 10 ? ' Consider keeping at least 10% so the community has something to govern together.' : ''
+      return `Treasury accrues ~$${monthlyTreasury.toFixed(0)}/month at $${ASSUMED_DAILY_VOL.toLocaleString()}/day. It's the community's collective wallet — give it a governance model so they know it's theirs.${flag}`
+    }
+    case 4: {
+      const tok = cfg.tokenTicker ? `$${cfg.tokenTicker.toUpperCase().replace(/^\$/, '')}` : 'the token'
+      return `ZAO takes a locked ${cfg.zaoStakePct}% token stake — not a fee cut. ZAO holds ${tok} just like your community does. ${cfg.zaoLockMonths}-month lock with 3-month cliff. If the empire wins, everyone wins.`
+    }
+    default:
+      return ''
+  }
 }
 
 export default function LaunchForm() {
@@ -104,7 +141,7 @@ export default function LaunchForm() {
       {/* AI advisor tip */}
       <div className="mb-6 p-4 rounded-xl bg-zao-card border border-zao-border/50 flex gap-3">
         <span className="text-gold-400 text-lg flex-shrink-0">⚡</span>
-        <p className="text-sm text-slate-400 leading-relaxed">{advisorTips[step]}</p>
+        <p className="text-sm text-slate-400 leading-relaxed">{getAdvisorTip(step, cfg)}</p>
       </div>
 
       <div className="card-dark p-8 space-y-6">
