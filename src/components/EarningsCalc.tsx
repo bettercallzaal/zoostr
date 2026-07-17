@@ -31,6 +31,7 @@ type Props = {
 
 export default function EarningsCalc({ contributors, totalPoints }: Props) {
   const [dailyVolume, setDailyVolume] = useState(10_000)
+  const [search, setSearch] = useState('')
 
   const weeklyPool = dailyVolume * FEE_TIER * COMMUNITY_SHARE * DAYS_PER_WEEK
 
@@ -43,6 +44,11 @@ export default function EarningsCalc({ contributors, totalPoints }: Props) {
       })),
     [contributors, totalPoints, weeklyPool]
   )
+
+  const query = search.trim().toLowerCase()
+  const visibleRows = query
+    ? rows.filter((r) => r.username.toLowerCase().includes(query))
+    : rows
 
   return (
     <div>
@@ -75,6 +81,20 @@ export default function EarningsCalc({ contributors, totalPoints }: Props) {
         </div>
       </div>
 
+      {/* Search */}
+      <div className="mb-3 flex items-center gap-3">
+        <input
+          type="text"
+          placeholder="Find your username…"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="flex-1 bg-zao-card border border-zao-border rounded-lg px-4 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-gold-500/50"
+        />
+        <span className="text-xs text-slate-500 whitespace-nowrap flex-shrink-0">
+          {query ? `${visibleRows.length} of ${rows.length}` : `${rows.length} boosters`}
+        </span>
+      </div>
+
       {/* Table */}
       <div className="card-dark overflow-hidden">
         <div className="overflow-x-auto">
@@ -90,16 +110,17 @@ export default function EarningsCalc({ contributors, totalPoints }: Props) {
               </tr>
             </thead>
             <tbody>
-              {rows.map((c, i) => {
+              {visibleRows.map((c) => {
+                const globalRank = rows.indexOf(c)
                 const share = totalPoints > 0 ? (c.zabalLikesCount / totalPoints) * 100 : 0
                 return (
                   <tr
                     key={c.fid}
                     className={`border-b border-zao-border/50 hover:bg-white/3 transition-colors ${
-                      i < 3 ? 'bg-gold-500/5' : ''
+                      globalRank < 3 ? 'bg-gold-500/5' : ''
                     }`}
                   >
-                    <td className="py-3 px-4 text-slate-500 font-mono">{i + 1}</td>
+                    <td className="py-3 px-4 text-slate-500 font-mono">{globalRank + 1}</td>
                     <td className="py-3 px-4">
                       <a
                         href={`https://warpcast.com/${c.username}`}
@@ -146,6 +167,11 @@ export default function EarningsCalc({ contributors, totalPoints }: Props) {
         </div>
         {rows.length === 0 && (
           <div className="text-center py-16 text-slate-500 text-sm">No contributors yet.</div>
+        )}
+        {rows.length > 0 && visibleRows.length === 0 && (
+          <div className="text-center py-10 text-slate-500 text-sm">
+            No booster found for &ldquo;{search}&rdquo; — check your Farcaster username.
+          </div>
         )}
       </div>
 
