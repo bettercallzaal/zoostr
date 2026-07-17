@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
 import type { BoostrStats } from '@/lib/types'
-import { sortedContributors, totalPoints } from '@/lib/boostr'
+import { sortedContributors, eligibleTotalPoints } from '@/lib/boostr'
 import EmpireStats from './EmpireStats'
 import Podium from './Podium'
 import LeaderboardTable from './LeaderboardTable'
@@ -39,7 +39,7 @@ export default function LiveLeaderboard({ initialData }: Props) {
   }, [refresh])
 
   const sorted = sortedContributors(data)
-  const total = totalPoints(data)
+  const total = eligibleTotalPoints(data)
   const top3 = sorted.slice(0, 3)
 
   return (
