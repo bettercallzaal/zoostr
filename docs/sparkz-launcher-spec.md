@@ -54,9 +54,9 @@ Zoostr uses leaderboard points (Boostr API). The architecture generalizes: any c
 
 **Fields:**
 - Creator name / handle (Farcaster, Twitter, or custom)
-- Token name (suggested: `[CreatorName]r` a la Zoostr, or `[Name]coin`)
+- Token name (suggested: `[CreatorName]r` a la Zoostr, or `[Name]x` — avoid "coin")
 - Token ticker (4–6 chars, suggested automatically)
-- One-line description ("ZABAL × Boostr creator token")
+- One-line description ("Back the empire. 50% of fees → community, by points.")
 - Chain (Base, default)
 
 **AI advisor:** "Based on your handle and community, here's what we'd suggest for a name and ticker. You can change anything."
