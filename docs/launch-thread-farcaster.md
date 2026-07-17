@@ -113,7 +113,10 @@ the token is extra. opt-in. the empire pays back with it.
 if you're a creator with people who show up for you every day—
 and you want to give them a real financial stake—
 
-Sparkz is building the launcher.
+Sparkz is the launcher. advisors, split sheets, collectables,
+patronage tiers — the whole stack, before and after any token.
+
+sparkz.xyz
 
 stay close. this is just cast one.
 
@@ -126,7 +129,7 @@ stay close. this is just cast one.
 - **Attach to Cast 1:** token contract address (0x...) + Basescan link
 - **Attach to Cast 2:** screenshot of the Zoostr leaderboard (zoostr.xyz) showing real top-3 podium
 - **Attach to Cast 3:** a clean graphic of the 50/25/25 fee split bar
-- **Attach to Cast 5:** link to Sparkz (if public) or just @bettercallzaal
+- **Attach to Cast 5:** sparkz.xyz — the full product stack is live at this URL
 - **Tag:** @cashlessman.eth in Cast 1 if Zaal is posting, @zaal if Aziz is posting
 
 ---
