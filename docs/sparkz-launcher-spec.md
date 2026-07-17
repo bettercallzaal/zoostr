@@ -19,6 +19,14 @@
 | `/audius` | Audius catalog → split weight integration |
 | `/how-it-works` | 0xSplits → Clanker technical walkthrough |
 | `/launches` | Discoverable launch registry (Zoostr as first entry) |
+| `/sitemap.xml` | SEO sitemap (14 routes, ISR) |
+| `/robots.txt` | Crawl rules — allow all |
+
+**Zoostr (zoostr.xyz) also has:**
+
+| Route | What it does |
+|-------|--------------|
+| `/receipt` | DreamNet-style weekly receipt — ISR 60s, Farcaster Frame, top-15 earners, pool + splits info |
 
 ---
 
