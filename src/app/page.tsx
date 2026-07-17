@@ -213,6 +213,32 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Collectables teaser */}
+      <section className="max-w-5xl mx-auto px-4 pb-16">
+        <div className="grid sm:grid-cols-2 gap-6 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold mb-5">
+              ✦ Earned, never purchased
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
+              Boosters earn collectables.
+            </h2>
+            <p className="text-slate-400 leading-relaxed mb-4">
+              Every weekly fee distribution mints an on-chain receipt for every contributor who
+              earned a share. Not a badge you bought. A permanent record: week, your points, your
+              percentage, your payout. ERC-1155. Non-transferable. On-chain SVG.
+            </p>
+            <p className="text-sm text-slate-500">
+              Stack receipts over time. 52 weeks of showing up = 52 collectables, a timeline of
+              contribution — not a balance sheet.
+            </p>
+          </div>
+          <div className="flex justify-center sm:justify-end">
+            <ZoostrCollectableMock />
+          </div>
+        </div>
+      </section>
+
       {/* Back the empire CTA */}
       <section className="max-w-5xl mx-auto px-4 pb-16">
         <div className="card-dark glow-purple p-10 sm:p-14 text-center">
@@ -326,5 +352,60 @@ function SocialLink({ href, label }: { href: string; label: string }) {
     >
       {label} ↗
     </a>
+  )
+}
+
+function ZoostrCollectableMock() {
+  return (
+    <div
+      style={{
+        width: 240,
+        background: '#0a0a14',
+        border: '1px solid rgba(245,158,11,0.3)',
+        borderRadius: 12,
+        padding: 18,
+        fontFamily: 'monospace',
+        boxShadow: '0 0 40px rgba(245,158,11,0.08)',
+      }}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 14 }}>
+        <div>
+          <div style={{ color: '#f59e0b', fontSize: 10, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>
+            Sparkz Collectable
+          </div>
+          <div style={{ color: '#ffffff', fontSize: 16, fontWeight: 900, marginTop: 2, letterSpacing: -0.5 }}>
+            ZOOSTR
+          </div>
+        </div>
+        <div style={{ color: '#7c3aed', fontSize: 20 }}>⬡</div>
+      </div>
+      <div style={{ color: '#64748b', fontSize: 9, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 10 }}>
+        Week 01 · 2026
+      </div>
+      <div style={{ borderTop: '1px solid rgba(245,158,11,0.15)', marginBottom: 10 }} />
+      <div style={{ marginBottom: 8 }}>
+        <div style={{ color: '#475569', fontSize: 9, textTransform: 'uppercase', letterSpacing: 1 }}>Contributor</div>
+        <div style={{ color: '#ffffff', fontSize: 12, marginTop: 2 }}>@username</div>
+      </div>
+      <div style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
+        <div>
+          <div style={{ color: '#475569', fontSize: 9, textTransform: 'uppercase', letterSpacing: 1 }}>Points</div>
+          <div style={{ color: '#f59e0b', fontSize: 13, fontWeight: 700, marginTop: 2 }}>342</div>
+        </div>
+        <div>
+          <div style={{ color: '#475569', fontSize: 9, textTransform: 'uppercase', letterSpacing: 1 }}>Share</div>
+          <div style={{ color: '#f59e0b', fontSize: 13, fontWeight: 700, marginTop: 2 }}>8.4%</div>
+        </div>
+        <div>
+          <div style={{ color: '#475569', fontSize: 9, textTransform: 'uppercase', letterSpacing: 1 }}>Earned</div>
+          <div style={{ color: '#f59e0b', fontSize: 13, fontWeight: 700, marginTop: 2 }}>0.0004Ξ</div>
+        </div>
+      </div>
+      <div style={{ borderTop: '1px solid rgba(100,116,139,0.2)', marginBottom: 8 }} />
+      <div style={{ color: '#1e293b', fontSize: 8, letterSpacing: 0.5, lineHeight: 1.5 }}>
+        ERC-1155 · NON-TRANSFERABLE<br />
+        BASE · 0xSPLITS · EARNED NEVER PURCHASED
+      </div>
+    </div>
   )
 }
