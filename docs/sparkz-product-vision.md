@@ -83,6 +83,59 @@ This is Sparkz's core technical contribution — and the product differentiator.
 
 ---
 
+## Sparkz use cases (v2 applications)
+
+These are the shapes the FRAMING directive calls out. Zoostr (leaderboard model) is built. The rest are v2 targets.
+
+### 1. Leaderboard community (Zoostr model — BUILT)
+
+A social creator on Farcaster/Boostr whose community earns points by boosting content. Weights = zabalLikesCount / totalPoints, updated weekly. Example: Zoostr ($ZOOSTR).
+
+### 2. Music collab (collab song split — v2)
+
+Two or more artists release a song together. The song token's trading fees split between all contributing artists proportionally (e.g. 60/40 lead/feature). Both artists are financially incentivized to share, stream, and promote — not just the creator who technically "owns" the token. The 0xSplits recipient list = the featured artists.
+
+**The key insight:** When both artists have a fee stake, a repost isn't just goodwill — it's money. Sparkz creates a financial reason for collaboration to be genuine.
+
+**Config:** `CommunityMetric = 'equal'` across contributing wallets. Or a custom leaderboard if one platform tracks contribution weight.
+
+### 3. Group crowdfund — "a light Nouns DAO with liquid tokens" (f2dc model — v2)
+
+A community raises toward a shared goal (e.g. Farcaster-to-Devcon trip: 20 contributors split costs and any future token fees by their contribution weight). The community can make proposals; token holders vote; treasury funds approved proposals.
+
+**Shape:**
+- Token launched by the organizing wallet (e.g. `/f2dc`)
+- 0xSplits recipient list = contributors by contribution amount
+- Treasury (25%) = community Snapshot governance
+- Holders vote on proposals (fund a travel grant, donate to a cause, buy back tokens)
+- This is "Nouns DAO with liquid tokens" — governance exists but you can exit anytime (liquid, not locked NFT)
+
+**Sparkz adds:** The configurable fee split means contributors earn from secondary trading of the token itself, not just the initial raise. This aligns long-term holders with the fund's success.
+
+**f2dc example config:**
+```
+Community metric: equal share (each contributor = 1/N of the leaderboard pool)
+Community share: 50% (flows to contributors by contribution weight)
+Treasury: 25% (Snapshot vote — fund proposals)
+Creator/organizer: 25% (trip organizing costs, coordination)
+```
+
+### 4. PFP / collector community (NFT-holder model — v2)
+
+A creator with a PFP collection uses NFT holding as the metric. Each NFT = 1 unit of leaderboard weight. Holding 3 NFTs = 3x the fee share of a 1-NFT holder.
+
+**Why this works:** Existing NFT holders already have social identity in the collection. Adding a fee share to NFT holding makes them financially incentivized to promote and discuss the token — the NFT becomes a compounding financial instrument, not just a membership card.
+
+**Config:** `CommunityMetric = 'nft'` with the NFT contract as the metric source. Weights = balance of each address at snapshot time.
+
+### 5. DAO / staking community (long-term holder model — v2)
+
+A DAO wants to reward its most committed members. Metric = tokens staked × duration. A member who staked 1,000 tokens for 6 months outweighs someone who staked 10,000 for 1 week. This rewards patience and conviction over capital.
+
+**Config:** `CommunityMetric = 'staking'` with a staking score contract. Sparkz computes the weight from the staking index.
+
+---
+
 ## The ZAO stake model
 
 ZAO is not a fee extractor. ZAO holds locked tokens.
