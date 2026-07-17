@@ -33,9 +33,14 @@ export default async function Home() {
             <span className="text-white">STR</span>
           </span>
           <div className="flex items-center gap-4 text-sm">
-            <a href="#leaderboard" className="text-slate-400 hover:text-white transition-colors">Leaderboard</a>
-            <a href="#token" className="text-slate-400 hover:text-white transition-colors">Token</a>
-            <a href="#tokenomics" className="text-slate-400 hover:text-white transition-colors">Tokenomics</a>
+            <a href="#leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</a>
+            <a href="#tokenomics" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">How it works</a>
+            <a
+              href="/launch"
+              className="px-3 py-1.5 rounded-lg border border-zao-violet/50 text-zao-violet hover:bg-zao-violet/10 text-xs font-semibold transition-colors"
+            >
+              ⚡ Launch your token
+            </a>
           </div>
         </div>
       </nav>
@@ -212,14 +217,22 @@ export default async function Home() {
             Boost ZABAL on Boostr. Earn points. Collect your share of every trade — forever.
             The community that showed up first gets a real financial stake in what they helped build.
           </p>
-          <a
-            href="https://boostr.itscashless.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-black text-lg transition-colors glow-gold"
-          >
-            Start boosting ↗
-          </a>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="https://boostr.itscashless.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-black text-lg transition-colors"
+            >
+              Start boosting ↗
+            </a>
+            <a
+              href="/launch"
+              className="px-8 py-4 rounded-xl border border-zao-violet/50 text-zao-violet hover:bg-zao-violet/10 font-bold text-lg transition-colors"
+            >
+              ⚡ Creator? Launch your token
+            </a>
+          </div>
         </div>
       </section>
 
