@@ -27,9 +27,10 @@ type Row = Contributor & { weeklyEarnings: number }
 type Props = {
   contributors: Contributor[]
   totalPoints: number
+  minPoints?: number
 }
 
-export default function EarningsCalc({ contributors, totalPoints }: Props) {
+export default function EarningsCalc({ contributors, totalPoints, minPoints = 0 }: Props) {
   const [dailyVolume, setDailyVolume] = useState(10_000)
   const [search, setSearch] = useState('')
 
@@ -91,7 +92,9 @@ export default function EarningsCalc({ contributors, totalPoints }: Props) {
           className="flex-1 bg-zao-card border border-zao-border rounded-lg px-4 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-gold-500/50"
         />
         <span className="text-xs text-slate-500 whitespace-nowrap flex-shrink-0">
-          {query ? `${visibleRows.length} of ${rows.length}` : `${rows.length} boosters`}
+          {query
+            ? `${visibleRows.length} of ${rows.length}`
+            : `${rows.filter((r) => r.zabalEnabled && r.zabalLikesCount >= minPoints).length} eligible · ${rows.length} total`}
         </span>
       </div>
 
@@ -112,12 +115,13 @@ export default function EarningsCalc({ contributors, totalPoints }: Props) {
             <tbody>
               {visibleRows.map((c) => {
                 const globalRank = rows.indexOf(c)
-                const share = totalPoints > 0 ? (c.zabalLikesCount / totalPoints) * 100 : 0
+                const eligible = c.zabalEnabled && c.zabalLikesCount >= minPoints
+                const share = eligible && totalPoints > 0 ? (c.zabalLikesCount / totalPoints) * 100 : 0
                 return (
                   <tr
                     key={c.fid}
                     className={`border-b border-zao-border/50 hover:bg-white/3 transition-colors ${
-                      globalRank < 3 ? 'bg-gold-500/5' : ''
+                      !eligible ? 'opacity-50' : globalRank < 3 ? 'bg-gold-500/5' : ''
                     }`}
                   >
                     <td className="py-3 px-4 text-slate-500 font-mono">{globalRank + 1}</td>
@@ -150,14 +154,18 @@ export default function EarningsCalc({ contributors, totalPoints }: Props) {
                       {c.followers_count.toLocaleString()}
                     </td>
                     <td className="py-3 px-4 text-right text-slate-300 tabular-nums">
-                      {share.toFixed(2)}%
+                      {eligible ? `${share.toFixed(2)}%` : '—'}
                     </td>
                     <td
                       className={`py-3 px-4 text-right font-semibold tabular-nums ${
-                        c.weeklyEarnings >= 1 ? 'text-gold-400' : 'text-slate-500'
+                        eligible && c.weeklyEarnings >= 1 ? 'text-gold-400' : 'text-slate-500'
                       }`}
                     >
-                      {formatUsd(c.weeklyEarnings)}
+                      {eligible
+                        ? formatUsd(c.weeklyEarnings)
+                        : !c.zabalEnabled
+                          ? 'enable Boostr'
+                          : `${minPoints - c.zabalLikesCount} pts to unlock`}
                     </td>
                   </tr>
                 )

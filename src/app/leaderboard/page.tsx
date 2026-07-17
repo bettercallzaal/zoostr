@@ -1,4 +1,4 @@
-import { fetchBoostrStats, sortedContributors, totalPoints } from '@/lib/boostr'
+import { fetchBoostrStats, sortedContributors, eligibleTotalPoints, MIN_POINTS } from '@/lib/boostr'
 import EarningsCalc from '@/components/EarningsCalc'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -47,7 +47,7 @@ export default async function LeaderboardPage() {
   try {
     const stats = await fetchBoostrStats()
     contributors = sortedContributors(stats)
-    total = totalPoints(stats)
+    total = eligibleTotalPoints(stats)
     activeCount = stats.activeContributorsCount
     totalLikes = stats.totalLikesGenerated
   } catch {
@@ -112,7 +112,7 @@ export default async function LeaderboardPage() {
 
       <section className="max-w-5xl mx-auto px-4 pb-24">
         {contributors.length > 0 ? (
-          <EarningsCalc contributors={contributors} totalPoints={total} />
+          <EarningsCalc contributors={contributors} totalPoints={total} minPoints={MIN_POINTS} />
         ) : (
           <div className="text-center py-20 text-slate-500">
             Could not load leaderboard — try refreshing.
