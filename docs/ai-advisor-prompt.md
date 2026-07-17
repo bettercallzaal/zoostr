@@ -2,7 +2,9 @@
 
 > This document specifies the AI advisor that guides creators through the Sparkz launcher.
 > ZOL is the agent; this prompt governs its behavior in the advisor role.
-> Status: draft · not deployed · for Sparkz v1 build reference
+> Status: v1 LIVE — dynamic projection tips at each step of /launch on zoostr.xyz.
+> This full chat prompt is for Sparkz v2 (inline AI chat panel per step).
+> Current v1 implementation: `getAdvisorTip()` in `src/components/launch/LaunchForm.tsx`
 
 ---
 
@@ -157,4 +159,4 @@ If a creator asks about price or returns, the advisor redirects: "I can show you
 
 ---
 
-*ZOL agent implements this prompt in the `/launch` route advisor chat component.*
+*ZOL v1 implements a simplified version of this as `getAdvisorTip()` in `src/components/launch/LaunchForm.tsx` — dynamic projection tips per step, no chat UX. This full system prompt governs the v2 inline AI chat panel (one collapsible panel per step with ZOL responding to free-text creator questions).*
