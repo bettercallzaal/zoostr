@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "snapshot": "npx tsx scripts/snapshot-split.ts"
   },
   "dependencies": {
     "autoprefixer": "^10.5.4",

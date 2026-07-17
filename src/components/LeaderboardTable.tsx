@@ -38,7 +38,7 @@ export default function LeaderboardTable({ contributors, totalPoints, showAll = 
                 >
                   <img
                     src={c.pfp_url}
-                    alt={c.display_name}
+                    alt={c.username}
                     width={32}
                     height={32}
                     className="rounded-full flex-shrink-0"
@@ -46,11 +46,8 @@ export default function LeaderboardTable({ contributors, totalPoints, showAll = 
                       ;(e.target as HTMLImageElement).src = `https://api.dicebear.com/7.x/identicon/svg?seed=${c.fid}`
                     }}
                   />
-                  <div>
-                    <div className="font-medium text-white group-hover:text-gold-400 transition-colors leading-tight">
-                      {c.display_name}
-                    </div>
-                    <div className="text-slate-500 text-xs">@{c.username}</div>
+                  <div className="font-medium text-white group-hover:text-gold-400 transition-colors leading-tight">
+                    @{c.username}
                   </div>
                 </a>
               </td>

@@ -15,6 +15,7 @@ export default async function Home() {
 
   const FALLBACK: BoostrStats = {
     activeContributorsCount: 0,
+    allTimeContributorsCount: 0,
     totalLikesGenerated: 0,
     totalCastsLiked: 0,
     contributors: [],

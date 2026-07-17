@@ -1,5 +1,6 @@
 type Props = {
   activeContributorsCount: number
+  allTimeContributorsCount: number
   totalLikesGenerated: number
   totalCastsLiked: number
 }
@@ -15,11 +16,17 @@ function Stat({ label, value }: { label: string; value: string | number }) {
   )
 }
 
-export default function EmpireStats({ activeContributorsCount, totalLikesGenerated, totalCastsLiked }: Props) {
+export default function EmpireStats({
+  activeContributorsCount,
+  allTimeContributorsCount,
+  totalLikesGenerated,
+  totalCastsLiked,
+}: Props) {
   return (
     <div className="card-dark glow-gold p-6 sm:p-8">
       <div className="flex flex-wrap justify-center gap-8 sm:gap-16">
         <Stat label="Active Boosters" value={activeContributorsCount} />
+        <Stat label="All-Time Boosters" value={allTimeContributorsCount} />
         <Stat label="Total Likes" value={totalLikesGenerated} />
         <Stat label="Casts Liked" value={totalCastsLiked} />
       </div>

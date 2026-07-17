@@ -68,6 +68,7 @@ export default function LiveLeaderboard({ initialData }: Props) {
       {/* Empire stats */}
       <EmpireStats
         activeContributorsCount={data.activeContributorsCount}
+        allTimeContributorsCount={data.allTimeContributorsCount}
         totalLikesGenerated={data.totalLikesGenerated}
         totalCastsLiked={data.totalCastsLiked}
       />

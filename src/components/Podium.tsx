@@ -31,7 +31,7 @@ function PodiumCard({
         )}
         <img
           src={contributor.pfp_url}
-          alt={contributor.display_name}
+          alt={contributor.username}
           width={rank === 1 ? 80 : 64}
           height={rank === 1 ? 80 : 64}
           className={`relative rounded-full border-2 ${
@@ -45,9 +45,8 @@ function PodiumCard({
 
       <div className="text-center">
         <div className="text-base font-semibold text-white leading-tight">
-          {MEDALS[rank - 1]} {contributor.display_name}
+          {MEDALS[rank - 1]} @{contributor.username}
         </div>
-        <div className="text-xs text-slate-400">@{contributor.username}</div>
         <div className="mt-1 text-sm font-bold text-gradient-gold">
           {contributor.zabalLikesCount.toLocaleString()} pts
         </div>

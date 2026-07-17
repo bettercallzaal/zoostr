@@ -1,42 +1,27 @@
-import type { BoostrStats, Contributor } from './types'
+import type { BoostrApiResponse, BoostrStats } from './types'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function normalizeContributors(raw: any): Contributor[] {
-  // API may return array directly or under various field names
-  const list: unknown[] = Array.isArray(raw)
-    ? raw
-    : raw?.contributors ?? raw?.boosters ?? raw?.users ?? raw?.data?.contributors ?? []
-
-  return (list as Contributor[]).filter(
-    (c) => c && typeof c === 'object' && ('fid' in c || 'username' in c)
-  )
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function normalizeStats(raw: any, contributors: Contributor[]): BoostrStats {
-  const empire = raw?.empire ?? raw?.stats ?? raw
-  return {
-    activeContributorsCount:
-      empire?.activeContributorsCount ?? empire?.active_contributors ?? contributors.length,
-    totalLikesGenerated:
-      empire?.totalLikesGenerated ?? empire?.total_likes ?? 0,
-    totalCastsLiked:
-      empire?.totalCastsLiked ?? empire?.total_casts_liked ?? 0,
-    contributors,
-  }
-}
+const BOOSTR_URL = 'https://boostr.itscashless.com/api/zabaal/stats'
 
 export async function fetchBoostrStats(): Promise<BoostrStats> {
-  const res = await fetch('https://boostr.itscashless.com/api/zabaal/stats', {
+  const res = await fetch(BOOSTR_URL, {
     headers: { Accept: 'application/json' },
     next: { revalidate: 60 },
   })
 
   if (!res.ok) throw new Error(`Boostr API error: ${res.status}`)
 
-  const raw = await res.json()
-  const contributors = normalizeContributors(raw)
-  return normalizeStats(raw, contributors)
+  const raw: BoostrApiResponse = await res.json()
+
+  if (!raw.success || !raw.stats) throw new Error('Unexpected Boostr API shape')
+
+  const s = raw.stats
+  return {
+    totalCastsLiked: s.totalCastsLiked ?? 0,
+    activeContributorsCount: s.activeContributorsCount ?? 0,
+    allTimeContributorsCount: s.allTimeContributorsCount ?? 0,
+    totalLikesGenerated: s.totalLikesGenerated ?? 0,
+    contributors: s.zabalUsers ?? [],
+  }
 }
 
 export function sortedContributors(stats: BoostrStats) {
