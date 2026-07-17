@@ -113,6 +113,43 @@ async function main() {
   }
 
   const splitsPath = path.join(process.cwd(), 'splits-update.json')
+
+  // Diff vs previous snapshot (if exists) — shows what changed for human review
+  type PrevRecipient = { username: string; percentAllocation: string; fid: number }
+  const prevPayload: { recipients?: PrevRecipient[] } | null = fs.existsSync(splitsPath)
+    ? JSON.parse(fs.readFileSync(splitsPath, 'utf-8'))
+    : null
+
+  if (prevPayload?.recipients) {
+    const prevByFid: Record<number, number> = {}
+    for (const r of prevPayload.recipients) {
+      prevByFid[r.fid] = parseFloat(r.percentAllocation)
+    }
+    const diffs = splitsPayload.recipients.map((r) => {
+      const prev = prevByFid[r.fid] ?? 0
+      const curr = parseFloat(r.percentAllocation)
+      return { username: r.username, prev, curr, delta: curr - prev }
+    })
+    // Also note anyone who dropped out
+    const currFids = new Set(splitsPayload.recipients.map((r) => r.fid))
+    for (const r of prevPayload.recipients) {
+      if (!currFids.has(r.fid)) {
+        diffs.push({ username: r.username, prev: parseFloat(r.percentAllocation), curr: 0, delta: -parseFloat(r.percentAllocation) })
+      }
+    }
+    diffs.sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta))
+    const topMovers = diffs.filter((d) => Math.abs(d.delta) > 0.1).slice(0, 10)
+    if (topMovers.length > 0) {
+      console.log('\n--- WEIGHT CHANGES vs LAST SNAPSHOT ---')
+      for (const d of topMovers) {
+        const sign = d.delta > 0 ? '+' : ''
+        console.log(`  @${d.username.padEnd(20)} ${d.prev.toFixed(2)}% → ${d.curr.toFixed(2)}%  (${sign}${d.delta.toFixed(2)}%)`)
+      }
+    } else {
+      console.log('\n(No significant weight changes vs last snapshot)')
+    }
+  }
+
   fs.writeFileSync(splitsPath, JSON.stringify(splitsPayload, null, 2))
   console.log(`\nWrote ${splitsPath}`)
 

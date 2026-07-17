@@ -36,3 +36,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated weekly ops outputs (contain addresses; reviewed offline)
+splits-update.json
+receipt-*.md
+fid-wallets.json
