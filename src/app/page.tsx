@@ -285,7 +285,16 @@ export default async function Home() {
                 <span className="text-white">STR</span>
               </div>
               <p className="text-sm text-slate-500">
-                A Sparkz launch · co-built with Boostr · powered by ZAO
+                A{' '}
+                <a
+                  href="https://sparkz.xyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-gold-400 transition-colors"
+                >
+                  Sparkz
+                </a>{' '}
+                launch · co-built with Boostr · powered by ZAO
               </p>
             </div>
             <div>
@@ -294,6 +303,7 @@ export default async function Home() {
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
                 <SocialLink href="/receipt" label="Weekly receipt" internal />
                 <SocialLink href="/launch" label="Creator launch" internal />
+                <SocialLink href="https://sparkz.xyz/circles" label="Culture Circles ↗" />
               </div>
             </div>
             <div>
@@ -311,9 +321,22 @@ export default async function Home() {
               </div>
             </div>
           </div>
-          <p className="text-xs text-slate-600 text-center">
-            Not financial advice. Perks reflect what holders enjoy today — not guaranteed entitlements. Do your own research.
-          </p>
+          <div className="border-t border-zao-border pt-6 flex flex-wrap items-center justify-between gap-4">
+            <p className="text-xs text-slate-600">
+              Not financial advice. Perks reflect what holders enjoy today — not guaranteed entitlements. Do your own research.
+            </p>
+            <div className="flex items-center gap-1 text-xs text-slate-600">
+              <span>Want to launch like this?</span>
+              <a
+                href="https://sparkz.xyz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold-400 hover:text-gold-300 transition-colors font-semibold ml-1"
+              >
+                sparkz.xyz →
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </main>
