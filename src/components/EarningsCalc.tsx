@@ -187,6 +187,56 @@ export default function EarningsCalc({ contributors, totalPoints, minPoints = 0 
         Projections are estimates based on selected daily trading volume. Actual earnings depend on
         market activity. Nothing here is financial advice.
       </p>
+
+      {/* Claiming guide */}
+      <div className="mt-8 card-dark p-6">
+        <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
+          How to claim your earnings
+        </div>
+        <div className="grid sm:grid-cols-3 gap-4 mb-4">
+          {[
+            {
+              n: '1',
+              label: 'Fees accumulate on-chain',
+              desc: 'Every $ZOOSTR trade sends 1% to the 0xSplits contract. 50% of that is already your leaderboard pool.',
+            },
+            {
+              n: '2',
+              label: 'Monday: split updates',
+              desc: 'ZOL runs the weekly snapshot, Zaal reviews and calls updateSplit() — weights update to match the current leaderboard.',
+            },
+            {
+              n: '3',
+              label: 'Claim at app.splits.org',
+              desc: 'Connect your wallet on Base, find the Zoostr split contract, and withdraw. No claiming deadline — funds wait.',
+            },
+          ].map(({ n, label, desc }) => (
+            <div key={n} className="flex gap-3">
+              <div className="text-2xl font-black text-gold-500/20 flex-shrink-0 w-6 text-center tabular-nums">
+                {n}
+              </div>
+              <div>
+                <div className="font-semibold text-white text-sm mb-1">{label}</div>
+                <div className="text-xs text-slate-500 leading-relaxed">{desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-3 pt-3 border-t border-zao-border">
+          <a
+            href="https://app.splits.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors"
+          >
+            app.splits.org →
+          </a>
+          <span className="text-slate-600 text-sm">·</span>
+          <span className="text-xs text-slate-600 self-center">
+            Split contract address is published in each weekly receipt cast
+          </span>
+        </div>
+      </div>
     </div>
   )
 }
