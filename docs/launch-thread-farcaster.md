@@ -44,11 +44,11 @@ it's a launch on receipts
 they did it before any token existed.
 that's the proof.
 
-leaderboard: [zoostr.xyz/#leaderboard]
+leaderboard: zoostr.xyz/leaderboard (earnings calculator live)
 
 the top 28 wallets already have a fee share waiting for them ↓
 
-[UPDATE WITH LIVE NUMBERS ON LAUNCH DAY — fetch /api/boostr]
+[UPDATE NUMBERS ON LAUNCH DAY: run `npm run receipt` from the repo to get the cast-ready snapshot]
 
 ---
 

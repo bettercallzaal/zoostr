@@ -36,9 +36,9 @@ this launch is backed by real numbers, not hype
 
 they built the empire before any token existed
 
-the leaderboard is live: [zoostr.xyz]
+the leaderboard is live: zoostr.xyz/leaderboard
 
-[UPDATE NUMBERS FROM /api/boostr ON LAUNCH DAY]
+[UPDATE NUMBERS ON LAUNCH DAY: run `npm run receipt` from the repo]
 
 ---
 
