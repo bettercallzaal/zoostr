@@ -214,4 +214,4 @@ Sparkz v2 (later): direct Clanker API integration, on-chain 0xSplits creation, a
 
 ---
 
-*Next: build the Sparkz v1 launcher form as a Next.js route at `/launch`*
+*Status: the Sparkz v1 launcher is live at `/launch` on the Zoostr site — 5-step form, config export (deploy-config.md + Farcaster thread + X thread), earnings preview. Sparkz v2 is the standalone launcher with direct Clanker/Splits integration.*
