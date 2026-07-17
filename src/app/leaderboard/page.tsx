@@ -5,13 +5,36 @@ import type { Metadata } from 'next'
 
 export const revalidate = 60
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
+const OG_IMAGE = `${BASE_URL}/api/og`
+
 export const metadata: Metadata = {
   title: 'Empire Leaderboard — Zoostr',
   description:
     'Every ZABAL booster ranked by points with projected $ZOOSTR weekly earnings at your chosen trading volume.',
   openGraph: {
     title: 'Empire Leaderboard — Zoostr',
-    description: 'See your fee share and weekly earnings projection from $ZOOSTR trading fees.',
+    description: 'See your fee share and projected weekly earnings from $ZOOSTR trading fees.',
+    type: 'website',
+    url: `${BASE_URL}/leaderboard`,
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Zoostr Live Leaderboard' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zoostr Leaderboard',
+    description: 'See your fee share and projected weekly earnings.',
+    images: [OG_IMAGE],
+  },
+  other: {
+    'fc:frame': 'vNext',
+    'fc:frame:image': OG_IMAGE,
+    'fc:frame:image:aspect_ratio': '1.91:1',
+    'fc:frame:button:1': '📊 Earnings calculator',
+    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:target': `${BASE_URL}/leaderboard`,
+    'fc:frame:button:2': '⚡ Boost to earn',
+    'fc:frame:button:2:action': 'link',
+    'fc:frame:button:2:target': 'https://boostr.itscashless.com',
   },
 }
 
