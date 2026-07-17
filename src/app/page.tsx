@@ -229,10 +229,18 @@ export default async function Home() {
               earned a share. Not a badge you bought. A permanent record: week, your points, your
               percentage, your payout. ERC-1155. Non-transferable. On-chain SVG.
             </p>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-slate-500 mb-4">
               Stack receipts over time. 52 weeks of showing up = 52 collectables, a timeline of
               contribution — not a balance sheet.
             </p>
+            <a
+              href="https://sparkz.xyz/collectables"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gold-400 hover:text-gold-300 font-semibold transition-colors"
+            >
+              How collectables work → sparkz.xyz ↗
+            </a>
           </div>
           <div className="flex justify-center sm:justify-end">
             <ZoostrCollectableMock />
