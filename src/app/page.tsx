@@ -33,7 +33,7 @@ export default async function Home() {
             <span className="text-white">STR</span>
           </span>
           <div className="flex items-center gap-4 text-sm">
-            <a href="#leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</a>
+            <a href="/leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</a>
             <a href="#tokenomics" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">How it works</a>
             <a
               href="/launch"
