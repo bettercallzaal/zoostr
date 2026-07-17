@@ -192,6 +192,9 @@ export default async function Home() {
                 recipient weights update weekly from the live leaderboard. The split is publicly
                 readable and adjustable — unlike Clanker&apos;s fee settings, which freeze at
                 deploy. Keeping the split live and on-chain is Sparkz&apos;s core architecture.
+                The same pattern works for any creator shape: a collab splits fees between both
+                artists (both have reason to share), a group crowdfund splits by contribution
+                weight with holder votes. Multi-recipient, live, adjustable on-chain.
               </p>
             </div>
           </div>
