@@ -61,6 +61,7 @@ This is Sparkz's core architectural pattern for "configurable fee distributions.
 - `npm run snapshot` — fetches live leaderboard, computes integer weights summing to 1,000,000, writes `splits-update.json` (paste into splits.org UI) + `receipt-<date>.md` (Farcaster-ready receipt). NEVER signs anything.
 - `npm run receipt` — generates a cast-ready 2-cast receipt with top-5 earners and projected $/week at any volume (`VOLUME=50000 npm run receipt`).
 - `/leaderboard` on zoostr.xyz — live per-contributor earnings projection at selectable daily volumes.
+- `/receipt` on zoostr.xyz — shareable DreamNet-style weekly receipt page: empire stats, pool breakdown, top-15 earners with %, projected earnings, splits contract link. ISR (60s) and Farcaster-frameable.
 
 ---
 
