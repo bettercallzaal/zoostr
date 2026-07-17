@@ -5,7 +5,7 @@ import LaunchForm from '@/components/launch/LaunchForm'
 export const metadata: Metadata = {
   title: 'Launch Your Token — Sparkz by ZAO',
   description:
-    'Configure your creator token in 5 steps. Set your community fee split, choose your metric, and export a ready-to-deploy config. One human click on clanker.world.',
+    'Give your community a real stake. Configure your fee split in 5 steps, export a deploy config, and launch in one click on clanker.world. Multi-recipient 0xSplits — on-chain, adjustable.',
 }
 
 export default function LaunchPage() {
@@ -33,19 +33,19 @@ export default function LaunchPage() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-3">
-          Launch your creator token.
+          Give your community a real stake.
         </h1>
 
         <p className="text-slate-400 max-w-lg mx-auto leading-relaxed">
-          Configure your fee split in 5 steps. The deploy is one click on clanker.world.
-          Your community earns from every trade — forever.
+          Configure your community fee split in 5 steps. Export a complete deploy config.
+          Your community earns from every trade — forever. One click to deploy on clanker.world.
         </p>
 
         <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
           <span>✓ No wallet needed to configure</span>
-          <span>✓ On-chain via 0xSplits</span>
-          <span>✓ Weekly leaderboard updates</span>
-          <span>✓ ZAO stakes alongside you</span>
+          <span>✓ Multi-recipient via 0xSplits</span>
+          <span>✓ Weekly auto-distribution</span>
+          <span>✓ ZAO stakes (never extracts fees)</span>
         </div>
       </section>
 

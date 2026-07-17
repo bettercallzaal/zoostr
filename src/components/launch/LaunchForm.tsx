@@ -181,7 +181,7 @@ export default function LaunchForm() {
             >
               <input
                 className={inputCls}
-                placeholder="e.g. ZABAL × Boostr creator token — 50% of fees to the leaderboard"
+                placeholder="e.g. Back the empire. 50% of every trading fee goes to the community — by points, weekly."
                 value={cfg.description}
                 onChange={(e) => update({ description: e.target.value })}
               />
