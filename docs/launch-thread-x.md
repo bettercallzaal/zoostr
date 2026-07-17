@@ -30,13 +30,15 @@ now there is one
 
 this launch is backed by real numbers, not hype
 
-[X] people boosted ZABAL on Boostr
-[Y] total likes generated
-[Z] casts liked
+34 people boosted ZABAL on Boostr
+655 total likes generated
+36 casts liked
 
 they built the empire before any token existed
 
 the leaderboard is live: [zoostr.xyz]
+
+[UPDATE NUMBERS FROM /api/boostr ON LAUNCH DAY]
 
 ---
 

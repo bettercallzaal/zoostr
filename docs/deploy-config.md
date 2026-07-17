@@ -3,6 +3,10 @@
 > Status: draft · all prep done here · ONE human clicks deploy on clanker.world
 > Deployer: TBD — Zaal decision (likely Aziz/cashlessman on the Boostr rail)
 
+**Live empire snapshot (2026-07-17):**
+- 34 all-time boosters · 32 active · 655 total likes · 36 casts liked
+- 28 eligible for first split (≥10 pts) · run `npm run snapshot` for weights
+
 ---
 
 ## Pre-flight: decisions to lock before deploy
@@ -61,7 +65,12 @@ Aspect ratio: 1:1 (1000×1000px).
 Vibe: premium creator token, not meme. Clean. No clipart, no emojis, no logos.
 ```
 
-**Alternative (simpler):** A "Z" monogram in gold on dark background, ZOOSTR in wordmark below.
+**SVG placeholder:** `public/zoostr-token-placeholder.svg` is in the repo — gold ZOOSTR wordmark on dark background, purple glow, "ZABAL × BOOSTR" subtitle, 1000×1000. Convert to PNG with:
+```bash
+# requires Inkscape or rsvg-convert
+rsvg-convert -w 1000 -h 1000 public/zoostr-token-placeholder.svg > public/zoostr-token.png
+# or open in browser, screenshot, crop to 1000×1000
+```
 
 Deliver as a square PNG, 1000×1000px minimum.
 

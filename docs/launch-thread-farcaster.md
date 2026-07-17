@@ -37,16 +37,18 @@ this isn't a launch on vibes
 
 it's a launch on receipts
 
-[X] people have boosted ZABAL
-[Y] total likes
-[Z] total casts liked
+34 people have boosted ZABAL
+655 total likes generated
+36 casts liked
 
 they did it before any token existed.
 that's the proof.
 
 leaderboard: [zoostr.xyz/#leaderboard]
 
-the top [N] wallets already have a fee share waiting for them ↓
+the top 28 wallets already have a fee share waiting for them ↓
+
+[UPDATE WITH LIVE NUMBERS ON LAUNCH DAY — fetch /api/boostr]
 
 ---
 
