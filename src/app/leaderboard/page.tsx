@@ -64,6 +64,12 @@ export default async function LeaderboardPage() {
           </Link>
           <div className="flex items-center gap-4 text-sm">
             <Link
+              href="/receipt"
+              className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline"
+            >
+              Weekly receipt
+            </Link>
+            <Link
               href="/#tokenomics"
               className="text-slate-400 hover:text-white transition-colors hidden sm:inline"
             >
