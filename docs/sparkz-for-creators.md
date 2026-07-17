@@ -59,19 +59,17 @@ Every weekly fee distribution mints an ERC-1155 receipt NFT for each contributor
 
 ### 7. ZAO backing
 
-### 8. ZAO backing
-
 ZAO takes a small locked token stake — not a fee cut. ZAO holds your token for 12 months. If your token does well, ZAO wins. If it doesn't, ZAO loses alongside you. That's the alignment model: ZAO's incentive is to help you succeed, not extract from you.
 
 ZAO does not take a cut of every trade. Every trade fee goes entirely to your community, you, or the treasury.
 
-### 9. Marketing support
+### 8. Marketing support
 
 ZOL (ZAO's agent) writes:
 - A 5-cast Farcaster launch thread (announcement → proof → mechanics → anthem → Sparkz frame)
 - A 5-tweet X thread + standalone announcement
 - A deploy checklist (exact fields for clanker.world)
-- A weekly receipt cast (top 5 earners, empire stats)
+- A weekly receipt cast (top 5 earners, empire stats) + a live web receipt page (shareable link, Farcaster Frame)
 
 You review and approve. You (or ZOL) posts.
 
