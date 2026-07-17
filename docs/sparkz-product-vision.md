@@ -152,6 +152,8 @@ Never say price. Never say returns. Never say investment.
 | **Q2 — community metric abstraction** | ✅ Built | `CommunityMetric` type in `src/lib/launcher.ts` — leaderboard / NFT / staking / equal, each with labels, descriptions, optional API URL |
 | **Q3 — trustless Splits update** | ⏳ Design below | Still manual keeper. Sketch for v2. |
 | **Q4 — creator onboarding flow** | ✅ Built | 5-step `/launch` form with dynamic ZOL advisor projections; system prompt in `docs/ai-advisor-prompt.md` |
+| **Q5 — Feature-first framing** | ✅ Updated 2026-07-17 | Site, marketing threads, launcher copy all rewritten: community-first, token as payback mechanism. Locked FRAMING principles in this doc. |
+| **Q6 — Collectables / receipt NFTs** | 📋 Planned v2 | Design below — proof-of-contribution NFTs minted at distribution, shareable social artifacts |
 
 ---
 
@@ -187,11 +189,42 @@ Option C — Chainlink oracle (overkill for v1)
 
 ---
 
+## Q6 design: Collectables (v2)
+
+The FRAMING directive lists collectables as a key feature to sell alongside the boost engine, fee splits, and community backing. This is the design sketch.
+
+**What collectables are:** Proof-of-contribution NFTs minted automatically when you earn from a distribution. Not financial instruments — cultural artifacts. "Back the album, earn the vinyl."
+
+**The pattern:**
+1. Each weekly fee distribution runs the `npm run snapshot` → `updateSplit()` flow
+2. As part of the same transaction (or a separate lightweight mint), everyone in the split receives a receipt NFT
+3. The NFT encodes: epoch, username/FID, points, % share, amount earned that week
+4. Rendered on-chain as an SVG: "Week of Jul 14 2026 · @username · 12.0% · $28.40"
+5. Transferable but soulbound-by-feel — the data tells the story regardless of who holds it
+
+**Why this adds value:**
+- Backers share their receipts socially → virality for the creator
+- Proof of who was there *before* the token was big (early backer credibility)
+- The collection becomes a history of the empire — a record of every week someone earned
+- "I have 18 consecutive weeks of Zoostr receipts" is a social signal
+
+**What it is NOT:** Not a "buy this NFT to earn." Collectables are earned automatically from boosting — there is no mint price. The feature is additive to backing, not a gate.
+
+**Implementation path:**
+- A simple `DistributionReceipt` ERC-1155 or ERC-721 contract
+- Minted by the same transaction that calls `updateSplit()`, or via a claim window
+- Metadata stored on-chain (SVG) or IPFS; `tokenId` = epoch × 1000 + rank
+- Integrated into the `npm run snapshot` script output (adds a `mint-receipts.json` payload)
+
+---
+
 ## Open questions (still open)
 
-5. **Is there a Sparkz token?** Should Sparkz itself eventually have a token that aggregates ZAO stakes and launcher governance across all launched creator tokens? Or does ZAO accrue value through its per-launch token stakes portfolio instead?
+5. **Is there a Sparkz token?**
+   
+   Working recommendation: **No standalone Sparkz token for now.** ZAO accrues value through its per-launch token stake portfolio — a diversified basket of creator tokens. If/when Sparkz has enough launched tokens to justify governance, ZAO's locked stakes *are* the governance layer. A separate Sparkz token would introduce the same speculation risk that the FRAMING directive says to avoid.
 
-6. **Receipt NFTs?** Each weekly distribution could mint a collectible proof-of-earn NFT (DreamNet / Brandon's RECEIPTS pattern). Low priority for v1; would add social virality.
+   Revisit after 10+ launches.
 
 ---
 
