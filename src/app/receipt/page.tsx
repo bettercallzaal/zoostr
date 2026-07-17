@@ -264,6 +264,14 @@ export default async function ReceiptPage() {
             >
               Cast on Farcaster ↗
             </a>
+            <a
+              href={`https://x.com/intent/tweet?text=${encodeURIComponent(`zoostr weekly receipt 🟡\n\n${eligible.length} boosters · top earner: @${eligible[0]?.username ?? '—'}\n\nback the empire → ${BASE_URL}/receipt`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg bg-slate-700/30 border border-slate-600/40 text-slate-300 hover:bg-slate-700/50 text-sm font-semibold transition-colors"
+            >
+              Post on X ↗
+            </a>
             <Link href="/leaderboard" className="btn-gold text-sm py-2 px-4">
               Full leaderboard →
             </Link>
