@@ -3,6 +3,7 @@
 > Who this is for: a creator with an existing community who wants to give them a real financial stake
 > Status: draft · use this as the pitch doc when creators ask "how do I do what ZABAL did?"
 > Frame: feature-first, community-first. Never price, never speculation.
+> Live at: sparkz.xyz (bettercallzaal/sparkz, 2026-07-17)
 
 ---
 
@@ -36,24 +37,35 @@ This is the only way to deliver "adjustable community fee splits" on Clanker. It
 
 ### 3. AI advisor to configure your split
 
-The Sparkz AI advisor (ZOL) walks you through 5 decisions:
-1. **Community share** — what % of fees goes to your community (default: 50%)
-2. **Creator share** — your ongoing income from the token you launched (default: 25%)
-3. **Treasury** — the community's collective wallet for future governance (default: 25%)
-4. **Community metric** — what earns a bigger share: leaderboard points, NFT holding, staking, or equal
-5. **ZAO stake** — ZAO holds a locked token allocation (default: 5%, 12 months)
+The Sparkz AI advisor asks 3 questions (crowdfund? collab? solo?) and gives you a recommended split in under 2 minutes — community %, creator %, treasury %, and whether to launch a token now, later, or never. Answers flow directly into the split wizard with the values pre-filled.
 
-At each step, the advisor shows you a real dollar projection: *"At $10k daily volume, your community pool is $350/week. Your top supporter earns ~$32/week."*
+Live at: sparkz.xyz/advisor
 
-You adjust the sliders. The advisor flags tradeoffs. You export a complete deploy config and launch threads. Then you click deploy.
+### 4. Split sheet wizard
 
-### 4. ZAO backing
+Set roles, percentages, and collaborator wallets before you launch. Producer, engineer, featured artist, community pool — all defined and IPFS-attested so there's a permanent record of what was agreed. Eliminates ~70% of music revenue disputes.
+
+Live at: sparkz.xyz/split-wizard
+
+### 5. Patronage tiers — no token required
+
+Before any token exists, set up $5/$25/$100 recurring memberships with custom perks. Fans back your work with a card. You collect early momentum. The split and tiers are already live before a coin is ever deployed.
+
+Live at: sparkz.xyz/tiers
+
+### 6. Collectables — proof-of-contribution receipts
+
+Every weekly fee distribution mints an ERC-1155 receipt NFT for each contributor who earned a share. Non-transferable. On-chain SVG. It records: week, their points, their percentage, their payout. Not a badge they bought — a record of what they built.
+
+### 7. ZAO backing
+
+### 8. ZAO backing
 
 ZAO takes a small locked token stake — not a fee cut. ZAO holds your token for 12 months. If your token does well, ZAO wins. If it doesn't, ZAO loses alongside you. That's the alignment model: ZAO's incentive is to help you succeed, not extract from you.
 
 ZAO does not take a cut of every trade. Every trade fee goes entirely to your community, you, or the treasury.
 
-### 5. Marketing support
+### 9. Marketing support
 
 ZOL (ZAO's agent) writes:
 - A 5-cast Farcaster launch thread (announcement → proof → mechanics → anthem → Sparkz frame)
@@ -95,7 +107,7 @@ You review and approve. You (or ZOL) posts.
 
 Two paths:
 
-**Path A — Use the Sparkz Launcher:** Go to zoostr.xyz/launch → configure in 5 steps → export your deploy config. ZAO reviews your config before launch to confirm the launch fits the Sparkz model.
+**Path A — Use the Sparkz product:** Go to sparkz.xyz → start with the advisor (3 questions) → configure your split in the wizard → set up patronage tiers → apply for a ZAO vetting slot. The whole stack is live and takes under 10 minutes to configure.
 
 **Path B — Work with ZOL directly:** DM @bettercallzaal on Farcaster. ZOL will run the configuration with you and handle the full launch prep (copy, threads, deploy checklist). You review everything before it goes anywhere.
 

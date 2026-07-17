@@ -88,14 +88,15 @@ start with a spark, not a token — the community, the boost engine,
 the leaderboard — all of that runs before any coin exists.
 the token is extra. opt-in. the empire pays back with it.
 
-Sparkz is building the launcher where:
-→ you set your community's fee split
+Sparkz is the full stack:
+→ split wizard, patron tiers, AI advisor, collectables
 → ZAO stakes (doesn't extract)
 → one click to launch when you're ready
 
 this is the first. more are coming.
 
 if you're a creator with a loyal community, stay close
+sparkz.xyz
 
 [tag: @bettercallzaal]
 
