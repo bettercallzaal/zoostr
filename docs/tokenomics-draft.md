@@ -103,4 +103,10 @@ Zoostr is also the first live example of a **Sparkz default config**:
 
 ---
 
+---
+
+## Lifecycle position
+
+Zoostr is at **Stage 3 → Stage 4** in the Sparkz lifecycle (Proposed → Emerging → **Verified** → **Established** → Federated). See `docs/spark-lifecycle.md` for the full model.
+
 *Last updated: 2026-07-17 · Draft — not final · Zaal deploys, not this doc*
