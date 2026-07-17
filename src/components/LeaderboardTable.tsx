@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Contributor } from '@/lib/types'
 import { feeSharePct } from '@/lib/boostr'
 
@@ -66,7 +67,9 @@ export default function LeaderboardTable({ contributors, totalPoints, showAll = 
       </table>
       {!showAll && contributors.length > 20 && (
         <p className="text-center text-slate-500 text-xs py-4">
-          + {contributors.length - 20} more boosters
+          <Link href="/leaderboard" className="hover:text-gold-400 transition-colors">
+            + {contributors.length - 20} more boosters — see earnings projections →
+          </Link>
         </p>
       )}
     </div>
