@@ -52,13 +52,18 @@ export default async function Home() {
           <span className="text-white">STR</span>
         </h1>
 
-        <p className="text-xl sm:text-2xl font-semibold text-slate-300 mb-2">
+        <p className="text-xl sm:text-2xl font-semibold text-slate-300 mb-3">
           ZABAL × Boostr Creator Token
         </p>
 
+        <p className="text-2xl sm:text-3xl font-black text-gradient-gold mb-6">
+          The empire pays back.
+        </p>
+
         <p className="text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
-          The first creator token where the people who built the empire actually own a piece of it.
-          Boost ZABAL, earn points, collect your share of every trade — forever.
+          You showed up for ZABAL before there was a token. You boosted. You built it.
+          Now 50% of every trading fee flows straight to the leaderboard —
+          by your points, every week, forever. No claiming. It just lands.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3">
@@ -68,13 +73,13 @@ export default async function Home() {
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-lg bg-gold-500 hover:bg-gold-400 text-black font-bold transition-colors"
           >
-            Boost to Earn ↗
+            Boost to earn ↗
           </a>
           <a
-            href="#tokenomics"
+            href="#leaderboard"
             className="px-6 py-3 rounded-lg border border-zao-border hover:border-gold-500 text-white font-medium transition-colors"
           >
-            How it works
+            See the leaderboard ↓
           </a>
         </div>
       </section>
@@ -145,9 +150,10 @@ export default async function Home() {
       {/* Tokenomics */}
       <section id="tokenomics" className="max-w-5xl mx-auto px-4 pb-24">
         <div className="card-dark p-8 sm:p-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Tokenomics</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">How It Works</h2>
           <p className="text-slate-400 mb-10">
-            50% of every trading fee flows directly to the people who built the empire.
+            Every trade generates a 1% fee. Half of it belongs to the people who built the empire.
+            The other half keeps the lights on and the treasury growing.
           </p>
 
           {/* Fee split visual */}
@@ -169,18 +175,17 @@ export default async function Home() {
             </h3>
             <div className="space-y-4 text-sm text-slate-300 leading-relaxed">
               <p>
-                Each booster&apos;s share of the leaderboard pool is proportional to their{' '}
-                <span className="text-gold-400 font-semibold">zabalLikesCount</span> divided by total
-                points across all active boosters. A booster with 1,000 of 10,000 total points
-                earns exactly 10% of the 50% leaderboard pool — fully transparent and on-chain.
+                Your share equals your{' '}
+                <span className="text-gold-400 font-semibold">Boost points</span> divided by the
+                total points across all active boosters. 1,000 points out of 10,000 total = exactly
+                10% of the leaderboard pool — mechanical, transparent, on-chain.
               </p>
               <p>
-                Distributions flow via a{' '}
+                Fees flow through a{' '}
                 <span className="text-zao-violet font-semibold">0xSplits contract</span> whose
-                recipient weights are updated on a weekly cadence from leaderboard snapshots.
-                The split is publicly visible and adjustable — unlike raw Clanker{' '}
-                <code className="text-xs bg-zao-dark px-1 py-0.5 rounded">rewardBps</code>,
-                which freeze at deploy. This is Sparkz&apos;s core architectural fix.
+                recipient weights update weekly from the live leaderboard. The split is publicly
+                readable and adjustable — unlike Clanker&apos;s fee settings, which freeze at
+                deploy. Keeping the split live and on-chain is Sparkz&apos;s core architecture.
               </p>
             </div>
           </div>
@@ -191,11 +196,30 @@ export default async function Home() {
               ZAO&apos;s Stake
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed">
-              ZAO receives a <span className="text-zao-violet font-semibold">locked token allocation</span> — not
-              a fee slice. Aligned with the $IMAN precedent: ZAO backs the creator long-term by holding the
-              token, not by extracting ongoing fees. Lock duration and size TBD at launch.
+              ZAO takes a <span className="text-zao-violet font-semibold">locked token stake</span> — not
+              a fee slice. ZAO backs the creator by holding the token long-term, aligning interests instead
+              of extracting rent. The empire wins together or not at all. Lock size and duration set at launch.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Back the empire CTA */}
+      <section className="max-w-5xl mx-auto px-4 pb-16">
+        <div className="card-dark glow-purple p-10 sm:p-14 text-center">
+          <p className="text-3xl sm:text-4xl font-black text-white mb-3">Back the empire.</p>
+          <p className="text-slate-400 max-w-lg mx-auto mb-8 leading-relaxed">
+            Boost ZABAL on Boostr. Earn points. Collect your share of every trade — forever.
+            The community that showed up first gets a real financial stake in what they helped build.
+          </p>
+          <a
+            href="https://boostr.itscashless.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-black text-lg transition-colors glow-gold"
+          >
+            Start boosting ↗
+          </a>
         </div>
       </section>
 
