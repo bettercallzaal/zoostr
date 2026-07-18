@@ -25,6 +25,12 @@ export const metadata: Metadata = {
     description: 'Live leaderboard distribution: top earners + empire stats.',
     images: [`${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+distribution`],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zoostr Weekly Receipt — back the empire',
+    description: 'Live leaderboard: who earned what from $ZOOSTR trading fees this week.',
+    images: [`${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+distribution`],
+  },
   other: {
     'fc:frame': 'vNext',
     'fc:frame:image': `${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+distribution`,
