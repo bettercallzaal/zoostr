@@ -166,7 +166,7 @@ export default function EarningsCalc({ contributors, totalPoints, minPoints = 0 
                         <span className="flex items-center justify-end gap-2">
                           <span>{formatUsd(c.weeklyEarnings)}</span>
                           <a
-                            href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`i'm #${globalRank + 1} on the Zoostr leaderboard\n\n@${c.username} — ${share.toFixed(1)}% of the pool — ${formatUsd(c.weeklyEarnings)}/week\n\nthe empire pays its builders\nboost to earn → zoostr.xyz/leaderboard`)}`}
+                            href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`i'm #${globalRank + 1} on the Zoostr leaderboard\n\n@${c.username} — ${share.toFixed(1)}% of the pool — ${formatUsd(c.weeklyEarnings)}/week\n\nthe empire backs its builders — claim at splits.org\nboost to earn → zoostr.xyz/leaderboard`)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             title="Cast your rank on Farcaster"
