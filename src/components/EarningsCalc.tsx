@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import type { Contributor } from '@/lib/types'
 
 const FEE_TIER = 0.01
-// NEXT_PUBLIC_COMMUNITY_SHARE_PCT: set to 1 at launch (97/2/1 split), 50 at maturity.
+// NEXT_PUBLIC_COMMUNITY_SHARE_PCT: Zoostr community pool is 50% from day 1 (50/25/25 split).
 const COMMUNITY_SHARE = Number(process.env.NEXT_PUBLIC_COMMUNITY_SHARE_PCT ?? 50) / 100
 const DAYS_PER_WEEK = 7
 
