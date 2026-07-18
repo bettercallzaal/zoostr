@@ -152,11 +152,6 @@ export default async function ReceiptPage() {
           <div className="text-xs text-slate-700 mt-2">
             Minimum threshold: {MIN_POINTS} pts · boosters below threshold not included
           </div>
-          {COMMUNITY_SHARE === 0.5 && (
-            <div className="text-xs text-slate-700 mt-2 italic">
-              Projecting at 50% community share (mature split). At launch the community share starts at 1% and grows as the leaderboard earns its stake.
-            </div>
-          )}
         </div>
 
         {/* Top earners */}
