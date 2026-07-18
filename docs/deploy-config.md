@@ -71,12 +71,14 @@ After all 38 PRs are merged to `main`:
 | `NEYNAR_API_KEY` | `...` | `npm run post-cast`, `npm run track-remix`, `/api/zol/post` direct posting |
 | `NEYNAR_SIGNER_UUID` | `...` | `npm run post-cast`, `/api/zol/post` (Neynar developer portal) |
 | `NEXT_PUBLIC_SPARKZ_URL` | `https://sparkz.xyz` | /launch page "See Zoostr leaderboard" Frame button |
-| `COMMUNITY_SHARE_PCT` | `1` at launch → `50` after evolving | `/receipt` page projections; `npm run receipt` uses same env var (`COMMUNITY_PCT`) |
+| `NEXT_PUBLIC_COMMUNITY_SHARE_PCT` | `1` at launch → `50` at maturity | Leaderboard earnings calc, receipt page, ZOL cast drafts — must match the live on-chain split |
 
 The site deploys and runs in pre-token mode without `NEXT_PUBLIC_TOKEN_ADDRESS`.
 Set that env var after the Clanker deploy and redeploy Vercel.
 
-> **COMMUNITY_SHARE_PCT note:** set to `1` at launch (97/2/1 split). When you update the on-chain split to 50/25/25, update this Vercel env var to `50` and redeploy. Otherwise the receipt page shows 50× inflated earnings projections.
+> **NEXT_PUBLIC_COMMUNITY_SHARE_PCT note:** set to `1` at launch (97/2/1 split — community earns 1% of fees). When you update the on-chain split to 50/25/25, update this Vercel env var to `50` and redeploy. Otherwise the leaderboard and receipt page show 50× inflated earnings.
+>
+> For CLI scripts (`npm run receipt`, `npm run detect-moment`), use the local `COMMUNITY_PCT` env var: `COMMUNITY_PCT=1 npm run receipt`.
 
 ---
 
