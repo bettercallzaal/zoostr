@@ -71,8 +71,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 54 | `feat/sparkz-for-creators-claiming-fix` | sparkz-for-creators.md: "Sparkz wires it there weekly" → "allocates it weekly by points"; "No claims, no lockups" → "Contributors claim at splits.org"; section 1 "flow through" → "accumulate...claim at splits.org" |
 | 55 | `feat/deploy-config-pr-table-54` | deploy-config.md: update PR merge table 52→54 rows; "After all 52 PRs" → "After all 54 PRs" |
 | 56 | `feat/x-thread-claiming-fix` | launch-thread-x.md Post 2: "splits.org distributes by leaderboard points" → "fee pool allocated by leaderboard points" — Pull model accuracy (mirrors PR #50 Farcaster thread fix) |
+| 57 | `feat/deploy-config-pr-table-56` | deploy-config.md: update PR merge table 54→56 rows; "After all 54 PRs" → "After all 56 PRs" |
+| 58 | `feat/receipt-cast-community-pct-fix` | receipt-cast.ts: COMMUNITY_PCT comment "At launch (97/2/1): set to 1" — Zoostr starts at 50% from day 1; warning text corrected |
 
-After all 56 PRs are merged to `main`:
+After all 58 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
