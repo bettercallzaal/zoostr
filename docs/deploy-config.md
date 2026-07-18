@@ -94,8 +94,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 77 | `feat/deploy-config-pr-table-75` | deploy-config.md: update PR merge table 74→76 rows; "After all 74 PRs" → "After all 77 PRs" |
 | 78 | `feat/homepage-pull-model-fix` | page.tsx: hero "straight to the leaderboard" → "into the leaderboard pool"; collectables teaser "every weekly fee distribution" → "every weekly snapshot" |
 | 79 | `feat/deploy-config-pr-table-78` | deploy-config.md: update PR merge table 77→78 rows; "After all 77 PRs" → "After all 79 PRs" |
+| 80 | `feat/meme-engine-mv2-pull-model-fix` | meme-engine.ts: mv2 cast "flows to the leaderboard" → "flows into the leaderboard pool — claim yours at splits.org" |
+| 81 | `feat/deploy-config-pr-table-80` | deploy-config.md: update PR merge table 79→80 rows; "After all 79 PRs" → "After all 81 PRs" |
 
-After all 79 PRs are merged to `main`:
+After all 81 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
