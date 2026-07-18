@@ -61,8 +61,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 44 | `feat/gitignore-meme-engine-outputs` | .gitignore: add meme-engine-draft-*.json/md, remix-rewards-*.json, last-cast.json — runtime outputs with FID/username/cast data |
 | 45 | `feat/community-share-pct-zoostr-correction` | Fix COMMUNITY_SHARE_PCT across 6 files — comment said "set 1 at launch (97/2/1)" but Zoostr launches at 50% community pool from day 1 (50/25/25 split) |
 | 46 | `feat/launch-form-cast-claiming-fix` | LaunchForm.tsx: "weekly distribution via 0xSplits" → "weekly split updates — claim at splits.org"; receipt/page.tsx: remove stale "starts at 1%" note |
+| 47 | `feat/deploy-config-pr-table-46` | deploy-config.md: update PR merge table 42→46 rows; "After all 42 PRs" → "After all 46 PRs" |
+| 48 | `feat/earnings-calc-subtitle-claiming-fix` | EarningsCalc.tsx subtitle: "weekly distribution" → "claim at splits.org" (Pull model) |
 
-After all 46 PRs are merged to `main`:
+After all 48 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
