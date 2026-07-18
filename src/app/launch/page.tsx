@@ -72,7 +72,7 @@ export default function LaunchPage() {
         <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
           <span>✓ No wallet needed to configure</span>
           <span>✓ Multi-recipient via 0xSplits</span>
-          <span>✓ Weekly auto-distribution</span>
+          <span>✓ Weekly split updates — claim at splits.org</span>
           <span>✓ ZAO stakes (never extracts fees)</span>
         </div>
       </section>
