@@ -43,8 +43,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 26 | `feat/launch-docs-update` | Launch threads: [ALL_TIME_COUNT] placeholder for hardcoded "34"; sparkz-for-creators.md: real 3-question advisor flow + creator-first framing |
 | 27 | `feat/tokenomics-default-fix` | tokenomics-draft.md: Sparkz default corrected to 97/2/1 creator-first; full row breakdown vs Zoostr's 50/25/25 |
 | 28 | `feat/launch-form-creator-first` | /launch form: fix community share range (1–80%, was 25–75%); creator-first default (97/2/1); advisory copy rewritten to explain progression |
+| 29 | `feat/ops-human-gate-fix` | deploy-config.md ops table: split "Leaderboard snapshot" row so ZOL generates payload only; separate "Split weights update" row puts updateSplit() call on Zaal (human-only on-chain action) |
 
-After all 28 PRs are merged to `main`:
+After all 29 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
@@ -184,7 +185,8 @@ Immediately after the token deploys:
 
 | Task | Cadence | Who | How |
 |------|---------|-----|-----|
-| Leaderboard snapshot | Weekly (Monday 00:00 UTC) | ZOL agent (review-gated) | Fetch `/api/zabaal/stats`, compute weights, call `updateSplit()` |
+| Leaderboard snapshot | Weekly (Monday 00:00 UTC) | ZOL agent | Fetch `/api/zabaal/stats`, compute weights, output `splits-update.json` + draft receipt cast |
+| Split weights update | Same day (after snapshot) | Zaal (human) | Review `splits-update.json` → app.splits.org → Update recipients → verify on basescan |
 | Fee distribution | Continuous (pull model) | Recipients self-serve | Call `distributeERC20()` on Splits or use the Splits UI |
 | Distribution receipt | Weekly, same day | ZOL agent | `npm run receipt` → copy output → post to Farcaster (review-gated) |
 | Split audit | Monthly | Zaal | Verify on-chain weights match leaderboard snapshot |
