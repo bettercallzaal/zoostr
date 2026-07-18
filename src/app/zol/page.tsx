@@ -22,6 +22,7 @@ export const revalidate = 60
 
 const DAILY_VOLUME = Number(process.env.ZOL_ASSUMED_VOLUME ?? 10_000)
 const FEE_TIER = 0.01
+// Zoostr community pool is 50% from day 1. NEXT_PUBLIC_COMMUNITY_SHARE_PCT defaults to 50.
 const COMMUNITY_SHARE = Number(process.env.NEXT_PUBLIC_COMMUNITY_SHARE_PCT ?? 50) / 100
 const SPLITS_ADDRESS = process.env.NEXT_PUBLIC_SPLITS_ADDRESS ?? null
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'

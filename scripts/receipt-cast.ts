@@ -20,7 +20,7 @@ const TOP_N = 5
 
 const DAILY_VOLUME = Number(process.env.VOLUME ?? 10_000)
 // COMMUNITY_PCT: percentage of fees that go to the community pool.
-// At launch (97/2/1 split): set to 1. Mature Zoostr config (50/25/25): set to 50.
+// Zoostr launches with 50% community pool (50/25/25 split). Default is 50.
 const COMMUNITY_SHARE = Number(process.env.COMMUNITY_PCT ?? 50) / 100
 
 function weeklyPool(): number {
@@ -99,12 +99,8 @@ full receipt + all earners → zoostr.xyz/receipt
 
 not financial advice. projections at assumed volume.`
 
-  if (!process.env.COMMUNITY_PCT) {
-    console.warn(
-      `\n⚠  COMMUNITY_PCT not set — defaulting to 50% community share.\n` +
-      `   At launch (97/2/1 split) set COMMUNITY_PCT=1.\n` +
-      `   Example: COMMUNITY_PCT=1 npm run receipt\n`
-    )
+  if (process.env.COMMUNITY_PCT) {
+    console.log(`\nℹ️  Using COMMUNITY_PCT=${process.env.COMMUNITY_PCT}% community share.`)
   }
   console.log('=== CAST 1 (receipt) ===')
   console.log(cast1)
