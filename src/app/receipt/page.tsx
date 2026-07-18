@@ -14,7 +14,9 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
 const SPLITS_ADDRESS = process.env.NEXT_PUBLIC_SPLITS_ADDRESS ?? null
 const ASSUMED_DAILY_VOLUME = 10_000
 const FEE_TIER = 0.01
-const COMMUNITY_SHARE = 0.5
+// Set COMMUNITY_SHARE_PCT in Vercel env vars to match the on-chain split.
+// At launch (97/2/1): 1. After evolving to 50/25/25: 50.
+const COMMUNITY_SHARE = Number(process.env.COMMUNITY_SHARE_PCT ?? 50) / 100
 const DAYS = 7
 
 export const metadata: Metadata = {
@@ -150,6 +152,11 @@ export default async function ReceiptPage() {
           <div className="text-xs text-slate-700 mt-2">
             Minimum threshold: {MIN_POINTS} pts · boosters below threshold not included
           </div>
+          {COMMUNITY_SHARE === 0.5 && (
+            <div className="text-xs text-slate-700 mt-2 italic">
+              Projecting at 50% community share (mature split). At launch the community share starts at 1% and grows as the leaderboard earns its stake.
+            </div>
+          )}
         </div>
 
         {/* Top earners */}

@@ -15,11 +15,13 @@ import type { BoostrApiResponse, BoostrStats, Contributor } from '../src/lib/typ
 
 const BOOSTR_URL = 'https://boostr.itscashless.com/api/zabaal/stats'
 const FEE_TIER = 0.01
-const COMMUNITY_SHARE = 0.5
 const DAYS_PER_WEEK = 7
 const TOP_N = 5
 
 const DAILY_VOLUME = Number(process.env.VOLUME ?? 10_000)
+// COMMUNITY_PCT: percentage of fees that go to the community pool.
+// At launch (97/2/1 split): set to 1. Mature Zoostr config (50/25/25): set to 50.
+const COMMUNITY_SHARE = Number(process.env.COMMUNITY_PCT ?? 50) / 100
 
 function weeklyPool(): number {
   return DAILY_VOLUME * FEE_TIER * COMMUNITY_SHARE * DAYS_PER_WEEK
@@ -97,6 +99,13 @@ full receipt + all earners → zoostr.xyz/receipt
 
 not financial advice. projections at assumed volume.`
 
+  if (!process.env.COMMUNITY_PCT) {
+    console.warn(
+      `\n⚠  COMMUNITY_PCT not set — defaulting to 50% community share.\n` +
+      `   At launch (97/2/1 split) set COMMUNITY_PCT=1.\n` +
+      `   Example: COMMUNITY_PCT=1 npm run receipt\n`
+    )
+  }
   console.log('=== CAST 1 (receipt) ===')
   console.log(cast1)
   console.log()
