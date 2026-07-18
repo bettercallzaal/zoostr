@@ -202,6 +202,73 @@ now ${pool}/week flows to them. proportional to what they put in. forever.
 
 that's what "back the work" looks like.${receiptLink}`
 
+  // Milestone: likes
+  if (moment.type === 'milestone-likes') {
+    const label = moment.label // e.g. "10,000 likes milestone"
+    const mv1 = `ZOOSTR MILESTONE: ${label.toUpperCase()}
+
+${likes.toLocaleString()} total likes from ${active} active contributors.
+weekly pool: ${pool}
+
+the empire keeps growing. claim your share → splits.org.${receiptLink}`
+
+    const mv2 = `${likes.toLocaleString()} likes.
+
+before any token existed, ${active} people kept showing up for ZABAL. liked the casts. boosted the reach.
+
+$ZOOSTR pays every one of them back — proportional to what they put in.
+
+${pool}/week flows to the leaderboard. claim yours at splits.org.${receiptLink}`
+
+    const mv3 = `the empire just hit ${label}.
+
+not a trader milestone. not a market cap number.
+
+${likes.toLocaleString()} times someone showed up and said "this matters."
+
+every one of them earns from every trade. weekly. forever.
+
+that's the model.${receiptLink}`
+
+    return [
+      { variant: 1, angle: 'milestone announcement / stats', cast: mv1 },
+      { variant: 2, angle: 'people-first milestone story', cast: mv2 },
+      { variant: 3, angle: 'what the milestone actually means', cast: mv3 },
+    ]
+  }
+
+  // Milestone: contributors
+  if (moment.type === 'milestone-contributors') {
+    const count = active
+    const cv1 = `ZOOSTR: ${count} ACTIVE CONTRIBUTORS
+
+${count} people in the community pool. ${likes.toLocaleString()} total likes. ${pool}/week.
+
+the leaderboard is live. claim your share → splits.org.${receiptLink}`
+
+    const cv2 = `${count} people helped build the empire.
+
+they didn't need to know a token was coming. they just showed up.
+
+now every trade pays them back — weighted by effort, every week.
+
+that's the point.${receiptLink}`
+
+    const cv3 = `the ZOOSTR community pool now has ${count} active contributors.
+
+not holders. contributors.
+
+every one of them can claim a proportional slice of the weekly fee pool at splits.org.
+
+this is what "earned, not purchased" looks like.${receiptLink}`
+
+    return [
+      { variant: 1, angle: 'contributor count milestone announcement', cast: cv1 },
+      { variant: 2, angle: 'community story', cast: cv2 },
+      { variant: 3, angle: '"earned not purchased" framing', cast: cv3 },
+    ]
+  }
+
   if (moment.type === 'new-top' && top) {
     const ntv1 = `new #1 on the ZOOSTR leaderboard: @${top.username} 🟡
 
