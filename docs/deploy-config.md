@@ -53,8 +53,12 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 36 | `feat/homepage-hero-claiming-fix` | Homepage hero + farcaster cast 1: "No claiming. It just lands." → "Claim your share at splits.org"; launch-thread-farcaster.md cast 1 same fix |
 | 37 | `feat/homepage-collectables-v2` | Homepage collectables teaser: change present tense ("mints", "Boosters earn collectables") to future tense + "(v2)" label — collectables launch alongside first split distribution, not at token launch |
 | 38 | `feat/meme-engine-milestone-fix` | snapshot-split.ts: add `_stats` field to splits-update.json (empire totals + top contributor FID/username) so meme-engine detect-moment can compare week-over-week; meme-engine.ts: add new-top detection + new-top cast variants |
+| 39 | `feat/ops-table-detect-moment-order` | deploy-config.md Step 6: add detect-moment as explicit weekly step; document critical order constraint — detect-moment MUST run before snapshot (snapshot overwrites _stats) |
+| 40 | `feat/receipt-community-share-env` | receipt-cast.ts + receipt/page.tsx: COMMUNITY_SHARE hardcoded at 50% — wrong at launch (97/2/1 = 1% community); add NEXT_PUBLIC_COMMUNITY_SHARE_PCT env var; deploy-config.md: add env var entry |
+| 41 | `feat/community-share-consistency` | EarningsCalc.tsx + zol/page.tsx + meme-engine.ts: same 50% hardcoding fixed; consolidated to NEXT_PUBLIC_COMMUNITY_SHARE_PCT for pages, COMMUNITY_PCT for CLI scripts |
+| 42 | `feat/launch-page-auto-distribution-fix` | /launch page: "✓ Weekly auto-distribution" → "✓ Weekly split updates — claim at splits.org" (Pull model) |
 
-After all 38 PRs are merged to `main`:
+After all 42 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
