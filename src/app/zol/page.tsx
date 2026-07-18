@@ -80,7 +80,7 @@ every trade now pays them back. weekly. on-chain. claim at splits.org.${receiptL
 
 they didn't wait for a coin. they just showed up — liked the casts, boosted the reach, kept the leaderboard moving.
 
-now ${pool}/week flows to them. proportional to what they put in. forever.
+now ${pool}/week flows into the pool — theirs to claim at splits.org. proportional to what they put in. forever.
 
 that's what "back the work" looks like.${receiptLine}`
 
