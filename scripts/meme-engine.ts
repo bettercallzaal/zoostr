@@ -34,7 +34,7 @@ import type { BoostrApiResponse, BoostrStats, Contributor } from '../src/lib/typ
 const BOOSTR_URL = 'https://boostr.itscashless.com/api/zabaal/stats'
 const DAILY_VOLUME = Number(process.env.VOLUME ?? 10_000)
 const FEE_TIER = 0.01
-// COMMUNITY_PCT: set to 1 at launch (97/2/1 split), 50 at maturity. Same as npm run receipt.
+// COMMUNITY_PCT: Zoostr community pool is 50% from day 1. Default is 50.
 const COMMUNITY_SHARE = Number(process.env.COMMUNITY_PCT ?? 50) / 100
 const SPLITS_ADDRESS = process.env.SPLITS_ADDRESS ?? null
 const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY ?? null
