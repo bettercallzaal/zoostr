@@ -455,7 +455,16 @@ export default function LaunchForm() {
               </button>
             </div>
 
-            <div className="mt-6 p-4 rounded-xl bg-zao-dark border border-zao-border/50 text-xs text-slate-500 space-y-1">
+            <a
+              href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`configuring my Sparkz launch ⚡\n\n${cfg.tokenName || 'my token'} ($${ticker || 'TOKEN'})\n${cfg.communityPct}% fee share to the community · ${cfg.creatorPct}% creator\nweekly distribution via 0xSplits\n\nsparkz.xyz/launch`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 flex items-center justify-center gap-2 w-full py-2 rounded-lg border border-zao-violet/40 text-zao-violet hover:border-zao-violet/70 hover:bg-zao-violet/5 text-sm font-semibold transition-colors"
+            >
+              Cast your launch config ↗
+            </a>
+
+            <div className="mt-4 p-4 rounded-xl bg-zao-dark border border-zao-border/50 text-xs text-slate-500 space-y-1">
               <p>• deploy-config.md has the exact Clanker fields and 0xSplits setup steps</p>
               <p>• Fill [SITE_URL] and community numbers in both threads before posting</p>
               <p>• Run <code className="text-slate-400">npm run receipt</code> from the repo for a cast-ready live snapshot</p>
