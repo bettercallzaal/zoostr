@@ -192,12 +192,23 @@ Immediately after the token deploys:
 
 ## Step 6: Ongoing operations
 
+### Weekly ops order (order matters — do not swap steps 1 and 3)
+
+| # | Task | Who | How |
+|---|------|-----|-----|
+| 1 | **Detect moment** (Monday 00:00 UTC) | ZOL agent | `npm run detect-moment` — reads last week's `_stats` from `splits-update.json`, fetches fresh Boostr stats, detects milestones, writes `meme-engine-draft-YYYY-MM-DD.md` |
+| 2 | **Approve + post cast** | Zaal (human) | Review draft → `npm run post-cast -- --approve N` (variants 1/2/3) |
+| 3 | **Leaderboard snapshot** (same day, after step 2) | ZOL agent | `npm run snapshot` — fetches fresh weights, **overwrites** `splits-update.json` (including `_stats`) |
+| 4 | **Split weights update** | Zaal (human) | Review `splits-update.json` → app.splits.org → Update recipients → verify on basescan |
+| 5 | **Distribution receipt** | ZOL agent | `npm run receipt` → copy output → post to Farcaster (review-gated) |
+
+> **Why order matters:** `detect-moment` compares fresh stats against `splits-update.json._stats` (last week's baseline). Running `snapshot` first overwrites `_stats` with the current week — so detect-moment would compare current vs. current and detect no milestones.
+
+### Other recurring tasks
+
 | Task | Cadence | Who | How |
 |------|---------|-----|-----|
-| Leaderboard snapshot | Weekly (Monday 00:00 UTC) | ZOL agent | Fetch `/api/zabaal/stats`, compute weights, output `splits-update.json` + draft receipt cast |
-| Split weights update | Same day (after snapshot) | Zaal (human) | Review `splits-update.json` → app.splits.org → Update recipients → verify on basescan |
-| Fee distribution | Continuous (pull model) | Recipients self-serve | Call `distributeERC20()` on Splits or use the Splits UI |
-| Distribution receipt | Weekly, same day | ZOL agent | `npm run receipt` → copy output → post to Farcaster (review-gated) |
+| Fee distribution | Continuous (pull model) | Recipients self-serve | Call `distributeERC20()` on Splits or use the Splits UI at app.splits.org |
 | Split audit | Monthly | Zaal | Verify on-chain weights match leaderboard snapshot |
 
 ---
