@@ -87,8 +87,8 @@ export default function ZolApprovePanel({ drafts }: { drafts: Draft[] }) {
           </div>
 
           <p className="text-xs text-slate-700 leading-relaxed">
-            Clicking "Open in Warpcast" takes you to the Warpcast compose screen pre-filled with this text.
-            You post it. That's the human gate. ZOL never posts without your final click.
+            Clicking &ldquo;Open in Warpcast&rdquo; takes you to the Warpcast compose screen pre-filled with this text.
+            You post it. That&rsquo;s the human gate. ZOL never posts without your final click.
           </p>
         </div>
       )}

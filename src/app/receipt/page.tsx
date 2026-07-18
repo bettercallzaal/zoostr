@@ -253,7 +253,7 @@ export default async function ReceiptPage() {
         {/* Share CTA */}
         <div className="card-dark p-5 border-gold-500/20 text-center">
           <p className="text-sm text-slate-400 mb-3">
-            Share this receipt to show your community what they've built.
+            Share this receipt to show your community what they&rsquo;ve built.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
