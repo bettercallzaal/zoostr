@@ -57,8 +57,12 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 40 | `feat/receipt-community-share-env` | receipt-cast.ts + receipt/page.tsx: COMMUNITY_SHARE hardcoded at 50% — wrong at launch (97/2/1 = 1% community); add NEXT_PUBLIC_COMMUNITY_SHARE_PCT env var; deploy-config.md: add env var entry |
 | 41 | `feat/community-share-consistency` | EarningsCalc.tsx + zol/page.tsx + meme-engine.ts: same 50% hardcoding fixed; consolidated to NEXT_PUBLIC_COMMUNITY_SHARE_PCT for pages, COMMUNITY_PCT for CLI scripts |
 | 42 | `feat/launch-page-auto-distribution-fix` | /launch page: "✓ Weekly auto-distribution" → "✓ Weekly split updates — claim at splits.org" (Pull model) |
+| 43 | `feat/deploy-config-pr-table-update` | deploy-config.md: update PR merge table 38→42 rows; "After all 38 PRs" → "After all 42 PRs" |
+| 44 | `feat/gitignore-meme-engine-outputs` | .gitignore: add meme-engine-draft-*.json/md, remix-rewards-*.json, last-cast.json — runtime outputs with FID/username/cast data |
+| 45 | `feat/community-share-pct-zoostr-correction` | Fix COMMUNITY_SHARE_PCT across 6 files — comment said "set 1 at launch (97/2/1)" but Zoostr launches at 50% community pool from day 1 (50/25/25 split) |
+| 46 | `feat/launch-form-cast-claiming-fix` | LaunchForm.tsx: "weekly distribution via 0xSplits" → "weekly split updates — claim at splits.org"; receipt/page.tsx: remove stale "starts at 1%" note |
 
-After all 42 PRs are merged to `main`:
+After all 46 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
