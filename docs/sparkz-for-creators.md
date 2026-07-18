@@ -12,7 +12,7 @@ You've built something real. People show up for you — they like your posts, sh
 
 **The trap:** Most "creator tokens" are just meme launches with your face on them. Your community buys in, price moons for a week, then crashes — and now your most loyal people took a loss on you. That's not loyalty. That's a liability.
 
-**What Sparkz does instead:** Every trade in your token generates a 1% fee. You configure how much of that fee goes to your community — Sparkz wires it there weekly, by points, forever. The default is creator-first: 97% to you, and the community share starts small and grows as contributors prove themselves (Zoostr runs 50% community after 30+ consistent boosters). No claims, no lockups, no promises about price. Just: *you boost, you earn.*
+**What Sparkz does instead:** Every trade in your token generates a 1% fee. You configure how much of that fee goes to your community — Sparkz updates the 0xSplits allocation weekly, by points, forever. The default is creator-first: 97% to you, and the community share starts small and grows as contributors prove themselves (Zoostr runs 50% community after 30+ consistent boosters). Recipients claim their share at splits.org — no lockups, no promises about price. Just: *you boost, you accrue.*
 
 The token is not the pitch. The token is the accounting. The community is the pitch.
 
@@ -24,7 +24,7 @@ The token is not the pitch. The token is the accounting. The community is the pi
 
 Your community already has a ranking. Boostr points, Discord activity, NFT holdings, staking score — whatever metric fits your community. Sparkz maps that ranking to a fee distribution that updates weekly. Top supporters earn the most. Consistent supporters earn consistently.
 
-**You don't manage the payouts.** They flow through a 0xSplits contract on-chain. Your community checks basescan if they don't trust you.
+**You don't manage the allocations.** Fees accumulate in a 0xSplits contract on-chain — recipients claim their share at splits.org. Your community checks basescan if they don't trust you.
 
 ### 2. The 0xSplits fix (the thing most creator tokens get wrong)
 
@@ -107,7 +107,7 @@ ZABAL (Farcaster creator) + Boostr (boost platform) → Zoostr
 - They earned Boostr points by liking ZABAL's casts and getting others to like them
 - At launch: $ZOOSTR deployed on Clanker → 0xSplits contract as fee recipient → weekly snapshot from Boostr API → ZOL computes weights, Zaal reviews and calls `updateSplit()` on-chain
 - Every trade: 50% to the leaderboard by points, 25% to ZABAL/operations, 25% to treasury
-- The people who showed up first earn from every trade, forever
+- The people who showed up first accrue fees from every trade, forever — claim their share at splits.org
 
 *That community was already real. The token just made it pay.*
 
@@ -118,7 +118,7 @@ ZABAL (Farcaster creator) + Boostr (boost platform) → Zoostr
 | | Standard launch | Sparkz launch |
 |--|----------------|---------------|
 | Fee recipient | Single wallet (frozen) | 0xSplits contract (adjustable) |
-| Community payout | None, or one-time airdrop | Weekly, proportional to contribution |
+| Community allocation | None, or one-time airdrop | Weekly snapshot — claim at splits.org |
 | ZAO involvement | None | Locked stake (aligned, not extractive) |
 | Marketing | You write everything | ZOL drafts; you approve |
 | Deploy complexity | High — no template | One config export + one human click |
