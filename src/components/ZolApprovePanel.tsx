@@ -8,9 +8,13 @@ type Draft = {
   text: string
 }
 
+type PostState = 'idle' | 'posting' | 'posted' | 'error'
+
 export default function ZolApprovePanel({ drafts }: { drafts: Draft[] }) {
   const [selected, setSelected] = useState<1 | 2 | 3 | null>(null)
   const [edited, setEdited] = useState('')
+  const [postState, setPostState] = useState<PostState>('idle')
+  const [postResult, setPostResult] = useState<{ hash?: string; error?: string } | null>(null)
 
   const activeDraft = selected ? drafts.find(d => d.variant === selected) : null
 
@@ -18,11 +22,37 @@ export default function ZolApprovePanel({ drafts }: { drafts: Draft[] }) {
     setSelected(v)
     const draft = drafts.find(d => d.variant === v)
     if (draft) setEdited(draft.text)
+    setPostState('idle')
+    setPostResult(null)
   }
 
   const composeUrl = activeDraft
     ? `https://warpcast.com/~/compose?text=${encodeURIComponent(edited.slice(0, 1024))}`
     : null
+
+  const postViaNeynar = async () => {
+    if (!activeDraft || edited.length > 1024) return
+    setPostState('posting')
+    setPostResult(null)
+    try {
+      const res = await fetch('/api/zol/post', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: edited }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setPostResult({ error: data.error ?? `HTTP ${res.status}` })
+        setPostState('error')
+      } else {
+        setPostResult({ hash: data.cast_hash })
+        setPostState('posted')
+      }
+    } catch (err) {
+      setPostResult({ error: err instanceof Error ? err.message : 'Network error' })
+      setPostState('error')
+    }
+  }
 
   return (
     <div className="space-y-4">
@@ -54,7 +84,11 @@ export default function ZolApprovePanel({ drafts }: { drafts: Draft[] }) {
 
           <textarea
             value={edited}
-            onChange={e => setEdited(e.target.value)}
+            onChange={e => {
+              setEdited(e.target.value)
+              setPostState('idle')
+              setPostResult(null)
+            }}
             rows={edited.split('\n').length + 2}
             className="w-full bg-zao-dark border border-zao-border rounded-lg p-4 text-sm text-white font-mono leading-relaxed focus:outline-none focus:border-gold-500/50 resize-none"
           />
@@ -66,12 +100,23 @@ export default function ZolApprovePanel({ drafts }: { drafts: Draft[] }) {
                 <span className="text-red-400 ml-2">⚠ over Farcaster limit (1024)</span>
               )}
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap justify-end">
               <button
-                onClick={() => setEdited(activeDraft.text)}
+                onClick={() => {
+                  setEdited(activeDraft.text)
+                  setPostState('idle')
+                  setPostResult(null)
+                }}
                 className="text-xs text-slate-500 hover:text-slate-300 transition-colors"
               >
                 Reset to draft
+              </button>
+              <button
+                onClick={postViaNeynar}
+                disabled={postState === 'posting' || postState === 'posted' || edited.length > 1024}
+                className="text-sm py-2 px-4 rounded-lg border border-zao-border text-slate-300 hover:text-white hover:border-slate-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                {postState === 'posting' ? 'Posting…' : postState === 'posted' ? '✓ Posted' : 'Post via ZOL →'}
               </button>
               {composeUrl && (
                 <a
@@ -86,9 +131,24 @@ export default function ZolApprovePanel({ drafts }: { drafts: Draft[] }) {
             </div>
           </div>
 
+          {postState === 'posted' && postResult?.hash && (
+            <div className="text-xs text-green-400 bg-green-500/10 border border-green-500/20 rounded-lg px-4 py-2">
+              Cast posted — hash: <span className="font-mono">{postResult.hash}</span>
+            </div>
+          )}
+          {postState === 'error' && postResult?.error && (
+            <div className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-2">
+              {postResult.error}
+              {postResult.error.includes('NEYNAR') && (
+                <span className="text-slate-500"> — set NEYNAR_API_KEY + NEYNAR_SIGNER_UUID in Vercel env vars, or use Warpcast</span>
+              )}
+            </div>
+          )}
+
           <p className="text-xs text-slate-700 leading-relaxed">
-            Clicking &ldquo;Open in Warpcast&rdquo; takes you to the Warpcast compose screen pre-filled with this text.
-            You post it. That&rsquo;s the human gate. ZOL never posts without your final click.
+            &ldquo;Post via ZOL&rdquo; calls Neynar directly (requires NEYNAR_API_KEY + NEYNAR_SIGNER_UUID).
+            &ldquo;Open in Warpcast&rdquo; is always available as the fallback — you post it manually.
+            That&rsquo;s the human gate. ZOL never posts without your final click.
           </p>
         </div>
       )}
