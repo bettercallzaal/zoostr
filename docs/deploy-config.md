@@ -39,8 +39,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 22 | `feat/error-boundary` | Global error.tsx boundary + leaderboard loading skeleton (animate-pulse) |
 | 23 | `feat/receipt-loading` | /receipt page loading skeleton (animate-pulse) — nav, stats, pool, distribution table |
 | 24 | `feat/homepage-loading` | Homepage + /launch loading skeletons (animate-pulse) — nav, hero, leaderboard rows; launch form with 5-step progress |
+| 25 | `feat/zol-loading` | /zol Meme Engine admin loading skeleton (animate-pulse) — empire stats, top earners, 3 draft variant cards |
 
-After all 24 PRs are merged to `main`:
+After all 25 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
