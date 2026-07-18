@@ -291,7 +291,7 @@ they showed up before any token existed. that's the proof.
 ${ticker} is what the empire pays back with
 
 → ${cfg.communityPct}% of every trading fee → community (${METRIC_LABELS[cfg.communityMetric]}) → by points
-→ no claiming. it lands in your wallet
+→ claim at splits.org — your share waits, no deadline
 
 you didn't need a token to show up.
 now the token shows up for you.

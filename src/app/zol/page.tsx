@@ -74,7 +74,7 @@ ${top5.map((u, i) => `${i + 1}. @${u.username} — ${pct(u.zabalLikesCount, tota
 
 ${stats.activeContributorsCount} people showed up before $ZOOSTR existed. that's the empire.
 
-every trade now pays them back. weekly. on-chain. no claiming.${receiptLine}`
+every trade now pays them back. weekly. on-chain. claim at splits.org.${receiptLine}`
 
   const v3 = `${stats.activeContributorsCount} people built the empire.
 

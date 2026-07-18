@@ -39,7 +39,7 @@ This is Sparkz's core architectural pattern for "configurable fee distributions.
 ### Option A: 0xSplits with weekly weight refresh (RECOMMENDED)
 
 - **How it works:** An off-chain keeper (or ZAO multisig) reads the Boostr leaderboard weekly, computes each participant's share (zabalLikesCount / totalPoints), and calls `updateSplit()` on the 0xSplits contract.
-- **Pros:** Continuous accrual — no claiming required. Fully on-chain. Visible to anyone. Composable (any wallet can hold a split share).
+- **Pros:** Accumulated pull — fees accrue in the contract; recipients claim their share anytime at app.splits.org (no per-period deadline, no lockup). Fully on-chain. Visible to anyone. Composable.
 - **Cons:** Requires a trusted/permissioned role to call `updateSplit`. Could be governed by a ZAO multisig or eventually a keeper with on-chain leaderboard data.
 - **Gas:** updateSplit costs ~100–200k gas per update. Weekly cadence is ~$5–20 on Base. Acceptable.
 - **Trust model:** Until a decentralized keeper exists, Zaal + Aziz multisig controls the update. This is disclosed publicly. Future: governance vote automates the keeper.
