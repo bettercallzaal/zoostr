@@ -83,8 +83,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 66 | `feat/deploy-config-pr-table-64` | deploy-config.md: update PR merge table 63→65 rows; "After all 63 PRs" → "After all 65 PRs" |
 | 67 | `feat/deploy-config-pr-table-66` | deploy-config.md: update PR merge table 65→66 rows; "After all 65 PRs" → "After all 66 PRs" |
 | 68 | `feat/deploy-config-pr-table-67` | deploy-config.md: update PR merge table 66→68 rows; "After all 66 PRs" → "After all 68 PRs" |
+| 69 | `feat/internal-links-link-component` | page.tsx + receipt/page.tsx: replace native `<a>` with Next.js `<Link>` for all internal routes (5 occurrences); add Link import to page.tsx |
+| 70 | `feat/deploy-config-pr-table-69` | deploy-config.md: update PR merge table 68→69 rows; "After all 68 PRs" → "After all 70 PRs" |
 
-After all 68 PRs are merged to `main`:
+After all 70 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
