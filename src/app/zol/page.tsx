@@ -91,15 +91,23 @@ that's what "back the work" looks like.${receiptLine}`
   ]
 }
 
+async function getStats() {
+  try {
+    return await fetchBoostrStats()
+  } catch {
+    return null
+  }
+}
+
 export default async function ZolPage() {
   const today = new Date().toISOString().slice(0, 10)
-  const stats = await fetchBoostrStats()
-  const drafts = buildDrafts(stats, today)
+  const stats = await getStats()
   const pool = fmt(DAILY_VOLUME * FEE_TIER * COMMUNITY_SHARE * 7)
 
-  const sorted = sortedContributors(stats)
+  const sorted = stats ? sortedContributors(stats) : []
   const eligible = sorted.filter(isEligible)
-  const total = eligibleTotalPoints(stats)
+  const total = stats ? eligibleTotalPoints(stats) : 0
+  const drafts = stats ? buildDrafts(stats, today) : []
 
   return (
     <main className="min-h-screen bg-zao-dark">
@@ -115,24 +123,34 @@ export default async function ZolPage() {
 
       <div className="max-w-4xl mx-auto px-4 pt-8 pb-24 space-y-8">
 
+        {!stats && (
+          <div className="rounded-lg border border-amber-800/40 bg-amber-950/20 px-5 py-3 text-sm text-amber-400">
+            Boostr API unavailable — showing cached data if available, otherwise reload in a moment.
+          </div>
+        )}
+
         {/* Empire stats */}
         <div className="card-dark p-6">
           <div className="text-xs font-bold text-gold-400 uppercase tracking-widest mb-4">
             Current empire stats
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              { label: 'Active boosters', value: stats.activeContributorsCount.toString() },
-              { label: 'Total likes', value: stats.totalLikesGenerated.toLocaleString() },
-              { label: 'Weekly pool', value: pool },
-              { label: 'Eligible for split', value: eligible.length.toString() },
-            ].map(({ label, value }) => (
-              <div key={label}>
-                <div className="text-2xl font-black text-white">{value}</div>
-                <div className="text-xs text-slate-500 mt-0.5">{label}</div>
-              </div>
-            ))}
-          </div>
+          {stats ? (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { label: 'Active boosters', value: stats.activeContributorsCount.toString() },
+                { label: 'Total likes', value: stats.totalLikesGenerated.toLocaleString() },
+                { label: 'Weekly pool', value: pool },
+                { label: 'Eligible for split', value: eligible.length.toString() },
+              ].map(({ label, value }) => (
+                <div key={label}>
+                  <div className="text-2xl font-black text-white">{value}</div>
+                  <div className="text-xs text-slate-500 mt-0.5">{label}</div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-slate-600 text-sm">Stats unavailable — Boostr API did not respond.</div>
+          )}
         </div>
 
         {/* Top earners preview */}
@@ -140,23 +158,27 @@ export default async function ZolPage() {
           <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
             Top 5 earners (current)
           </div>
-          <div className="space-y-2">
-            {eligible.slice(0, 5).map((u, i) => (
-              <div key={u.fid} className="flex items-center justify-between text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="text-slate-600 w-4 text-right tabular-nums">{i + 1}</span>
-                  {u.pfp_url && (
-                    <img src={u.pfp_url} alt={u.username} width={24} height={24} className="rounded-full" />
-                  )}
-                  <span className="text-white font-medium">@{u.username}</span>
+          {eligible.length > 0 ? (
+            <div className="space-y-2">
+              {eligible.slice(0, 5).map((u, i) => (
+                <div key={u.fid} className="flex items-center justify-between text-sm">
+                  <div className="flex items-center gap-2">
+                    <span className="text-slate-600 w-4 text-right tabular-nums">{i + 1}</span>
+                    {u.pfp_url && (
+                      <img src={u.pfp_url} alt={u.username} width={24} height={24} className="rounded-full" />
+                    )}
+                    <span className="text-white font-medium">@{u.username}</span>
+                  </div>
+                  <div className="flex gap-4 text-right tabular-nums">
+                    <span className="text-slate-400">{pct(u.zabalLikesCount, total)}</span>
+                    <span className="text-gold-400 font-bold">{earnings(u.zabalLikesCount, total)}/wk</span>
+                  </div>
                 </div>
-                <div className="flex gap-4 text-right tabular-nums">
-                  <span className="text-slate-400">{pct(u.zabalLikesCount, total)}</span>
-                  <span className="text-gold-400 font-bold">{earnings(u.zabalLikesCount, total)}/wk</span>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-slate-600 text-sm">{stats ? 'No eligible boosters yet.' : 'Leaderboard unavailable.'}</div>
+          )}
         </div>
 
         {/* Draft variants + approve panel */}
@@ -164,7 +186,13 @@ export default async function ZolPage() {
           <div className="text-xs font-bold text-gold-400 uppercase tracking-widest mb-4">
             Draft cast variants — pick one to approve
           </div>
-          <ZolApprovePanel drafts={drafts} />
+          {drafts.length > 0 ? (
+            <ZolApprovePanel drafts={drafts} />
+          ) : (
+            <div className="card-dark p-6 text-slate-600 text-sm">
+              Draft generation requires live Boostr data. Reload when the API is back.
+            </div>
+          )}
         </div>
 
         {/* Loop guide */}
