@@ -75,8 +75,11 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 58 | `feat/receipt-cast-community-pct-fix` | receipt-cast.ts: COMMUNITY_PCT comment "At launch (97/2/1): set to 1" — Zoostr starts at 50% from day 1; warning text corrected |
 | 59 | `feat/deploy-config-pr-table-58` | deploy-config.md: update PR merge table 56→58 rows; "After all 56 PRs" → "After all 58 PRs" |
 | 60 | `feat/env-example-and-earnings-calc-fix` | .env.example: add 8 missing env vars (SPLITS_ADDRESS, COMMUNITY_SHARE_PCT, SPARKZ_URL, SIGNER_UUID, ZOL_ASSUMED_VOLUME, Stripe, Resend, ZAO_NOTIFY); EarningsCalc COMMUNITY_SHARE_PCT comment: "set to 1 at launch" → Zoostr 50% day-1 |
+| 61 | `feat/deploy-config-pr-table-60` | deploy-config.md: update PR merge table 58→60 rows; "After all 58 PRs" → "After all 60 PRs" |
+| 62 | `feat/deploy-config-community-pct-launch-fix` | deploy-config.md Vercel vars: COMMUNITY_SHARE_PCT value "1 at launch" → "50 (Zoostr launches at 50/25/25)"; note + CLI example corrected |
+| 63 | `feat/deploy-config-site-verification-checklist` | deploy-config.md: add "Verify Zoostr website" checklist (13 items covering all routes, OG, Frame, copy, earnings sanity) |
 
-After all 60 PRs are merged to `main`:
+After all 63 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
