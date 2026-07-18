@@ -43,6 +43,7 @@ export default async function LeaderboardPage() {
   let total = 0
   let activeCount = 0
   let totalLikes = 0
+  let apiDown = false
 
   try {
     const stats = await fetchBoostrStats()
@@ -51,7 +52,7 @@ export default async function LeaderboardPage() {
     activeCount = stats.activeContributorsCount
     totalLikes = stats.totalLikesGenerated
   } catch {
-    // show empty state below
+    apiDown = true
   }
 
   return (
@@ -86,6 +87,14 @@ export default async function LeaderboardPage() {
           </div>
         </div>
       </nav>
+
+      {apiDown && (
+        <div className="max-w-5xl mx-auto px-4 pt-6">
+          <div className="rounded-lg border border-amber-800/40 bg-amber-950/20 px-5 py-3 text-sm text-amber-400">
+            Boostr API unavailable — leaderboard data may be stale. Reload to try again.
+          </div>
+        </div>
+      )}
 
       <section className="max-w-5xl mx-auto px-4 pt-14 pb-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -129,7 +138,9 @@ export default async function LeaderboardPage() {
           <EarningsCalc contributors={contributors} totalPoints={total} minPoints={MIN_POINTS} />
         ) : (
           <div className="text-center py-20 text-slate-500">
-            Could not load leaderboard — try refreshing.
+            {apiDown
+              ? 'Boostr API unavailable — leaderboard is loading. Try refreshing.'
+              : 'No boosters yet — be the first.'}
           </div>
         )}
       </section>

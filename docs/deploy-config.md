@@ -35,8 +35,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 18 | `feat/launch-export-share` | "Cast your launch config ↗" Farcaster link on /launch export step |
 | 19 | `feat/receipt-twitter-card` | Add Twitter card metadata to /receipt page (was using generic layout fallback) |
 | 20 | `feat/readme-update` | Full README rewrite — pages, scripts, env vars, framing — ready for public repo |
+| 21 | `feat/leaderboard-error-state` | Leaderboard: amber banner + distinct error/empty messages when Boostr API is down |
 
-After all 20 PRs are merged to `main`:
+After all 21 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
