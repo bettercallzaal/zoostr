@@ -80,8 +80,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 63 | `feat/deploy-config-site-verification-checklist` | deploy-config.md: add "Verify Zoostr website" checklist (13 items covering all routes, OG, Frame, copy, earnings sanity) |
 | 64 | `feat/deploy-config-pr-table-62` | deploy-config.md: update PR merge table 60→63 rows; "After all 60 PRs" → "After all 63 PRs" |
 | 65 | `feat/meme-engine-milestone-drafts` | meme-engine.ts: milestone-specific cast drafts for likes + contributor milestones (previously fell back to generic weekly-receipt drafts) |
+| 66 | `feat/deploy-config-pr-table-64` | deploy-config.md: update PR merge table 63→65 rows; "After all 63 PRs" → "After all 65 PRs" |
 
-After all 65 PRs are merged to `main`:
+After all 66 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
