@@ -89,8 +89,11 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 72 | `feat/deploy-config-pr-table-71` | deploy-config.md: update PR merge table 70→71 rows; "After all 70 PRs" → "After all 72 PRs" |
 | 73 | `feat/zol-draft-v3-pull-model-fix` | zol/page.tsx: v3 anthem draft "flows to them" → "flows into the pool — theirs to claim at splits.org"; matches v2's pull-model qualifier added in PR #45 |
 | 74 | `feat/deploy-config-pr-table-73` | deploy-config.md: update PR merge table 72→73 rows; "After all 72 PRs" → "After all 74 PRs" |
+| 75 | `feat/meme-engine-cast-pull-model-sweep` | meme-engine.ts: add "claim at splits.org" pull-model qualifier to 4 cast draft variants (v3, mv3, cv2, ntv2) missed in PR #45 |
+| 76 | `feat/earnings-calc-cast-pull-model-fix` | EarningsCalc.tsx: leaderboard share cast "pays its builders" → "backs its builders — claim at splits.org" |
+| 77 | `feat/deploy-config-pr-table-75` | deploy-config.md: update PR merge table 74→76 rows; "After all 74 PRs" → "After all 77 PRs" |
 
-After all 74 PRs are merged to `main`:
+After all 77 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
