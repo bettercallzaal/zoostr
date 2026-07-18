@@ -12,7 +12,7 @@ You've built something real. People show up for you — they like your posts, sh
 
 **The trap:** Most "creator tokens" are just meme launches with your face on them. Your community buys in, price moons for a week, then crashes — and now your most loyal people took a loss on you. That's not loyalty. That's a liability.
 
-**What Sparkz does instead:** Every trade in your token generates a 1% fee. You configure how much of that fee goes to your community — Sparkz wires it there weekly, by points, forever. The default is creator-first: 97% to you, and the community share starts small and grows as contributors prove themselves (Zoostr runs 50% community after 30+ consistent boosters). No claims, no lockups, no promises about price. Just: *you boost, you earn.*
+**What Sparkz does instead:** Every trade in your token generates a 1% fee. You configure how much of that fee goes to your community — Sparkz allocates it weekly by points, on-chain, forever. The default is creator-first: 97% to you, and the community share starts small and grows as contributors prove themselves (Zoostr runs 50% community after 30+ consistent boosters). Contributors claim their share at splits.org — funds accumulate, no deadline. Just: *you boost, you earn.*
 
 The token is not the pitch. The token is the accounting. The community is the pitch.
 
@@ -24,7 +24,7 @@ The token is not the pitch. The token is the accounting. The community is the pi
 
 Your community already has a ranking. Boostr points, Discord activity, NFT holdings, staking score — whatever metric fits your community. Sparkz maps that ranking to a fee distribution that updates weekly. Top supporters earn the most. Consistent supporters earn consistently.
 
-**You don't manage the payouts.** They flow through a 0xSplits contract on-chain. Your community checks basescan if they don't trust you.
+**You don't manage the payouts.** Fees accumulate in a 0xSplits contract on-chain — contributors claim their share at splits.org whenever they want, no deadline. Your community checks basescan if they don't trust you.
 
 ### 2. The 0xSplits fix (the thing most creator tokens get wrong)
 
