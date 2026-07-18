@@ -4,7 +4,8 @@ import { useState, useMemo } from 'react'
 import type { Contributor } from '@/lib/types'
 
 const FEE_TIER = 0.01
-const COMMUNITY_SHARE = 0.50
+// NEXT_PUBLIC_COMMUNITY_SHARE_PCT: set to 1 at launch (97/2/1 split), 50 at maturity.
+const COMMUNITY_SHARE = Number(process.env.NEXT_PUBLIC_COMMUNITY_SHARE_PCT ?? 50) / 100
 const DAYS_PER_WEEK = 7
 
 const VOLUME_PRESETS = [
@@ -58,7 +59,7 @@ export default function EarningsCalc({ contributors, totalPoints, minPoints = 0 
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <div className="text-sm font-semibold text-white mb-0.5">Earnings calculator</div>
-            <div className="text-xs text-slate-500">1% fee · 50% to leaderboard · weekly distribution</div>
+            <div className="text-xs text-slate-500">1% fee · {COMMUNITY_SHARE * 100}% to leaderboard · weekly distribution</div>
           </div>
           <div className="flex flex-wrap gap-2">
             {VOLUME_PRESETS.map(({ label, value }) => (
@@ -210,7 +211,7 @@ export default function EarningsCalc({ contributors, totalPoints, minPoints = 0 
             {
               n: '1',
               label: 'Fees accumulate on-chain',
-              desc: 'Every $ZOOSTR trade sends 1% to the 0xSplits contract. 50% of that is already your leaderboard pool.',
+              desc: `Every $ZOOSTR trade sends 1% to the 0xSplits contract. ${COMMUNITY_SHARE * 100}% of that is your leaderboard pool.`,
             },
             {
               n: '2',
