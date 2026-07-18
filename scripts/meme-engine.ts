@@ -218,7 +218,7 @@ before any token existed, ${active} people kept showing up for ZABAL. liked the 
 
 $ZOOSTR pays every one of them back — proportional to what they put in.
 
-${pool}/week flows to the leaderboard. claim yours at splits.org.${receiptLink}`
+${pool}/week flows into the leaderboard pool — claim yours at splits.org.${receiptLink}`
 
     const mv3 = `the empire just hit ${label}.
 
