@@ -63,8 +63,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 46 | `feat/launch-form-cast-claiming-fix` | LaunchForm.tsx: "weekly distribution via 0xSplits" → "weekly split updates — claim at splits.org"; receipt/page.tsx: remove stale "starts at 1%" note |
 | 47 | `feat/deploy-config-pr-table-46` | deploy-config.md: update PR merge table 42→46 rows; "After all 42 PRs" → "After all 46 PRs" |
 | 48 | `feat/earnings-calc-subtitle-claiming-fix` | EarningsCalc.tsx subtitle: "weekly distribution" → "claim at splits.org" (Pull model) |
+| 49 | `feat/deploy-config-pr-table-48` | deploy-config.md: update PR merge table 46→48 rows; "After all 46 PRs" → "After all 48 PRs" |
+| 50 | `feat/launch-thread-claiming-fix` | launch-thread-farcaster.md cast 3: "splits.org distributes by leaderboard points" → "fee pool allocated by leaderboard points" (Pull model) |
 
-After all 48 PRs are merged to `main`:
+After all 50 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
