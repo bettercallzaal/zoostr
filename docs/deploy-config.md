@@ -87,8 +87,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 70 | `feat/deploy-config-pr-table-69` | deploy-config.md: update PR merge table 68→69 rows; "After all 68 PRs" → "After all 70 PRs" |
 | 71 | `feat/sparkz-for-creators-pull-model-fix` | sparkz-for-creators.md: 4 pull-model accuracy fixes — "wires it there weekly"→"updates the 0xSplits allocation weekly"; "No claims"→"Recipients claim at splits.org"; "payouts flow through"→"Fees accumulate... claim at splits.org"; "Community payout/Weekly"→"Community allocation/Weekly snapshot — claim at splits.org" |
 | 72 | `feat/deploy-config-pr-table-71` | deploy-config.md: update PR merge table 70→71 rows; "After all 70 PRs" → "After all 72 PRs" |
+| 73 | `feat/zol-draft-v3-pull-model-fix` | zol/page.tsx: v3 anthem draft "flows to them" → "flows into the pool — theirs to claim at splits.org"; matches v2's pull-model qualifier added in PR #45 |
+| 74 | `feat/deploy-config-pr-table-73` | deploy-config.md: update PR merge table 72→73 rows; "After all 72 PRs" → "After all 74 PRs" |
 
-After all 72 PRs are merged to `main`:
+After all 74 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
