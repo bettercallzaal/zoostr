@@ -38,8 +38,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 21 | `feat/leaderboard-error-state` | Leaderboard: amber banner + distinct error/empty messages when Boostr API is down |
 | 22 | `feat/error-boundary` | Global error.tsx boundary + leaderboard loading skeleton (animate-pulse) |
 | 23 | `feat/receipt-loading` | /receipt page loading skeleton (animate-pulse) — nav, stats, pool, distribution table |
+| 24 | `feat/homepage-loading` | Homepage loading skeleton (animate-pulse) — nav, hero, leaderboard rows, tokenomics card |
 
-After all 23 PRs are merged to `main`:
+After all 24 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
