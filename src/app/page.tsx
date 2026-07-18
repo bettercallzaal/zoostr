@@ -70,7 +70,7 @@ export default async function Home() {
         <p className="text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
           The boost engine was already running before any token existed. You showed up for ZABAL.
           You boosted. You built the empire. Now $ZOOSTR is how it pays back — 50% of every
-          trading fee, straight to the leaderboard by your points, every week.
+          trading fee into the leaderboard pool by your points, every week.
           Claim your share at splits.org — it waits for you, no deadline.
         </p>
 
@@ -226,7 +226,7 @@ export default async function Home() {
               Boosters will earn collectables. <span className="text-base font-semibold text-slate-500">(v2)</span>
             </h2>
             <p className="text-slate-400 leading-relaxed mb-4">
-              Every weekly fee distribution will mint an on-chain receipt for every contributor who
+              Every weekly snapshot will mint an on-chain receipt for every contributor who
               earns a share. Not a badge you bought. A permanent record: week, your points, your
               percentage, your payout. ERC-1155. Non-transferable. On-chain SVG.
             </p>
