@@ -50,8 +50,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 33 | `feat/no-claiming-xthread-fix` | X thread + meme-engine.ts: "No claiming required" + "fees land in your wallet passively" (X post 1+2) and meme-engine.ts v2 draft — all fixed to "claim at splits.org" |
 | 34 | `feat/tokenomics-why-fix` | tokenomics-draft.md decision rationale: "fees land in your wallet on cadence, no action required" contradicted Pull model; rewritten to describe Pull claiming accurately |
 | 35 | `feat/readme-claims-fix` | README.md: "automatically, forever. No claiming." → accurate Pull split claiming language |
+| 36 | `feat/homepage-hero-claiming-fix` | Homepage hero + farcaster cast 1: "No claiming. It just lands." → "Claim your share at splits.org"; launch-thread-farcaster.md cast 1 same fix |
 
-After all 35 PRs are merged to `main`:
+After all 36 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc

@@ -69,8 +69,8 @@ export default async function Home() {
         <p className="text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
           The boost engine was already running before any token existed. You showed up for ZABAL.
           You boosted. You built the empire. Now $ZOOSTR is how it pays back — 50% of every
-          trading fee, straight to the leaderboard by your points, every week, forever.
-          No claiming. It just lands.
+          trading fee, straight to the leaderboard by your points, every week.
+          Claim your share at splits.org — it waits for you, no deadline.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3">

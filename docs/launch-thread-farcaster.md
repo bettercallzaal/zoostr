@@ -14,7 +14,7 @@ $ZOOSTR is live on Base.
 
 [ALL_TIME_COUNT] people built the ZABAL empire on Boostr before any token existed.
 
-Every trade now pays them back. Weekly. On-chain. No claiming.
+Every trade now pays them back. Weekly. On-chain. Claim at splits.org.
 
 zoostr.xyz
 ```
