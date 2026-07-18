@@ -198,7 +198,7 @@ every trade now pays them back. weekly. on-chain. claim at splits.org.${receiptL
 
 they didn't wait for a coin. they just showed up — liked the casts, boosted the reach, kept the leaderboard moving.
 
-now ${pool}/week flows to them. proportional to what they put in. forever.
+now ${pool}/week flows into the pool — theirs to claim at splits.org. proportional to what they put in. forever.
 
 that's what "back the work" looks like.${receiptLink}`
 
@@ -226,7 +226,7 @@ not a trader milestone. not a market cap number.
 
 ${likes.toLocaleString()} times someone showed up and said "this matters."
 
-every one of them earns from every trade. weekly. forever.
+every one of them earns from every trade — claim at splits.org. weekly.
 
 that's the model.${receiptLink}`
 
@@ -250,7 +250,7 @@ the leaderboard is live. claim your share → splits.org.${receiptLink}`
 
 they didn't need to know a token was coming. they just showed up.
 
-now every trade pays them back — weighted by effort, every week.
+now every trade pays them back — claim at splits.org. weighted by effort, every week.
 
 that's the point.${receiptLink}`
 
@@ -280,7 +280,7 @@ ${active} boosters. ${likes.toLocaleString()} total likes. the empire keeps movi
 
 before $ZOOSTR even had a price, they showed up. every week. every cast.
 
-now that work pays ${earnings(top.zabalLikesCount, stats.totalLikesGenerated)}/week from trading fees.
+now that work pays ${earnings(top.zabalLikesCount, stats.totalLikesGenerated)}/week into the pool — claim at splits.org.
 
 this is what "back the work" actually means.${receiptLink}`
 
