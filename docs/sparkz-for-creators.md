@@ -12,7 +12,7 @@ You've built something real. People show up for you — they like your posts, sh
 
 **The trap:** Most "creator tokens" are just meme launches with your face on them. Your community buys in, price moons for a week, then crashes — and now your most loyal people took a loss on you. That's not loyalty. That's a liability.
 
-**What Sparkz does instead:** Every trade in your token generates a 1% fee. Sparkz wires 50% of that fee directly to the people who showed up for you — by points, weekly, forever. No claims, no lockups, no promises about price. Just: *you boost, you earn.*
+**What Sparkz does instead:** Every trade in your token generates a 1% fee. You configure how much of that fee goes to your community — Sparkz wires it there weekly, by points, forever. The default is creator-first: 97% to you, and the community share starts small and grows as contributors prove themselves (Zoostr runs 50% community after 30+ consistent boosters). No claims, no lockups, no promises about price. Just: *you boost, you earn.*
 
 The token is not the pitch. The token is the accounting. The community is the pitch.
 
@@ -105,7 +105,7 @@ ZABAL (Farcaster creator) + Boostr (boost platform) → Zoostr
 
 - [ALL_TIME_COUNT] people boosted ZABAL on Boostr before any token existed
 - They earned Boostr points by liking ZABAL's casts and getting others to like them
-- At launch: $ZOOSTR deployed on Clanker → 0xSplits contract as fee recipient → weekly snapshot from Boostr API → split updates automatically
+- At launch: $ZOOSTR deployed on Clanker → 0xSplits contract as fee recipient → weekly snapshot from Boostr API → ZOL computes weights, Zaal reviews and calls `updateSplit()` on-chain
 - Every trade: 50% to the leaderboard by points, 25% to ZABAL/operations, 25% to treasury
 - The people who showed up first earn from every trade, forever
 
