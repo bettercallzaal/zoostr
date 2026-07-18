@@ -21,7 +21,7 @@ The first split:
 → @[username]: 11.1% — $22/week
 → @[username]: 8.3% — $16/week
 
-Every $ZOOSTR trade now pays them back. Weekly. On-chain. No claiming required.
+Every $ZOOSTR trade now pays them back. Weekly. On-chain. Claim at splits.org — your share waits, no deadline.
 
 zoostr.xyz
 ```
@@ -38,7 +38,7 @@ how it works:
 $ZOOSTR trades on Base (Clanker, 1% fee)
 50% of every fee → a 0xSplits contract
 splits.org distributes by leaderboard points — weekly
-fees land in your wallet passively
+claim your share at splits.org — no lockups, no deadline
 
 the split is fully on-chain and public.
 

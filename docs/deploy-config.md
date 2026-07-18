@@ -47,8 +47,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 30 | `feat/leaderboard-claims-copy` | Leaderboard page: fix "no claiming" copy — Pull split model requires claiming; changed to "Claim your share anytime at app.splits.org — funds accumulate, no deadline" |
 | 31 | `feat/sparkz-for-creators-accuracy` | sparkz-for-creators.md: fix two inaccuracies — (1) "50% of that fee" in problem/solution frame hardcoded Zoostr's split as default; (2) "split updates automatically" implied on-chain automation; both now accurate |
 | 32 | `feat/no-claiming-docs-fix` | Fix "no claiming" in four places: tokenomics-draft.md Option A pro (Pull model does require claiming), launcher.ts cast template, zol/page.tsx v2 draft, launch-thread-farcaster.md cast 3 |
+| 33 | `feat/no-claiming-xthread-fix` | X thread + meme-engine.ts: "No claiming required" + "fees land in your wallet passively" (X post 1+2) and meme-engine.ts v2 draft — all fixed to "claim at splits.org" |
 
-After all 32 PRs are merged to `main`:
+After all 33 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
