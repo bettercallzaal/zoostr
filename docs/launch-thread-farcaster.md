@@ -12,7 +12,7 @@
 ```
 $ZOOSTR is live on Base.
 
-34 people built the ZABAL empire on Boostr before any token existed.
+[ALL_TIME_COUNT] people built the ZABAL empire on Boostr before any token existed.
 
 Every trade now pays them back. Weekly. On-chain. No claiming.
 
@@ -64,7 +64,7 @@ splits contract: [SPLITS_ADDRESS]
 ## Cast 4 — Anthem
 
 ```
-34 people showed up before the token.
+[ALL_TIME_COUNT] people showed up before the token.
 
 they didn't wait for a coin. they liked the casts, boosted the reach, kept the leaderboard alive.
 

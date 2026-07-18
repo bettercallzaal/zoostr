@@ -36,16 +36,14 @@ This is the only way to deliver "adjustable community fee splits" on Clanker. It
 
 ### 3. AI advisor to configure your split
 
-The Sparkz AI advisor (ZOL) walks you through 5 decisions:
-1. **Community share** — what % of fees goes to your community (default: 50%)
-2. **Creator share** — your ongoing income from the token you launched (default: 25%)
-3. **Treasury** — the community's collective wallet for future governance (default: 25%)
-4. **Community metric** — what earns a bigger share: leaderboard points, NFT holding, staking, or equal
-5. **ZAO stake** — ZAO holds a locked token allocation (default: 5%, 12 months)
+The Sparkz AI advisor (sparkz.xyz/advisor) asks 3 questions and gives you a concrete split recommendation:
+1. **What kind of project is this?** (solo with producers / artist collab / group crowdfund)
+2. **Token now, later, or never?** — start tokenless if the community isn't proven yet
+3. **What volume range are you expecting?** — sizes the fee model honestly for your stage
 
-At each step, the advisor shows you a real dollar projection: *"At $10k daily volume, your community pool is $350/week. Your top supporter earns ~$32/week."*
+The **default is creator-first: 97% creator, 1% community, 2% treasury.** The community share grows as real contributors show up. You don't give away share before the community exists. Zoostr evolved to 50% community share after 30+ consistent boosters — the advisor shows you where to start and when to grow it.
 
-You adjust the sliders. The advisor flags tradeoffs. You export a complete deploy config and launch threads. Then you click deploy.
+The advisor calculates real dollar projections: *"At $10k daily volume, your community pool at 50% is $350/week. Your top supporter earns ~$32/week."* You export the config, open the split wizard, and click deploy. ZAO stake (5%, locked 12 months) is set automatically.
 
 ### 4. ZAO backing
 
@@ -95,7 +93,7 @@ You review and approve. You (or ZOL) posts.
 
 Two paths:
 
-**Path A — Use the Sparkz Launcher:** Go to zoostr.xyz/launch → configure in 5 steps → export your deploy config. ZAO reviews your config before launch to confirm the launch fits the Sparkz model.
+**Path A — Use the Sparkz Launcher:** Go to sparkz.xyz/advisor → answer 3 questions → open the split wizard → export your deploy config. ZAO reviews your config before launch to confirm the launch fits the Sparkz model.
 
 **Path B — Work with ZOL directly:** DM @bettercallzaal on Farcaster. ZOL will run the configuration with you and handle the full launch prep (copy, threads, deploy checklist). You review everything before it goes anywhere.
 
@@ -105,7 +103,7 @@ Two paths:
 
 ZABAL (Farcaster creator) + Boostr (boost platform) → Zoostr
 
-- 34 people boosted ZABAL on Boostr before any token existed
+- [ALL_TIME_COUNT] people boosted ZABAL on Boostr before any token existed
 - They earned Boostr points by liking ZABAL's casts and getting others to like them
 - At launch: $ZOOSTR deployed on Clanker → 0xSplits contract as fee recipient → weekly snapshot from Boostr API → split updates automatically
 - Every trade: 50% to the leaderboard by points, 25% to ZABAL/operations, 25% to treasury

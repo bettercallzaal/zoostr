@@ -12,7 +12,7 @@
 ```
 $ZOOSTR is live on Base.
 
-34 people built the ZABAL empire on Boostr before any token existed.
+[ALL_TIME_COUNT] people built the ZABAL empire on Boostr before any token existed.
 
 The first split:
 [TOP_EARNERS — paste from `npm run receipt`]
@@ -51,7 +51,7 @@ $ZOOSTR: [TOKEN_ADDRESS]
 ## Post 3 — Anthem + CTA
 
 ```
-34 people showed up before there was a token.
+[ALL_TIME_COUNT] people showed up before there was a token.
 
 that's not a community. that's an empire.
 
