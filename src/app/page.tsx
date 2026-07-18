@@ -222,16 +222,16 @@ export default async function Home() {
               ✦ Earned, never purchased
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
-              Boosters earn collectables.
+              Boosters will earn collectables. <span className="text-base font-semibold text-slate-500">(v2)</span>
             </h2>
             <p className="text-slate-400 leading-relaxed mb-4">
-              Every weekly fee distribution mints an on-chain receipt for every contributor who
-              earned a share. Not a badge you bought. A permanent record: week, your points, your
+              Every weekly fee distribution will mint an on-chain receipt for every contributor who
+              earns a share. Not a badge you bought. A permanent record: week, your points, your
               percentage, your payout. ERC-1155. Non-transferable. On-chain SVG.
             </p>
             <p className="text-sm text-slate-500 mb-4">
-              Stack receipts over time. 52 weeks of showing up = 52 collectables, a timeline of
-              contribution — not a balance sheet.
+              Collectables launch alongside the first split distribution — after the token is live.
+              Stack them over time: 52 weeks of showing up = 52 collectables.
             </p>
             <a
               href="https://sparkz.xyz/collectables"
