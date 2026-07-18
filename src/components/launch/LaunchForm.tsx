@@ -57,10 +57,10 @@ function getAdvisorTip(step: number, cfg: LaunchConfig): string {
     case 1: {
       const weeklyPool = weeklyVol * fee * (cfg.communityPct / 100)
       const flag =
-        cfg.communityPct < 30
-          ? ' ⚠ Below 30% the per-member amount starts to feel like dust.'
+        cfg.communityPct < 10
+          ? ' Creator-first default — the Sparkz platform standard. Grow this as real contributors prove themselves. Zoostr started at 1% and grew to 50% after 30+ consistent boosters.'
           : cfg.communityPct > 60
-          ? ' Note: above 60% leaves less for operations and treasury.'
+          ? ' Above 60% leaves little for creator operations. This is Zoostr-level territory — it works when 30+ consistent boosters have proven the leaderboard.'
           : ''
       return `At $${ASSUMED_DAILY_VOL.toLocaleString()}/day, the community pool is ~$${weeklyPool.toFixed(0)}/week.${flag}`
     }
@@ -71,7 +71,7 @@ function getAdvisorTip(step: number, cfg: LaunchConfig): string {
     case 3: {
       const tPct = treasuryPct(cfg)
       const monthlyTreasury = ASSUMED_DAILY_VOL * 30 * fee * (tPct / 100)
-      const flag = tPct < 10 ? ' Consider keeping at least 10% so the community has something to govern together.' : ''
+      const flag = tPct < 2 ? ' Treasury below 2% means no governance reserve. Consider leaving at least 2% (the Sparkz standard).' : ''
       return `Treasury accrues ~$${monthlyTreasury.toFixed(0)}/month at $${ASSUMED_DAILY_VOL.toLocaleString()}/day. It's the community's collective wallet — give it a governance model so they know it's theirs.${flag}`
     }
     case 4: {
@@ -110,7 +110,7 @@ export default function LaunchForm() {
   const treasury = treasuryPct(cfg)
   const canProceed = [
     cfg.tokenName.trim() && cfg.tokenTicker.trim() && cfg.creatorHandle.trim(),
-    cfg.communityPct >= 25 && cfg.communityPct <= 75,
+    cfg.communityPct >= 1 && cfg.communityPct <= 80,
     cfg.creatorPct >= 10 && treasury >= 0,
     true,
     zaoConsent,
@@ -251,15 +251,15 @@ export default function LaunchForm() {
             >
               <input
                 type="range"
-                min={25}
-                max={75}
+                min={1}
+                max={80}
                 value={cfg.communityPct}
                 onChange={(e) => updateCommunityPct(Number(e.target.value))}
                 className="w-full accent-gold-500"
               />
               <div className="flex justify-between text-xs text-slate-500 mt-1">
-                <span>25% (minimum)</span>
-                <span>75% (maximum)</span>
+                <span>1% (creator-first default)</span>
+                <span>80% (max)</span>
               </div>
             </Field>
 

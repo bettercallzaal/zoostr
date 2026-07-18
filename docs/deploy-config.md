@@ -42,8 +42,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 25 | `feat/zol-loading` | /zol Meme Engine admin loading skeleton (animate-pulse) — empire stats, top earners, 3 draft variant cards |
 | 26 | `feat/launch-docs-update` | Launch threads: [ALL_TIME_COUNT] placeholder for hardcoded "34"; sparkz-for-creators.md: real 3-question advisor flow + creator-first framing |
 | 27 | `feat/tokenomics-default-fix` | tokenomics-draft.md: Sparkz default corrected to 97/2/1 creator-first; full row breakdown vs Zoostr's 50/25/25 |
+| 28 | `feat/launch-form-creator-first` | /launch form: fix community share range (1–80%, was 25–75%); creator-first default (97/2/1); advisory copy rewritten to explain progression |
 
-After all 27 PRs are merged to `main`:
+After all 28 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
