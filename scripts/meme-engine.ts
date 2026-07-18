@@ -91,7 +91,14 @@ type Moment = {
   urgency: 'high' | 'normal'
 }
 
-function detectMoments(stats: BoostrStats, prev: Partial<BoostrStats> = {}): Moment[] {
+type PrevStats = {
+  totalLikesGenerated?: number
+  activeContributorsCount?: number
+  topFid?: number | null
+  topUsername?: string | null
+}
+
+function detectMoments(stats: BoostrStats, prev: PrevStats = {}): Moment[] {
   const moments: Moment[] = []
   const { totalLikesGenerated: likes, activeContributorsCount: active, contributors } = stats
   const top = contributors[0]
@@ -104,7 +111,7 @@ function detectMoments(stats: BoostrStats, prev: Partial<BoostrStats> = {}): Mom
     urgency: 'high',
   })
 
-  // Milestone: likes thresholds (10k, 25k, 50k, 100k, ...)
+  // Milestone: likes thresholds
   const LIKE_MILESTONES = [1_000, 5_000, 10_000, 25_000, 50_000, 100_000, 250_000]
   const prevLikes = prev.totalLikesGenerated ?? 0
   for (const m of LIKE_MILESTONES) {
@@ -130,6 +137,20 @@ function detectMoments(stats: BoostrStats, prev: Partial<BoostrStats> = {}): Mom
         urgency: 'high',
       })
     }
+  }
+
+  // New #1 contributor — only fire if prev top is known and has changed
+  if (
+    prev.topFid != null &&
+    top &&
+    top.fid !== prev.topFid
+  ) {
+    moments.push({
+      type: 'new-top',
+      label: `New #1: @${top.username}`,
+      detail: `@${top.username} just overtook @${prev.topUsername ?? 'previous leader'} at the top of the leaderboard`,
+      urgency: 'high',
+    })
   }
 
   return moments
@@ -180,6 +201,36 @@ now ${pool}/week flows to them. proportional to what they put in. forever.
 
 that's what "back the work" looks like.${receiptLink}`
 
+  if (moment.type === 'new-top' && top) {
+    const ntv1 = `new #1 on the ZOOSTR leaderboard: @${top.username} 🟡
+
+${top.zabalLikesCount.toLocaleString()} points — ${pct(top.zabalLikesCount, stats.totalLikesGenerated)} of the community pool — ${earnings(top.zabalLikesCount, stats.totalLikesGenerated)}/week
+
+${active} boosters. ${likes.toLocaleString()} total likes. the empire keeps moving.${receiptLink}`
+
+    const ntv2 = `👑 @${top.username} is now #1.
+
+before $ZOOSTR even had a price, they showed up. every week. every cast.
+
+now that work pays ${earnings(top.zabalLikesCount, stats.totalLikesGenerated)}/week from trading fees.
+
+this is what "back the work" actually means.${receiptLink}`
+
+    const ntv3 = `the leaderboard just moved.
+
+@${top.username} is the new #1 on the ZOOSTR empire. not by buying in — by showing up.
+
+${active} people are building this. the ones at the top earned it.
+
+claim your share → splits.org${receiptLink}`
+
+    return [
+      { variant: 1, angle: 'new #1 announcement', cast: ntv1 },
+      { variant: 2, angle: 'tribute / personal (new leader story)', cast: ntv2 },
+      { variant: 3, angle: 'leaderboard movement framing', cast: ntv3 },
+    ]
+  }
+
   return [
     { variant: 1, angle: 'announcement / stats', cast: v1 },
     { variant: 2, angle: 'proof / leaderboard (calls out top booster)', cast: v2 },
@@ -195,13 +246,13 @@ async function detectAndDraft() {
   const stats = await fetchStats()
   console.log(`✓ Boostr stats fetched: ${stats.activeContributorsCount} active, ${stats.totalLikesGenerated.toLocaleString()} likes`)
 
-  // Load previous week's stats for milestone comparison (if available)
+  // Load previous week's stats for milestone comparison (from splits-update.json._stats)
   const prevPath = path.join(process.cwd(), 'splits-update.json')
-  let prev: Partial<BoostrStats> = {}
+  let prev: PrevStats = {}
   if (fs.existsSync(prevPath)) {
     try {
       const raw = JSON.parse(fs.readFileSync(prevPath, 'utf-8'))
-      if (raw._stats) prev = raw._stats
+      if (raw._stats) prev = raw._stats as PrevStats
     } catch { /* no prev stats */ }
   }
 

@@ -140,6 +140,15 @@ async function main() {
       ...(u.remixBonus > 0 ? { remixBonus: u.remixBonus, effectivePoints: u.effectivePts } : {}),
     })),
     totalWeight: SCALE,
+    // _stats persisted so meme-engine detect-moment can compare milestones week-over-week
+    _stats: {
+      totalLikesGenerated,
+      activeContributorsCount,
+      allTimeContributorsCount,
+      topFid: eligible[0]?.fid ?? null,
+      topUsername: eligible[0]?.username ?? null,
+      date,
+    },
   }
 
   const splitsPath = path.join(process.cwd(), 'splits-update.json')
