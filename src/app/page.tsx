@@ -169,7 +169,7 @@ export default async function Home() {
               Trading Fee Split (1% per trade)
             </h3>
             <div className="space-y-3">
-              <FeeBar label="Leaderboard Boosters" pct={50} color="from-gold-500 to-gold-400" note="distributed by points" />
+              <FeeBar label="Leaderboard Boosters" pct={50} color="from-gold-500 to-gold-400" note="allocated by points — claim at splits.org" />
               <FeeBar label="Creator & Operations" pct={25} color="from-violet-600 to-violet-500" note="Zaal · ZABAL" />
               <FeeBar label="Treasury" pct={25} color="from-slate-600 to-slate-500" note="future liquidity / community vote" />
             </div>
@@ -225,12 +225,12 @@ export default async function Home() {
               Boosters will earn collectables. <span className="text-base font-semibold text-slate-500">(v2)</span>
             </h2>
             <p className="text-slate-400 leading-relaxed mb-4">
-              Every weekly fee distribution will mint an on-chain receipt for every contributor who
+              Every weekly snapshot will mint an on-chain receipt for every contributor who
               earns a share. Not a badge you bought. A permanent record: week, your points, your
-              percentage, your payout. ERC-1155. Non-transferable. On-chain SVG.
+              percentage, your share. ERC-1155. Non-transferable. On-chain SVG.
             </p>
             <p className="text-sm text-slate-500 mb-4">
-              Collectables launch alongside the first split distribution — after the token is live.
+              Collectables launch alongside the first split update — after the token is live.
               Stack them over time: 52 weeks of showing up = 52 collectables.
             </p>
             <a
