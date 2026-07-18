@@ -120,7 +120,7 @@ export default function EarningsCalc({ contributors, totalPoints, minPoints = 0 
                 return (
                   <tr
                     key={c.fid}
-                    className={`border-b border-zao-border/50 hover:bg-white/3 transition-colors ${
+                    className={`group border-b border-zao-border/50 hover:bg-white/3 transition-colors ${
                       !eligible ? 'opacity-50' : globalRank < 3 ? 'bg-gold-500/5' : ''
                     }`}
                   >
@@ -161,11 +161,23 @@ export default function EarningsCalc({ contributors, totalPoints, minPoints = 0 
                         eligible && c.weeklyEarnings >= 1 ? 'text-gold-400' : 'text-slate-500'
                       }`}
                     >
-                      {eligible
-                        ? formatUsd(c.weeklyEarnings)
-                        : !c.zabalEnabled
-                          ? 'enable Boostr'
-                          : `${minPoints - c.zabalLikesCount} pts to unlock`}
+                      {eligible ? (
+                        <span className="flex items-center justify-end gap-2">
+                          <span>{formatUsd(c.weeklyEarnings)}</span>
+                          <a
+                            href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`i'm #${globalRank + 1} on the Zoostr leaderboard\n\n@${c.username} — ${share.toFixed(1)}% of the pool — ${formatUsd(c.weeklyEarnings)}/week\n\nthe empire pays its builders\nboost to earn → zoostr.xyz/leaderboard`)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Cast your rank on Farcaster"
+                            className="text-slate-600 hover:text-zao-violet transition-colors opacity-0 group-hover:opacity-100 flex-shrink-0"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            ↗
+                          </a>
+                        </span>
+                      ) : !c.zabalEnabled
+                        ? 'enable Boostr'
+                        : `${minPoints - c.zabalLikesCount} pts to unlock`}
                     </td>
                   </tr>
                 )
