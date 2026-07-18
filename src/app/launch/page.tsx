@@ -2,10 +2,38 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import LaunchForm from '@/components/launch/LaunchForm'
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
+const SPARKZ_URL = process.env.NEXT_PUBLIC_SPARKZ_URL ?? 'https://sparkz.xyz'
+const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Launch your token')}&sub=${encodeURIComponent('Configure your split. Export. One click to deploy.')}`
+
 export const metadata: Metadata = {
   title: 'Launch Your Token — Sparkz by ZAO',
   description:
     'Give your community a real stake. Configure your fee split in 5 steps, export a deploy config, and launch in one click on clanker.world. Multi-recipient 0xSplits — on-chain, adjustable.',
+  openGraph: {
+    title: 'Launch your token — Sparkz by ZAO',
+    description: 'Configure your community fee split in 5 steps. Export a deploy config. One click to launch on clanker.world.',
+    url: `${BASE_URL}/launch`,
+    images: [{ url: OG_URL, width: 1200, height: 630, alt: 'Launch your token — Sparkz by ZAO' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Launch your token — Sparkz by ZAO',
+    description: 'Configure your split. Export. One click to deploy.',
+    images: [OG_URL],
+  },
+  other: {
+    'fc:frame': 'vNext',
+    'fc:frame:image': OG_URL,
+    'fc:frame:image:aspect_ratio': '1.91:1',
+    'fc:frame:button:1': '⚡ Configure my split',
+    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:target': `${BASE_URL}/launch`,
+    'fc:frame:button:2': '🏆 See the Zoostr leaderboard',
+    'fc:frame:button:2:action': 'link',
+    'fc:frame:button:2:target': `${SPARKZ_URL}/launches/zoostr`,
+  },
 }
 
 export default function LaunchPage() {
