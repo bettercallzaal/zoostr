@@ -53,7 +53,7 @@ This is Sparkz's core architectural pattern for "configurable fee distributions.
 
 ### Decision: Option A (0xSplits weekly refresh)
 
-**Why:** Zoostr's brand is "boost and earn — passively." A claimable airdrop breaks that promise. 0xSplits accrual is invisible-feeling — fees land in your wallet on cadence, no action required. The trust tradeoff (multisig controller) is acceptable at launch and can be progressively decentralized.
+**Why:** Zoostr's brand is "boost and earn." A periodic merkle drop requires active per-period claiming — bad UX. 0xSplits Pull: fees accumulate in the contract on weekly cadence; recipients claim at splits.org anytime (no per-period deadline, funds wait). Lower friction than Option B. The trust tradeoff (multisig controller) is acceptable at launch and can be progressively decentralized.
 
 **Receipt framing (DreamNet-style):** Each weekly distribution is logged as a public on-chain event and can be formatted as a human-readable receipt — "You earned 0.0042 ETH this week from Zoostr trades based on 1,240 boost points (12.4% of pool)." Brandon's RECEIPTS tool pattern applies here.
 
