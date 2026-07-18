@@ -1,5 +1,6 @@
 import { fetchBoostrStats } from '@/lib/boostr'
 import LiveLeaderboard from '@/components/LiveLeaderboard'
+import Link from 'next/link'
 import type { BoostrStats } from '@/lib/types'
 
 const TOKEN_ADDRESS = process.env.NEXT_PUBLIC_TOKEN_ADDRESS ?? null
@@ -33,15 +34,15 @@ export default async function Home() {
             <span className="text-white">STR</span>
           </span>
           <div className="flex items-center gap-4 text-sm">
-            <a href="/leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</a>
-            <a href="/receipt" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Weekly receipt</a>
+            <Link href="/leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</Link>
+            <Link href="/receipt" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Weekly receipt</Link>
             <a href="#tokenomics" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">How it works</a>
-            <a
+            <Link
               href="/launch"
               className="px-3 py-1.5 rounded-lg border border-zao-violet/50 text-zao-violet hover:bg-zao-violet/10 text-xs font-semibold transition-colors"
             >
               ⚡ Launch your token
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -265,12 +266,12 @@ export default async function Home() {
             >
               Start boosting ↗
             </a>
-            <a
+            <Link
               href="/launch"
               className="px-8 py-4 rounded-xl border border-zao-violet/50 text-zao-violet hover:bg-zao-violet/10 font-bold text-lg transition-colors"
             >
               ⚡ Creator? Launch your token
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -385,9 +386,9 @@ function FeeBar({ label, pct, color, note }: { label: string; pct: number; color
 function SocialLink({ href, label, internal }: { href: string; label: string; internal?: boolean }) {
   if (internal) {
     return (
-      <a href={href} className="text-sm text-slate-400 hover:text-gold-400 transition-colors block">
+      <Link href={href} className="text-sm text-slate-400 hover:text-gold-400 transition-colors block">
         {label}
-      </a>
+      </Link>
     )
   }
   return (

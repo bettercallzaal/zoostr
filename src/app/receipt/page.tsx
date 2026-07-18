@@ -257,9 +257,9 @@ export default async function ReceiptPage() {
           <p className="text-xl font-black text-gold-400">Back the empire. 🟡</p>
           <p className="text-xs text-slate-600 mt-2">
             Projections at ${(ASSUMED_DAILY_VOLUME / 1000).toFixed(0)}k/day volume ·{' '}
-            <a href="/leaderboard" className="text-slate-500 hover:text-slate-400 underline">
+            <Link href="/leaderboard" className="text-slate-500 hover:text-slate-400 underline">
               adjust volume on leaderboard →
-            </a>
+            </Link>
           </p>
         </div>
 
