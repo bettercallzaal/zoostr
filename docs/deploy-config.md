@@ -44,8 +44,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 27 | `feat/tokenomics-default-fix` | tokenomics-draft.md: Sparkz default corrected to 97/2/1 creator-first; full row breakdown vs Zoostr's 50/25/25 |
 | 28 | `feat/launch-form-creator-first` | /launch form: fix community share range (1–80%, was 25–75%); creator-first default (97/2/1); advisory copy rewritten to explain progression |
 | 29 | `feat/ops-human-gate-fix` | deploy-config.md ops table: split "Leaderboard snapshot" row so ZOL generates payload only; separate "Split weights update" row puts updateSplit() call on Zaal (human-only on-chain action) |
+| 30 | `feat/leaderboard-claims-copy` | Leaderboard page: fix "no claiming" copy — Pull split model requires claiming; changed to "Claim your share anytime at app.splits.org — funds accumulate, no deadline" |
 
-After all 29 PRs are merged to `main`:
+After all 30 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
