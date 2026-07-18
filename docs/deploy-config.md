@@ -104,6 +104,26 @@ Set that env var after the Clanker deploy and redeploy Vercel.
 
 ---
 
+## Verify Zoostr website (after Vercel deploys, before token launch)
+
+- [ ] `https://zoostr.xyz` — hero loads, leaderboard visible, top-3 podium renders
+- [ ] `https://zoostr.xyz` — empire stats (active contributors, total likes) show live numbers
+- [ ] `https://zoostr.xyz/leaderboard` — full table loads with avatars and projected earnings
+- [ ] `https://zoostr.xyz/receipt` — receipt page loads; projected earnings match leaderboard
+- [ ] `https://zoostr.xyz/receipt` — Farcaster Frame tags present (paste URL in Warpcast composer → preview renders with "Share leaderboard" CTA)
+- [ ] `https://zoostr.xyz/launch` — launch info page loads; tokenomics section visible; links to cashlessman + Zaal visible
+- [ ] `https://zoostr.xyz/sitemap.xml` — 4 URLs listed
+- [ ] `https://zoostr.xyz` — OG image renders (paste in Warpcast → preview shows ZOOSTR wordmark)
+- [ ] `https://zoostr.xyz` — "Claim your share at splits.org" copy visible; no "automatic / no claiming" language
+- [ ] `COMMUNITY_SHARE_PCT` sanity check: projected weekly earnings for top booster look plausible at assumed volume (run `npm run receipt` to preview before posting)
+
+After token launch (once `NEXT_PUBLIC_TOKEN_ADDRESS` is set):
+- [ ] "Token Live" green banner appears on homepage
+- [ ] Basescan link in banner goes to the correct contract
+- [ ] `https://zoostr.xyz/receipt` — earnings projections reflect live on-chain split
+
+---
+
 ## Pre-flight: decisions to lock before deploy
 
 | # | Decision | Options | Recommended |
