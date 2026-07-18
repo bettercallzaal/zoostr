@@ -30,8 +30,9 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 13 | `feat/launch-page-og` | OG + Farcaster Frame metadata on /launch page; deploy-config updated to 13 PRs |
 | 14 | `feat/zol-boostr-resilience` | /zol page: graceful fallback when Boostr API is down (banner + disabled drafts) |
 | 15 | `feat/launch-threads` | docs: 5-cast Farcaster launch thread + X thread (run `npm run receipt` then post) |
+| 16 | `feat/leaderboard-share-cast` | Warpcast share icon on each eligible leaderboard row — boosters share their rank |
 
-After all 15 PRs are merged to `main`:
+After all 16 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
