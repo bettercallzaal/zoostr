@@ -154,7 +154,7 @@ export default async function ReceiptPage() {
           </div>
           {COMMUNITY_SHARE === 0.5 && (
             <div className="text-xs text-slate-700 mt-2 italic">
-              Projecting at 50% community share (mature split). At launch the community share starts at 1% and grows as the leaderboard earns its stake.
+              Projecting at 50% community share — Zoostr&apos;s community pool from day 1.
             </div>
           )}
         </div>
