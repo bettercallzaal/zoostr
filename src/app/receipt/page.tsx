@@ -277,6 +277,25 @@ export default async function ReceiptPage() {
             </Link>
           </div>
         </div>
+
+        {/* How to join */}
+        <div className="card-dark p-5 border-zao-border/50">
+          <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
+            Not on the leaderboard yet?
+          </div>
+          <p className="text-sm text-slate-400 mb-3">
+            Boost ZABAL on Boostr — like his casts, and get others to like them too. Every {MIN_POINTS}+ points
+            puts you in the weekly split. The top 15 are on this receipt.
+          </p>
+          <a
+            href="https://boostr.itscashless.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-4 py-2 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500/20 text-sm font-semibold transition-colors"
+          >
+            Start boosting ↗
+          </a>
+        </div>
       </div>
     </main>
   )
