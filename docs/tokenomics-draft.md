@@ -80,14 +80,16 @@ ZAO does **not** take an ongoing fee cut. This keeps the fee split entirely betw
 
 ## Sparkz Default Configuration
 
-Zoostr is also the first live example of a **Sparkz default config**:
+Zoostr is also the first live example of a **Sparkz default config**. The Sparkz platform default is **creator-first (97/2/1)** — creator keeps 97%, treasury gets 2%, community pool starts at 1%. Zoostr evolved to 50% community after 30+ consistent boosters proved the leaderboard. The advisor starts every creator at 97/2/1 and explains when to grow the community share.
 
 | Parameter | Zoostr Setting | Sparkz Default |
 |-----------|---------------|----------------|
 | Fee tier | 1% (Clanker) | 1% |
 | Fee recipient | 0xSplits contract | 0xSplits contract |
-| Community pool | 50% → leaderboard | Configurable (50% suggested) |
-| ZAO stake | Locked token alloc | Locked token alloc |
+| Community pool | 50% (evolved from 1% as boosters showed up) | 1% (creator-first; grows when community is proven) |
+| Creator pool | 25% | 97% |
+| Treasury | 25% | 2% (1% community governance + 1% ZOL compute) |
+| ZAO stake | Locked token alloc | Locked token alloc (never a fee slice) |
 | Distribution cadence | Weekly | Weekly |
 | Update controller | ZAO + creator multisig | Creator + ZAO multisig |
 
