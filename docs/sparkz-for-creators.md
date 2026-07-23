@@ -43,7 +43,7 @@ The Sparkz AI advisor (sparkz.xyz/advisor) asks 3 questions and gives you a conc
 
 The **default is creator-first: 97% creator, 1% community, 2% treasury.** The community share grows as real contributors show up. You don't give away share before the community exists. Zoostr evolved to 50% community share after 30+ consistent boosters — the advisor shows you where to start and when to grow it.
 
-The advisor calculates real dollar projections: *"At $10k daily volume, your community pool at 50% is $350/week. Your top supporter earns ~$32/week."* You export the config, open the split wizard, and click deploy. ZAO stake (5%, locked 12 months) is set automatically.
+The advisor calculates real dollar projections: *"At $10k daily volume, your community pool at 50% is $350/week. Your top supporter earns ~$32/week."* You export the config, open the split wizard, and click deploy. ZAO stake (5%, locked 12 months) is pre-filled in your deploy config — a separate post-deploy token transfer to ZAO's lock contract completes it.
 
 ### 4. ZAO backing
 
