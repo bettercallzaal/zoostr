@@ -158,7 +158,7 @@ export default async function ReceiptPage() {
         <div className="card-dark overflow-hidden font-mono">
           <div className="px-5 py-4 border-b border-zao-border">
             <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">
-              Distribution weights — top {Math.min(eligible.length, 15)} boosters
+              Allocation weights — top {Math.min(eligible.length, 15)} boosters
             </div>
           </div>
           <div className="divide-y divide-zao-border/50">
