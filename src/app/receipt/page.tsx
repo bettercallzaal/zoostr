@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description: 'Live snapshot: who earned what in the Zoostr leaderboard pool this week.',
   openGraph: {
     title: 'Zoostr Weekly Receipt — back the empire',
-    description: 'Live leaderboard distribution: top earners + empire stats.',
+    description: 'Live leaderboard snapshot: top earners + empire stats.',
     images: [`${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+distribution`],
   },
   twitter: {

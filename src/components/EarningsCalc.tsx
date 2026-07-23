@@ -59,7 +59,7 @@ export default function EarningsCalc({ contributors, totalPoints, minPoints = 0 
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <div className="text-sm font-semibold text-white mb-0.5">Earnings calculator</div>
-            <div className="text-xs text-slate-500">1% fee · {COMMUNITY_SHARE * 100}% to leaderboard · weekly distribution</div>
+            <div className="text-xs text-slate-500">1% fee · {COMMUNITY_SHARE * 100}% to leaderboard · weekly snapshot</div>
           </div>
           <div className="flex flex-wrap gap-2">
             {VOLUME_PRESETS.map(({ label, value }) => (
