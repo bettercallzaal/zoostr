@@ -20,9 +20,9 @@ The token is not the pitch. The token is the accounting. The community is the pi
 
 ## What you get with Sparkz
 
-### 1. A live leaderboard → fee distribution
+### 1. A live leaderboard → fee allocation
 
-Your community already has a ranking. Boostr points, Discord activity, NFT holdings, staking score — whatever metric fits your community. Sparkz maps that ranking to a fee distribution that updates weekly. Top supporters earn the most. Consistent supporters earn consistently.
+Your community already has a ranking. Boostr points, Discord activity, NFT holdings, staking score — whatever metric fits your community. Sparkz maps that ranking to a fee allocation that updates weekly. Top supporters earn the most. Consistent supporters earn consistently.
 
 **You don't manage the allocations.** Fees accumulate in a 0xSplits contract on-chain — recipients claim their share at splits.org. Your community checks basescan if they don't trust you.
 
