@@ -124,8 +124,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 107 | `feat/deploy-config-pr-table-106` | deploy-config.md: update PR merge table 105→106 rows; "After all 105 PRs" → "After all 107 PRs" |
 | 108 | `feat/readme-fee-allocation-accuracy` | README.md: 'fee distribution to' → 'fee allocation for'; 'goes to' → 'accumulates for' |
 | 109 | `feat/deploy-config-pr-table-108` | deploy-config.md: update PR merge table 107→108 rows; "After all 107 PRs" → "After all 109 PRs" |
+| 110 | `feat/launcher-discord-claim-instruction` | launcher.ts: Discord announcement template — add 'claim at splits.org' instruction |
+| 111 | `feat/deploy-config-pr-table-110` | deploy-config.md: update PR merge table 109→110 rows; "After all 109 PRs" → "After all 111 PRs" |
 
-After all 109 PRs are merged to `main`:
+After all 111 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
