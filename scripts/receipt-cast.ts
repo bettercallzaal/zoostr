@@ -95,6 +95,8 @@ every week. every trade. your share.
 boost on ZABAL → earn from $ZOOSTR
 boostr.itscashless.com
 
+claim your share → splits.org (accumulates, no deadline)
+
 full receipt + all earners → zoostr.xyz/receipt
 
 not financial advice. projections at assumed volume.`
