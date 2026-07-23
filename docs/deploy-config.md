@@ -100,8 +100,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 83 | `feat/deploy-config-pr-table-82` | deploy-config.md: update PR merge table 81→82 rows; "After all 81 PRs" → "After all 83 PRs" |
 | 84 | `feat/homepage-pr52-remaining-fixes` | page.tsx: FeeBar note 'distributed by points' → 'allocated by points — claim at splits.org'; collectables body 'your payout' → 'your share'; 'first split distribution' → 'first split update' |
 | 85 | `feat/deploy-config-pr-table-84` | deploy-config.md: update PR merge table 83→84 rows; "After all 83 PRs" → "After all 85 PRs" |
+| 86 | `feat/meme-engine-community-pct-comment-fix` | meme-engine.ts: COMMUNITY_PCT comment 'set to 1 at launch (97/2/1)' → 'Zoostr launches at 50 (50/25/25); Sparkz default is 1 (97/2/1)' |
+| 87 | `feat/deploy-config-pr-table-86` | deploy-config.md: update PR merge table 85→86 rows; "After all 85 PRs" → "After all 87 PRs" |
 
-After all 85 PRs are merged to `main`:
+After all 87 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
