@@ -2,7 +2,7 @@
 
 **Zoostr is the first Sparkz launch — ZABAL × Boostr.**
 
-A live Boostr leaderboard + weekly fee distribution to the people who built the empire. 50% of every $ZOOSTR trading fee goes to leaderboard participants by points, weekly, on-chain. Claim your share at splits.org — no lockups, no deadline.
+A live Boostr leaderboard + weekly fee allocation for the people who built the empire. 50% of every $ZOOSTR trading fee accumulates for leaderboard participants by points, weekly, on-chain — claim your share at splits.org, no lockups, no deadline.
 
 Built and marketed by ZOL. Deployed by humans. [sparkz.xyz](https://sparkz.xyz)
 
