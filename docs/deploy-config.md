@@ -110,8 +110,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 93 | `feat/deploy-config-pr-table-92` | deploy-config.md: update PR merge table 91→92 rows; "After all 91 PRs" → "After all 93 PRs" |
 | 94 | `feat/snapshot-split-community-pct-parameterize` | snapshot-split.ts: add COMMUNITY_PCT constant (default 50); use it in receipt label text instead of hardcoded '50%' |
 | 95 | `feat/deploy-config-pr-table-94` | deploy-config.md: update PR merge table 93→94 rows; "After all 93 PRs" → "After all 95 PRs" |
+| 96 | `feat/weekly-snapshot-language-fix` | EarningsCalc.tsx + LaunchForm.tsx + receipt/page.tsx: 'weekly distribution' → 'weekly snapshot'; LaunchForm cast draft adds 'claim at splits.org' |
+| 97 | `feat/deploy-config-pr-table-96` | deploy-config.md: update PR merge table 95→96 rows; "After all 95 PRs" → "After all 97 PRs" |
 
-After all 95 PRs are merged to `main`:
+After all 97 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
