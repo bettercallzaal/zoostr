@@ -251,6 +251,8 @@ The community was already running before the token. No token required to boost, 
 
 ${ticker} is the payback mechanism: ${cfg.communityPct}% of every trading fee → community → by ${METRIC_LABELS[cfg.communityMetric]}, weekly, forever.
 
+→ Claim your share at splits.org — accumulates on-chain, no lockups, no deadline.
+
 This is a Sparkz launch — back the community that built the empire, not just the token.
 
 → Live leaderboard + earnings calculator: [SITE_URL/leaderboard]
