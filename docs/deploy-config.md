@@ -104,8 +104,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 87 | `feat/deploy-config-pr-table-86` | deploy-config.md: update PR merge table 85→86 rows; "After all 85 PRs" → "After all 87 PRs" |
 | 88 | `feat/sparkz-for-creators-zao-stake-accuracy` | sparkz-for-creators.md: 'ZAO stake is set automatically' → accurate post-deploy transfer note |
 | 89 | `feat/deploy-config-pr-table-88` | deploy-config.md: update PR merge table 87→88 rows; "After all 87 PRs" → "After all 89 PRs" |
+| 90 | `feat/launch-threads-distributes-fix` | launch-thread-farcaster.md cast 3 + launch-thread-x.md post 2: 'splits.org distributes by leaderboard points' → 'fee pool allocated by leaderboard points — weekly snapshot' |
+| 91 | `feat/deploy-config-pr-table-90` | deploy-config.md: update PR merge table 89→90 rows; "After all 89 PRs" → "After all 91 PRs" |
 
-After all 89 PRs are merged to `main`:
+After all 91 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
