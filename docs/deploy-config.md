@@ -122,8 +122,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 105 | `feat/deploy-config-pr-table-104` | deploy-config.md: update PR merge table 103→104 rows; "After all 103 PRs" → "After all 105 PRs" |
 | 106 | `feat/sparkz-for-creators-fee-allocation` | docs/sparkz-for-creators.md: heading + body 'fee distribution' → 'fee allocation' |
 | 107 | `feat/deploy-config-pr-table-106` | deploy-config.md: update PR merge table 105→106 rows; "After all 105 PRs" → "After all 107 PRs" |
+| 108 | `feat/readme-fee-allocation-accuracy` | README.md: 'fee distribution to' → 'fee allocation for'; 'goes to' → 'accumulates for' |
+| 109 | `feat/deploy-config-pr-table-108` | deploy-config.md: update PR merge table 107→108 rows; "After all 107 PRs" → "After all 109 PRs" |
 
-After all 107 PRs are merged to `main`:
+After all 109 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
