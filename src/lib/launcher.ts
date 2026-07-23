@@ -315,6 +315,8 @@ the leaderboard is live: [SITE_URL/leaderboard]
 
 the people who showed up first already have a fee share waiting.
 
+claim yours at splits.org — no lockups, no deadline.
+
 ---
 
 ## Cast 3 — Mechanics
@@ -328,6 +330,8 @@ every trade generates a 1% fee
 → ${treasury}% → treasury (${GOV_LABELS[cfg.treasuryGov]})
 
 the split lives in a 0xSplits contract — on-chain, public, adjustable
+
+claim your share at splits.org anytime — fees accumulate, no deadline.
 
 no trust-me-bro. verify on basescan.
 
