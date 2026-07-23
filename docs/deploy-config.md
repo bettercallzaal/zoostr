@@ -126,8 +126,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 109 | `feat/deploy-config-pr-table-108` | deploy-config.md: update PR merge table 107→108 rows; "After all 107 PRs" → "After all 109 PRs" |
 | 110 | `feat/launcher-discord-claim-instruction` | launcher.ts: Discord announcement template — add 'claim at splits.org' instruction |
 | 111 | `feat/deploy-config-pr-table-110` | deploy-config.md: update PR merge table 109→110 rows; "After all 109 PRs" → "After all 111 PRs" |
+| 112 | `feat/launcher-casts-claim-instruction` | launcher.ts: add 'claim at splits.org' to cast 2 + cast 3 Farcaster templates |
+| 113 | `feat/deploy-config-pr-table-112` | deploy-config.md: update PR merge table 111→112 rows; "After all 111 PRs" → "After all 113 PRs" |
 
-After all 111 PRs are merged to `main`:
+After all 113 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
