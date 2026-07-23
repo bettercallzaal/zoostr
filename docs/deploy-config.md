@@ -118,8 +118,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 101 | `feat/deploy-config-pr-table-100` | deploy-config.md: update PR merge table 99→100 rows; "After all 99 PRs" → "After all 101 PRs" |
 | 102 | `feat/receipt-cast-claim-instruction` | scripts/receipt-cast.ts cast 2: add 'claim your share → splits.org (accumulates, no deadline)' |
 | 103 | `feat/deploy-config-pr-table-102` | deploy-config.md: update PR merge table 101→102 rows; "After all 101 PRs" → "After all 103 PRs" |
+| 104 | `feat/snapshot-split-receipt-accuracy` | snapshot-split.ts receipt: 'Distribution weights' → 'Allocation weights'; add 'Claim your share: splits.org' section |
+| 105 | `feat/deploy-config-pr-table-104` | deploy-config.md: update PR merge table 103→104 rows; "After all 103 PRs" → "After all 105 PRs" |
 
-After all 103 PRs are merged to `main`:
+After all 105 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
