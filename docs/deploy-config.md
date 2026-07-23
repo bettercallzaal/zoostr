@@ -98,8 +98,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 81 | `feat/deploy-config-pr-table-80` | deploy-config.md: update PR merge table 79→80 rows; "After all 79 PRs" → "After all 81 PRs" |
 | 82 | `feat/receipt-community-share-note-fix` | receipt/page.tsx: remove inaccurate "1% at launch" note — Zoostr launches at 50% community share from day 1, not 1% |
 | 83 | `feat/deploy-config-pr-table-82` | deploy-config.md: update PR merge table 81→82 rows; "After all 81 PRs" → "After all 83 PRs" |
+| 84 | `feat/homepage-pr52-remaining-fixes` | page.tsx: FeeBar note 'distributed by points' → 'allocated by points — claim at splits.org'; collectables body 'your payout' → 'your share'; 'first split distribution' → 'first split update' |
+| 85 | `feat/deploy-config-pr-table-84` | deploy-config.md: update PR merge table 83→84 rows; "After all 83 PRs" → "After all 85 PRs" |
 
-After all 83 PRs are merged to `main`:
+After all 85 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
