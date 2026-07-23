@@ -128,8 +128,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 111 | `feat/deploy-config-pr-table-110` | deploy-config.md: update PR merge table 109→110 rows; "After all 109 PRs" → "After all 111 PRs" |
 | 112 | `feat/launcher-casts-claim-instruction` | launcher.ts: add 'claim at splits.org' to cast 2 + cast 3 Farcaster templates |
 | 113 | `feat/deploy-config-pr-table-112` | deploy-config.md: update PR merge table 111→112 rows; "After all 111 PRs" → "After all 113 PRs" |
+| 114 | `feat/receipt-community-share-comment-fix` | receipt/page.tsx: COMMUNITY_SHARE_PCT comment 'At launch (97/2/1): 1' → Zoostr-specific (launches at 50 from day 1) |
+| 115 | `feat/deploy-config-pr-table-114` | deploy-config.md: update PR merge table 113→114 rows; "After all 113 PRs" → "After all 115 PRs" |
 
-After all 113 PRs are merged to `main`:
+After all 115 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
