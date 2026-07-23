@@ -37,7 +37,7 @@ how it works:
 
 $ZOOSTR trades on Base (Clanker, 1% fee)
 50% of every fee → a 0xSplits contract
-splits.org distributes by leaderboard points — weekly
+fee pool allocated by leaderboard points — weekly snapshot
 claim your share at splits.org — no lockups, no deadline
 
 the split is fully on-chain and public.
