@@ -25,17 +25,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Zoostr Weekly Receipt — back the empire',
     description: 'Live leaderboard snapshot: top earners + empire stats.',
-    images: [`${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+distribution`],
+    images: [`${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+snapshot`],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Zoostr Weekly Receipt — back the empire',
     description: 'Live leaderboard: who earned what from $ZOOSTR trading fees this week.',
-    images: [`${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+distribution`],
+    images: [`${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+snapshot`],
   },
   other: {
     'fc:frame': 'vNext',
-    'fc:frame:image': `${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+distribution`,
+    'fc:frame:image': `${BASE_URL}/api/og?title=Zoostr+Weekly+Receipt&sub=Live+leaderboard+snapshot`,
     'fc:frame:image:aspect_ratio': '1.91:1',
     'fc:frame:button:1': '📊 Full leaderboard',
     'fc:frame:button:1:action': 'link',
