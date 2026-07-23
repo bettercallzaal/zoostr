@@ -26,6 +26,8 @@ const BOOSTR_URL = 'https://boostr.itscashless.com/api/zabaal/stats'
 const MIN_POINTS = 10
 const SCALE = 1_000_000 // 0xSplits uses integer weights; 1M = 100%
 const SPLITS_ADDRESS = process.env.SPLITS_ADDRESS ?? '[SPLITS_CONTRACT_ADDRESS]'
+// COMMUNITY_PCT: Zoostr launches at 50 (50/25/25). Sparkz default is 1 (97/2/1).
+const COMMUNITY_PCT = Number(process.env.COMMUNITY_PCT ?? 50)
 
 type Contributor = {
   fid: number
@@ -209,7 +211,7 @@ async function main() {
     `  Total likes generated: ${totalLikesGenerated}`,
     `  Casts liked: ${totalCastsLiked}`,
     ``,
-    `Leaderboard pool (50% of all $ZOOSTR trading fees this week):`,
+    `Leaderboard pool (${COMMUNITY_PCT}% of all $ZOOSTR trading fees this week):`,
     `  → Split across ${eligible.length} eligible boosters by points`,
     `  → Minimum threshold: ${MIN_POINTS} points`,
     remixBonusHolders.length > 0 ? `  → Community Swarm bonus: +${REMIX_BONUS_POINTS} pts for top remixers (top 3), +${Math.floor(REMIX_BONUS_POINTS/2)} for the rest` : '',
