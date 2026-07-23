@@ -108,8 +108,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 91 | `feat/deploy-config-pr-table-90` | deploy-config.md: update PR merge table 89→90 rows; "After all 89 PRs" → "After all 91 PRs" |
 | 92 | `feat/readme-env-vars-table-update` | README.md: add NEXT_PUBLIC_COMMUNITY_SHARE_PCT + ZOL_ASSUMED_VOLUME to env vars table (both missing) |
 | 93 | `feat/deploy-config-pr-table-92` | deploy-config.md: update PR merge table 91→92 rows; "After all 91 PRs" → "After all 93 PRs" |
+| 94 | `feat/snapshot-split-community-pct-parameterize` | snapshot-split.ts: add COMMUNITY_PCT constant (default 50); use it in receipt label text instead of hardcoded '50%' |
+| 95 | `feat/deploy-config-pr-table-94` | deploy-config.md: update PR merge table 93→94 rows; "After all 93 PRs" → "After all 95 PRs" |
 
-After all 93 PRs are merged to `main`:
+After all 95 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
