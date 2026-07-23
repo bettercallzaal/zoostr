@@ -130,8 +130,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 113 | `feat/deploy-config-pr-table-112` | deploy-config.md: update PR merge table 111→112 rows; "After all 111 PRs" → "After all 113 PRs" |
 | 114 | `feat/receipt-community-share-comment-fix` | receipt/page.tsx: COMMUNITY_SHARE_PCT comment 'At launch (97/2/1): 1' → Zoostr-specific (launches at 50 from day 1) |
 | 115 | `feat/deploy-config-pr-table-114` | deploy-config.md: update PR merge table 113→114 rows; "After all 113 PRs" → "After all 115 PRs" |
+| 116 | `feat/receipt-og-sub-snapshot-restore` | receipt/page.tsx: re-apply OG image sub 'distribution' → 'snapshot' in 3 URLs (lost in PR #100 rebase) |
+| 117 | `feat/deploy-config-pr-table-116` | deploy-config.md: update PR merge table 115→116 rows; "After all 115 PRs" → "After all 117 PRs" |
 
-After all 115 PRs are merged to `main`:
+After all 117 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
