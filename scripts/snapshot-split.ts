@@ -216,13 +216,16 @@ async function main() {
     `  → Minimum threshold: ${MIN_POINTS} points`,
     remixBonusHolders.length > 0 ? `  → Community Swarm bonus: +${REMIX_BONUS_POINTS} pts for top remixers (top 3), +${Math.floor(REMIX_BONUS_POINTS/2)} for the rest` : '',
     ``,
-    `Distribution weights (top 10):`,
+    `Allocation weights (top 10):`,
     ...effectivePoints.slice(0, 10).map((u, i) => {
       const pct = ((weights[i] / SCALE) * 100).toFixed(2)
       const bonus = u.remixBonus > 0 ? ` +${u.remixBonus} remix bonus` : ''
       return `  #${String(i + 1).padStart(2)} @${u.username.padEnd(22)} ${String(u.zabalLikesCount).padStart(3)} pts${bonus}  →  ${pct}% of pool`
     }),
     eligible.length > 10 ? `       … and ${eligible.length - 10} more boosters` : '',
+    ``,
+    `Claim your share:`,
+    `  splits.org → connect wallet → claim (accumulates, no deadline)`,
     ``,
     `Verified on-chain:`,
     `  Split contract: ${SPLITS_ADDRESS}`,
