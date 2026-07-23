@@ -114,8 +114,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 97 | `feat/deploy-config-pr-table-96` | deploy-config.md: update PR merge table 95→96 rows; "After all 95 PRs" → "After all 97 PRs" |
 | 98 | `feat/receipt-og-url-snapshot-fix` | receipt/page.tsx: fix URL-encoded OG image sub param — 'Live+leaderboard+distribution' → 'Live+leaderboard+snapshot' (3 occurrences missed by PR #96) |
 | 99 | `feat/deploy-config-pr-table-98` | deploy-config.md: update PR merge table 97→98 rows; "After all 97 PRs" → "After all 99 PRs" |
+| 100 | `feat/receipt-allocation-weights-label` | receipt/page.tsx: 'Distribution weights' → 'Allocation weights' table header (pull-model consistency) |
+| 101 | `feat/deploy-config-pr-table-100` | deploy-config.md: update PR merge table 99→100 rows; "After all 99 PRs" → "After all 101 PRs" |
 
-After all 99 PRs are merged to `main`:
+After all 101 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
