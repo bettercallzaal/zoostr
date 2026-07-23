@@ -49,9 +49,11 @@ npm run track-remix    # score quote-casts + replies 24h after posting
 | `NEXT_PUBLIC_BASE_URL` | OG images, sitemap canonical |
 | `NEXT_PUBLIC_TOKEN_ADDRESS` | "Token Live" banner on homepage (set after Clanker deploy) |
 | `NEXT_PUBLIC_SPLITS_ADDRESS` | Receipt page splits link |
+| `NEXT_PUBLIC_COMMUNITY_SHARE_PCT` | Earnings projections (leaderboard, receipt, /zol); set to `50` for Zoostr |
 | `NEXT_PUBLIC_SPARKZ_URL` | /launch page cross-link to sparkz.xyz |
 | `NEYNAR_API_KEY` | Meme Engine posting + `/api/zol/post` |
 | `NEYNAR_SIGNER_UUID` | Neynar signer for posting |
+| `ZOL_ASSUMED_VOLUME` | /zol admin page earnings projections (default: 10000) |
 
 ## Framing (never violate)
 
