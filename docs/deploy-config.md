@@ -158,8 +158,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 141 | `feat/deploy-config-pr-table-140` | deploy-config.md: update PR merge table 139→140 rows; "After all 139 PRs" → "After all 141 PRs" |
 | 142 | `feat/deploy-config-preflight-snapshot-cadence` | deploy-config.md: pre-flight table row 7 'Distribution cadence' → 'Snapshot cadence' (missed by PRs #122 and #140) |
 | 143 | `feat/deploy-config-pr-table-142` | deploy-config.md: update PR merge table 141→142 rows; "After all 141 PRs" → "After all 143 PRs" |
+| 144 | `feat/tokenomics-dust-distributions-fix` | tokenomics-draft.md + deploy-config.md: 'dust distributions' → 'dust-level claims'; 'large distributions' → 'large recipient counts' |
+| 145 | `feat/deploy-config-pr-table-144` | deploy-config.md: update PR merge table 143→144 rows; "After all 143 PRs" → "After all 145 PRs" |
 
-After all 143 PRs are merged to `main`:
+After all 145 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
