@@ -37,7 +37,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated weekly ops outputs (contain addresses; reviewed offline)
+# generated weekly ops outputs (contain addresses/usernames; reviewed offline)
 splits-update.json
 receipt-*.md
 fid-wallets.json
+meme-engine-draft-*.json
+meme-engine-draft-*.md
+remix-rewards-*.json
+last-cast.json
