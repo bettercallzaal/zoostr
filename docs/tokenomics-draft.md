@@ -20,7 +20,7 @@ Zoostr is the first Sparkz launch: a creator token co-built between Zaal (ZABAL)
 - Weights can be **updated** (by the designated controller) as leaderboard points change
 - Clanker sees one immutable address (the Splits contract); Splits handles the rest
 
-This is Sparkz's core architectural pattern for "configurable fee distributions."
+This is Sparkz's core architectural pattern for "configurable fee allocation."
 
 ---
 
