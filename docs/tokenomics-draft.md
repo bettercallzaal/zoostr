@@ -34,7 +34,7 @@ This is Sparkz's core architectural pattern for "configurable fee distributions.
 
 ---
 
-## Leaderboard → Fee Distribution: Design Options
+## Leaderboard → Fee Allocation: Design Options
 
 ### Option A: 0xSplits with weekly weight refresh (RECOMMENDED)
 
@@ -90,7 +90,7 @@ Zoostr is also the first live example of a **Sparkz default config**. The Sparkz
 | Creator pool | 25% | 97% |
 | Treasury | 25% | 2% (1% community governance + 1% ZOL compute) |
 | ZAO stake | Locked token alloc | Locked token alloc (never a fee slice) |
-| Distribution cadence | Weekly | Weekly |
+| Snapshot cadence | Weekly | Weekly |
 | Update controller | ZAO + creator multisig | Creator + ZAO multisig |
 
 ---
