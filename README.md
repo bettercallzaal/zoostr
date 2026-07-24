@@ -58,7 +58,7 @@ npm run track-remix    # score quote-casts + replies 24h after posting
 ## Framing (never violate)
 
 - Lead with the community, not the coin: "back the empire"
-- Fee distribution is the proof, not the pitch
+- Fee allocation is the proof, not the pitch
 - Perks = what holders enjoy today — not guaranteed future entitlements
 - ZOL drafts. Zaal (or designated human) approves. No autonomous on-chain actions.
 
