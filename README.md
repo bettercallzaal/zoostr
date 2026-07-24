@@ -12,7 +12,7 @@ Built and marketed by ZOL. Deployed by humans. [sparkz.xyz](https://sparkz.xyz)
 
 - **Live leaderboard** — pulls from the Boostr API (`/api/zabaal/stats`), ranks contributors by points, shows projected weekly earnings at any trading volume (ISR, refreshes every 60s)
 - **Weekly receipt** — shareable proof of who earned what, with Farcaster Frame embed
-- **0xSplits distribution** — the Clanker fee recipient is a 0xSplits contract, so leaderboard → split weights update without touching the token contract
+- **0xSplits integration** — the Clanker fee recipient is a 0xSplits contract, so leaderboard → split weights update without touching the token contract
 - **Meme Engine** — human-in-the-loop CLI for weekly cast generation, approval, and posting (no autonomous publishing)
 - **ZOL admin** — `/zol` page for reviewing draft casts, empire stats, and eligible booster weights
 
@@ -26,7 +26,7 @@ Clanker v4 `rewardBps` are immutable after deploy. Sparkz's fix: set the fee rec
 |-------|-----------|
 | `/` | Homepage: hero, live leaderboard embed, tokenomics, fee split visual, collectables teaser |
 | `/leaderboard` | Full earnings calculator — search by username, adjust volume slider |
-| `/receipt` | Weekly distribution snapshot — shareable as Farcaster Frame |
+| `/receipt` | Weekly allocation snapshot — shareable as Farcaster Frame |
 | `/launch` | Sparkz Launcher config wizard (for other creators) |
 | `/zol` | Admin page: draft cast variants, empire stats, ZOL approve panel |
 
