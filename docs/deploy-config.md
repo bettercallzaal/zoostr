@@ -216,7 +216,7 @@ After token launch (once `NEXT_PUBLIC_TOKEN_ADDRESS` is set):
 | 4 | **ZAO lock duration** | 6–24 months | **12 months** with 3-month cliff (aligned with $IMAN precedent) |
 | 5 | **Initial split controller** | Zaal solo / Zaal+Aziz 2-of-2 / 2-of-3 multisig | **2-of-2 Zaal+Aziz** — simple, disclosed, upgradeable to multisig later |
 | 6 | **Min points threshold** | 0 / 5 / 10 pts to be in split | **10 pts** — prevents dust distributions |
-| 7 | **Distribution cadence** | Daily / Weekly / Biweekly | **Weekly** (Monday 00:00 UTC) — simple, predictable |
+| 7 | **Snapshot cadence** | Daily / Weekly / Biweekly | **Weekly** (Monday 00:00 UTC) — simple, predictable |
 
 ---
 
