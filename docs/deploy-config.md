@@ -168,8 +168,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 151 | `feat/deploy-config-pr-table-150` | deploy-config.md: update PR merge table 149→150 rows; "After all 149 PRs" → "After all 151 PRs" |
 | 152 | `feat/deploy-config-ops-receipt-label` | deploy-config.md: ops table step 5 'Distribution receipt' → 'Weekly receipt cast' |
 | 153 | `feat/deploy-config-pr-table-152` | deploy-config.md: update PR merge table 151→152 rows; "After all 151 PRs" → "After all 153 PRs" |
+| 154 | `feat/zoostr-v1-scope-doc-fix` | docs: add V1-SCOPE.md — locked scope doc (pages, scripts, economics, Meme Engine loop, deferred features, pre-deploy checklist) |
+| 155 | `feat/deploy-config-pr-table-155` | deploy-config.md: update PR merge table 153→155 rows; "After all 153 PRs" → "After all 155 PRs" |
 
-After all 153 PRs are merged to `main`:
+After all 155 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
