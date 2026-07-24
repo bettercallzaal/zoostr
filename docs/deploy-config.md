@@ -326,7 +326,7 @@ Immediately after the token deploys:
 
 | Task | Cadence | Who | How |
 |------|---------|-----|-----|
-| Fee distribution | Continuous (pull model) | Recipients self-serve | Call `distributeERC20()` on Splits or use the Splits UI at app.splits.org |
+| Fee claiming | Continuous (pull model) | Recipients self-serve | Use the Splits UI at app.splits.org — distributes + withdraws in one step; or call `distributeERC20()` then `withdraw()` manually |
 | Split audit | Monthly | Zaal | Verify on-chain weights match leaderboard snapshot |
 
 ---
