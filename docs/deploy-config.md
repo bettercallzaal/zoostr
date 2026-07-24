@@ -198,7 +198,8 @@ Set that env var after the Clanker deploy and redeploy Vercel.
 - [ ] `https://zoostr.xyz/leaderboard` — full table loads with avatars and projected earnings
 - [ ] `https://zoostr.xyz/receipt` — receipt page loads; projected earnings match leaderboard
 - [ ] `https://zoostr.xyz/receipt` — Farcaster Frame tags present (paste URL in Warpcast composer → preview renders with "Share leaderboard" CTA)
-- [ ] `https://zoostr.xyz/launch` — launch info page loads; tokenomics section visible; links to cashlessman + Zaal visible
+- [ ] `https://zoostr.xyz/#token` — token launch info section visible; links to @cashlessman.eth + @zaal correct; "Launching soon" banner shown (pre-deploy)
+- [ ] `https://zoostr.xyz/launch` — Sparkz Launcher form loads; 5-step wizard navigates; export generates deploy-config.md
 - [ ] `https://zoostr.xyz/zol` — ZOL admin page loads; Meme Engine draft variants render; empire stats visible
 - [ ] `https://zoostr.xyz/sitemap.xml` — 4 URLs listed
 - [ ] `https://zoostr.xyz` — OG image renders (paste in Warpcast → preview shows ZOOSTR wordmark)
