@@ -191,6 +191,7 @@ Set that env var after the Clanker deploy and redeploy Vercel.
 - [ ] `https://zoostr.xyz/receipt` — receipt page loads; projected earnings match leaderboard
 - [ ] `https://zoostr.xyz/receipt` — Farcaster Frame tags present (paste URL in Warpcast composer → preview renders with "Share leaderboard" CTA)
 - [ ] `https://zoostr.xyz/launch` — launch info page loads; tokenomics section visible; links to cashlessman + Zaal visible
+- [ ] `https://zoostr.xyz/zol` — ZOL admin page loads; Meme Engine draft variants render; empire stats visible
 - [ ] `https://zoostr.xyz/sitemap.xml` — 4 URLs listed
 - [ ] `https://zoostr.xyz` — OG image renders (paste in Warpcast → preview shows ZOOSTR wordmark)
 - [ ] `https://zoostr.xyz` — "Claim your share at splits.org" copy visible; no "automatic / no claiming" language
@@ -346,7 +347,7 @@ Immediately after the token deploys:
 - [ ] ZAO lock size (recommendation: 5%)?
 - [ ] 0xSplits controller wallet(s)?
 - [ ] Token image approved?
-- [ ] Distribution cadence confirmed (recommendation: weekly)?
+- [ ] Snapshot cadence confirmed (recommendation: weekly snapshot + split update)?
 - [ ] Minimum points threshold confirmed (recommendation: 10)?
 
 ---
