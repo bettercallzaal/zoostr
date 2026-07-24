@@ -138,8 +138,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 121 | `feat/deploy-config-pr-table-120` | deploy-config.md: update PR merge table 119→120 rows; "After all 119 PRs" → "After all 121 PRs" |
 | 122 | `feat/tokenomics-fee-allocation-heading` | tokenomics-draft.md: 'Fee Distribution: Design Options' → 'Fee Allocation'; 'Distribution cadence' → 'Snapshot cadence' |
 | 123 | `feat/deploy-config-pr-table-122` | deploy-config.md: update PR merge table 121→122 rows; "After all 121 PRs" → "After all 123 PRs" |
+| 124 | `feat/tokenomics-configurable-fee-allocation` | tokenomics-draft.md: 'configurable fee distributions' → 'configurable fee allocation' in pattern description |
+| 125 | `feat/deploy-config-pr-table-124` | deploy-config.md: update PR merge table 123→124 rows; "After all 123 PRs" → "After all 125 PRs" |
 
-After all 123 PRs are merged to `main`:
+After all 125 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
