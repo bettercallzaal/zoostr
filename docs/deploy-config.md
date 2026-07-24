@@ -183,6 +183,7 @@ After all 149 PRs are merged to `main`:
 | `NEYNAR_SIGNER_UUID` | `...` | `npm run post-cast`, `/api/zol/post` (Neynar developer portal) |
 | `NEXT_PUBLIC_SPARKZ_URL` | `https://sparkz.xyz` | /launch page "See Zoostr leaderboard" Frame button |
 | `NEXT_PUBLIC_COMMUNITY_SHARE_PCT` | `50` (Zoostr launches at 50/25/25) | Leaderboard earnings calc, receipt page, ZOL cast drafts — must match the live on-chain split |
+| `ZOL_ASSUMED_VOLUME` | `10000` (optional) | /zol admin page earnings projection; defaults to $10k/day if not set |
 
 The site deploys and runs in pre-token mode without `NEXT_PUBLIC_TOKEN_ADDRESS`.
 Set that env var after the Clanker deploy and redeploy Vercel.
