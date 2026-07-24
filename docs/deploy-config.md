@@ -144,8 +144,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 127 | `feat/deploy-config-pr-table-126` | deploy-config.md: update PR merge table 125→126 rows; "After all 125 PRs" → "After all 127 PRs" |
 | 128 | `feat/snapshot-tokenomics-distribution-fixes` | snapshot-split.ts + tokenomics-draft.md: 'distribution receipt' → 'allocation receipt'; 'weekly distribution is logged' → 'weekly snapshot update is logged'; 'distribution weight' → 'allocation weight' |
 | 129 | `feat/deploy-config-pr-table-128` | deploy-config.md: update PR merge table 127→128 rows; "After all 127 PRs" → "After all 129 PRs" |
+| 130 | `feat/readme-distribution-labels-fix` | README.md: '0xSplits distribution' → '0xSplits integration'; 'Weekly distribution snapshot' → 'Weekly allocation snapshot' |
+| 131 | `feat/deploy-config-pr-table-130` | deploy-config.md: update PR merge table 129→130 rows; "After all 129 PRs" → "After all 131 PRs" |
 
-After all 129 PRs are merged to `main`:
+After all 131 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
