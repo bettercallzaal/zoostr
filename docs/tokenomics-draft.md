@@ -47,7 +47,7 @@ This is Sparkz's core architectural pattern for "configurable fee allocation."
 ### Option B: Periodic Merkle-Drop (claimable)
 
 - **How it works:** Weekly snapshot of leaderboard → compute merkle tree of claims → publish root on-chain. Participants claim their share by submitting a proof.
-- **Pros:** More gas-efficient for large distributions (doesn't require iterating recipients on-chain). No ongoing permission to update recipients.
+- **Pros:** More gas-efficient for large recipient counts (doesn't require iterating recipients on-chain). No ongoing permission to update recipients.
 - **Cons:** **Active claiming required.** Unclaimed fees accumulate and need expiry handling. Worse UX — participants have to check and claim. Less "you already own it" feel.
 - **Gas:** Claim costs ~80–120k gas per user per period.
 
@@ -101,7 +101,7 @@ Zoostr is also the first live example of a **Sparkz default config**. The Sparkz
 2. **Treasury governance:** What can the 25% treasury be used for? Suggest a simple on-chain vote (Snapshot) with token-weighted quorum.
 3. **ZAO lock size + duration:** Align with Zaal before deploy.
 4. **Leaderboard snapshot logic:** Does `zabalLikesCount` reset weekly or accumulate? Accumulating rewards consistent boosters; resetting rewards recent activity. Recommend: accumulating score for allocation weight, with a "recent activity" multiplier TBD.
-5. **Minimum points threshold:** Should boosters need a minimum point count to be eligible? Prevents dust distributions. Suggest: > 10 points.
+5. **Minimum points threshold:** Should boosters need a minimum point count to be eligible? Prevents dust-level claims. Suggest: > 10 points.
 
 ---
 
