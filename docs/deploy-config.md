@@ -134,8 +134,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 117 | `feat/deploy-config-pr-table-116` | deploy-config.md: update PR merge table 115→116 rows; "After all 115 PRs" → "After all 117 PRs" |
 | 118 | `feat/boostr-payout-comment-fix` | boostr.ts: 'payout eligibility' + 'payout denominator' → 'allocation' in code comments |
 | 119 | `feat/deploy-config-pr-table-118` | deploy-config.md: update PR merge table 117→118 rows; "After all 117 PRs" → "After all 119 PRs" |
+| 120 | `feat/readme-framing-fee-allocation` | README.md: 'Fee distribution is the proof' → 'Fee allocation is the proof' — terminology consistency |
+| 121 | `feat/deploy-config-pr-table-120` | deploy-config.md: update PR merge table 119→120 rows; "After all 119 PRs" → "After all 121 PRs" |
 
-After all 119 PRs are merged to `main`:
+After all 121 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
