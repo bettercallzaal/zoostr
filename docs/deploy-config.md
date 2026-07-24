@@ -160,8 +160,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 143 | `feat/deploy-config-pr-table-142` | deploy-config.md: update PR merge table 141→142 rows; "After all 141 PRs" → "After all 143 PRs" |
 | 144 | `feat/tokenomics-dust-distributions-fix` | tokenomics-draft.md + deploy-config.md: 'dust distributions' → 'dust-level claims'; 'large distributions' → 'large recipient counts' |
 | 145 | `feat/deploy-config-pr-table-144` | deploy-config.md: update PR merge table 143→144 rows; "After all 143 PRs" → "After all 145 PRs" |
+| 146 | `feat/zol-loop-guide-accuracy` | /zol loop guide step 1: distinguish detect-moment CLI from /zol page draft generation |
+| 147 | `feat/deploy-config-pr-table-146` | deploy-config.md: update PR merge table 145→146 rows; "After all 145 PRs" → "After all 147 PRs" |
 
-After all 145 PRs are merged to `main`:
+After all 147 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
