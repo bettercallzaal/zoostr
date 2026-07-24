@@ -2,7 +2,7 @@ import type { BoostrApiResponse, BoostrStats, Contributor } from './types'
 
 const BOOSTR_URL = 'https://boostr.itscashless.com/api/zabaal/stats'
 
-// Must match snapshot-split.ts MIN_POINTS so leaderboard eligibility = payout eligibility
+// Must match snapshot-split.ts MIN_POINTS so leaderboard eligibility = allocation eligibility
 export const MIN_POINTS = 10
 
 export function isEligible(c: Contributor): boolean {
@@ -44,7 +44,7 @@ export function totalPoints(stats: BoostrStats): number {
   return (stats?.contributors ?? []).reduce((sum, c) => sum + (c.zabalLikesCount ?? 0), 0)
 }
 
-// Points over ELIGIBLE contributors only — matches snapshot-split.ts payout denominator
+// Points over ELIGIBLE contributors only — matches snapshot-split.ts allocation denominator
 export function eligibleTotalPoints(stats: BoostrStats): number {
   return (stats?.contributors ?? [])
     .filter(isEligible)
