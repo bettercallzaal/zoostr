@@ -3,7 +3,7 @@
  * snapshot-split.ts
  *
  * Weekly ops script: fetch the Boostr leaderboard, compute 0xSplits weights,
- * and write the updateSplit() payload + a DreamNet-style distribution receipt.
+ * and write the updateSplit() payload + a DreamNet-style allocation receipt.
  *
  * Usage:
  *   npm run snapshot

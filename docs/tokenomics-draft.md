@@ -55,7 +55,7 @@ This is Sparkz's core architectural pattern for "configurable fee allocation."
 
 **Why:** Zoostr's brand is "boost and earn." A periodic merkle drop requires active per-period claiming — bad UX. 0xSplits Pull: fees accumulate in the contract on weekly cadence; recipients claim at splits.org anytime (no per-period deadline, funds wait). Lower friction than Option B. The trust tradeoff (multisig controller) is acceptable at launch and can be progressively decentralized.
 
-**Receipt framing (DreamNet-style):** Each weekly distribution is logged as a public on-chain event and can be formatted as a human-readable receipt — "You earned 0.0042 ETH this week from Zoostr trades based on 1,240 boost points (12.4% of pool)." Brandon's RECEIPTS tool pattern applies here.
+**Receipt framing (DreamNet-style):** Each weekly snapshot update is logged as a public on-chain event and can be formatted as a human-readable receipt — "You earned 0.0042 ETH this week from Zoostr trades based on 1,240 boost points (12.4% of pool)." Brandon's RECEIPTS tool pattern applies here.
 
 **Tooling (built):**
 - `npm run snapshot` — fetches live leaderboard, computes integer weights summing to 1,000,000, writes `splits-update.json` (paste into splits.org UI) + `receipt-<date>.md` (Farcaster-ready receipt). NEVER signs anything.
@@ -100,7 +100,7 @@ Zoostr is also the first live example of a **Sparkz default config**. The Sparkz
 1. **Split controller:** Who is the signer on the 0xSplits update? Suggest 2-of-3 multisig: Zaal + Aziz + ZAO.
 2. **Treasury governance:** What can the 25% treasury be used for? Suggest a simple on-chain vote (Snapshot) with token-weighted quorum.
 3. **ZAO lock size + duration:** Align with Zaal before deploy.
-4. **Leaderboard snapshot logic:** Does `zabalLikesCount` reset weekly or accumulate? Accumulating rewards consistent boosters; resetting rewards recent activity. Recommend: accumulating score for distribution weight, with a "recent activity" multiplier TBD.
+4. **Leaderboard snapshot logic:** Does `zabalLikesCount` reset weekly or accumulate? Accumulating rewards consistent boosters; resetting rewards recent activity. Recommend: accumulating score for allocation weight, with a "recent activity" multiplier TBD.
 5. **Minimum points threshold:** Should boosters need a minimum point count to be eligible? Prevents dust distributions. Suggest: > 10 points.
 
 ---
