@@ -154,8 +154,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 137 | `feat/deploy-config-pr-table-136` | deploy-config.md: update PR merge table 135→136 rows; "After all 135 PRs" → "After all 137 PRs" |
 | 138 | `feat/gitignore-meme-engine-outputs-fix` | .gitignore: add meme-engine-draft-*.json/md, remix-rewards-*.json, last-cast.json (runtime outputs with user data) |
 | 139 | `feat/deploy-config-pr-table-138` | deploy-config.md: update PR merge table 137→138 rows; "After all 137 PRs" → "After all 139 PRs" |
+| 140 | `feat/deploy-config-snapshot-cadence-fix` | deploy-config.md: open questions 'Distribution cadence' → 'Snapshot cadence'; add /zol verification checklist item |
+| 141 | `feat/deploy-config-pr-table-140` | deploy-config.md: update PR merge table 139→140 rows; "After all 139 PRs" → "After all 141 PRs" |
 
-After all 139 PRs are merged to `main`:
+After all 141 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
