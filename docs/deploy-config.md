@@ -341,7 +341,7 @@ Immediately after the token deploys:
 | 2 | **Approve + post cast** | Zaal (human) | Review draft → `npm run post-cast -- --approve N` (variants 1/2/3) |
 | 3 | **Leaderboard snapshot** (same day, after step 2) | ZOL agent | `npm run snapshot` — fetches fresh weights, **overwrites** `splits-update.json` (including `_stats`) |
 | 4 | **Split weights update** | Zaal (human) | Review `splits-update.json` → app.splits.org → Update recipients → verify on basescan |
-| 5 | **Distribution receipt** | ZOL agent | `npm run receipt` → copy output → post to Farcaster (review-gated) |
+| 5 | **Weekly receipt cast** | ZOL agent | `npm run receipt` → copy output → post to Farcaster (review-gated) |
 
 > **Why order matters:** `detect-moment` compares fresh stats against `splits-update.json._stats` (last week's baseline). Running `snapshot` first overwrites `_stats` with the current week — so detect-moment would compare current vs. current and detect no milestones.
 
