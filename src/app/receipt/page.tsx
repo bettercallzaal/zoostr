@@ -15,7 +15,7 @@ const SPLITS_ADDRESS = process.env.NEXT_PUBLIC_SPLITS_ADDRESS ?? null
 const ASSUMED_DAILY_VOLUME = 10_000
 const FEE_TIER = 0.01
 // Set NEXT_PUBLIC_COMMUNITY_SHARE_PCT in Vercel env vars to match the on-chain split.
-// At launch (97/2/1): 1. After evolving to 50/25/25: 50.
+// Zoostr launches at 50 (50/25/25 split from day 1). Other Sparkz creators default to 1 (97/2/1).
 const COMMUNITY_SHARE = Number(process.env.NEXT_PUBLIC_COMMUNITY_SHARE_PCT ?? 50) / 100
 const DAYS = 7
 
