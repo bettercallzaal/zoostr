@@ -202,7 +202,7 @@ export default async function ZolPage() {
           </div>
           <div className="grid sm:grid-cols-3 gap-4 text-sm">
             {[
-              { step: '1. Flag + draft', desc: 'This page auto-detects the weekly receipt moment and generates 3 variants from live data' },
+              { step: '1. Flag + draft', desc: 'Run `npm run detect-moment` for milestone detection. This page loads live stats and generates 3 draft variants from current data.' },
               { step: '2. Approve + post', desc: 'You pick a variant, optionally edit it, then click the Warpcast compose link. One human click = final gate.' },
               { step: '3. Swarm + receipt', desc: 'After posting, watch quote-casts for 24h. Top remixers get flagged for the next snapshot points bonus.' },
             ].map(({ step, desc }) => (
