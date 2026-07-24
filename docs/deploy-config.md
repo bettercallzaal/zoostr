@@ -166,8 +166,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 149 | `feat/deploy-config-pr-table-148` | deploy-config.md: update PR merge table 147→148 rows; "After all 147 PRs" → "After all 149 PRs" |
 | 150 | `feat/deploy-config-zol-volume-env-var` | deploy-config.md: add ZOL_ASSUMED_VOLUME to Vercel env vars table (in README but missing here) |
 | 151 | `feat/deploy-config-pr-table-150` | deploy-config.md: update PR merge table 149→150 rows; "After all 149 PRs" → "After all 151 PRs" |
+| 152 | `feat/deploy-config-ops-receipt-label` | deploy-config.md: ops table step 5 'Distribution receipt' → 'Weekly receipt cast' |
+| 153 | `feat/deploy-config-pr-table-152` | deploy-config.md: update PR merge table 151→152 rows; "After all 151 PRs" → "After all 153 PRs" |
 
-After all 151 PRs are merged to `main`:
+After all 153 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
