@@ -148,8 +148,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 131 | `feat/deploy-config-pr-table-130` | deploy-config.md: update PR merge table 129→130 rows; "After all 129 PRs" → "After all 131 PRs" |
 | 132 | `feat/deploy-config-fee-claiming-ops-label` | deploy-config.md ops table: 'Fee distribution' → 'Fee claiming'; expand How column with accurate 2-step distribute+withdraw flow |
 | 133 | `feat/deploy-config-pr-table-132` | deploy-config.md: update PR merge table 131→132 rows; "After all 131 PRs" → "After all 133 PRs" |
+| 134 | `feat/launch-frame-button-target-fix` | launch/page.tsx: Frame button 2 target 'sparkz.xyz/launches/zoostr' → 'zoostr.xyz/leaderboard' (label mismatch fix) |
+| 135 | `feat/deploy-config-pr-table-134` | deploy-config.md: update PR merge table 133→134 rows; "After all 133 PRs" → "After all 135 PRs" |
 
-After all 133 PRs are merged to `main`:
+After all 135 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
