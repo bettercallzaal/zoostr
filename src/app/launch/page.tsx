@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     'fc:frame:button:1:target': `${BASE_URL}/launch`,
     'fc:frame:button:2': '🏆 See the Zoostr leaderboard',
     'fc:frame:button:2:action': 'link',
-    'fc:frame:button:2:target': `${SPARKZ_URL}/launches/zoostr`,
+    'fc:frame:button:2:target': `${BASE_URL}/leaderboard`,
   },
 }
 
