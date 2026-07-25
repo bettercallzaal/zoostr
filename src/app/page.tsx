@@ -235,7 +235,7 @@ export default async function Home() {
               Stack them over time: 52 weeks of showing up = 52 collectables.
             </p>
             <a
-              href="https://sparkz.xyz/collectables"
+              href="https://sparkz.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gold-400 hover:text-gold-300 font-semibold transition-colors"
@@ -304,7 +304,7 @@ export default async function Home() {
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
                 <SocialLink href="/receipt" label="Weekly receipt" internal />
                 <SocialLink href="/launch" label="Creator launch" internal />
-                <SocialLink href="https://sparkz.xyz/circles" label="Culture Circles ↗" />
+                <SocialLink href="https://sparkz.xyz" label="sparkz.xyz ↗" />
               </div>
             </div>
             <div>
