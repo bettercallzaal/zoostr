@@ -190,8 +190,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 173 | `feat/deploy-config-pr-table-173` | deploy-config.md: update PR merge table 171-172 rows; "After all 171 PRs" to "After all 173 PRs" |
 | 174 | `feat/back-page` | /back fiat backing page — 3 tiers (Spark $5/Booster $25/Patron $100); graceful fallback when STRIPE_SECRET_KEY absent; Viniapp credits teaser; sitemap + homepage nav |
 | 175 | `feat/deploy-config-pr-table-175` | deploy-config.md: update PR merge table 173→174 rows; "After all 173 PRs" → "After all 175 PRs" |
+| 176 | `feat/settings-byok` | /settings BYOK page — localStorage Anthropic key; status pill (BYOK active vs treasury compute); treasury-funds-onboarding explainer; sitemap + advisor footer |
+| 177 | `feat/deploy-config-pr-table-177` | deploy-config.md: update PR merge table 175→176 rows; "After all 175 PRs" → "After all 177 PRs" |
 
-After all 175 PRs are merged to `main`:
+After all 177 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
