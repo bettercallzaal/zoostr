@@ -186,8 +186,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 169 | `feat/deploy-config-pr-table-169` | deploy-config.md: update PR merge table 167→168 rows; "After all 167 PRs" → "After all 169 PRs" |
 | 170 | `feat/og-route-title-sub-support` | api/og/route.tsx: add title/sub URL param support — render branded text card for /receipt and /launch; podium unchanged when no params |
 | 171 | `feat/deploy-config-pr-table-171` | deploy-config.md: update PR merge table 169→170 rows; "After all 169 PRs" → "After all 171 PRs" |
+| 172 | `feat/advisor-page` | /advisor page: 3-question microflow (solo/collab/collective/crowdfund × new/growing/proven × later/now/never) → recommended split + token timing badge + weekly pool estimate; sitemap, footer, launch page nudge |
+| 173 | `feat/deploy-config-pr-table-173` | deploy-config.md: update PR merge table 171-172 rows; "After all 171 PRs" to "After all 173 PRs" |
 
-After all 171 PRs are merged to `main`:
+After all 173 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
