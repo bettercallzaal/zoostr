@@ -22,6 +22,8 @@ const DAILY_VOLUME = Number(process.env.VOLUME ?? 10_000)
 // COMMUNITY_PCT: percentage of fees that go to the community pool.
 // Zoostr community pool is 50% from day 1 (50/25/25 split). Default is 50.
 const COMMUNITY_SHARE = Number(process.env.COMMUNITY_PCT ?? 50) / 100
+// Must match snapshot-split.ts and src/lib/boostr.ts so receipt cast shows allocation-accurate percentages
+const MIN_POINTS = 10
 
 function weeklyPool(): number {
   return DAILY_VOLUME * FEE_TIER * COMMUNITY_SHARE * DAYS_PER_WEEK
@@ -63,9 +65,11 @@ function sortContributors(stats: BoostrStats): Contributor[] {
 async function main() {
   const stats = await fetchStats()
   const sorted = sortContributors(stats)
-  const total = sorted.reduce((sum, c) => sum + c.zabalLikesCount, 0)
+  // Filter to eligible contributors only (same as snapshot-split.ts) so receipt shows allocation-accurate percentages
+  const eligible = sorted.filter(c => c.zabalEnabled && c.zabalLikesCount >= MIN_POINTS)
+  const total = eligible.reduce((sum, c) => sum + c.zabalLikesCount, 0)
   const pool = weeklyPool()
-  const top = sorted.slice(0, TOP_N)
+  const top = eligible.slice(0, TOP_N)
 
   const today = new Date().toISOString().slice(0, 10)
 
@@ -83,7 +87,7 @@ ${top.map((c, i) => {
 }).join('\n')}
 
 total leaderboard pool → ${formatUsd(pool)}/wk
-${stats.activeContributorsCount} active boosters · ${total.toLocaleString()} total points`
+${stats.activeContributorsCount} active boosters · ${eligible.length} eligible · ${total.toLocaleString()} eligible points`
 
   // Cast 2: Empire stats + CTA
   const cast2 = `${stats.totalLikesGenerated.toLocaleString()} likes generated
