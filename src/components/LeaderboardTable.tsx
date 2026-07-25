@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Contributor } from '@/lib/types'
-import { feeSharePct } from '@/lib/boostr'
+import { feeSharePct, isEligible } from '@/lib/boostr'
 
 type Props = {
   contributors: Contributor[]
@@ -58,8 +58,10 @@ export default function LeaderboardTable({ contributors, totalPoints, showAll = 
               <td className="py-3 px-4 text-right text-slate-400 tabular-nums">
                 {c.followers_count.toLocaleString()}
               </td>
-              <td className="py-3 px-4 text-right font-medium text-zao-violet tabular-nums">
-                {feeSharePct(c.zabalLikesCount, totalPoints)}%
+              <td className="py-3 px-4 text-right font-medium tabular-nums">
+                {isEligible(c)
+                  ? <span className="text-zao-violet">{feeSharePct(c.zabalLikesCount, totalPoints)}%</span>
+                  : <span className="text-slate-600">—</span>}
               </td>
             </tr>
           ))}
