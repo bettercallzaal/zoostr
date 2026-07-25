@@ -3,6 +3,8 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
 export const revalidate = 60
 
+const MIN_POINTS = 10
+
 const C = {
   bg: '#0a0a14',
   card: '#12121e',
@@ -52,7 +54,7 @@ export async function GET() {
       const s = raw?.stats
       if (s) {
         const users: User[] = (s.zabalUsers ?? [])
-          .filter((u: User) => u.zabalEnabled)
+          .filter((u: User) => u.zabalEnabled && u.zabalLikesCount >= MIN_POINTS)
           .sort(
             (a: User, b: User) =>
               b.zabalLikesCount - a.zabalLikesCount || b.followers_count - a.followers_count
