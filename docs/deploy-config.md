@@ -196,8 +196,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 179 | `feat/deploy-config-pr-table-179` | deploy-config.md: update PR merge table 177→178 rows; "After all 177 PRs" → "After all 179 PRs" |
 | 180 | `feat/patronage-tiers` | /patronage: tokenless recurring membership builder — 3-step template (edit/preview/export); Supporter $5/Patron $25/Council $100; exports md + Farcaster/X copy |
 | 181 | `feat/deploy-config-pr-table-181` | deploy-config.md: update PR merge table 179→180 rows; "After all 179 PRs" → "After all 181 PRs" |
+| 182 | `feat/zao-vetted-badge` | /vetted: ZAO curation program — 50 slots/quarter, badge on Zoostr homepage hero, apply CTA; adds /vetted to sitemap |
+| 183 | `feat/deploy-config-pr-table-183` | deploy-config.md: update PR merge table 181→182 rows; "After all 181 PRs" → "After all 183 PRs" |
 
-After all 181 PRs are merged to `main`:
+After all 183 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
