@@ -36,6 +36,8 @@ const DAILY_VOLUME = Number(process.env.VOLUME ?? 10_000)
 const FEE_TIER = 0.01
 // COMMUNITY_PCT: Zoostr launches at 50 (50/25/25). Sparkz default is 1 (97/2/1). Same as npm run receipt.
 const COMMUNITY_SHARE = Number(process.env.COMMUNITY_PCT ?? 50) / 100
+// Must match snapshot-split.ts and src/lib/boostr.ts so cast drafts show allocation-accurate percentages
+const MIN_POINTS = 10
 const SPLITS_ADDRESS = process.env.SPLITS_ADDRESS ?? null
 const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY ?? null
 const NEYNAR_SIGNER_UUID = process.env.NEYNAR_SIGNER_UUID ?? null
@@ -167,7 +169,10 @@ type Draft = {
 
 function generateDrafts(stats: BoostrStats, moment: Moment): Draft[] {
   const { totalLikesGenerated: likes, activeContributorsCount: active, contributors } = stats
-  const top5 = contributors.slice(0, 5)
+  // Use only eligible contributors (same filter as snapshot-split.ts) so percentages match allocation
+  const eligible = contributors.filter(u => u.zabalEnabled && u.zabalLikesCount >= MIN_POINTS)
+  const eligibleTotal = eligible.reduce((s, u) => s + u.zabalLikesCount, 0)
+  const top5 = eligible.slice(0, 5)
   const pool = fmt(weeklyPool())
   const splitsLink = SPLITS_ADDRESS ? `\n\nsplits: basescan.org/address/${SPLITS_ADDRESS}` : ''
   const receiptLink = '\nfull receipt → zoostr.xyz/receipt'
@@ -181,13 +186,13 @@ empire stats:
 💰 ${pool}/week in the pool
 
 top earners:
-${top5.map((u, i) => `${i + 1}. @${u.username} — ${pct(u.zabalLikesCount, stats.totalLikesGenerated)} — ${earnings(u.zabalLikesCount, stats.totalLikesGenerated)}/week`).join('\n')}${splitsLink}${receiptLink}`
+${top5.map((u, i) => `${i + 1}. @${u.username} — ${pct(u.zabalLikesCount, eligibleTotal)} — ${earnings(u.zabalLikesCount, eligibleTotal)}/week`).join('\n')}${splitsLink}${receiptLink}`
 
   // Variant 2: Proof / leaderboard angle (more personal, calls out top booster)
   const top = top5[0]
   const v2 = `the empire doesn't lie.
 
-@${top?.username ?? 'the community'} is #1 this week — ${top ? pct(top.zabalLikesCount, stats.totalLikesGenerated) : ''}${top ? ` of the pool, ${earnings(top.zabalLikesCount, stats.totalLikesGenerated)}/week` : ''}
+@${top?.username ?? 'the community'} is #1 this week — ${top ? pct(top.zabalLikesCount, eligibleTotal) : ''}${top ? ` of the pool, ${earnings(top.zabalLikesCount, eligibleTotal)}/week` : ''}
 
 ${active} people showed up before $ZOOSTR existed. that's the empire.
 
@@ -272,7 +277,7 @@ this is what "earned, not purchased" looks like.${receiptLink}`
   if (moment.type === 'new-top' && top) {
     const ntv1 = `new #1 on the ZOOSTR leaderboard: @${top.username} 🟡
 
-${top.zabalLikesCount.toLocaleString()} points — ${pct(top.zabalLikesCount, stats.totalLikesGenerated)} of the community pool — ${earnings(top.zabalLikesCount, stats.totalLikesGenerated)}/week
+${top.zabalLikesCount.toLocaleString()} points — ${pct(top.zabalLikesCount, eligibleTotal)} of the community pool — ${earnings(top.zabalLikesCount, eligibleTotal)}/week
 
 ${active} boosters. ${likes.toLocaleString()} total likes. the empire keeps moving.${receiptLink}`
 
@@ -280,7 +285,7 @@ ${active} boosters. ${likes.toLocaleString()} total likes. the empire keeps movi
 
 before $ZOOSTR even had a price, they showed up. every week. every cast.
 
-now that work pays ${earnings(top.zabalLikesCount, stats.totalLikesGenerated)}/week into the pool — claim at splits.org.
+now that work pays ${earnings(top.zabalLikesCount, eligibleTotal)}/week into the pool — claim at splits.org.
 
 this is what "back the work" actually means.${receiptLink}`
 
