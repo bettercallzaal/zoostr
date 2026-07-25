@@ -39,7 +39,126 @@ function pct(pts: number, total: number): string {
   return total > 0 ? ((pts / total) * 100).toFixed(1) : '0.0'
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
+  const titleParam = searchParams.get('title')
+  const subParam = searchParams.get('sub')
+
+  // Branded text card — used by /receipt, /launch, and any page that passes title/sub
+  if (titleParam) {
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '1200px',
+            height: '630px',
+            background: C.bg,
+            padding: '64px 72px',
+            fontFamily: 'Arial, Helvetica, sans-serif',
+            boxSizing: 'border-box',
+            justifyContent: 'space-between',
+          }}
+        >
+          {/* Wordmark row */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div
+              style={{
+                fontSize: '48px',
+                fontWeight: 900,
+                color: C.gold,
+                letterSpacing: '-2px',
+                lineHeight: '1',
+              }}
+            >
+              ZOOSTR
+            </div>
+            <div
+              style={{
+                fontSize: '16px',
+                color: C.purple,
+                letterSpacing: '3px',
+                marginTop: '6px',
+              }}
+            >
+              ZABAL × BOOSTR · A SPARKZ LAUNCH
+            </div>
+          </div>
+
+          {/* Main title + subtitle */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <div
+              style={{
+                fontSize: '72px',
+                fontWeight: 900,
+                color: C.text,
+                letterSpacing: '-3px',
+                lineHeight: '1.05',
+              }}
+            >
+              {titleParam}
+            </div>
+            {subParam && (
+              <div
+                style={{
+                  fontSize: '26px',
+                  color: C.muted,
+                  lineHeight: '1.4',
+                }}
+              >
+                {subParam}
+              </div>
+            )}
+          </div>
+
+          {/* Footer row */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <div style={{ fontSize: '16px', color: C.muted }}>zoostr.xyz</div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: C.greenBg,
+                border: `1px solid ${C.greenBorder}`,
+                borderRadius: '20px',
+                padding: '8px 18px',
+              }}
+            >
+              <div
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  background: C.green,
+                }}
+              />
+              <div
+                style={{
+                  color: C.green,
+                  fontSize: '14px',
+                  fontWeight: 700,
+                  letterSpacing: '1.5px',
+                }}
+              >
+                LIVE
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      { width: 1200, height: 630 }
+    )
+  }
+
+  // Live podium — used by homepage and leaderboard (no title/sub params)
   // Fetch live data inline (edge-safe, no lib imports)
   let top3: User[] = []
   let empireStats = { active: 0, allTime: 0, likes: 0, casts: 0 }
