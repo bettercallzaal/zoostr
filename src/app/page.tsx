@@ -50,9 +50,18 @@ export default async function Home() {
 
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-4 pt-20 pb-16 text-center">
-        <div className="inline-flex items-center gap-2 bg-zao-card border border-zao-border rounded-full px-4 py-1.5 text-xs text-slate-400 mb-8">
-          <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
-          A Sparkz Launch · powered by ZAO
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <div className="inline-flex items-center gap-2 bg-zao-card border border-zao-border rounded-full px-4 py-1.5 text-xs text-slate-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
+            A Sparkz Launch · powered by ZAO
+          </div>
+          <Link
+            href="/vetted"
+            className="inline-flex items-center gap-2 bg-zao-violet/15 border border-zao-violet/40 rounded-full px-4 py-1.5 text-xs font-bold text-zao-violet hover:bg-zao-violet/25 transition-colors"
+          >
+            <span>⬡</span>
+            Vetted by ZAO
+          </Link>
         </div>
 
         <h1 className="text-5xl sm:text-7xl font-black tracking-tight mb-4">
