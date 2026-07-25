@@ -180,8 +180,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 163 | `feat/deploy-config-pr-table-163` | deploy-config.md: update PR merge table 161→162 rows; "After all 161 PRs" → "After all 163 PRs" |
 | 164 | `feat/leaderboard-table-ineligible-fee-share` | LeaderboardTable: show '—' for ineligible contributors; LiveLeaderboard podium uses eligible top3 |
 | 165 | `feat/deploy-config-pr-table-165` | deploy-config.md: update PR merge table 163→164 rows; "After all 163 PRs" → "After all 165 PRs" |
+| 166 | `feat/sparkz-xyz-subpage-links-fix` | page.tsx: sparkz.xyz/collectables + /circles → sparkz.xyz (subpages don't exist yet; would 404 on launch) |
+| 167 | `feat/deploy-config-pr-table-167` | deploy-config.md: update PR merge table 165→166 rows; "After all 165 PRs" → "After all 167 PRs" |
 
-After all 165 PRs are merged to `main`:
+After all 167 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
