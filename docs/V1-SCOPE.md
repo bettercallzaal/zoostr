@@ -32,7 +32,7 @@
 - `docs/launch-thread-x.md` — 3-post X/Twitter launch thread template
 
 ### Token economics (settled)
-- Split: 50% community / 25% creator / 25% treasury (Zoostr's evolved split after 30+ proven boosters)
+- Split: 50% community / 25% creator / 25% treasury (Zoostr launches at 50% — community was proven before the token)
 - Platform default: 97% creator / 1% community / 2% treasury (the Sparkz creator-first starting point)
 - Mechanism: 0xSplits Pull model — fees accumulate in contract, recipients claim at splits.org (no deadline)
 - Update cadence: weekly snapshot (Monday 00:00 UTC) with human-reviewed `updateSplit()` call
