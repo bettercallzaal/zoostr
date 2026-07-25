@@ -176,8 +176,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 159 | `feat/deploy-config-pr-table-159` | deploy-config.md: update PR merge table 157→158 rows; "After all 157 PRs" → "After all 159 PRs" |
 | 160 | `feat/launch-advisor-zoostr-framing-fix` | LaunchForm.tsx: advisor tip 'Zoostr started at 1% and grew to 50%' → accurate 'launched at 50% because community was proven before token' |
 | 161 | `feat/deploy-config-pr-table-161` | deploy-config.md: update PR merge table 159→160 rows; "After all 159 PRs" → "After all 161 PRs" |
+| 162 | `feat/zoostr-launch-split-framing-fix` | V1-SCOPE + tokenomics + sparkz-for-creators: 'evolved from 1%' → 'launches at 50%' (mirrors LaunchForm fix in PR #160) |
+| 163 | `feat/deploy-config-pr-table-163` | deploy-config.md: update PR merge table 161→162 rows; "After all 161 PRs" → "After all 163 PRs" |
 
-After all 161 PRs are merged to `main`:
+After all 163 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
