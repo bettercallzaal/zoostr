@@ -178,8 +178,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 161 | `feat/deploy-config-pr-table-161` | deploy-config.md: update PR merge table 159→160 rows; "After all 159 PRs" → "After all 161 PRs" |
 | 162 | `feat/zoostr-launch-split-framing-fix` | V1-SCOPE + tokenomics + sparkz-for-creators: 'evolved from 1%' → 'launches at 50%' (mirrors LaunchForm fix in PR #160) |
 | 163 | `feat/deploy-config-pr-table-163` | deploy-config.md: update PR merge table 161→162 rows; "After all 161 PRs" → "After all 163 PRs" |
+| 164 | `feat/leaderboard-table-ineligible-fee-share` | LeaderboardTable: show '—' for ineligible contributors; LiveLeaderboard podium uses eligible top3 |
+| 165 | `feat/deploy-config-pr-table-165` | deploy-config.md: update PR merge table 163→164 rows; "After all 163 PRs" → "After all 165 PRs" |
 
-After all 163 PRs are merged to `main`:
+After all 165 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
