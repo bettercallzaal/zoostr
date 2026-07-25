@@ -87,6 +87,12 @@ export default function AdvisorPage() {
             >
               Leaderboard →
             </Link>
+            <Link
+              href="/settings"
+              className="text-slate-500 hover:text-slate-400 transition-colors"
+            >
+              ⚙ BYOK →
+            </Link>
           </div>
         </div>
       </div>
