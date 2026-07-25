@@ -303,6 +303,7 @@ export default async function Home() {
               <div className="space-y-2">
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
                 <SocialLink href="/receipt" label="Weekly receipt" internal />
+                <SocialLink href="/advisor" label="Split advisor" internal />
                 <SocialLink href="/launch" label="Creator launch" internal />
                 <SocialLink href="https://sparkz.xyz" label="sparkz.xyz ↗" />
               </div>

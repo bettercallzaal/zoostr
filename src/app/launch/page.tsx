@@ -77,6 +77,21 @@ export default function LaunchPage() {
         </div>
       </section>
 
+      {/* Advisor nudge */}
+      <div className="max-w-3xl mx-auto px-4 mb-6">
+        <div className="flex items-center justify-between p-4 rounded-xl bg-zao-card border border-zao-border/50">
+          <div className="text-sm text-slate-400">
+            Not sure what split to use?
+          </div>
+          <Link
+            href="/advisor"
+            className="text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors flex-shrink-0"
+          >
+            Try the 3-question advisor ↗
+          </Link>
+        </div>
+      </div>
+
       {/* Form */}
       <section className="max-w-3xl mx-auto px-4 pb-24">
         <LaunchForm />
