@@ -37,6 +37,7 @@ export default async function Home() {
             <Link href="/leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</Link>
             <Link href="/receipt" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Weekly receipt</Link>
             <a href="#tokenomics" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">How it works</a>
+            <Link href="/back" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Back it</Link>
             <Link
               href="/launch"
               className="px-3 py-1.5 rounded-lg border border-zao-violet/50 text-zao-violet hover:bg-zao-violet/10 text-xs font-semibold transition-colors"
