@@ -182,8 +182,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 165 | `feat/deploy-config-pr-table-165` | deploy-config.md: update PR merge table 163→164 rows; "After all 163 PRs" → "After all 165 PRs" |
 | 166 | `feat/sparkz-xyz-subpage-links-fix` | page.tsx: sparkz.xyz/collectables + /circles → sparkz.xyz (subpages don't exist yet; would 404 on launch) |
 | 167 | `feat/deploy-config-pr-table-167` | deploy-config.md: update PR merge table 165→166 rows; "After all 165 PRs" → "After all 167 PRs" |
+| 168 | `feat/og-route-eligible-filter-fix` | api/og/route.tsx: filter ineligible contributors (zabalEnabled-only → +MIN_POINTS ≥ 10); OG podium and % fee share now match eligibility criteria |
+| 169 | `feat/deploy-config-pr-table-169` | deploy-config.md: update PR merge table 167→168 rows; "After all 167 PRs" → "After all 169 PRs" |
 
-After all 167 PRs are merged to `main`:
+After all 169 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
