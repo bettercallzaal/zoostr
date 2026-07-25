@@ -77,9 +77,9 @@ export default function LaunchPage() {
         </div>
       </section>
 
-      {/* Advisor nudge */}
-      <div className="max-w-3xl mx-auto px-4 mb-6">
-        <div className="flex items-center justify-between p-4 rounded-xl bg-zao-card border border-zao-border/50">
+      {/* Advisor + split-wizard nudge */}
+      <div className="max-w-3xl mx-auto px-4 mb-6 flex flex-col sm:flex-row gap-3">
+        <div className="flex-1 flex items-center justify-between p-4 rounded-xl bg-zao-card border border-zao-border/50">
           <div className="text-sm text-slate-400">
             Not sure what split to use?
           </div>
@@ -87,7 +87,18 @@ export default function LaunchPage() {
             href="/advisor"
             className="text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors flex-shrink-0"
           >
-            Try the 3-question advisor ↗
+            AI Advisor ↗
+          </Link>
+        </div>
+        <div className="flex-1 flex items-center justify-between p-4 rounded-xl bg-zao-card border border-zao-border/50">
+          <div className="text-sm text-slate-400">
+            Collab with producers or writers?
+          </div>
+          <Link
+            href="/split-wizard"
+            className="text-sm font-semibold text-green-400 hover:text-green-300 transition-colors flex-shrink-0"
+          >
+            Split-Sheet Wizard ↗
           </Link>
         </div>
       </div>
