@@ -170,8 +170,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 153 | `feat/deploy-config-pr-table-152` | deploy-config.md: update PR merge table 151→152 rows; "After all 151 PRs" → "After all 153 PRs" |
 | 154 | `feat/zoostr-v1-scope-doc-fix` | docs: add V1-SCOPE.md — locked scope doc (pages, scripts, economics, Meme Engine loop, deferred features, pre-deploy checklist) |
 | 155 | `feat/deploy-config-pr-table-155` | deploy-config.md: update PR merge table 153→155 rows; "After all 153 PRs" → "After all 155 PRs" |
+| 156 | `feat/meme-engine-eligible-pct-fix` | meme-engine.ts: filter eligible contributors + use eligibleTotal denominator for pct/earnings in cast drafts (matches snapshot-split.ts allocation logic) |
+| 157 | `feat/deploy-config-pr-table-157` | deploy-config.md: update PR merge table 155→156 rows; "After all 155 PRs" → "After all 157 PRs" |
 
-After all 155 PRs are merged to `main`:
+After all 157 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
