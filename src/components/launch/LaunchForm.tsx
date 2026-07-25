@@ -58,7 +58,7 @@ function getAdvisorTip(step: number, cfg: LaunchConfig): string {
       const weeklyPool = weeklyVol * fee * (cfg.communityPct / 100)
       const flag =
         cfg.communityPct < 10
-          ? ' Creator-first default — the Sparkz platform standard. Grow this as real contributors prove themselves. Zoostr started at 1% and grew to 50% after 30+ consistent boosters.'
+          ? ' Creator-first default — the Sparkz platform standard. Grow this as real contributors prove themselves. Zoostr launched at 50% because 30+ consistent boosters already proved the community before the token existed.'
           : cfg.communityPct > 60
           ? ' Above 60% leaves little for creator operations. This is Zoostr-level territory — it works when 30+ consistent boosters have proven the leaderboard.'
           : ''
