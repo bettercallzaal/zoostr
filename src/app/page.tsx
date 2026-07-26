@@ -339,6 +339,7 @@ export default async function Home() {
               <div className="space-y-2">
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
                 <SocialLink href="/discover" label="Discover" internal />
+                <SocialLink href="/rewards" label="Empire rewards" internal />
                 <SocialLink href="/receipt" label="Weekly receipt" internal />
                 <SocialLink href="/examples" label="Spark templates" internal />
                 <SocialLink href="/audius" label="Audius integration" internal />
