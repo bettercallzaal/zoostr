@@ -35,6 +35,7 @@ export default async function Home() {
           </span>
           <div className="flex items-center gap-4 text-sm">
             <Link href="/leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</Link>
+            <Link href="/examples" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Templates</Link>
             <Link href="/receipt" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Weekly receipt</Link>
             <a href="#tokenomics" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">How it works</a>
             <Link href="/back" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Back it</Link>
@@ -259,6 +260,30 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Spark templates promo */}
+      <section className="max-w-5xl mx-auto px-4 pb-16">
+        <div className="border border-zao-border rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1">
+            <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">
+              No token required to start
+            </div>
+            <h2 className="text-xl font-black text-white mb-2">
+              Spark templates — 8 real use cases
+            </h2>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Solo EP, collab single, fan-backed project, group crowdfund, ZAO-backed launch.
+              Every template uses a live 0xSplits contract. Start today, add a coin later (or never).
+            </p>
+          </div>
+          <Link
+            href="/examples"
+            className="shrink-0 btn-gold py-3 px-6 text-sm whitespace-nowrap"
+          >
+            Browse templates →
+          </Link>
+        </div>
+      </section>
+
       {/* Back the empire CTA */}
       <section className="max-w-5xl mx-auto px-4 pb-16">
         <div className="card-dark glow-purple p-10 sm:p-14 text-center">
@@ -313,6 +338,7 @@ export default async function Home() {
               <div className="space-y-2">
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
                 <SocialLink href="/receipt" label="Weekly receipt" internal />
+                <SocialLink href="/examples" label="Spark templates" internal />
                 <SocialLink href="/advisor" label="Split advisor" internal />
                 <SocialLink href="/launch" label="Creator launch" internal />
                 <SocialLink href="https://sparkz.xyz" label="sparkz.xyz ↗" />

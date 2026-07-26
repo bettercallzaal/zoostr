@@ -328,7 +328,7 @@ export default function SplitWizard() {
           </div>
 
           <button
-            disabled={!isBalanced || total === 0}
+            disabled={!isBalanced || (total as number) === 0}
             onClick={() => setStep(1)}
             className="w-full py-3 rounded-xl bg-gold-500 text-black font-bold text-sm hover:bg-gold-400 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
