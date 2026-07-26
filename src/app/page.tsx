@@ -339,6 +339,7 @@ export default async function Home() {
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
                 <SocialLink href="/receipt" label="Weekly receipt" internal />
                 <SocialLink href="/examples" label="Spark templates" internal />
+                <SocialLink href="/audius" label="Audius integration" internal />
                 <SocialLink href="/advisor" label="Split advisor" internal />
                 <SocialLink href="/launch" label="Creator launch" internal />
                 <SocialLink href="https://sparkz.xyz" label="sparkz.xyz ↗" />

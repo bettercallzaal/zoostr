@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/settings`, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${BASE}/split-wizard`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE}/examples`, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE}/audius`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE}/patronage`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE}/vetted`, changeFrequency: 'monthly', priority: 0.5 },
   ]
