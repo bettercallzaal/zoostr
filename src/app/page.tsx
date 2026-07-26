@@ -35,6 +35,7 @@ export default async function Home() {
           </span>
           <div className="flex items-center gap-4 text-sm">
             <Link href="/leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</Link>
+            <Link href="/discover" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Discover</Link>
             <Link href="/examples" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Templates</Link>
             <Link href="/receipt" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Weekly receipt</Link>
             <a href="#tokenomics" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">How it works</a>
@@ -337,6 +338,7 @@ export default async function Home() {
               <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Site</h4>
               <div className="space-y-2">
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
+                <SocialLink href="/discover" label="Discover" internal />
                 <SocialLink href="/receipt" label="Weekly receipt" internal />
                 <SocialLink href="/examples" label="Spark templates" internal />
                 <SocialLink href="/audius" label="Audius integration" internal />
