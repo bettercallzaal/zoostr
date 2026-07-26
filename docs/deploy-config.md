@@ -202,8 +202,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 185 | `feat/deploy-config-pr-table-185` | deploy-config.md: update PR merge table 183→184 rows; "After all 183 PRs" → "After all 185 PRs" |
 | 186 | `feat/audius-integration` | /audius: live Audius handle lookup → per-track split configurator → 0xSplits JSON export; /api/audius server-side proxy (no CORS); Viniapp Phase 2 note |
 | 187 | `feat/deploy-config-pr-table-187` | deploy-config.md: update PR merge table 185→186 rows; "After all 185 PRs" → "After all 187 PRs" |
+| 188 | `feat/discover-feed` | /discover: live discoverability feed — featured sparks, trending contributors (trend score), rising builders (ranks 6–15), reward mechanics sidebar (contribution → pool share, no governance) |
+| 189 | `feat/deploy-config-pr-table-189` | deploy-config.md: update PR merge table 187→188 rows; "After all 187 PRs" → "After all 189 PRs" |
 
-After all 187 PRs are merged to `main`:
+After all 189 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
