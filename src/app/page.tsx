@@ -36,6 +36,7 @@ export default async function Home() {
           <div className="flex items-center gap-4 text-sm">
             <Link href="/leaderboard" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">Leaderboard</Link>
             <Link href="/discover" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Discover</Link>
+            <Link href="/circles" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Circles</Link>
             <Link href="/examples" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Templates</Link>
             <Link href="/receipt" className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline">Weekly receipt</Link>
             <a href="#tokenomics" className="text-slate-400 hover:text-white transition-colors hidden sm:inline">How it works</a>
