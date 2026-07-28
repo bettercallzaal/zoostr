@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#12121e"/>
+      <stop offset="100%" stop-color="#0a0a14"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="subtext" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="blur-glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="url(#bg)"/>
+
+  <!-- Purple glow halo -->
+  <ellipse cx="500" cy="500" rx="380" ry="380" fill="url(#glow)" filter="url(#blur-glow)"/>
+
+  <!-- Thin gold ring -->
+  <circle cx="500" cy="500" r="440" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.3"/>
+  <circle cx="500" cy="500" r="420" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.15"/>
+
+  <!-- ZOOSTR wordmark -->
+  <text
+    x="500"
+    y="530"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-size="148"
+    font-weight="900"
+    letter-spacing="-4"
+    text-anchor="middle"
+    fill="url(#gold)"
+  >ZOOSTR</text>
+
+  <!-- Subtitle -->
+  <text
+    x="500"
+    y="610"
+    font-family="'Arial', sans-serif"
+    font-size="32"
+    font-weight="400"
+    letter-spacing="8"
+    text-anchor="middle"
+    fill="url(#subtext)"
+    opacity="0.9"
+  >ZABAL × BOOSTR</text>
+
+  <!-- Bottom label -->
+  <text
+    x="500"
+    y="720"
+    font-family="'Arial', sans-serif"
+    font-size="18"
+    letter-spacing="4"
+    text-anchor="middle"
+    fill="#475569"
+    opacity="0.7"
+  >A SPARKZ LAUNCH</text>
+</svg>

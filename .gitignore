@@ -1,0 +1,47 @@
+# deps
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# generated weekly ops outputs (contain addresses/usernames; reviewed offline)
+splits-update.json
+receipt-*.md
+fid-wallets.json
+meme-engine-draft-*.json
+meme-engine-draft-*.md
+remix-rewards-*.json
+last-cast.json
