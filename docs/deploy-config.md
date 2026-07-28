@@ -212,8 +212,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 195 | `feat/deploy-config-pr-table-195` | deploy-config.md: update PR merge table 193→194 rows; "After all 193 PRs" → "After all 195 PRs" |
 | 196 | `feat/sparkz-principles-doc` | docs/sparkz-principles.md: extraction guardrails (5 principles), culture lifecycle (5 stages), ZOL autonomy tiers (4 levels), framing rules, V1 human-gate table, fee config constraints |
 | 197 | `feat/deploy-config-pr-table-197` | deploy-config.md: update PR merge table 195→196 rows; "After all 195 PRs" → "After all 197 PRs" |
+| 198 | `feat/meme-engine-token-launch-detection` | meme-engine.ts: add TOKEN_ADDRESS config + 'token-launch' moment type — fires once on first detect-moment run after clanker.world deploy; 3 "WE'RE LIVE" cast variants; deploy-config TOKEN_ADDRESS CLI env var doc |
+| 199 | `feat/deploy-config-pr-table-199` | deploy-config.md: update PR merge table 197→198 rows; "After all 197 PRs" → "After all 199 PRs" |
 
-After all 197 PRs are merged to `main`:
+After all 199 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
@@ -232,6 +234,7 @@ After all 197 PRs are merged to `main`:
 | `NEXT_PUBLIC_SPARKZ_URL` | `https://sparkz.xyz` | /launch page "See Zoostr leaderboard" Frame button |
 | `NEXT_PUBLIC_COMMUNITY_SHARE_PCT` | `50` (Zoostr launches at 50/25/25) | Leaderboard earnings calc, receipt page, ZOL cast drafts — must match the live on-chain split |
 | `ZOL_ASSUMED_VOLUME` | `10000` (optional) | /zol admin page earnings projection; defaults to $10k/day if not set |
+| `TOKEN_ADDRESS` | same as NEXT_PUBLIC_TOKEN_ADDRESS | CLI scripts only (meme-engine.ts): activates `token-launch` first-cast detection on first `npm run detect-moment` after deploy |
 
 The site deploys and runs in pre-token mode without `NEXT_PUBLIC_TOKEN_ADDRESS`.
 Set that env var after the Clanker deploy and redeploy Vercel.
