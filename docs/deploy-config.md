@@ -216,8 +216,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 199 | `feat/deploy-config-pr-table-199` | deploy-config.md: update PR merge table 197→198 rows; "After all 197 PRs" → "After all 199 PRs" |
 | 200 | `feat/discover-sidebar-links` | /discover sidebar Explore nav: add /rewards and /circles links |
 | 201 | `feat/deploy-config-pr-table-201` | deploy-config.md: update PR merge table 199→200 rows; "After all 199 PRs" → "After all 201 PRs" |
+| 202 | `feat/back-checkout-api` | /api/back/checkout Stripe route (form POST → Stripe session → redirect); /back page: async searchParams + success/error banners |
+| 203 | `feat/deploy-config-pr-table-203` | deploy-config.md: update PR merge table 201→202 rows; "After all 201 PRs" → "After all 203 PRs" |
 
-After all 201 PRs are merged to `main`:
+After all 203 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
@@ -237,6 +239,9 @@ After all 201 PRs are merged to `main`:
 | `NEXT_PUBLIC_COMMUNITY_SHARE_PCT` | `50` (Zoostr launches at 50/25/25) | Leaderboard earnings calc, receipt page, ZOL cast drafts — must match the live on-chain split |
 | `ZOL_ASSUMED_VOLUME` | `10000` (optional) | /zol admin page earnings projection; defaults to $10k/day if not set |
 | `TOKEN_ADDRESS` | same as NEXT_PUBLIC_TOKEN_ADDRESS | CLI scripts only (meme-engine.ts): activates `token-launch` first-cast detection on first `npm run detect-moment` after deploy |
+| `STRIPE_SECRET_KEY` | `sk_live_...` (Stripe dashboard) | /back card checkout — omit to show Boostr fallback mode |
+| `RESEND_API_KEY` | `re_...` (resend.com) | /api/back/checkout Stripe receipt emails + future email notifications |
+| `ZAO_NOTIFY_EMAIL` | `zaalp99@gmail.com` | Where backing notifications go (defaults to zaalp99@gmail.com) |
 
 The site deploys and runs in pre-token mode without `NEXT_PUBLIC_TOKEN_ADDRESS`.
 Set that env var after the Clanker deploy and redeploy Vercel.
