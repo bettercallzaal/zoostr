@@ -76,6 +76,12 @@ export default async function LeaderboardPage() {
             >
               How it works
             </Link>
+            <Link
+              href="/token"
+              className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline"
+            >
+              $ZOOSTR
+            </Link>
             <a
               href="https://boostr.itscashless.com"
               target="_blank"
