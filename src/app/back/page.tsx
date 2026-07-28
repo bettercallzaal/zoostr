@@ -72,7 +72,12 @@ const TIERS = [
   },
 ]
 
-export default function BackPage() {
+export default async function BackPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ success?: string; error?: string; tier?: string }>
+}) {
+  const { success, error, tier: successTier } = await searchParams
   return (
     <main className="min-h-screen bg-zao-dark">
       {/* Nav */}
@@ -88,6 +93,25 @@ export default function BackPage() {
           </div>
         </div>
       </nav>
+
+      {/* Success / error banners */}
+      {success === '1' && (
+        <div className="max-w-3xl mx-auto px-4 pt-4">
+          <div className="bg-green-400/10 border border-green-400/30 rounded-xl px-5 py-4 text-sm text-green-300">
+            <strong>You&rsquo;re in the empire.</strong> Your backing is confirmed. Points start accumulating — claim your fee share anytime at{' '}
+            <a href="https://splits.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-green-200">splits.org</a>.
+            {successTier && <span className="text-green-500 ml-2">({successTier})</span>}
+          </div>
+        </div>
+      )}
+      {error && (
+        <div className="max-w-3xl mx-auto px-4 pt-4">
+          <div className="bg-red-400/10 border border-red-400/30 rounded-xl px-5 py-4 text-sm text-red-300">
+            Something went wrong with your backing ({error}). Try again below or{' '}
+            <a href="https://boostr.itscashless.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-200">back on Boostr</a>.
+          </div>
+        </div>
+      )}
 
       {/* Header */}
       <section className="max-w-3xl mx-auto px-4 pt-16 pb-10 text-center">
