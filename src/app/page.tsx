@@ -340,6 +340,9 @@ export default async function Home() {
               <div className="space-y-2">
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
                 <SocialLink href="/discover" label="Discover" internal />
+                <SocialLink href="/how-it-works" label="How it works" internal />
+                <SocialLink href="/token" label="$ZOOSTR token" internal />
+                <SocialLink href="/about" label="About Zoostr" internal />
                 <SocialLink href="/rewards" label="Empire rewards" internal />
                 <SocialLink href="/circles" label="Culture Circles" internal />
                 <SocialLink href="/back" label="Back the empire" internal />
