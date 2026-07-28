@@ -214,8 +214,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 197 | `feat/deploy-config-pr-table-197` | deploy-config.md: update PR merge table 195→196 rows; "After all 195 PRs" → "After all 197 PRs" |
 | 198 | `feat/meme-engine-token-launch-detection` | meme-engine.ts: add TOKEN_ADDRESS config + 'token-launch' moment type — fires once on first detect-moment run after clanker.world deploy; 3 "WE'RE LIVE" cast variants; deploy-config TOKEN_ADDRESS CLI env var doc |
 | 199 | `feat/deploy-config-pr-table-199` | deploy-config.md: update PR merge table 197→198 rows; "After all 197 PRs" → "After all 199 PRs" |
+| 200 | `feat/discover-sidebar-links` | /discover sidebar Explore nav: add /rewards and /circles links |
+| 201 | `feat/deploy-config-pr-table-201` | deploy-config.md: update PR merge table 199→200 rows; "After all 199 PRs" → "After all 201 PRs" |
 
-After all 199 PRs are merged to `main`:
+After all 201 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
