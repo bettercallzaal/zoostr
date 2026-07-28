@@ -325,7 +325,7 @@ export default function AudiusIntegration() {
               step: '2',
               icon: '⚡',
               title: 'Set a split per track',
-              body: 'Artist, producer, featured collaborator — each gets a percentage. The split attests to IPFS before any money moves.',
+              body: 'Artist, producer, featured collaborator — each gets a percentage. Export the split config and upload to IPFS for an immutable record before any money moves.',
             },
             {
               step: '3',
