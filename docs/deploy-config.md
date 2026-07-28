@@ -236,8 +236,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 219 | `feat/deploy-config-pr-table-219` | deploy-config.md: update PR merge table 217→218 rows; "After all 217 PRs" → "After all 219 PRs" |
 | 220 | `feat/split-wizard-ipfs-attested-fix` | split-wizard/page.tsx + AudiusIntegration.tsx: "IPFS-attested" → "IPFS-attestable" — wizard exports JSON; IPFS upload is a manual user step |
 | 221 | `feat/deploy-config-pr-table-221` | deploy-config.md: update PR merge table 219→220 rows; "After all 219 PRs" → "After all 221 PRs" |
+| 222 | `feat/homepage-footer-tools-links` | homepage footer: add /split-wizard, /patronage, /vetted to Site section — complete creator tool map |
+| 223 | `feat/deploy-config-pr-table-223` | deploy-config.md: update PR merge table 221→222 rows; "After all 221 PRs" → "After all 223 PRs" |
 
-After all 221 PRs are merged to `main`:
+After all 223 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
