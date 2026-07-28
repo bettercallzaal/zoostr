@@ -53,6 +53,7 @@ For real-time data, fetch: https://boostr.itscashless.com/api/zabaal/stats
 - /settings — BYOK (bring-your-own Anthropic key for AI advisor)
 - /vetted — ZAO vetting program (50 slots/quarter)
 - /launch — Sparkz Launcher: configure + export your own creator coin
+- /token — $ZOOSTR token explainer: Base chain, Clanker v4, 1% fee tier, 50/25/25 split (community/creator/treasury), 0xSplits pull model, "boost → rank → claim" 3-step flow
 
 ---
 
