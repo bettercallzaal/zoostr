@@ -54,6 +54,7 @@ For real-time data, fetch: https://boostr.itscashless.com/api/zabaal/stats
 - /vetted — ZAO vetting program (50 slots/quarter)
 - /launch — Sparkz Launcher: configure + export your own creator coin
 - /token — $ZOOSTR token explainer: Base chain, Clanker v4, 1% fee tier, 50/25/25 split (community/creator/treasury), 0xSplits pull model, "boost → rank → claim" 3-step flow
+- /boostr — Boostr × Zoostr partnership: 5-step earn flow (like ZABAL casts → points → weekly snapshot → claim at splits.org), @cashlessman.eth builder, @zaal/@bettercallzaal creator, API details (boostr.itscashless.com/api/zabaal/stats), CORS-safe proxy at /api/boostr
 
 ---
 
