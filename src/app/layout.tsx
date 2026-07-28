@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     'fc:frame:button:1': '🏆 Live Leaderboard',
     'fc:frame:button:1:action': 'link',
     'fc:frame:button:1:target': BASE_URL,
-    'fc:frame:button:2': '⚡ How it works',
+    'fc:frame:button:2': '🎯 How to earn',
     'fc:frame:button:2:action': 'link',
-    'fc:frame:button:2:target': `${BASE_URL}/#tokenomics`,
+    'fc:frame:button:2:target': `${BASE_URL}/rewards`,
   },
 }
 
