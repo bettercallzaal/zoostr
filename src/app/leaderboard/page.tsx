@@ -102,7 +102,10 @@ export default async function LeaderboardPage() {
             <h1 className="text-3xl sm:text-4xl font-black text-white mb-2">Empire Leaderboard</h1>
             <p className="text-slate-400 max-w-xl leading-relaxed">
               Every booster ranked by points. Your share of the leaderboard pool = your points ÷ total
-              points. Claim your share anytime at app.splits.org — funds accumulate, no deadline.
+              points. Claim your share anytime at app.splits.org — funds accumulate, no deadline.{' '}
+              <Link href="/faq" className="text-slate-500 hover:text-slate-400 underline text-sm">
+                Questions? FAQ →
+              </Link>
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-medium">
