@@ -210,8 +210,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 193 | `feat/deploy-config-pr-table-193` | deploy-config.md: update PR merge table 191→192 rows; "After all 191 PRs" → "After all 193 PRs" |
 | 194 | `feat/readme-full-pages-update` | README: full pages table update — 5→16 routes listed; add Stripe/Resend/SPLITS env vars; add "claim at splits.org" framing note |
 | 195 | `feat/deploy-config-pr-table-195` | deploy-config.md: update PR merge table 193→194 rows; "After all 193 PRs" → "After all 195 PRs" |
+| 196 | `feat/sparkz-principles-doc` | docs/sparkz-principles.md: extraction guardrails (5 principles), culture lifecycle (5 stages), ZOL autonomy tiers (4 levels), framing rules, V1 human-gate table, fee config constraints |
+| 197 | `feat/deploy-config-pr-table-197` | deploy-config.md: update PR merge table 195→196 rows; "After all 195 PRs" → "After all 197 PRs" |
 
-After all 195 PRs are merged to `main`:
+After all 197 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
