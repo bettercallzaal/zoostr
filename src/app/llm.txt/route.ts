@@ -52,6 +52,7 @@ For real-time data, fetch: https://boostr.itscashless.com/api/zabaal/stats
 - /audius — Audius catalog → per-track split configurator
 - /settings — BYOK (bring-your-own Anthropic key for AI advisor)
 - /vetted — ZAO vetting program (50 slots/quarter)
+- /faq — Common questions: leaderboard mechanics, fee share, claiming at splits.org, token timing, card backing, ZAO role
 - /launch — Sparkz Launcher: configure + export your own creator coin
 
 ---
