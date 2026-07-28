@@ -456,7 +456,7 @@ export default function LaunchForm() {
             </div>
 
             <a
-              href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`configuring my Sparkz launch ⚡\n\n${cfg.tokenName || 'my token'} ($${ticker || 'TOKEN'})\n${cfg.communityPct}% fee share to the community · ${cfg.creatorPct}% creator\nweekly snapshot via 0xSplits — claim at splits.org\n\nsparkz.xyz/launch`)}`}
+              href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`configuring my Sparkz launch ⚡\n\n${cfg.tokenName || 'my token'} ($${ticker || 'TOKEN'})\n${cfg.communityPct}% fee share to the community · ${cfg.creatorPct}% creator\nweekly snapshot via 0xSplits — claim at splits.org\n\ntrysparkz.com/launch`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 flex items-center justify-center gap-2 w-full py-2 rounded-lg border border-zao-violet/40 text-zao-violet hover:border-zao-violet/70 hover:bg-zao-violet/5 text-sm font-semibold transition-colors"

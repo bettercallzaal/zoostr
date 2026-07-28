@@ -584,12 +584,12 @@ export default function AdvisorFlow() {
             Recommendations are based on your inputs — not financial advice. Actual splits
             are configured in the Sparkz launcher and deployed on-chain via 0xSplits.{' '}
             <a
-              href="https://sparkz.xyz"
+              href="https://trysparkz.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-slate-400"
             >
-              Learn more at sparkz.xyz →
+              Learn more at trysparkz.com →
             </a>
           </p>
         </div>

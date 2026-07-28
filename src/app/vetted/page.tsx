@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
-const SPARKZ_URL = process.env.NEXT_PUBLIC_SPARKZ_URL ?? 'https://sparkz.xyz'
+const SPARKZ_URL = process.env.NEXT_PUBLIC_SPARKZ_URL ?? 'https://trysparkz.com'
 const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Vetted by ZAO')}&sub=${encodeURIComponent('Curated launches · Scarcity by design · 1 of 50 this quarter')}`
 
 export const metadata: Metadata = {

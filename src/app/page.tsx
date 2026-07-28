@@ -248,12 +248,12 @@ export default async function Home() {
               Stack them over time: 52 weeks of showing up = 52 collectables.
             </p>
             <a
-              href="https://sparkz.xyz"
+              href="https://trysparkz.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gold-400 hover:text-gold-300 font-semibold transition-colors"
             >
-              How collectables work → sparkz.xyz ↗
+              How collectables work → trysparkz.com ↗
             </a>
           </div>
           <div className="flex justify-center sm:justify-end">
@@ -325,7 +325,7 @@ export default async function Home() {
               <p className="text-sm text-slate-500">
                 A{' '}
                 <a
-                  href="https://sparkz.xyz"
+                  href="https://trysparkz.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-gold-400 transition-colors"
@@ -351,7 +351,7 @@ export default async function Home() {
                 <SocialLink href="/patronage" label="Patronage tiers" internal />
                 <SocialLink href="/vetted" label="Vetted by ZAO" internal />
                 <SocialLink href="/launch" label="Creator launch" internal />
-                <SocialLink href="https://sparkz.xyz" label="sparkz.xyz ↗" />
+                <SocialLink href="https://trysparkz.com" label="trysparkz.com ↗" />
               </div>
             </div>
             <div>
@@ -376,12 +376,12 @@ export default async function Home() {
             <div className="flex items-center gap-1 text-xs text-slate-600">
               <span>Want to launch like this?</span>
               <a
-                href="https://sparkz.xyz"
+                href="https://trysparkz.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gold-400 hover:text-gold-300 transition-colors font-semibold ml-1"
               >
-                sparkz.xyz →
+                trysparkz.com →
               </a>
             </div>
           </div>
