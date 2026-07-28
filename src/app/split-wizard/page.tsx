@@ -3,12 +3,12 @@ import Link from 'next/link'
 import SplitWizard from '@/components/SplitWizard'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
-const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Split-Sheet Wizard')}&sub=${encodeURIComponent('Set roles + % before launch — IPFS-attested, wired to 0xSplits')}`
+const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Split-Sheet Wizard')}&sub=${encodeURIComponent('Set roles + % before launch — IPFS-attestable, wired to 0xSplits')}`
 
 export const metadata: Metadata = {
   title: 'Split-Sheet Wizard — Sparkz by ZAO',
   description:
-    'Define collaborator roles + percentages before launch. IPFS-attested, wired directly to 0xSplits. The music-native way to kill revenue disputes before they start.',
+    'Define collaborator roles + percentages before launch. IPFS-attestable. Exports JSON ready to wire directly to 0xSplits. The music-native way to kill revenue disputes before they start.',
   openGraph: {
     title: 'Split-Sheet Wizard — Sparkz by ZAO',
     description:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Split-Sheet Wizard — Sparkz',
-    description: 'Music-native split sheet: roles + % before launch, IPFS-attested.',
+    description: 'Music-native split sheet: roles + % before launch, IPFS-attestable.',
     images: [OG_URL],
   },
 }
