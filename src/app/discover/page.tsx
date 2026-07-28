@@ -366,6 +366,7 @@ export default async function DiscoverPage() {
                 { href: '/advisor', label: '🤖 AI advisor' },
                 { href: '/split-wizard', label: '⚙️ Split wizard' },
                 { href: '/vetted', label: '⬡ ZAO-vetted' },
+                { href: '/token', label: '⚡ $ZOOSTR token' },
               ].map((item) => (
                 <Link
                   key={item.href}
