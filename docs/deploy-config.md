@@ -252,8 +252,11 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 235 | `feat/deploy-config-pr-table-235` | deploy-config.md: update PR merge table 233→234 rows; "After all 233 PRs" → "After all 235 PRs" |
 | 236 | `feat/receipt-sparkz-cta` | receipt/page.tsx: add "Launch your own empire" CTA → trysparkz.com |
 | 237 | `feat/deploy-config-pr-table-237` | deploy-config.md: update PR merge table 235→236 rows; "After all 235 PRs" → "After all 237 PRs" |
+| 238 | `feat/discover-patronage-link` | discover: add /patronage to quick links sidebar |
+| 239 | `feat/leaderboard-back-cta` | leaderboard: add bottom CTA strip — "Back the empire" → /back |
+| 240 | `feat/deploy-config-pr-table-240` | deploy-config.md: update PR merge table 237→239 rows; "After all 237 PRs" → "After all 240 PRs" |
 
-After all 237 PRs are merged to `main`:
+After all 240 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
