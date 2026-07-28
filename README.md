@@ -42,6 +42,7 @@ Clanker v4 `rewardBps` are immutable after deploy. Sparkz's fix: set the fee rec
 | `/vetted` | ZAO curation program — 50 slots/quarter, badge on homepage |
 | `/launch` | Sparkz Launcher config wizard (for creators launching their own token) |
 | `/zol` | Admin page: draft cast variants, empire stats, ZOL approve panel (unlisted) |
+| `GET /llm.txt` | Machine-readable context for AI agents — empire data, pages, API endpoints, framing rules, ZOL human-gate rule |
 
 ## Scripts
 
