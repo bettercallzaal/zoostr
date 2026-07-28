@@ -304,6 +304,24 @@ export default async function ReceiptPage() {
             Start boosting ↗
           </a>
         </div>
+
+        {/* Cross-sell: Sparkz platform */}
+        <div className="card-dark p-5 border-zao-border/30 opacity-80">
+          <div className="text-xs font-bold text-slate-600 uppercase tracking-widest mb-3">
+            Want to launch your own empire?
+          </div>
+          <p className="text-sm text-slate-500 mb-3">
+            Zoostr is the first Sparkz launch. Configure your own community fee split — 0xSplits, weekly receipts, no token required to start.
+          </p>
+          <a
+            href="https://trysparkz.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-4 py-2 rounded-lg bg-zao-violet/10 border border-zao-violet/20 text-zao-violet hover:bg-zao-violet/20 text-sm font-semibold transition-colors"
+          >
+            trysparkz.com →
+          </a>
+        </div>
       </div>
     </main>
   )
