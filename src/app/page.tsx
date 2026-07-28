@@ -350,6 +350,7 @@ export default async function Home() {
                 <SocialLink href="/split-wizard" label="Split-sheet wizard" internal />
                 <SocialLink href="/patronage" label="Patronage tiers" internal />
                 <SocialLink href="/vetted" label="Vetted by ZAO" internal />
+                <SocialLink href="/faq" label="FAQ" internal />
                 <SocialLink href="/launch" label="Creator launch" internal />
                 <SocialLink href="https://trysparkz.com" label="trysparkz.com ↗" />
               </div>
