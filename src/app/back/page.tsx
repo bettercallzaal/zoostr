@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
 const STRIPE_READY = Boolean(process.env.STRIPE_SECRET_KEY)
-const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Back the Empire')}&sub=${encodeURIComponent('No wallet. No gas. Card backing — coming soon.')}`
+const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Back the Empire')}&sub=${encodeURIComponent('No wallet. No gas. One-time founding backing — Spark $5 / Booster $25 / Patron $100.')}`
 
 export const metadata: Metadata = {
   title: 'Back the Empire — Zoostr',
@@ -29,21 +29,19 @@ const TIERS = [
     id: 'spark',
     label: 'Spark',
     price: 5,
-    period: 'mo',
     description: 'Get in the door. Your name on the leaderboard. Community recognition.',
     perks: [
       'Leaderboard entry — points start accumulating',
       'Community recognition badge',
       'Weekly receipt notifications',
     ],
-    cta: 'Back for $5/mo',
+    cta: 'Back for $5',
     highlight: false,
   },
   {
     id: 'booster',
     label: 'Booster',
     price: 25,
-    period: 'mo',
     description: 'The real deal. Meaningful fee-share weight + early access to Sparkz launches.',
     perks: [
       'Everything in Spark',
@@ -51,14 +49,13 @@ const TIERS = [
       'Early access to new Sparkz creator launches',
       'ZAO-backed community Discord access',
     ],
-    cta: 'Back for $25/mo',
+    cta: 'Back for $25',
     highlight: true,
   },
   {
     id: 'patron',
     label: 'Patron',
     price: 100,
-    period: 'mo',
     description: 'Top-tier backing. Maximum weight. Direct access to ZAO.',
     perks: [
       'Everything in Booster',
@@ -67,7 +64,7 @@ const TIERS = [
       '"ZAO Patron" label on your profile',
       'Invited to quarterly creator roundtables',
     ],
-    cta: 'Back for $100/mo',
+    cta: 'Back for $100',
     highlight: false,
   },
 ]
@@ -131,7 +128,7 @@ export default async function BackPage({
         </p>
 
         <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-          <span>✓ Cancel anytime</span>
+          <span>✓ One-time founding backing</span>
           <span>✓ Points accumulate immediately</span>
           <span>✓ Claim fee share at splits.org</span>
         </div>
@@ -192,7 +189,7 @@ export default async function BackPage({
               <h2 className="text-lg font-black text-white">{tier.label}</h2>
               <div className="flex items-baseline gap-1 mt-1">
                 <span className="text-3xl font-black text-white">${tier.price}</span>
-                <span className="text-sm text-slate-500">/{tier.period}</span>
+                <span className="text-sm text-slate-500">one-time</span>
               </div>
             </div>
 
