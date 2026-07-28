@@ -144,6 +144,29 @@ export default async function LeaderboardPage() {
           </div>
         )}
       </section>
+
+      {/* Bottom CTA strip */}
+      <div className="border-t border-zao-border bg-zao-card/40">
+        <div className="max-w-5xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-white">Not on the leaderboard yet?</p>
+            <p className="text-xs text-slate-500 mt-0.5">
+              Back the empire with a card — no wallet or gas needed. Points start accumulating immediately.
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/receipt"
+              className="text-xs text-slate-400 hover:text-white transition-colors"
+            >
+              Weekly receipt →
+            </Link>
+            <Link href="/back" className="btn-gold text-xs py-2 px-4">
+              Back the empire
+            </Link>
+          </div>
+        </div>
+      </div>
     </main>
   )
 }
