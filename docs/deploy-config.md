@@ -248,8 +248,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 231 | `feat/deploy-config-pr-table-231` | deploy-config.md: update PR merge table 229→230 rows; "After all 229 PRs" → "After all 231 PRs" |
 | 232 | `feat/llm-txt-fixes` | llm.txt: correct /examples count 8→9; Sparkz platform URL sparkz.xyz→trysparkz.com |
 | 233 | `feat/deploy-config-pr-table-233` | deploy-config.md: update PR merge table 231→232 rows; "After all 231 PRs" → "After all 233 PRs" |
+| 234 | `feat/sparkz-url-fix` | 8 files: all sparkz.xyz references → trysparkz.com (correct platform domain) |
+| 235 | `feat/deploy-config-pr-table-235` | deploy-config.md: update PR merge table 233→234 rows; "After all 233 PRs" → "After all 235 PRs" |
 
-After all 233 PRs are merged to `main`:
+After all 235 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
