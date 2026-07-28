@@ -208,8 +208,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 191 | `feat/deploy-config-pr-table-191` | deploy-config.md: update PR merge table 189→190 rows; "After all 189 PRs" → "After all 191 PRs" |
 | 192 | `feat/culture-circles` | /circles: Culture Circles — composable pre-token mutual backing graph; live Zoostr circle (ZABAL × Boostr × ZAO), lifecycle stages (Proposed→Federated), music-native collab edge, 3 templates, Farcaster signal CTA; sitemap + homepage nav |
 | 193 | `feat/deploy-config-pr-table-193` | deploy-config.md: update PR merge table 191→192 rows; "After all 191 PRs" → "After all 193 PRs" |
+| 194 | `feat/readme-full-pages-update` | README: full pages table update — 5→16 routes listed; add Stripe/Resend/SPLITS env vars; add "claim at splits.org" framing note |
+| 195 | `feat/deploy-config-pr-table-195` | deploy-config.md: update PR merge table 193→194 rows; "After all 193 PRs" → "After all 195 PRs" |
 
-After all 193 PRs are merged to `main`:
+After all 195 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
