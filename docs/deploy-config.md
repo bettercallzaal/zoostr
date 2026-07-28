@@ -220,8 +220,20 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 203 | `feat/deploy-config-pr-table-203` | deploy-config.md: update PR merge table 201→202 rows; "After all 201 PRs" → "After all 203 PRs" |
 | 204 | `feat/v1-scope-update` | docs/V1-SCOPE.md: update locked scope from 4→15 pages; add sparkz-principles.md, meme moment types, Stripe v1 clarification |
 | 205 | `feat/deploy-config-pr-table-205` | deploy-config.md: update PR merge table 203→204 rows; "After all 203 PRs" → "After all 205 PRs" |
+| 206 | `feat/llm-txt-zoostr` | zoostr.xyz/llm.txt: machine-readable context for AI agents — empire data, pages, scripts, fee structure, framing rules |
+| 207 | `feat/deploy-config-pr-table-207` | deploy-config.md: update PR merge table 205→206 rows; "After all 205 PRs" → "After all 207 PRs" |
+| 208 | `feat/frame-rewards-cta` | layout: global Farcaster Frame button 2 — "How to earn" → /rewards (replaces /#tokenomics anchor) |
+| 209 | `feat/deploy-config-pr-table-209` | deploy-config.md: update PR merge table 207→208 rows; "After all 207 PRs" → "After all 209 PRs" |
+| 210 | `feat/back-onetime-copy-fix` | /back page: remove /mo subscription framing — one-time founding backing; checkout uses mode:'payment' (subscriptions deferred) |
+| 211 | `feat/deploy-config-pr-table-211` | deploy-config.md: update PR merge table 209→210 rows; "After all 209 PRs" → "After all 211 PRs" |
+| 212 | `feat/homepage-footer-circles-back` | homepage footer: add /circles and /back to Site section — complete site map |
+| 213 | `feat/deploy-config-pr-table-213` | deploy-config.md: update PR merge table 211→212 rows; "After all 211 PRs" → "After all 213 PRs" |
+| 214 | `feat/readme-llm-txt-entry` | README: add /llm.txt to pages table |
+| 215 | `feat/deploy-config-pr-table-215` | deploy-config.md: update PR merge table 213→214 rows; "After all 213 PRs" → "After all 215 PRs" |
+| 216 | `feat/audius-auto-claiming-fix` | AudiusIntegration + audius/page.tsx + examples/page.tsx: fix "automatically" claims — Pull split requires claiming at splits.org |
+| 217 | `feat/deploy-config-pr-table-217` | deploy-config.md: update PR merge table 215→216 rows; "After all 215 PRs" → "After all 217 PRs" |
 
-After all 205 PRs are merged to `main`:
+After all 217 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
