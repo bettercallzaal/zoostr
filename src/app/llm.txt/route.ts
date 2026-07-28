@@ -47,7 +47,7 @@ For real-time data, fetch: https://boostr.itscashless.com/api/zabaal/stats
 - /back — Fan fiat backing: Spark $5/Booster $25/Patron $100 (Stripe when configured)
 - /advisor — 3-question split advisor (powered by sparkz.xyz)
 - /split-wizard — Music-native split sheet wizard → 0xSplits JSON
-- /patronage — Tokenless recurring membership builder
+- /patronage — Tokenless backing tier builder (v1 checkout is one-time; recurring billing is v2)
 - /examples — 8 spark templates showing the range of what Sparkz enables
 - /audius — Audius catalog → per-track split configurator
 - /settings — BYOK (bring-your-own Anthropic key for AI advisor)

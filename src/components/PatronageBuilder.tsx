@@ -105,7 +105,7 @@ function generateTemplate(tiers: Tier[], creatorHandle: string, projectName: str
     '',
     '## Implementation notes',
     '',
-    '- These are tokenless recurring memberships — no wallet/gas required from fans',
+    '- These are tokenless backing tiers — no wallet/gas required from fans',
     '- Activate card payments by setting STRIPE_SECRET_KEY on your Sparkz deployment',
     '- Leaderboard weight multipliers require the Sparkz snapshot script (`npm run snapshot`)',
     '- Community recognition labels sync to the Boostr leaderboard via the weekly snapshot',
@@ -113,7 +113,7 @@ function generateTemplate(tiers: Tier[], creatorHandle: string, projectName: str
     '## Farcaster / X copy (paste-ready)',
     '',
     tiers.map((t) =>
-      `**${t.name} ($${t.price}/mo):** ${t.description} | ${t.perks.slice(0, 2).join(' · ')}`
+      `**${t.name} ($${t.price} backing tier):** ${t.description} | ${t.perks.slice(0, 2).join(' · ')}`
     ).join('\n'),
   ]
   return lines.join('\n')
