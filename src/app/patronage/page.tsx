@@ -65,8 +65,8 @@ export default function PatronagePage() {
         </h1>
 
         <p className="text-slate-400 max-w-lg mx-auto leading-relaxed">
-          Recurring memberships that don&apos;t need a token. Fans pay $5, $25, or $100 a month
-          with a card. They earn leaderboard weight. You earn consistent income.{' '}
+          Backing tiers that don&apos;t need a token. Fans back at $5, $25, or $100
+          with a card. They earn leaderboard weight. You earn consistent support.{' '}
           <strong className="text-white">No crypto required on either side.</strong>
         </p>
 
