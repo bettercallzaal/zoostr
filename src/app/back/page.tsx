@@ -315,6 +315,12 @@ export default async function BackPage({
           </p>
           <div className="flex gap-4 text-xs">
             <Link
+              href="/token"
+              className="text-slate-500 hover:text-slate-400 transition-colors"
+            >
+              $ZOOSTR →
+            </Link>
+            <Link
               href="/leaderboard"
               className="text-slate-500 hover:text-slate-400 transition-colors"
             >
