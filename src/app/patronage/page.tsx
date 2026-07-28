@@ -3,16 +3,16 @@ import Link from 'next/link'
 import PatronageBuilder from '@/components/PatronageBuilder'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
-const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Patronage Tiers')}&sub=${encodeURIComponent('Tokenless recurring memberships — no wallet needed')}`
+const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Patronage Tiers')}&sub=${encodeURIComponent('Tokenless backing tiers — no wallet needed')}`
 
 export const metadata: Metadata = {
   title: 'Patronage Tiers — Sparkz by ZAO',
   description:
-    'Build tokenless recurring membership tiers for your community. Fans back with a card — no wallet, no gas. 88% of community builders monetize this way.',
+    'Build tokenless backing tiers for your community. Fans back with a card — no wallet, no gas. 88% of community builders monetize this way.',
   openGraph: {
     title: 'Patronage Tiers — Sparkz by ZAO',
     description:
-      'Tokenless recurring memberships. Fans pay with a card. Leaderboard weight. No crypto required.',
+      'Tokenless backing tiers. Fans back with a card. Leaderboard weight. No crypto required.',
     url: `${BASE_URL}/patronage`,
     images: [{ url: OG_URL, width: 1200, height: 630, alt: 'Patronage Tiers — Sparkz' }],
     type: 'website',
