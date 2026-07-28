@@ -276,8 +276,11 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 259 | `feat/boostr-page` | boostr/page.tsx: add /boostr — Boostr × Zoostr partnership page, 5-step earn flow, sitemap |
 | 260 | `feat/llm-txt-boostr` | llm.txt: add /boostr to key pages list |
 | 261 | `feat/deploy-config-pr-table-261` | deploy-config.md: update PR merge table 258→260 rows; "After all 258 PRs" → "After all 261 PRs" |
+| 262 | `feat/receipt-token-nav` | receipt/page.tsx: add footer nav — leaderboard, $ZOOSTR token, Boostr, rewards, back, FAQ |
+| 263 | `feat/discover-boostr-link` | discover: add Boostr platform to quick links sidebar |
+| 264 | `feat/deploy-config-pr-table-264` | deploy-config.md: update PR merge table 261→263 rows; "After all 261 PRs" → "After all 264 PRs" |
 
-After all 261 PRs are merged to `main`:
+After all 264 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
