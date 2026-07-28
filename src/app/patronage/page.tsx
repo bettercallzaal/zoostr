@@ -23,6 +23,17 @@ export const metadata: Metadata = {
     description: 'Tokenless memberships. Card payments. No wallet.',
     images: [OG_URL],
   },
+  other: {
+    'fc:frame': 'vNext',
+    'fc:frame:image': OG_URL,
+    'fc:frame:image:aspect_ratio': '1.91:1',
+    'fc:frame:button:1': '💎 Build backing tiers',
+    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:target': `${BASE_URL}/patronage`,
+    'fc:frame:button:2': '⚡ Back the empire',
+    'fc:frame:button:2:action': 'link',
+    'fc:frame:button:2:target': `${BASE_URL}/back`,
+  },
 }
 
 export default function PatronagePage() {

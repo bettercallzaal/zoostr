@@ -22,6 +22,17 @@ export const metadata: Metadata = {
     description: 'No wallet. No gas. Card backing for the empire.',
     images: [OG_URL],
   },
+  other: {
+    'fc:frame': 'vNext',
+    'fc:frame:image': OG_URL,
+    'fc:frame:image:aspect_ratio': '1.91:1',
+    'fc:frame:button:1': '⚡ Back the empire',
+    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:target': `${BASE_URL}/back`,
+    'fc:frame:button:2': '🏆 See the leaderboard',
+    'fc:frame:button:2:action': 'link',
+    'fc:frame:button:2:target': `${BASE_URL}/leaderboard`,
+  },
 }
 
 const TIERS = [
