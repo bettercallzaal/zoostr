@@ -240,8 +240,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 223 | `feat/deploy-config-pr-table-223` | deploy-config.md: update PR merge table 221→222 rows; "After all 221 PRs" → "After all 223 PRs" |
 | 224 | `feat/rewards-discover-frame-meta` | /rewards + /discover: add Farcaster Frame metadata (fc:frame tags) — both pages were missing Frame embeds |
 | 225 | `feat/deploy-config-pr-table-225` | deploy-config.md: update PR merge table 223→224 rows; "After all 223 PRs" → "After all 225 PRs" |
+| 226 | `feat/patronage-one-time-fix` | patronage/page.tsx + llm.txt + PatronageBuilder: remove 'recurring membership' claims — v1 checkout is one-time |
+| 227 | `feat/deploy-config-pr-table-227` | deploy-config.md: update PR merge table 225→226 rows; "After all 225 PRs" → "After all 227 PRs" |
 
-After all 225 PRs are merged to `main`:
+After all 227 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
