@@ -121,8 +121,8 @@ export default function AudiusIntegration() {
 
         <p className="text-slate-400 max-w-xl mx-auto text-lg leading-relaxed mb-4">
           Pull your tracks from Audius, set a split per track, and wire streaming income
-          directly to your 0xSplits contract — collaborators, producers, and fans all paid
-          on-chain, automatically.
+          directly to your 0xSplits contract — collaborators, producers, and fans all claim
+          their share at splits.org, on-chain.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
@@ -331,7 +331,7 @@ export default function AudiusIntegration() {
               step: '3',
               icon: '🏦',
               title: 'Deploy on-chain',
-              body: 'Export the 0xSplits JSON, paste into app.splits.org, deploy on Base. Streaming income routes to all recipients automatically — no invoicing.',
+              body: 'Export the 0xSplits JSON, paste into app.splits.org, deploy on Base. Streaming income routes to the splits contract — recipients claim their share at splits.org, no invoicing.',
             },
           ].map((item) => (
             <div
@@ -388,7 +388,7 @@ export default function AudiusIntegration() {
             <p>
               Sparkz wires <span className="text-gold-400 font-semibold">0xSplits</span> into the
               gap: a contract that receives streaming income and routes it to every contributor
-              proportionally, automatically, on-chain. The split is set before the track drops.
+              proportionally, on-chain. Recipients claim at splits.org — the split is set before the track drops.
               Both artists have reason to promote — every stream earns them both.
             </p>
             <p>

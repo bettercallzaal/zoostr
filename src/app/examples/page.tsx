@@ -53,7 +53,7 @@ const EXAMPLES: Example[] = [
     ],
     highlight: '90% to you, on-chain from day 1',
     why:
-      'Producer gets credited automatically. No chasing invoices. The treasury 5% funds the AI advisor that keeps the split tuned.',
+      'Producer gets credited on-chain. No chasing invoices. They claim their share at splits.org. The treasury 5% funds the AI advisor that keeps the split tuned.',
     wizardSeed: 'solo-ep',
   },
   {
