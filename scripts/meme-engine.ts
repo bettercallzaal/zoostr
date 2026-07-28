@@ -16,6 +16,7 @@
  *   NEYNAR_SIGNER_UUID    — the signer to post as
  *   VOLUME                — assumed daily trading volume USD (default: 10000)
  *   SPLITS_ADDRESS        — 0x... for receipt link in casts
+ *   TOKEN_ADDRESS         — set after clanker.world deploy; enables token-launch cast on first run
  *
  * Output:
  *   meme-engine-draft-YYYY-MM-DD.json  — machine-readable draft (for --approve)
@@ -39,6 +40,8 @@ const COMMUNITY_SHARE = Number(process.env.COMMUNITY_PCT ?? 50) / 100
 const SPLITS_ADDRESS = process.env.SPLITS_ADDRESS ?? null
 const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY ?? null
 const NEYNAR_SIGNER_UUID = process.env.NEYNAR_SIGNER_UUID ?? null
+// TOKEN_ADDRESS: set after clanker.world deploy; activates token-launch detection on first run
+const TOKEN_ADDRESS = process.env.TOKEN_ADDRESS ?? process.env.NEXT_PUBLIC_TOKEN_ADDRESS ?? null
 
 const today = new Date().toISOString().slice(0, 10)
 const DRAFT_MD = path.join(process.cwd(), `meme-engine-draft-${today}.md`)
@@ -86,7 +89,7 @@ async function fetchStats(): Promise<BoostrStats> {
 // ── Moment detection ─────────────────────────────────────────────────────────
 
 type Moment = {
-  type: 'weekly-receipt' | 'milestone-likes' | 'milestone-contributors' | 'new-top'
+  type: 'weekly-receipt' | 'milestone-likes' | 'milestone-contributors' | 'new-top' | 'token-launch'
   label: string
   detail: string
   urgency: 'high' | 'normal'
@@ -99,10 +102,22 @@ type PrevStats = {
   topUsername?: string | null
 }
 
-function detectMoments(stats: BoostrStats, prev: PrevStats = {}): Moment[] {
+function detectMoments(stats: BoostrStats, prev: PrevStats = {}, isPrevEmpty = false): Moment[] {
   const moments: Moment[] = []
   const { totalLikesGenerated: likes, activeContributorsCount: active, contributors } = stats
   const top = contributors[0]
+
+  // Token-launch: fires once — when TOKEN_ADDRESS is set and no prior snapshot exists.
+  // This is the first Monday after the clanker.world deploy. High urgency: replace normal receipt.
+  if (TOKEN_ADDRESS && isPrevEmpty) {
+    moments.push({
+      type: 'token-launch',
+      label: '$ZOOSTR is live — first cast',
+      detail: `Token deployed. ${active} empire builders in the pool. ${fmt(weeklyPool())}/week now claimable.`,
+      urgency: 'high',
+    })
+    return moments // token-launch is the only moment on launch day — skip all other detections
+  }
 
   // Always flag: weekly receipt ready (this is the primary Monday trigger)
   moments.push({
@@ -201,6 +216,43 @@ they didn't wait for a coin. they just showed up — liked the casts, boosted th
 now ${pool}/week flows into the pool — theirs to claim at splits.org. proportional to what they put in. forever.
 
 that's what "back the work" looks like.${receiptLink}`
+
+  // Token launch: first cast after $ZOOSTR deploys on clanker.world
+  if (moment.type === 'token-launch') {
+    const tokenLine = TOKEN_ADDRESS ? `\n\n$ZOOSTR: basescan.org/token/${TOKEN_ADDRESS}` : ''
+    const tlv1 = `$ZOOSTR is live on Base.
+
+${active} people built the ZABAL empire on Boostr before any token existed.
+
+every trade now pays them back. weekly. on-chain. claim at splits.org.
+
+${likes.toLocaleString()} total likes. ${pool}/week in the pool. ${active} contributors already eligible.${tokenLine}${splitsLink}
+
+zoostr.xyz`
+
+    const tlv2 = `the empire didn't wait for a coin.
+
+${active} people showed up for ZABAL — liked the casts, boosted the reach, kept the leaderboard alive — before $ZOOSTR existed.
+
+it's live now. and every trade pays them back.
+
+${pool}/week flows into the leaderboard pool — claim your share at splits.org. weighted by points. forever.${receiptLink}`
+
+    const tlv3 = `this is the first Sparkz launch.
+
+Sparkz builds culture first, token later — if at all. Zoostr is proof.
+
+${active} people built the empire before $ZOOSTR had a price. now it does. and it pays.
+
+back the empire → zoostr.xyz
+claim your share → splits.org${tokenLine}`
+
+    return [
+      { variant: 1, angle: 'announcement + live stats + links', cast: tlv1 },
+      { variant: 2, angle: 'empire story — community before token', cast: tlv2 },
+      { variant: 3, angle: 'Sparkz context — first launch framing', cast: tlv3 },
+    ]
+  }
 
   // Milestone: likes
   if (moment.type === 'milestone-likes') {
@@ -317,14 +369,18 @@ async function detectAndDraft() {
   // Load previous week's stats for milestone comparison (from splits-update.json._stats)
   const prevPath = path.join(process.cwd(), 'splits-update.json')
   let prev: PrevStats = {}
+  let isPrevEmpty = true
   if (fs.existsSync(prevPath)) {
     try {
       const raw = JSON.parse(fs.readFileSync(prevPath, 'utf-8'))
-      if (raw._stats) prev = raw._stats as PrevStats
+      if (raw._stats) {
+        prev = raw._stats as PrevStats
+        isPrevEmpty = false
+      }
     } catch { /* no prev stats */ }
   }
 
-  const moments = detectMoments(stats, prev)
+  const moments = detectMoments(stats, prev, isPrevEmpty)
   console.log(`\n📍 Moments detected (${moments.length}):`)
   moments.forEach((m, i) => console.log(`  ${i + 1}. [${m.urgency.toUpperCase()}] ${m.label}: ${m.detail}`))
 
