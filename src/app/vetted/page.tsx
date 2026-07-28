@@ -23,6 +23,17 @@ export const metadata: Metadata = {
     description: '1 of 50 ZAO-backed collabs per quarter. Curation as prestige.',
     images: [OG_URL],
   },
+  other: {
+    'fc:frame': 'vNext',
+    'fc:frame:image': OG_URL,
+    'fc:frame:image:aspect_ratio': '1.91:1',
+    'fc:frame:button:1': '🏅 Apply for ZAO vetting',
+    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:target': `${BASE_URL}/vetted`,
+    'fc:frame:button:2': '⭕ Culture circles',
+    'fc:frame:button:2:action': 'link',
+    'fc:frame:button:2:target': `${BASE_URL}/circles`,
+  },
 }
 
 const CRITERIA = [

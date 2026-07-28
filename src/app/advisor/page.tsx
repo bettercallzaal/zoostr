@@ -23,6 +23,17 @@ export const metadata: Metadata = {
     description: '3 questions → split recommendation + token timing.',
     images: [OG_URL],
   },
+  other: {
+    'fc:frame': 'vNext',
+    'fc:frame:image': OG_URL,
+    'fc:frame:image:aspect_ratio': '1.91:1',
+    'fc:frame:button:1': '🤖 Get split advice',
+    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:target': `${BASE_URL}/advisor`,
+    'fc:frame:button:2': '🎵 Build split sheet',
+    'fc:frame:button:2:action': 'link',
+    'fc:frame:button:2:target': `${BASE_URL}/split-wizard`,
+  },
 }
 
 export default function AdvisorPage() {
