@@ -348,6 +348,8 @@ export default async function DiscoverPage() {
               {[
                 { href: '/leaderboard', label: '📊 Full leaderboard' },
                 { href: '/receipt', label: '🧾 Weekly receipt' },
+                { href: '/rewards', label: '🏆 Empire rewards' },
+                { href: '/circles', label: '⭕ Culture Circles' },
                 { href: '/examples', label: '⚡ Spark templates' },
                 { href: '/audius', label: '🎵 Audius integration' },
                 { href: '/advisor', label: '🤖 AI advisor' },
