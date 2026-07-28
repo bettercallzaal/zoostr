@@ -341,6 +341,8 @@ export default async function Home() {
                 <SocialLink href="/leaderboard" label="Leaderboard" internal />
                 <SocialLink href="/discover" label="Discover" internal />
                 <SocialLink href="/rewards" label="Empire rewards" internal />
+                <SocialLink href="/circles" label="Culture Circles" internal />
+                <SocialLink href="/back" label="Back the empire" internal />
                 <SocialLink href="/receipt" label="Weekly receipt" internal />
                 <SocialLink href="/examples" label="Spark templates" internal />
                 <SocialLink href="/audius" label="Audius integration" internal />
