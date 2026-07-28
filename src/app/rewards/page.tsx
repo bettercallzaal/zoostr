@@ -24,6 +24,17 @@ export const metadata: Metadata = {
     description: 'Contribution → points → fee share. No governance.',
     images: [OG_URL],
   },
+  other: {
+    'fc:frame': 'vNext',
+    'fc:frame:image': OG_URL,
+    'fc:frame:image:aspect_ratio': '1.91:1',
+    'fc:frame:button:1': '🏆 Empire rewards',
+    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:target': `${BASE_URL}/rewards`,
+    'fc:frame:button:2': '🎯 How to earn',
+    'fc:frame:button:2:action': 'link',
+    'fc:frame:button:2:target': `${BASE_URL}/leaderboard`,
+  },
 }
 
 const DAILY_VOLUME = 10_000
