@@ -234,8 +234,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 217 | `feat/deploy-config-pr-table-217` | deploy-config.md: update PR merge table 215→216 rows; "After all 215 PRs" → "After all 217 PRs" |
 | 218 | `feat/rewards-checkout-onetime-fix` | rewards page + checkout API: remove /mo subscription labels — checkout is mode:payment (one-time); subscriptions deferred per V1-SCOPE |
 | 219 | `feat/deploy-config-pr-table-219` | deploy-config.md: update PR merge table 217→218 rows; "After all 217 PRs" → "After all 219 PRs" |
+| 220 | `feat/split-wizard-ipfs-attested-fix` | split-wizard/page.tsx + AudiusIntegration.tsx: "IPFS-attested" → "IPFS-attestable" — wizard exports JSON; IPFS upload is a manual user step |
+| 221 | `feat/deploy-config-pr-table-221` | deploy-config.md: update PR merge table 219→220 rows; "After all 219 PRs" → "After all 221 PRs" |
 
-After all 219 PRs are merged to `main`:
+After all 221 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
