@@ -261,8 +261,11 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 244 | `feat/back-faq-link` | back/page.tsx: add FAQ link to footer nav |
 | 245 | `feat/leaderboard-faq-link` | leaderboard/page.tsx: add inline FAQ link in description |
 | 246 | `feat/deploy-config-pr-table-246` | deploy-config.md: update PR merge table 243→245 rows; "After all 243 PRs" → "After all 246 PRs" |
+| 247 | `feat/homepage-faq-link` | homepage: add FAQ to SocialLinks explore section |
+| 248 | `feat/circles-back-link` | circles: add "Back the empire" → /back CTA in Zoostr circle sidebar |
+| 249 | `feat/deploy-config-pr-table-249` | deploy-config.md: update PR merge table 246→248 rows; "After all 246 PRs" → "After all 249 PRs" |
 
-After all 246 PRs are merged to `main`:
+After all 249 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
