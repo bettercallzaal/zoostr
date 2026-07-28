@@ -35,7 +35,7 @@ const BOOSTER_TIERS = [
   {
     id: 'spark',
     label: 'Spark',
-    price: '$5/mo',
+    price: '$5',
     multiplier: 1,
     desc: 'Base leaderboard entry. Points accumulate from day 1.',
     color: 'border-slate-600/50 bg-slate-800/20',
@@ -44,7 +44,7 @@ const BOOSTER_TIERS = [
   {
     id: 'booster',
     label: 'Booster',
-    price: '$25/mo',
+    price: '$25',
     multiplier: 5,
     desc: 'Boosted weight. 5× more fee-share per contribution point.',
     color: 'border-gold-500/50 bg-gold-500/5 glow-gold',
@@ -53,7 +53,7 @@ const BOOSTER_TIERS = [
   {
     id: 'patron',
     label: 'Patron',
-    price: '$100/mo',
+    price: '$100',
     multiplier: 20,
     desc: 'Maximum weight. Direct ZAO access. "ZAO Patron" label.',
     color: 'border-zao-violet/50 bg-zao-violet/5',

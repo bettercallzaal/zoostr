@@ -3,9 +3,9 @@ import { NextResponse } from 'next/server'
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
 
 const TIER_CONFIG: Record<string, { cents: number; label: string }> = {
-  spark: { cents: 500, label: 'Spark — $5/mo' },
-  booster: { cents: 2500, label: 'Booster — $25/mo' },
-  patron: { cents: 10000, label: 'Patron — $100/mo' },
+  spark: { cents: 500, label: 'Spark — $5 founding backing' },
+  booster: { cents: 2500, label: 'Booster — $25 founding backing' },
+  patron: { cents: 10000, label: 'Patron — $100 founding backing' },
 }
 
 export async function POST(request: Request) {
