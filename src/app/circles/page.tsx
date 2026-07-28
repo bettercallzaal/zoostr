@@ -208,6 +208,12 @@ export default function CirclesPage() {
               >
                 Join on Boostr ↗
               </a>
+              <Link
+                href="/back"
+                className="text-center text-xs py-2 px-4 rounded-lg border border-gold-500/30 text-gold-400 hover:border-gold-500/60 hover:bg-gold-500/5 transition-colors"
+              >
+                Back the empire →
+              </Link>
             </div>
           </div>
         </div>
