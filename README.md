@@ -8,6 +8,9 @@ Built and marketed by ZOL. Deployed by humans. [sparkz.xyz](https://sparkz.xyz)
 
 ---
 
+> **Status (2026-07-29): pre-launch.** The tokenomics below are a WORKING DRAFT, not final - the fee + supply splits are being finalized with launch partners (Empire Builder, Boostr / cashlessman) and the community. See `docs/tokenomics-draft.md`. Launch is via Clanker, gated on v5. Built tokenless-first (Sparkz Capsule): build the energy, then the token.
+
+
 ## What it does
 
 - **Live leaderboard** — pulls from the Boostr API (`/api/zabaal/stats`), ranks contributors by points, shows projected weekly earnings at any trading volume (ISR, refreshes every 60s)
