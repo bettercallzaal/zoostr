@@ -182,6 +182,24 @@ const EXAMPLES: Example[] = [
     wizardSeed: 'fan-backed',
   },
   {
+    id: 'tokenless-patronage',
+    category: 'solo',
+    emoji: '❤️',
+    title: 'Tokenless patronage',
+    tagline: 'All the backing. None of the coin.',
+    useCase:
+      'A creator who wants card-backed community support without launching a token. Fans back with a card, earn leaderboard points, get a fee-share slice — no wallet or speculative coin involved.',
+    split: [
+      { label: 'Creator', pct: 97, note: 'direct to your wallet via 0xSplits' },
+      { label: 'Community pool', pct: 1, note: 'backers earn this proportionally' },
+      { label: 'Sparkz treasury', pct: 2, note: 'AI advisor + compute upkeep' },
+    ],
+    highlight: '97% to you — the Sparkz creator-first default',
+    why:
+      'The coin is always optional. A tokenless spark builds community, generates proof-of-contribution collectables, and earns real fee share from any future trade — without the speculation. Start here. Add the coin when the culture earns it.',
+    wizardSeed: 'tokenless-patronage',
+  },
+  {
     id: 'zao-backed',
     category: 'zao',
     emoji: '⬡',
