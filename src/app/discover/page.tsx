@@ -359,6 +359,9 @@ export default async function DiscoverPage() {
               {[
                 { href: '/leaderboard', label: '📊 Full leaderboard' },
                 { href: '/receipt', label: '🧾 Weekly receipt' },
+                { href: '/how-it-works', label: '⚡ How Zoostr works' },
+                { href: '/token', label: '💎 $ZOOSTR token' },
+                { href: '/about', label: '📖 About Zoostr' },
                 { href: '/rewards', label: '🏆 Empire rewards' },
                 { href: '/circles', label: '⭕ Culture Circles' },
                 { href: '/examples', label: '⚡ Spark templates' },
