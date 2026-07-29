@@ -285,8 +285,19 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 268 | `feat/about-page` | about/page.tsx: add /about — ZABAL × Boostr origin story, creator cards, timeline, stats, culture-first principle, sitemap |
 | 269 | `feat/discover-new-links` | discover: add /how-it-works, /token, /about to quick links sidebar |
 | 270 | `feat/deploy-config-pr-table-270` | deploy-config.md: update PR merge table 267→269 rows; "After all 267 PRs" → "After all 270 PRs" |
+| 271 | `feat/how-it-works-about-pages` | add /how-it-works (6-step cycle, pool math, 50/25/25 split bar) + /about (ZABAL × Boostr origin story, timeline, creator bios, stats, culture-first) + sitemap + llm.txt (PR #249) |
+| 272 | `feat/deploy-config-pr-table-249-add` | deploy-config.md: update PR merge table 270→271 rows; "After all 270 PRs" → "After all 272 PRs" (PR #250) |
+| 273 | `feat/faq-page-and-discover-links` | add /faq (5-section FAQ, 14 Q&As) + discover sidebar: /how-it-works, /token, /about quick links + sitemap + llm.txt (PR #251) |
+| 274 | `feat/boostr-page-and-links` | add /boostr landing page (Boostr × Zoostr partnership, 5-step earn flow, API/CORS details) + homepage link in Boostr section + sitemap + llm.txt (PR #252) |
+| 275 | `feat/deploy-config-pr-table-273` | deploy-config.md: update PR merge table 272→274 rows; "After all 272 PRs" → "After all 275 PRs" (PR #253) |
+| 276 | `feat/homepage-faq-boostr-links` | homepage: add /faq link to Site section SocialLinks explore footer (PR #254) |
+| 277 | `feat/leaderboard-cta-footer-nav` | leaderboard: add bottom CTA strip ("Not on leaderboard yet?") + footer nav (/token, /receipt, /rewards, /how-it-works, /faq, /back) (PR #255) |
+| 278 | `feat/receipt-footer-nav` | receipt: add footer nav (/leaderboard, /token, /boostr, /rewards, /faq, /back) (PR #256) |
+| 279 | `feat/deploy-config-pr-table-276` | deploy-config.md: update PR merge table 275→278 rows; "After all 275 PRs" → "After all 279 PRs" (PR #257) |
+| 280 | `feat/rewards-back-footer-nav` | /rewards footer: add leaderboard, token, how-it-works, faq links; /back footer: consistent 6-link chip row; llm.txt: date 2026-07-29 + /how-it-works, /about, /faq, /boostr pages (PR #258) |
+| 281 | `feat/deploy-config-pr-table-280` | deploy-config.md: update PR merge table 279→280 rows; "After all 279 PRs" → "After all 281 PRs" |
 
-After all 270 PRs are merged to `main`:
+After all 281 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
