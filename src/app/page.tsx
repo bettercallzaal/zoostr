@@ -343,6 +343,7 @@ export default async function Home() {
                 <SocialLink href="/how-it-works" label="How it works" internal />
                 <SocialLink href="/token" label="$ZOOSTR token" internal />
                 <SocialLink href="/about" label="About Zoostr" internal />
+                <SocialLink href="/faq" label="FAQ" internal />
                 <SocialLink href="/rewards" label="Empire rewards" internal />
                 <SocialLink href="/circles" label="Culture Circles" internal />
                 <SocialLink href="/back" label="Back the empire" internal />
