@@ -49,23 +49,6 @@ export default async function Home() {
         </section>
 
         <BoostBoard initial={stats} />
-
-        {/* Footer teaser */}
-        <footer className="mt-16 border-t border-zoostr-line pt-8">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-zoostr-dim">
-            Three tracks coming
-          </p>
-          <p className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
-            Artist <span className="text-zoostr-line">/</span> Builder{' '}
-            <span className="text-zoostr-line">/</span> Creator
-          </p>
-          <p className="mt-3 max-w-md font-mono text-xs leading-relaxed text-zoostr-dim">
-            Tap in by submitting or voting. Not open yet - the leaderboard comes first.
-          </p>
-          <p className="mt-10 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-zoostr-dim">
-            Live from the Boostr API · refreshed every 60s
-          </p>
-        </footer>
       </div>
     </main>
   )
