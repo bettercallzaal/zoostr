@@ -285,8 +285,10 @@ Merge each PR to `main` in order before deploying. They are stacked and depend o
 | 268 | `feat/about-page` | about/page.tsx: add /about — ZABAL × Boostr origin story, creator cards, timeline, stats, culture-first principle, sitemap |
 | 269 | `feat/discover-new-links` | discover: add /how-it-works, /token, /about to quick links sidebar |
 | 270 | `feat/deploy-config-pr-table-270` | deploy-config.md: update PR merge table 267→269 rows; "After all 267 PRs" → "After all 270 PRs" |
+| 271 | `feat/how-it-works-about-pages` | add /how-it-works (6-step cycle, pool math, 50/25/25 split bar) + /about (ZABAL × Boostr origin story, timeline, creator bios, stats, culture-first principle) + sitemap + llm.txt (PR #249) |
+| 272 | `feat/deploy-config-pr-table-271` | deploy-config.md: update PR merge table 270→271 rows; "After all 270 PRs" → "After all 272 PRs" |
 
-After all 270 PRs are merged to `main`:
+After all 272 PRs are merged to `main`:
 - Connect bettercallzaal/zoostr to Vercel (Zaal makes the Vercel)
 - Set env vars (see "Vercel env vars" below)
 - Then proceed to Steps 1–6 in this doc
