@@ -453,9 +453,12 @@ export default async function RewardsPage() {
           <p className="text-xs text-slate-600">
             Reward projections at ${(DAILY_VOLUME / 1000).toFixed(0)}k/day volume · Not financial advice · Perks = what holders enjoy today.
           </p>
-          <div className="flex gap-4 text-xs">
+          <div className="flex flex-wrap gap-4 text-xs">
+            <Link href="/leaderboard" className="text-slate-500 hover:text-slate-400 transition-colors">Leaderboard →</Link>
             <Link href="/receipt" className="text-slate-500 hover:text-slate-400 transition-colors">Receipt →</Link>
-            <Link href="/discover" className="text-slate-500 hover:text-slate-400 transition-colors">Discover →</Link>
+            <Link href="/token" className="text-slate-500 hover:text-slate-400 transition-colors">$ZOOSTR token →</Link>
+            <Link href="/how-it-works" className="text-slate-500 hover:text-slate-400 transition-colors">How it works →</Link>
+            <Link href="/faq" className="text-slate-500 hover:text-slate-400 transition-colors">FAQ →</Link>
           </div>
         </div>
       </div>

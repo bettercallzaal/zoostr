@@ -3,7 +3,7 @@ export const dynamic = 'force-static'
 const CONTENT = `# Zoostr — Machine-Readable Context
 
 > This file is written for AI agents and LLM assistants that interact with zoostr.xyz.
-> Last updated: 2026-07-28. Source: zoostr.xyz/llm.txt
+> Last updated: 2026-07-29. Source: zoostr.xyz/llm.txt
 > For the generic Sparkz platform context, see: trysparkz.com/llm.txt
 
 ---
@@ -54,6 +54,10 @@ For real-time data, fetch: https://boostr.itscashless.com/api/zabaal/stats
 - /vetted — ZAO vetting program (50 slots/quarter)
 - /launch — Sparkz Launcher: configure + export your own creator coin
 - /token — $ZOOSTR token explainer: Base chain, Clanker v4, 1% fee tier, 50/25/25 split (community/creator/treasury), 0xSplits pull model, "boost → rank → claim" 3-step flow
+- /how-it-works — 6-step Zoostr cycle (follow ZABAL → connect Boostr → like casts → weekly snapshot → 0xSplits update → claim); pool math table, 50/25/25 split bar
+- /about — ZABAL × Boostr origin story: creator bios, 5-event timeline, empire stats, culture-before-coin principle
+- /faq — 5-section FAQ (basics, fee share, token, boosting/backing, ZAO+Sparkz); 14 Q&As; sticky nav
+- /boostr — Boostr × Zoostr partnership: 5-step earn flow, ZABAL + Aziz creator cards, API/CORS proxy details
 
 ---
 

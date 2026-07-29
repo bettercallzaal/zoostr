@@ -308,25 +308,13 @@ export default async function BackPage({
 
       {/* Footer */}
       <div className="border-t border-zao-border">
-        <div className="max-w-3xl mx-auto px-4 py-8 flex flex-wrap items-center justify-between gap-4">
-          <p className="text-xs text-slate-600">
-            Backing converts to leaderboard points. Fee share is proportional to your total points.
-            Not financial advice.
-          </p>
-          <div className="flex gap-4 text-xs">
-            <Link
-              href="/leaderboard"
-              className="text-slate-500 hover:text-slate-400 transition-colors"
-            >
-              Leaderboard →
-            </Link>
-            <Link
-              href="/receipt"
-              className="text-slate-500 hover:text-slate-400 transition-colors"
-            >
-              Weekly receipt →
-            </Link>
-          </div>
+        <div className="max-w-3xl mx-auto px-4 py-6 flex flex-wrap gap-4 text-xs text-slate-500">
+          <Link href="/leaderboard" className="hover:text-slate-400 transition-colors">Leaderboard</Link>
+          <Link href="/receipt" className="hover:text-slate-400 transition-colors">Weekly receipt</Link>
+          <Link href="/token" className="hover:text-slate-400 transition-colors">$ZOOSTR token</Link>
+          <Link href="/rewards" className="hover:text-slate-400 transition-colors">Rewards</Link>
+          <Link href="/how-it-works" className="hover:text-slate-400 transition-colors">How it works</Link>
+          <Link href="/faq" className="hover:text-slate-400 transition-colors">FAQ</Link>
         </div>
       </div>
     </main>
