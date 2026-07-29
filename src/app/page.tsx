@@ -367,6 +367,7 @@ export default async function Home() {
             <div>
               <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Boostr</h4>
               <div className="space-y-2">
+                <SocialLink href="/boostr" label="Boostr × Zoostr" internal />
                 <SocialLink href="https://boostr.itscashless.com" label="boostr.itscashless.com" />
                 <SocialLink href="https://warpcast.com/cashlessman.eth" label="@cashlessman.eth on Farcaster" />
               </div>
