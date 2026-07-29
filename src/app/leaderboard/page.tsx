@@ -133,7 +133,7 @@ export default async function LeaderboardPage() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 pb-24">
+      <section className="max-w-5xl mx-auto px-4 pb-16">
         {contributors.length > 0 ? (
           <EarningsCalc contributors={contributors} totalPoints={total} minPoints={MIN_POINTS} />
         ) : (
@@ -144,6 +144,44 @@ export default async function LeaderboardPage() {
           </div>
         )}
       </section>
+
+      {/* Bottom CTA strip */}
+      <div className="border-t border-zao-border bg-zao-card/40">
+        <div className="max-w-5xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-white">Not on the leaderboard yet?</p>
+            <p className="text-xs text-slate-500 mt-0.5">
+              Back the empire with a card — no wallet or gas needed. Points start accumulating immediately.
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <Link href="/faq" className="text-xs text-slate-400 hover:text-white transition-colors">
+              FAQ →
+            </Link>
+            <Link href="/receipt" className="text-xs text-slate-400 hover:text-white transition-colors">
+              Weekly receipt →
+            </Link>
+            <Link
+              href="/back"
+              className="px-4 py-2 rounded-lg bg-gold-500 hover:bg-gold-400 text-black text-xs font-bold transition-colors"
+            >
+              Back the empire
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer nav */}
+      <div className="border-t border-zao-border">
+        <div className="max-w-5xl mx-auto px-4 py-6 flex flex-wrap gap-4 text-xs text-slate-500">
+          <Link href="/token" className="hover:text-slate-400 transition-colors">$ZOOSTR token</Link>
+          <Link href="/receipt" className="hover:text-slate-400 transition-colors">Weekly receipt</Link>
+          <Link href="/rewards" className="hover:text-slate-400 transition-colors">Rewards</Link>
+          <Link href="/how-it-works" className="hover:text-slate-400 transition-colors">How it works</Link>
+          <Link href="/faq" className="hover:text-slate-400 transition-colors">FAQ</Link>
+          <Link href="/back" className="hover:text-slate-400 transition-colors">Back it</Link>
+        </div>
+      </div>
     </main>
   )
 }
