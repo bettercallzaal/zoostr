@@ -3,24 +3,13 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
 export const revalidate = 60
 
-const MIN_POINTS = 10
-
+// Same locked palette as the landing page: ink, bone, one accent.
 const C = {
-  bg: '#0a0a14',
-  card: '#12121e',
-  border: '#1e1e38',
-  gold: '#fbbf24',
-  goldDim: '#fbbf2433',
-  silver: '#94a3b8',
-  silverDim: '#94a3b833',
-  bronze: '#b45309',
-  bronzeDim: '#b4530933',
-  purple: '#8b5cf6',
-  green: '#4ade80',
-  greenBg: '#052e16',
-  greenBorder: '#166534',
-  text: '#e2e8f0',
-  muted: '#64748b',
+  ink: '#08080a',
+  line: '#1c1c19',
+  bone: '#ede9e0',
+  dim: '#7e7a70',
+  acid: '#c2f53c',
 }
 
 type User = {
@@ -32,38 +21,38 @@ type User = {
 }
 
 function initial(username: string): string {
-  return username.replace(/[^a-zA-Z]/g, '')[0]?.toUpperCase() ?? '?'
+  return username.replace(/[^a-zA-Z0-9]/g, '')[0]?.toUpperCase() ?? '?'
 }
 
-function pct(pts: number, total: number): string {
-  return total > 0 ? ((pts / total) * 100).toFixed(1) : '0.0'
-}
+const fmt = (n: number) => n.toLocaleString('en-US')
 
-export async function GET() {
+export async function GET(request: Request) {
+  const [syne, monoRegular, monoSemi] = await Promise.all(
+    ['Syne-ExtraBold.ttf', 'IBMPlexMono-Regular.ttf', 'IBMPlexMono-SemiBold.ttf'].map((f) =>
+      fetch(new URL(`/fonts/${f}`, request.url)).then((r) => r.arrayBuffer())
+    )
+  )
+
   // Fetch live data inline (edge-safe, no lib imports)
-  let top3: User[] = []
-  let empireStats = { active: 0, allTime: 0, likes: 0, casts: 0 }
-  let total = 0
+  let users: User[] = []
+  let empire = { active: 0, likes: 0, casts: 0 }
 
   try {
-    const res = await fetch('https://boostr.itscashless.com/api/zabaal/stats', {
+    const statsUrl =
+      process.env.BOOSTR_STATS_URL ?? 'https://boostr.itscashless.com/api/zabaal/stats'
+    const res = await fetch(statsUrl, {
       headers: { Accept: 'application/json' },
     })
     if (res.ok) {
       const raw = await res.json()
       const s = raw?.stats
       if (s) {
-        const users: User[] = (s.zabalUsers ?? [])
-          .filter((u: User) => u.zabalEnabled && u.zabalLikesCount >= MIN_POINTS)
-          .sort(
-            (a: User, b: User) =>
-              b.zabalLikesCount - a.zabalLikesCount || b.followers_count - a.followers_count
-          )
-        top3 = users.slice(0, 3)
-        total = users.reduce((sum: number, u: User) => sum + u.zabalLikesCount, 0)
-        empireStats = {
+        users = (s.zabalUsers ?? []).sort(
+          (a: User, b: User) =>
+            b.zabalLikesCount - a.zabalLikesCount || b.followers_count - a.followers_count
+        )
+        empire = {
           active: s.activeContributorsCount ?? 0,
-          allTime: s.allTimeContributorsCount ?? 0,
           likes: s.totalLikesGenerated ?? 0,
           casts: s.totalCastsLiked ?? 0,
         }
@@ -73,11 +62,13 @@ export async function GET() {
     // render with empty data rather than failing
   }
 
-  // Podium display order: 2nd (left), 1st (center), 3rd (right)
-  const displayOrder = [1, 0, 2]
-  const podiumColor = [C.gold, C.silver, C.bronze]
-  const podiumDim = [C.goldDim, C.silverDim, C.bronzeDim]
-  const podiumHeight = [176, 136, 112] // px for rank 1, 2, 3
+  // Competition ranking so ties share a number, exactly like the page
+  const top = users.slice(0, 6).map((u, i) => ({
+    ...u,
+    rank: 1 + users.filter((o) => o.zabalLikesCount > u.zabalLikesCount).length,
+    tied: users.filter((o) => o.zabalLikesCount === u.zabalLikesCount).length > 1,
+    i,
+  }))
 
   return new ImageResponse(
     (
@@ -87,237 +78,194 @@ export async function GET() {
           flexDirection: 'column',
           width: '1200px',
           height: '630px',
-          background: C.bg,
-          padding: '44px 52px 36px',
-          fontFamily: 'Arial, Helvetica, sans-serif',
+          background: C.ink,
+          padding: '46px 56px 40px',
+          fontFamily: 'IBM Plex Mono',
           boxSizing: 'border-box',
         }}
       >
-        {/* Header */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            marginBottom: '28px',
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div
-              style={{
-                fontSize: '72px',
-                fontWeight: 900,
-                color: C.gold,
-                letterSpacing: '-3px',
-                lineHeight: '1',
-              }}
-            >
-              ZOOSTR
-            </div>
-            <div
-              style={{
-                fontSize: '18px',
-                color: C.purple,
-                letterSpacing: '3px',
-                marginTop: '6px',
-              }}
-            >
-              ZABAL × BOOSTR · A SPARKZ LAUNCH
-            </div>
-          </div>
-
-          {/* Live badge */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              background: C.greenBg,
-              border: `1px solid ${C.greenBorder}`,
-              borderRadius: '20px',
-              padding: '8px 18px',
-            }}
-          >
-            <div
-              style={{
-                width: '8px',
-                height: '8px',
-                borderRadius: '50%',
-                background: C.green,
-              }}
-            />
-            <div
-              style={{
-                color: C.green,
-                fontSize: '14px',
-                fontWeight: 700,
-                letterSpacing: '1.5px',
-              }}
-            >
-              LIVE
-            </div>
-          </div>
-        </div>
-
-        {/* Podium */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'flex-end',
-            gap: '20px',
-            flex: 1,
-          }}
-        >
-          {displayOrder.map((rank) => {
-            const user = top3[rank]
-            if (!user)
-              return (
-                <div key={rank} style={{ display: 'flex', width: '260px' }} />
-              )
-            const color = podiumColor[rank]
-            const dim = podiumDim[rank]
-            const isFirst = rank === 0
-            const circleSz = isFirst ? 84 : 68
-
-            return (
-              <div
-                key={user.fid}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '10px',
-                  width: '260px',
-                }}
-              >
-                {/* Avatar circle */}
-                <div
-                  style={{
-                    width: `${circleSz}px`,
-                    height: `${circleSz}px`,
-                    borderRadius: '50%',
-                    background: dim,
-                    border: `2px solid ${color}`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: isFirst ? '30px' : '24px',
-                    fontWeight: 900,
-                    color: color,
-                  }}
-                >
-                  {initial(user.username)}
-                </div>
-
-                {/* Name + stats */}
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: '3px',
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: isFirst ? '17px' : '15px',
-                      color: C.text,
-                      fontWeight: 700,
-                    }}
-                  >
-                    @{user.username}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: isFirst ? '24px' : '20px',
-                      fontWeight: 900,
-                      color: color,
-                    }}
-                  >
-                    {user.zabalLikesCount} pts
-                  </div>
-                  <div style={{ fontSize: '13px', color: C.purple }}>
-                    {pct(user.zabalLikesCount, total)}% fee share
-                  </div>
-                </div>
-
-                {/* Podium block */}
-                <div
-                  style={{
-                    display: 'flex',
-                    width: '100%',
-                    height: `${podiumHeight[rank]}px`,
-                    background: dim,
-                    border: `1px solid ${color}44`,
-                    borderRadius: '8px 8px 0 0',
-                    alignItems: 'flex-end',
-                    justifyContent: 'center',
-                    paddingBottom: '10px',
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: '40px',
-                      fontWeight: 900,
-                      color: `${color}33`,
-                    }}
-                  >
-                    #{rank + 1}
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-
-        {/* Bottom stats bar */}
+        {/* Masthead */}
         <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            marginTop: '20px',
-            paddingTop: '16px',
-            borderTop: `1px solid ${C.border}`,
+            borderBottom: `1px solid ${C.line}`,
+            paddingBottom: '22px',
           }}
         >
-          <div style={{ display: 'flex', gap: '36px' }}>
-            {[
-              { label: 'ACTIVE BOOSTERS', value: empireStats.active },
-              { label: 'TOTAL LIKES', value: empireStats.likes },
-              { label: 'CASTS LIKED', value: empireStats.casts },
-            ].map(({ label, value }) => (
+          <div
+            style={{
+              display: 'flex',
+              fontFamily: 'Syne',
+              fontSize: '44px',
+              color: C.bone,
+              letterSpacing: '-1.5px',
+            }}
+          >
+            ZOOSTR
+            <span style={{ color: C.acid }}>.</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div
+              style={{ width: '8px', height: '8px', borderRadius: '50%', background: C.acid }}
+            />
+            <div style={{ fontSize: '15px', color: C.dim, letterSpacing: '3px' }}>
+              SPARKZ 001 · ZABAL X BOOSTR
+            </div>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', flex: 1, paddingTop: '38px' }}>
+          {/* Left: the claim + the live counters */}
+          <div style={{ display: 'flex', flexDirection: 'column', width: '480px' }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                fontFamily: 'Syne',
+                fontSize: '62px',
+                lineHeight: '0.94',
+                letterSpacing: '-2px',
+              }}
+            >
+              <div style={{ display: 'flex', color: C.bone }}>The empire,</div>
+              <div style={{ display: 'flex', color: C.dim }}>before</div>
+              <div style={{ display: 'flex', color: C.dim }}>the token.</div>
+            </div>
+
+            <div style={{ display: 'flex', gap: '38px', marginTop: '44px' }}>
+              {[
+                { label: 'CONTRIBUTORS', value: empire.active },
+                { label: 'BOOSTS', value: empire.likes },
+                { label: 'CASTS', value: empire.casts },
+              ].map(({ label, value }) => (
+                <div key={label} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div style={{ fontSize: '12px', color: C.dim, letterSpacing: '2px' }}>
+                    {label}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'Syne',
+                      fontSize: '34px',
+                      color: C.bone,
+                      lineHeight: '1',
+                    }}
+                  >
+                    {fmt(value)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: the board */}
+          <div style={{ display: 'flex', flexDirection: 'column', flex: 1, paddingLeft: '48px' }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                fontSize: '12px',
+                color: C.dim,
+                letterSpacing: '2.5px',
+                marginBottom: '14px',
+              }}
+            >
+              <div style={{ display: 'flex' }}>LIVE LEADERBOARD</div>
+              <div style={{ display: 'flex' }}>BOOSTS</div>
+            </div>
+
+            {top.map((u) => (
               <div
-                key={label}
-                style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}
+                key={u.fid}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '16px',
+                  padding: '11px 0',
+                  borderBottom: `1px solid ${C.line}`,
+                }}
               >
                 <div
                   style={{
-                    fontSize: '26px',
-                    fontWeight: 700,
-                    color: C.gold,
-                    lineHeight: '1',
+                    display: 'flex',
+                    width: '34px',
+                    fontSize: '15px',
+                    color: C.dim,
                   }}
                 >
-                  {value.toLocaleString()}
+                  {u.tied ? '=' : ''}
+                  {String(u.rank).padStart(2, '0')}
                 </div>
                 <div
                   style={{
-                    fontSize: '11px',
-                    color: C.muted,
-                    letterSpacing: '1.5px',
+                    display: 'flex',
+                    width: '34px',
+                    height: '34px',
+                    borderRadius: '50%',
+                    border: `1px solid ${C.line}`,
+                    background: '#111110',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontFamily: 'Syne',
+                    fontSize: '15px',
+                    color: C.dim,
                   }}
                 >
-                  {label}
+                  {initial(u.username)}
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flex: 1,
+                    fontSize: '19px',
+                    color: C.bone,
+                  }}
+                >
+                  @{u.username}
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    fontFamily: 'Syne',
+                    fontSize: '24px',
+                    color: u.i === 0 ? C.acid : C.bone,
+                  }}
+                >
+                  {fmt(u.zabalLikesCount)}
                 </div>
               </div>
             ))}
           </div>
-          <div style={{ fontSize: '16px', color: C.muted }}>zoostr.xyz</div>
+        </div>
+
+        {/* Footline */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            borderTop: `1px solid ${C.line}`,
+            paddingTop: '18px',
+            marginTop: '8px',
+            fontSize: '13px',
+            color: C.dim,
+            letterSpacing: '2px',
+          }}
+        >
+          <div style={{ display: 'flex' }}>TOKENLESS-FIRST · SPLITS STILL OPEN</div>
+          <div style={{ display: 'flex' }}>ZOOSTR.XYZ</div>
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    {
+      width: 1200,
+      height: 630,
+      fonts: [
+        { name: 'Syne', data: syne, style: 'normal', weight: 800 },
+        { name: 'IBM Plex Mono', data: monoRegular, style: 'normal', weight: 400 },
+        { name: 'IBM Plex Mono', data: monoSemi, style: 'normal', weight: 600 },
+      ],
+    }
   )
 }

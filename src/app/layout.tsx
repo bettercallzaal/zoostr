@@ -17,7 +17,12 @@ const plexMono = IBM_Plex_Mono({
   display: 'swap',
 })
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
+// zoostr.xyz does not resolve yet, so fall back to the Vercel production URL
+// before the custom domain - a share card pointing at dead DNS renders nothing.
+const VERCEL_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : null
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? VERCEL_URL ?? 'https://zoostr.xyz'
 const OG_IMAGE = `${BASE_URL}/api/og`
 
 const DESCRIPTION =
