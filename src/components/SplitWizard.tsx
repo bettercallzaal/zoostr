@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import type { WizardSeedEntry } from '@/lib/examples'
 
 const ROLES = [
   'Artist',
@@ -207,14 +208,26 @@ function generateSplitsJson(cols: Collaborator[]): string {
   )
 }
 
-export default function SplitWizard() {
+function seedToCols(entries: WizardSeedEntry[]): Collaborator[] {
+  return entries.map((e) => ({ id: uid(), name: e.name, role: e.role, wallet: '', pct: e.pct }))
+}
+
+const DEFAULT_COLS: Collaborator[] = [
+  { id: uid(), name: '', role: 'Artist', wallet: '', pct: 50 },
+  { id: uid(), name: '', role: 'Producer', wallet: '', pct: 50 },
+]
+
+export default function SplitWizard({
+  templateSeed,
+}: {
+  templateSeed?: { title: string; entries: WizardSeedEntry[] }
+}) {
   const today = new Date().toISOString().split('T')[0]
-  const [projectName, setProjectName] = useState('')
+  const [projectName, setProjectName] = useState(templateSeed?.title ?? '')
   const [projectDate, setProjectDate] = useState(today)
-  const [cols, setCols] = useState<Collaborator[]>([
-    { id: uid(), name: '', role: 'Artist', wallet: '', pct: 50 },
-    { id: uid(), name: '', role: 'Producer', wallet: '', pct: 50 },
-  ])
+  const [cols, setCols] = useState<Collaborator[]>(
+    templateSeed ? seedToCols(templateSeed.entries) : DEFAULT_COLS
+  )
   const [step, setStep] = useState<0 | 1 | 2>(0)
   const [copied, setCopied] = useState<'sheet' | 'json' | null>(null)
 
