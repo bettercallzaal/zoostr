@@ -3,7 +3,7 @@ export const dynamic = 'force-static'
 const CONTENT = `# Zoostr — Machine-Readable Context
 
 > This file is written for AI agents and LLM assistants that interact with zoostr.xyz.
-> Last updated: 2026-07-28. Source: zoostr.xyz/llm.txt
+> Last updated: 2026-08-22. Source: zoostr.xyz/llm.txt
 > For the generic Sparkz platform context, see: trysparkz.com/llm.txt
 
 ---
@@ -46,9 +46,9 @@ For real-time data, fetch: https://boostr.itscashless.com/api/zabaal/stats
 - /circles — Culture Circles: composable backing; Zoostr is the first live circle
 - /back — Fan fiat backing: Spark $5/Booster $25/Patron $100 (Stripe when configured)
 - /advisor — 3-question split advisor (powered by trysparkz.com)
-- /split-wizard — Music-native split sheet wizard → 0xSplits JSON
+- /split-wizard — Music-native split sheet wizard → 0xSplits JSON; accepts ?template=<id> to pre-seed from /examples
 - /patronage — Tokenless backing tier builder (v1 checkout is one-time; recurring billing is v2)
-- /examples — 9 spark templates showing the range of what Sparkz enables
+- /examples — 9 spark templates (solo EP, collab single, band album, group crowdfund, tour/event, podcast collab, fan-backed EP, tokenless patronage, ZAO-backed launch); filterable by category (solo, collab, crowdfund, community, ZAO-backed); each "Use this template →" link pre-seeds /split-wizard
 - /audius — Audius catalog → per-track split configurator
 - /settings — BYOK (bring-your-own Anthropic key for AI advisor)
 - /vetted — ZAO vetting program (50 slots/quarter)
