@@ -41,8 +41,8 @@ function recommend(q1: Q1, q2: Q2, q3: Q3): Rec {
       headline: 'Patronage model. Fund the work, not the coin.',
       reasoning:
         'Crowdfunding works best without a speculative token. 80% of any fees go to the backer pool (equal share by contribution), 10% to the creator, 10% to the project treasury. Add a token only if the community pulls for it after the work ships — premature tokens often crash before the project is done.',
-      ctaLabel: 'Configure your structure →',
-      ctaHref: '/launch',
+      ctaLabel: 'Build your crowdfund split →',
+      ctaHref: '/split-wizard?template=group-crowdfund',
     }
   }
 
@@ -56,8 +56,8 @@ function recommend(q1: Q1, q2: Q2, q3: Q3): Rec {
         'Collab tokens only work when every co-creator has agreed to the split before launch. Set roles (artist / producer / manager), lock percentages into 0xSplits. This is the music-native differentiator — it kills 70% of revenue disputes. The 70% creator allocation routes through 0xSplits so each co-creator claims their own share directly.',
       warning:
         'Never launch a collab token without the split-sheet signed. On-chain is the only source of truth. Configure it in the Sparkz launcher before going live.',
-      ctaLabel: 'Configure your split →',
-      ctaHref: '/launch',
+      ctaLabel: 'Build your split sheet →',
+      ctaHref: '/split-wizard?template=collab-single',
     }
   }
 
@@ -74,8 +74,8 @@ function recommend(q1: Q1, q2: Q2, q3: Q3): Rec {
         q1 === 'collective'
           ? 'Tokenless collective: community earns via collectables and patronage tiers. Treasury funds governance. Add a token only if the community demands it after the culture is established.'
           : 'Tokenless is a valid long-term choice. 97% of trading fees stay with you. Community earns on-chain collectables as proof of contribution. No speculation, no FUD.',
-      ctaLabel: 'Configure your split →',
-      ctaHref: '/launch',
+      ctaLabel: 'Build your patronage structure →',
+      ctaHref: '/split-wizard?template=tokenless-patronage',
     }
   }
 
