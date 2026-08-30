@@ -3,7 +3,6 @@ import Link from 'next/link'
 import LaunchForm from '@/components/launch/LaunchForm'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
-const SPARKZ_URL = process.env.NEXT_PUBLIC_SPARKZ_URL ?? 'https://trysparkz.com'
 const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Launch your token')}&sub=${encodeURIComponent('Configure your split. Export. One click to deploy.')}`
 
 export const metadata: Metadata = {
