@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import SplitWizard from '@/components/SplitWizard'
+import { WIZARD_SEEDS } from '@/lib/examples'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
 const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('Split-Sheet Wizard')}&sub=${encodeURIComponent('Set roles + % before launch — IPFS-attestable, wired to 0xSplits')}`
@@ -36,7 +37,13 @@ export const metadata: Metadata = {
   },
 }
 
-export default function SplitWizardPage() {
+export default async function SplitWizardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ template?: string }>
+}) {
+  const { template } = await searchParams
+  const seed = template && WIZARD_SEEDS[template] ? WIZARD_SEEDS[template] : null
   return (
     <main className="min-h-screen bg-zao-dark">
       {/* Nav */}
@@ -64,10 +71,17 @@ export default function SplitWizardPage() {
           Split-Sheet Wizard
         </h1>
 
-        <p className="text-slate-400 max-w-md mx-auto leading-relaxed">
-          Define who gets what — before the token launches. IPFS-attest the sheet, wire it to
-          0xSplits. The music-native way to kill revenue disputes before they start.
-        </p>
+        {seed ? (
+          <p className="text-slate-400 max-w-md mx-auto leading-relaxed">
+            Pre-loaded: <span className="text-gold-400 font-semibold">{seed.title}</span> template.
+            Adjust the split, add wallet addresses, then export.
+          </p>
+        ) : (
+          <p className="text-slate-400 max-w-md mx-auto leading-relaxed">
+            Define who gets what — before the token launches. IPFS-attest the sheet, wire it to
+            0xSplits. The music-native way to kill revenue disputes before they start.
+          </p>
+        )}
 
         <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-slate-500">
           <span>✓ Artists · Producers · Writers · Labels</span>
@@ -110,7 +124,7 @@ export default function SplitWizardPage() {
 
       {/* Wizard */}
       <section className="max-w-3xl mx-auto px-4 pb-24">
-        <SplitWizard />
+        <SplitWizard templateSeed={seed ?? undefined} />
       </section>
 
       {/* Footer */}
