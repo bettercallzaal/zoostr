@@ -1,5 +1,10 @@
 # Zoostr
 
+> **Status (2026-09-10): the $ZOOSTR token is on hold.** It has not launched, so
+> there are no $ZOOSTR trading fees and no fee split paying out yet. For now,
+> tipping and weekly allowances run on the existing ZABAL token. The launch and
+> fee design below are the plan, not something live today.
+
 **Zoostr is the first Sparkz launch — ZABAL × Boostr.**
 
 A live Boostr leaderboard + weekly fee allocation for the people who built the empire. A share of every $ZOOSTR trading fee accumulates for leaderboard participants by points, weekly, on-chain — claim your share at splits.org, no lockups, no deadline.
