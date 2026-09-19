@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
-const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('About Zoostr')}&subtitle=${encodeURIComponent('ZABAL × Boostr — the origin story')}`
+const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('About Zoostr')}&sub=${encodeURIComponent('ZABAL × Boostr — the origin story')}`
 
 export const metadata: Metadata = {
   title: 'About Zoostr — ZABAL × Boostr',
@@ -215,6 +215,7 @@ export default function AboutPage() {
           <Link href="/token" className="hover:text-slate-400 transition-colors">$ZOOSTR token</Link>
           <Link href="/rewards" className="hover:text-slate-400 transition-colors">Rewards</Link>
           <Link href="/back" className="hover:text-slate-400 transition-colors">Back it</Link>
+          <Link href="/discover" className="hover:text-slate-400 transition-colors">Discover</Link>
         </div>
       </div>
     </main>

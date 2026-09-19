@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
-const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('How Zoostr Works')}&subtitle=${encodeURIComponent('Boost → Rank → Claim — the full cycle')}`
+const OG_URL = `${BASE_URL}/api/og?title=${encodeURIComponent('How Zoostr Works')}&sub=${encodeURIComponent('Boost → Rank → Claim — the full cycle')}`
 
 export const metadata: Metadata = {
   title: 'How Zoostr Works — Boost, Rank, Claim',
