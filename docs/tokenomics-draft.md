@@ -1,12 +1,17 @@
 # Zoostr Tokenomics — Draft
 
+> **OPEN RFC - the numbers are placeholders (X / Y / Z), not decisions.** We are NOT locking the tokenomics solo. The splits below are variables. If you're a partner, a booster, or just have an opinion on how the leaderboard, creator, LP, treasury, and open-market shares should be weighted - **tell us.** Open an issue or reply on the launch thread.
+
+---
+
+
 > Status: draft · for review before launch · not a legal document
 
 ---
 
 ## Overview
 
-Zoostr is the first Sparkz launch: a creator token co-built between Zaal (ZABAL) and Aziz (Boostr). The central mechanic is a **50/50 fee split** — half of every trade funds the Boostr leaderboard participants, proportional to their points. This turns the leaderboard into a permanent financial stake in the token's success.
+Zoostr is the first Sparkz launch: a creator token co-built between Zaal (ZABAL) and Aziz (Boostr). The central mechanic is a **configurable fee split** — a share of every trade funds the Boostr leaderboard participants, proportional to their points. The exact weights are OPEN (see below). This turns the leaderboard into a permanent financial stake in the token's success.
 
 ---
 
@@ -28,9 +33,9 @@ This is Sparkz's core architectural pattern for "configurable fee allocation."
 
 | Recipient | Share | Mechanism |
 |-----------|-------|-----------|
-| Leaderboard Boosters | **50%** | 0xSplits → weights updated weekly from leaderboard points |
-| Creator & Operations | **25%** | Zaal / ZABAL operational wallet |
-| Treasury | **25%** | Community-governed, future use (liquidity, buybacks, community vote) |
+| Leaderboard Boosters | **X%** | 0xSplits → weights updated weekly from leaderboard points |
+| Creator & Operations | **Y%** | Zaal / ZABAL operational wallet |
+| Treasury | **Z%** | Community-governed, future use (liquidity, buybacks, community vote) |
 
 ---
 
