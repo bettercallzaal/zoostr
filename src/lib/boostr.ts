@@ -1,6 +1,7 @@
 import type { BoostrApiResponse, BoostrStats, Contributor } from './types'
 
-const BOOSTR_URL = 'https://boostr.itscashless.com/api/zabaal/stats'
+// Override only for local dev against a fixture; production always hits the live API.
+const BOOSTR_URL = process.env.BOOSTR_STATS_URL ?? 'https://boostr.itscashless.com/api/zabaal/stats'
 
 // Must match snapshot-split.ts MIN_POINTS so leaderboard eligibility = allocation eligibility
 export const MIN_POINTS = 10
@@ -36,6 +37,21 @@ export function sortedContributors(stats: BoostrStats) {
   return [...list].sort((a, b) => {
     if (b.zabalLikesCount !== a.zabalLikesCount) return b.zabalLikesCount - a.zabalLikesCount
     return b.followers_count - a.followers_count
+  })
+}
+
+// Competition ranking: everyone on the same points shares a rank (1,1,1,4...).
+// Boostr ties are common - 15 contributors sat on 74 boosts at time of writing.
+export function rankedContributors(stats: BoostrStats) {
+  const sorted = sortedContributors(stats)
+  let rank = 0
+  let lastPoints: number | null = null
+  return sorted.map((c, i) => {
+    if (c.zabalLikesCount !== lastPoints) {
+      rank = i + 1
+      lastPoints = c.zabalLikesCount
+    }
+    return { ...c, rank }
   })
 }
 

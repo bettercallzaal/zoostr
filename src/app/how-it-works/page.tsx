@@ -218,7 +218,7 @@ export default function HowItWorksPage() {
           href="/about"
           className="rounded-lg border border-zao-border px-5 py-2.5 text-sm text-slate-300 hover:border-slate-600 hover:text-white transition-colors"
         >
-          About Zoostr
+          ℹ️ About Zoostr
         </Link>
       </section>
 
@@ -227,9 +227,9 @@ export default function HowItWorksPage() {
         <div className="max-w-2xl mx-auto px-4 py-8 flex flex-wrap gap-4 text-xs text-slate-500">
           <Link href="/leaderboard" className="hover:text-slate-400 transition-colors">Leaderboard</Link>
           <Link href="/token" className="hover:text-slate-400 transition-colors">$ZOOSTR token</Link>
+          <Link href="/about" className="hover:text-slate-400 transition-colors">About</Link>
           <Link href="/rewards" className="hover:text-slate-400 transition-colors">Rewards</Link>
           <Link href="/back" className="hover:text-slate-400 transition-colors">Back the empire</Link>
-          <Link href="/about" className="hover:text-slate-400 transition-colors">About</Link>
           <Link href="/discover" className="hover:text-slate-400 transition-colors">Discover</Link>
         </div>
       </div>

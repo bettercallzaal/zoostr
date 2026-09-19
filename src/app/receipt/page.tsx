@@ -323,6 +323,18 @@ export default async function ReceiptPage() {
           </a>
         </div>
       </div>
+
+      {/* Footer nav */}
+      <div className="border-t border-zao-border">
+        <div className="max-w-3xl mx-auto px-4 py-6 flex flex-wrap gap-4 text-xs text-slate-500">
+          <Link href="/leaderboard" className="hover:text-slate-400 transition-colors">Leaderboard</Link>
+          <Link href="/token" className="hover:text-slate-400 transition-colors">$ZOOSTR token</Link>
+          <Link href="/boostr" className="hover:text-slate-400 transition-colors">Boostr platform</Link>
+          <Link href="/rewards" className="hover:text-slate-400 transition-colors">Rewards</Link>
+          <Link href="/faq" className="hover:text-slate-400 transition-colors">FAQ</Link>
+          <Link href="/back" className="hover:text-slate-400 transition-colors">Back it</Link>
+        </div>
+      </div>
     </main>
   )
 }

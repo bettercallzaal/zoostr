@@ -18,10 +18,19 @@ const config: Config = {
           card: '#12121e',
           border: '#1e1e38',
         },
+        // Landing page palette - ink, bone, one accent
+        zoostr: {
+          ink: '#08080a',
+          line: '#1c1c19',
+          bone: '#ede9e0',
+          dim: '#7e7a70',
+          acid: '#c2f53c',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'pulse-gold': 'pulse 2s cubic-bezier(0.4,0,0.6,1) infinite',

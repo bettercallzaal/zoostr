@@ -436,8 +436,17 @@ async function detectAndDraft() {
 // ── Main: post-cast ───────────────────────────────────────────────────────────
 
 async function postCast() {
-  const approveArg = process.argv.find(a => a.startsWith('--approve'))
-  const variantNum = approveArg ? parseInt(approveArg.split('=')[1] ?? approveArg.replace('--approve', '').trim()) : NaN
+  // Support both --approve=1 and --approve 1 (space-separated)
+  const approveIdx = process.argv.findIndex(a => a.startsWith('--approve'))
+  let variantNum = NaN
+  if (approveIdx >= 0) {
+    const arg = process.argv[approveIdx]
+    if (arg.includes('=')) {
+      variantNum = parseInt(arg.split('=')[1])
+    } else {
+      variantNum = parseInt(process.argv[approveIdx + 1] ?? '')
+    }
+  }
 
   if (![1, 2, 3].includes(variantNum)) {
     console.error('Usage: npm run post-cast -- --approve <1|2|3>')

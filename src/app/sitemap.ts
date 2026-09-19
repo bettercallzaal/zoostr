@@ -20,8 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/vetted`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE}/circles`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE}/token`, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE}/about`, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE}/how-it-works`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE}/how-it-works`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE}/about`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/faq`, changeFrequency: 'monthly', priority: 0.5 },
   ]
 }

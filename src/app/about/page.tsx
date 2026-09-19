@@ -179,9 +179,9 @@ export default function AboutPage() {
           Culture before the coin. Always.
         </p>
         <p className="text-slate-400 text-sm leading-relaxed">
-          The token is the community&rsquo;s economic output — not its starting point. Zoostr started
-          with ZABAL&rsquo;s music, Aziz&rsquo;s tool, and 50+ people who showed up because the
-          culture was real. $ZOOSTR came second. That order matters.
+          The token is the community&rsquo;s economic output — not its starting point. Zoostr
+          started with ZABAL&rsquo;s music, Aziz&rsquo;s tool, and 50+ people who showed up because
+          the culture was real. $ZOOSTR came second. That order matters.
         </p>
       </section>
 

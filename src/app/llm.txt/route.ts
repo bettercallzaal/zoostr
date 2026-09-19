@@ -3,7 +3,7 @@ export const dynamic = 'force-static'
 const CONTENT = `# Zoostr — Machine-Readable Context
 
 > This file is written for AI agents and LLM assistants that interact with zoostr.xyz.
-> Last updated: 2026-07-28. Source: zoostr.xyz/llm.txt
+> Last updated: 2026-08-22. Source: zoostr.xyz/llm.txt
 > For the generic Sparkz platform context, see: trysparkz.com/llm.txt
 
 ---
@@ -46,16 +46,16 @@ For real-time data, fetch: https://boostr.itscashless.com/api/zabaal/stats
 - /circles — Culture Circles: composable backing; Zoostr is the first live circle
 - /back — Fan fiat backing: Spark $5/Booster $25/Patron $100 (Stripe when configured)
 - /advisor — 3-question split advisor (powered by trysparkz.com)
-- /split-wizard — Music-native split sheet wizard → 0xSplits JSON
+- /split-wizard — Music-native split sheet wizard → 0xSplits JSON; accepts ?template=<id> to pre-seed from /examples
 - /patronage — Tokenless backing tier builder (v1 checkout is one-time; recurring billing is v2)
-- /examples — 9 spark templates showing the range of what Sparkz enables
+- /examples — 9 spark templates (solo EP, collab single, band album, group crowdfund, tour/event, podcast collab, fan-backed EP, tokenless patronage, ZAO-backed launch); filterable by category (solo, collab, crowdfund, community, ZAO-backed); each "Use this template →" link pre-seeds /split-wizard
 - /audius — Audius catalog → per-track split configurator
 - /settings — BYOK (bring-your-own Anthropic key for AI advisor)
 - /vetted — ZAO vetting program (50 slots/quarter)
 - /launch — Sparkz Launcher: configure + export your own creator coin
 - /token — $ZOOSTR token explainer: Base chain, Clanker v4, 1% fee tier, 50/25/25 split (community/creator/treasury), 0xSplits pull model, "boost → rank → claim" 3-step flow
-- /how-it-works — 6-step Zoostr cycle (Follow ZABAL → Connect on Boostr → Like casts → Weekly snapshot → 0xSplits update → Claim); pool math table, 50/25/25 split bar
-- /about — ZABAL × Boostr origin story; creator bios (@zaal + @cashlessman.eth); timeline; empire stats (as of 2026-07-17)
+- /how-it-works — Full Zoostr cycle explainer: 6 steps (follow ZABAL → connect Boostr → like casts → weekly snapshot → 0xSplits update → claim at splits.org), pool math table (50% community share, 10 point minimum, weekly cadence), 50/25/25 split bar
+- /about — ZABAL × Boostr origin story: timeline (pre-token culture → community pull → 0xSplits first → Clanker launch → weekly snapshots), creator bios, empire stats table, Sparkz culture-before-coin principle
 - /faq — 14 Q&As across 4 sections: basics, fee share, token, boosting/backing, ZAO/Sparkz context
 
 ---
