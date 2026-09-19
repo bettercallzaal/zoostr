@@ -48,12 +48,14 @@ For real-time data, fetch: https://boostr.itscashless.com/api/zabaal/stats
 - /advisor — 3-question split advisor (powered by trysparkz.com)
 - /split-wizard — Music-native split sheet wizard → 0xSplits JSON
 - /patronage — Tokenless backing tier builder (v1 checkout is one-time; recurring billing is v2)
-- /examples — 9 spark templates showing the range of what Sparkz enables
+- /examples — 9 spark templates (solo EP, collab single, band album, group crowdfund, tour/event, podcast collab, fan-backed EP, tokenless patronage, ZAO-backed launch)
 - /audius — Audius catalog → per-track split configurator
 - /settings — BYOK (bring-your-own Anthropic key for AI advisor)
 - /vetted — ZAO vetting program (50 slots/quarter)
 - /launch — Sparkz Launcher: configure + export your own creator coin
 - /token — $ZOOSTR token explainer: Base chain, Clanker v4, 1% fee tier, 50/25/25 split (community/creator/treasury), 0xSplits pull model, "boost → rank → claim" 3-step flow
+- /how-it-works — Full Zoostr cycle explainer: 6 steps (follow ZABAL → connect Boostr → like casts → weekly snapshot → 0xSplits update → claim at splits.org), pool math table (50% community share, 10 point minimum, weekly cadence), 50/25/25 split bar
+- /about — ZABAL × Boostr origin story: timeline (pre-token culture → community pull → 0xSplits first → Clanker launch → weekly snapshots), creator bios, empire stats table, Sparkz culture-before-coin principle
 
 ---
 
