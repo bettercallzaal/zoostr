@@ -33,6 +33,124 @@ export async function GET(request: Request) {
     )
   )
 
+  const { searchParams } = new URL(request.url)
+  const titleParam = searchParams.get('title')
+  const subParam = searchParams.get('sub')
+
+  // Branded text card — used by any page that passes ?title=...&sub=...
+  if (titleParam) {
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '1200px',
+            height: '630px',
+            background: C.ink,
+            padding: '64px 72px',
+            fontFamily: 'Arial, Helvetica, sans-serif',
+            boxSizing: 'border-box',
+            justifyContent: 'space-between',
+          }}
+        >
+          {/* Wordmark row */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div
+              style={{
+                fontSize: '48px',
+                fontWeight: 900,
+                color: C.acid,
+                letterSpacing: '-2px',
+                lineHeight: '1',
+              }}
+            >
+              ZOOSTR
+            </div>
+            <div
+              style={{
+                fontSize: '16px',
+                color: C.dim,
+                letterSpacing: '3px',
+                marginTop: '6px',
+              }}
+            >
+              ZABAL × BOOSTR · A SPARKZ LAUNCH
+            </div>
+          </div>
+
+          {/* Main title + subtitle */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <div
+              style={{
+                fontSize: '72px',
+                fontWeight: 900,
+                color: C.bone,
+                letterSpacing: '-3px',
+                lineHeight: '1.05',
+              }}
+            >
+              {titleParam}
+            </div>
+            {subParam && (
+              <div
+                style={{
+                  fontSize: '26px',
+                  color: C.dim,
+                  lineHeight: '1.4',
+                }}
+              >
+                {subParam}
+              </div>
+            )}
+          </div>
+
+          {/* Footer row */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <div style={{ fontSize: '16px', color: C.dim }}>zoostr.xyz</div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'transparent',
+                border: `1px solid ${C.line}`,
+                borderRadius: '20px',
+                padding: '8px 18px',
+              }}
+            >
+              <div
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  background: C.acid,
+                }}
+              />
+              <div
+                style={{
+                  color: C.acid,
+                  fontSize: '14px',
+                  fontWeight: 700,
+                  letterSpacing: '1.5px',
+                }}
+              >
+                LIVE
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      { width: 1200, height: 630 }
+    )
+  }
+
   // Fetch live data inline (edge-safe, no lib imports)
   let users: User[] = []
   let empire = { active: 0, likes: 0, casts: 0 }
