@@ -1,13 +1,13 @@
-# Zoostr — X (Twitter) Launch Thread
+# Zoostr  -  X (Twitter) Launch Thread
 
 > Draft. Run `npm run receipt` before posting to get live empire stats.
-> X allows longer posts — consolidate the 5 Farcaster casts into 3 posts here.
+> X allows longer posts  -  consolidate the 5 Farcaster casts into 3 posts here.
 > Cross-post the same day as the Farcaster thread.
 > Replace `[STATS]`, `[TOKEN_ADDRESS]`, `[TOP_EARNERS]` with live receipt numbers.
 
 ---
 
-## Post 1 — Announcement + Proof (combined)
+## Post 1  -  Announcement + Proof (combined)
 
 ```
 $ZOOSTR is live on Base.
@@ -15,13 +15,13 @@ $ZOOSTR is live on Base.
 [ALL_TIME_COUNT] people built the ZABAL empire on Boostr before any token existed.
 
 The first split:
-[TOP_EARNERS — paste from `npm run receipt`]
+[TOP_EARNERS  -  paste from `npm run receipt`]
 [e.g.:]
-→ @[username]: 14.2% of the pool — $28/week
-→ @[username]: 11.1% — $22/week
-→ @[username]: 8.3% — $16/week
+→ @[username]: 14.2% of the pool  -  $28/week
+→ @[username]: 11.1%  -  $22/week
+→ @[username]: 8.3%  -  $16/week
 
-Every $ZOOSTR trade now pays them back. Weekly. On-chain. Claim at splits.org — your share waits, no deadline.
+Every $ZOOSTR trade now pays them back. Weekly. On-chain. Claim at splits.org  -  your share waits, no deadline.
 
 zoostr.xyz
 ```
@@ -30,15 +30,15 @@ zoostr.xyz
 
 ---
 
-## Post 2 — Mechanics
+## Post 2  -  Mechanics
 
 ```
 how it works:
 
 $ZOOSTR trades on Base (Clanker, 1% fee)
 50% of every fee → a 0xSplits contract
-fee pool allocated by leaderboard points — weekly snapshot
-claim your share at splits.org — no lockups, no deadline
+fee pool allocated by leaderboard points  -  weekly snapshot
+claim your share at splits.org  -  no lockups, no deadline
 
 the split is fully on-chain and public.
 
@@ -48,7 +48,7 @@ $ZOOSTR: [TOKEN_ADDRESS]
 
 ---
 
-## Post 3 — Anthem + CTA
+## Post 3  -  Anthem + CTA
 
 ```
 [ALL_TIME_COUNT] people showed up before there was a token.
@@ -57,11 +57,11 @@ that's not a community. that's an empire.
 
 $ZOOSTR is what an empire pays its builders with.
 
-——
+ -  - 
 
-this is the first Sparkz launch. Sparkz builds the culture first, the token later — if at all.
+this is the first Sparkz launch. Sparkz builds the culture first, the token later  -  if at all.
 
-want to launch like this? → sparkz.xyz
+want to launch like this? → trysparkz.com
 
 ZAO × Boostr × the empire. 🟡
 ```
@@ -79,4 +79,4 @@ ZAO × Boostr × the empire. 🟡
 
 ---
 
-*Prepared by ZOL · 2026-07-17 · Placeholder stats — replace with live receipt before posting*
+*Prepared by ZOL · 2026-07-17 · Placeholder stats  -  replace with live receipt before posting*

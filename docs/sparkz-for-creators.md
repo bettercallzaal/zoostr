@@ -8,11 +8,11 @@
 
 ## The problem
 
-You've built something real. People show up for you — they like your posts, share your work, show up in your comments before you have anything to sell. That community is real value. How do you give them a stake in what they helped build?
+You've built something real. People show up for you  -  they like your posts, share your work, show up in your comments before you have anything to sell. That community is real value. How do you give them a stake in what they helped build?
 
-**The trap:** Most "creator tokens" are just meme launches with your face on them. Your community buys in, price moons for a week, then crashes — and now your most loyal people took a loss on you. That's not loyalty. That's a liability.
+**The trap:** Most "creator tokens" are just meme launches with your face on them. Your community buys in, price moons for a week, then crashes  -  and now your most loyal people took a loss on you. That's not loyalty. That's a liability.
 
-**What Sparkz does instead:** Every trade in your token generates a 1% fee. You configure how much of that fee goes to your community — Sparkz updates the 0xSplits allocation weekly, by points, forever. The default is creator-first: 97% to you, and the community share starts small and grows as contributors prove themselves (Zoostr runs 50% community after 30+ consistent boosters). Recipients claim their share at splits.org — no lockups, no promises about price. Just: *you boost, you accrue.*
+**What Sparkz does instead:** Every trade in your token generates a 1% fee. You configure how much of that fee goes to your community  -  Sparkz updates the 0xSplits allocation weekly, by points, forever. The default is creator-first: 97% to you, and the community share starts small and grows as contributors prove themselves (Zoostr runs 50% community after 30+ consistent boosters). Recipients claim their share at splits.org  -  no lockups, no promises about price. Just: *you boost, you accrue.*
 
 The token is not the pitch. The token is the accounting. The community is the pitch.
 
@@ -22,13 +22,13 @@ The token is not the pitch. The token is the accounting. The community is the pi
 
 ### 1. A live leaderboard → fee allocation
 
-Your community already has a ranking. Boostr points, Discord activity, NFT holdings, staking score — whatever metric fits your community. Sparkz maps that ranking to a fee allocation that updates weekly. Top supporters earn the most. Consistent supporters earn consistently.
+Your community already has a ranking. Boostr points, Discord activity, NFT holdings, staking score  -  whatever metric fits your community. Sparkz maps that ranking to a fee allocation that updates weekly. Top supporters earn the most. Consistent supporters earn consistently.
 
-**You don't manage the allocations.** Fees accumulate in a 0xSplits contract on-chain — recipients claim their share at splits.org. Your community checks basescan if they don't trust you.
+**You don't manage the allocations.** Fees accumulate in a 0xSplits contract on-chain  -  recipients claim their share at splits.org. Your community checks basescan if they don't trust you.
 
 ### 2. The 0xSplits fix (the thing most creator tokens get wrong)
 
-When you launch on Clanker, the fee recipient is immutable. If you put your own wallet, you're the permanent single recipient. If you split multiple wallets upfront, you freeze the split at launch — your leaderboard changes weekly, your split should too.
+When you launch on Clanker, the fee recipient is immutable. If you put your own wallet, you're the permanent single recipient. If you split multiple wallets upfront, you freeze the split at launch  -  your leaderboard changes weekly, your split should too.
 
 **Sparkz's solution:** The Clanker fee recipient is a 0xSplits contract. Inside Splits, the recipients are adjustable. Your leaderboard evolves; your fee split evolves with it. On-chain, public, auditable.
 
@@ -36,18 +36,18 @@ This is the only way to deliver "adjustable community fee splits" on Clanker. It
 
 ### 3. AI advisor to configure your split
 
-The Sparkz AI advisor (sparkz.xyz/advisor) asks 3 questions and gives you a concrete split recommendation:
+The Sparkz AI advisor (trysparkz.com/advisor) asks 3 questions and gives you a concrete split recommendation:
 1. **What kind of project is this?** (solo with producers / artist collab / group crowdfund)
-2. **Token now, later, or never?** — start tokenless if the community isn't proven yet
-3. **What volume range are you expecting?** — sizes the fee model honestly for your stage
+2. **Token now, later, or never?**  -  start tokenless if the community isn't proven yet
+3. **What volume range are you expecting?**  -  sizes the fee model honestly for your stage
 
-The **default is creator-first: 97% creator, 1% community, 2% treasury.** The community share grows as real contributors show up. You don't give away share before the community exists. Zoostr launches at 50% because 30+ consistent boosters proved the community before the token existed — the advisor shows you where to start and when to grow it.
+The **default is creator-first: 97% creator, 1% community, 2% treasury.** The community share grows as real contributors show up. You don't give away share before the community exists. Zoostr launches at 50% because 30+ consistent boosters proved the community before the token existed  -  the advisor shows you where to start and when to grow it.
 
-The advisor calculates real dollar projections: *"At $10k daily volume, your community pool at 50% is $350/week. Your top supporter earns ~$32/week."* You export the config, open the split wizard, and click deploy. ZAO stake (5%, locked 12 months) is pre-filled in your deploy config — a separate post-deploy token transfer to ZAO's lock contract completes it.
+The advisor calculates real dollar projections: *"At $10k daily volume, your community pool at 50% is $350/week. Your top supporter earns ~$32/week."* You export the config, open the split wizard, and click deploy. ZAO stake (5%, locked 12 months) is pre-filled in your deploy config  -  a separate post-deploy token transfer to ZAO's lock contract completes it.
 
 ### 4. ZAO backing
 
-ZAO takes a small locked token stake — not a fee cut. ZAO holds your token for 12 months. If your token does well, ZAO wins. If it doesn't, ZAO loses alongside you. That's the alignment model: ZAO's incentive is to help you succeed, not extract from you.
+ZAO takes a small locked token stake  -  not a fee cut. ZAO holds your token for 12 months. If your token does well, ZAO wins. If it doesn't, ZAO loses alongside you. That's the alignment model: ZAO's incentive is to help you succeed, not extract from you.
 
 ZAO does not take a cut of every trade. Every trade fee goes entirely to your community, you, or the treasury.
 
@@ -76,7 +76,7 @@ You review and approve. You (or ZOL) posts.
 
 ## The one-line pitch
 
-**"Your community built your empire. Sparkz gives them a financial stake in it — without you having to figure out tokenomics."**
+**"Your community built your empire. Sparkz gives them a financial stake in it  -  without you having to figure out tokenomics."**
 
 ---
 
@@ -93,9 +93,9 @@ You review and approve. You (or ZOL) posts.
 
 Two paths:
 
-**Path A — Use the Sparkz Launcher:** Go to sparkz.xyz/advisor → answer 3 questions → open the split wizard → export your deploy config. ZAO reviews your config before launch to confirm the launch fits the Sparkz model.
+**Path A  -  Use the Sparkz Launcher:** Go to trysparkz.com/advisor → answer 3 questions → open the split wizard → export your deploy config. ZAO reviews your config before launch to confirm the launch fits the Sparkz model.
 
-**Path B — Work with ZOL directly:** DM @bettercallzaal on Farcaster. ZOL will run the configuration with you and handle the full launch prep (copy, threads, deploy checklist). You review everything before it goes anywhere.
+**Path B  -  Work with ZOL directly:** DM @bettercallzaal on Farcaster. ZOL will run the configuration with you and handle the full launch prep (copy, threads, deploy checklist). You review everything before it goes anywhere.
 
 ---
 
@@ -107,7 +107,7 @@ ZABAL (Farcaster creator) + Boostr (boost platform) → Zoostr
 - They earned Boostr points by liking ZABAL's casts and getting others to like them
 - At launch: $ZOOSTR deployed on Clanker → 0xSplits contract as fee recipient → weekly snapshot from Boostr API → ZOL computes weights, Zaal reviews and calls `updateSplit()` on-chain
 - Every trade: 50% to the leaderboard by points, 25% to ZABAL/operations, 25% to treasury
-- The people who showed up first accrue fees from every trade, forever — claim their share at splits.org
+- The people who showed up first accrue fees from every trade, forever  -  claim their share at splits.org
 
 *That community was already real. The token just made it pay.*
 
@@ -118,10 +118,10 @@ ZABAL (Farcaster creator) + Boostr (boost platform) → Zoostr
 | | Standard launch | Sparkz launch |
 |--|----------------|---------------|
 | Fee recipient | Single wallet (frozen) | 0xSplits contract (adjustable) |
-| Community allocation | None, or one-time airdrop | Weekly snapshot — claim at splits.org |
+| Community allocation | None, or one-time airdrop | Weekly snapshot  -  claim at splits.org |
 | ZAO involvement | None | Locked stake (aligned, not extractive) |
 | Marketing | You write everything | ZOL drafts; you approve |
-| Deploy complexity | High — no template | One config export + one human click |
+| Deploy complexity | High  -  no template | One config export + one human click |
 | Post-launch ops | Manual | ZOL handles weekly snapshot + receipt casts |
 | Framing | "Buy my coin" | "Back the empire" |
 
