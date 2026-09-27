@@ -5,11 +5,11 @@
 > tipping and weekly allowances run on the existing ZABAL token. The launch and
 > fee design below are the plan, not something live today.
 
-**Zoostr is the first Sparkz launch — ZABAL × Boostr.**
+**Zoostr is the first Sparkz launch  -  ZABAL × Boostr.**
 
-A live Boostr leaderboard + weekly fee allocation for the people who built the empire. A share of every $ZOOSTR trading fee accumulates for leaderboard participants by points, weekly, on-chain — claim your share at splits.org, no lockups, no deadline.
+A live Boostr leaderboard + weekly fee allocation for the people who built the empire. A share of every $ZOOSTR trading fee accumulates for leaderboard participants by points, weekly, on-chain  -  claim your share at splits.org, no lockups, no deadline.
 
-Built and marketed by ZOL. Deployed by humans. [sparkz.xyz](https://sparkz.xyz)
+Built and marketed by ZOL. Deployed by humans. [trysparkz.com](https://trysparkz.com)
 
 ---
 
@@ -17,13 +17,13 @@ Built and marketed by ZOL. Deployed by humans. [sparkz.xyz](https://sparkz.xyz)
 
 ## What it does
 
-- **Live leaderboard** — pulls from the Boostr API (`/api/zabaal/stats`), ranks contributors by points, shows projected weekly earnings at any trading volume (ISR, refreshes every 60s)
-- **Weekly receipt** — shareable proof of who earned what, with Farcaster Frame embed
-- **0xSplits integration** — the Clanker fee recipient is a 0xSplits contract, so leaderboard → split weights update without touching the token contract
-- **Meme Engine** — human-in-the-loop CLI for weekly cast generation, approval, and posting (no autonomous publishing)
-- **ZOL admin** — `/zol` page for reviewing draft casts, empire stats, and eligible booster weights
-- **Creator tools** — Sparkz launcher, AI advisor, split wizard, patronage tiers, BYOK settings
-- **Community** — Culture Circles, Audius integration, discoverability feed, ZAO vetting
+- **Live leaderboard**  -  pulls from the Boostr API (`/api/zabaal/stats`), ranks contributors by points, shows projected weekly earnings at any trading volume (ISR, refreshes every 60s)
+- **Weekly receipt**  -  shareable proof of who earned what, with Farcaster Frame embed
+- **0xSplits integration**  -  the Clanker fee recipient is a 0xSplits contract, so leaderboard → split weights update without touching the token contract
+- **Meme Engine**  -  human-in-the-loop CLI for weekly cast generation, approval, and posting (no autonomous publishing)
+- **ZOL admin**  -  `/zol` page for reviewing draft casts, empire stats, and eligible booster weights
+- **Creator tools**  -  Sparkz launcher, AI advisor, split wizard, patronage tiers, BYOK settings
+- **Community**  -  Culture Circles, Audius integration, discoverability feed, ZAO vetting
 
 ## The core architecture
 
@@ -34,22 +34,22 @@ Clanker v4 `rewardBps` are immutable after deploy. Sparkz's fix: set the fee rec
 | Route | What it is |
 |-------|-----------|
 | `/` | Homepage: hero, live leaderboard embed, tokenomics, fee split visual, collectables teaser |
-| `/leaderboard` | Full earnings calculator — search by username, adjust volume slider |
-| `/receipt` | Weekly allocation snapshot — shareable as Farcaster Frame |
-| `/rewards` | Empire rewards deep-dive — 4-step flow, pool math, booster tiers, remix rewards, weekly cadence |
-| `/discover` | Live discoverability feed — featured sparks, trending contributors, rewards sidebar |
-| `/circles` | Culture Circles — composable pre-token mutual backing graph; Zoostr live circle |
+| `/leaderboard` | Full earnings calculator  -  search by username, adjust volume slider |
+| `/receipt` | Weekly allocation snapshot  -  shareable as Farcaster Frame |
+| `/rewards` | Empire rewards deep-dive  -  4-step flow, pool math, booster tiers, remix rewards, weekly cadence |
+| `/discover` | Live discoverability feed  -  featured sparks, trending contributors, rewards sidebar |
+| `/circles` | Culture Circles  -  composable pre-token mutual backing graph; Zoostr live circle |
 | `/advisor` | 3-question AI advisor → recommended split + token timing + fee model |
-| `/split-wizard` | Music-native split sheet wizard — roles + % + collaborators → 0xSplits JSON |
-| `/patronage` | Tokenless recurring membership builder — Supporter/Patron/Council tiers |
-| `/examples` | 8 tokenless spark templates — solo EP, collab, crowdfund, fan-backed, ZAO-backed, etc. |
+| `/split-wizard` | Music-native split sheet wizard  -  roles + % + collaborators → 0xSplits JSON |
+| `/patronage` | Tokenless recurring membership builder  -  Supporter/Patron/Council tiers |
+| `/examples` | 8 tokenless spark templates  -  solo EP, collab, crowdfund, fan-backed, ZAO-backed, etc. |
 | `/audius` | Audius handle lookup → per-track split configurator → 0xSplits JSON export |
-| `/back` | Fan fiat backing page — Spark/Booster/Patron tiers ($5/$25/$100), card-only, no wallet |
-| `/settings` | BYOK settings — bring your own Anthropic key; treasury-funded fallback explainer |
-| `/vetted` | ZAO curation program — 50 slots/quarter, badge on homepage |
+| `/back` | Fan fiat backing page  -  Spark/Booster/Patron tiers ($5/$25/$100), card-only, no wallet |
+| `/settings` | BYOK settings  -  bring your own Anthropic key; treasury-funded fallback explainer |
+| `/vetted` | ZAO curation program  -  50 slots/quarter, badge on homepage |
 | `/launch` | Sparkz Launcher config wizard (for creators launching their own token) |
 | `/zol` | Admin page: draft cast variants, empire stats, ZOL approve panel (unlisted) |
-| `GET /llm.txt` | Machine-readable context for AI agents — empire data, pages, API endpoints, framing rules, ZOL human-gate rule |
+| `GET /llm.txt` | Machine-readable context for AI agents  -  empire data, pages, API endpoints, framing rules, ZOL human-gate rule |
 
 ## Scripts
 
@@ -71,7 +71,7 @@ npm run track-remix    # score quote-casts + replies 24h after posting
 | `NEXT_PUBLIC_TOKEN_ADDRESS` | "Token Live" banner on homepage (set after Clanker deploy) |
 | `NEXT_PUBLIC_SPLITS_ADDRESS` | Receipt page splits link; meme-engine draft links |
 | `NEXT_PUBLIC_COMMUNITY_SHARE_PCT` | Earnings projections (leaderboard, receipt, /zol, /rewards); set to `50` for Zoostr |
-| `NEXT_PUBLIC_SPARKZ_URL` | /launch page cross-link to sparkz.xyz |
+| `NEXT_PUBLIC_SPARKZ_URL` | /launch page cross-link to trysparkz.com |
 | `NEYNAR_API_KEY` | Meme Engine posting + `/api/zol/post` |
 | `NEYNAR_SIGNER_UUID` | Neynar signer for posting |
 | `ZOL_ASSUMED_VOLUME` | /zol admin page earnings projections (default: 10000) |
@@ -85,9 +85,9 @@ See `.env.example` for a complete list with comments.
 
 - Lead with the community, not the coin: "back the empire"
 - Fee allocation is the proof, not the pitch
-- Perks = what holders enjoy today — not guaranteed future entitlements
+- Perks = what holders enjoy today  -  not guaranteed future entitlements
 - ZOL drafts. Zaal (or designated human) approves. No autonomous on-chain actions.
-- "Claim at splits.org" — Pull model; fees accumulate, no deadline, no auto-payout
+- "Claim at splits.org"  -  Pull model; fees accumulate, no deadline, no auto-payout
 
 ## Stack
 
@@ -95,4 +95,4 @@ Next.js 15 (App Router) · React 19 · Tailwind CSS v3 · Boostr API · Neynar A
 
 ---
 
-*A Sparkz launch by ZAO · Co-built with Boostr · [sparkz.xyz](https://sparkz.xyz)*
+*A Sparkz launch by ZAO · Co-built with Boostr · [trysparkz.com](https://trysparkz.com)*
