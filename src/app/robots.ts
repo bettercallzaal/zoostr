@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 
-const BASE = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.xyz'
+// The live site is zoostr.vercel.app.
+const BASE = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://zoostr.vercel.app'
 
 export default function robots(): MetadataRoute.Robots {
   return {
