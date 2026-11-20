@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "node --test \"tests/*.test.mjs\"",
     "snapshot": "npx tsx scripts/snapshot-split.ts",
     "resolve-wallets": "npx tsx scripts/fid-to-wallet.ts",
     "receipt": "npx tsx scripts/receipt-cast.ts",
