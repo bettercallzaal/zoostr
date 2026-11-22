@@ -12,7 +12,7 @@ Zoostr is ZABAL x Boostr, the first Creator Hearth on Sparkz
 ZAO auto-likes in Boostr.
 
 There is no Zoostr token. There is nothing to buy. Do not describe Zoostr as a
-token, a coin, a fee share or a payout.
+token, a coin, a share of fees or a payout.
 
 ## Numbers
 

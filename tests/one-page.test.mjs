@@ -26,6 +26,11 @@ const BANNED = [
   { name: 'dead Boostr domain', re: /itscashless/i },
   { name: 'old zabaal typo path', re: /zabaal/i },
   { name: 'dead zoostr.xyz domain', re: /zoostr\.xyz/i },
+  { name: 'before the token', re: /before the token/i },
+  { name: 'the token', re: /the token/i },
+  { name: 'splits still open', re: /splits? (are|is) still open/i },
+  { name: 'tokenless-first', re: /tokenless-first/i },
+  { name: 'fee share', re: /fee share/i },
 ]
 
 test('files that still serve carry no token-era claim or dead URL', () => {

@@ -25,14 +25,15 @@ const VERCEL_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? VERCEL_URL ?? 'https://zoostr.vercel.app'
 const OG_IMAGE = `${BASE_URL}/api/og`
 
+const TITLE = 'Zoostr - turn on ZAO auto-likes'
 const DESCRIPTION =
-  'The first Sparkz launch. Tokenless-first: no supply, no splits, nothing to buy yet. Just the live leaderboard of the people boosting ZABAL Gamez posts - the empire, before the token.'
+  'ZABAL x Boostr, the first Creator Hearth on Sparkz. Turn on ZAO auto-likes and boost the people making things in The ZAO. No token, nothing to buy; the numbers come live from Boostr.'
 
 export const metadata: Metadata = {
-  title: 'Zoostr - the empire, before the token',
+  title: TITLE,
   description: DESCRIPTION,
   openGraph: {
-    title: 'Zoostr - the empire, before the token',
+    title: TITLE,
     description: DESCRIPTION,
     type: 'website',
     url: BASE_URL,
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zoostr - the empire, before the token',
+    title: TITLE,
     description: DESCRIPTION,
     images: [OG_IMAGE],
   },

@@ -252,9 +252,9 @@ export async function GET(request: Request) {
                 letterSpacing: '-2px',
               }}
             >
-              <div style={{ display: 'flex', color: C.bone }}>The empire,</div>
-              <div style={{ display: 'flex', color: C.dim }}>before</div>
-              <div style={{ display: 'flex', color: C.dim }}>the token.</div>
+              <div style={{ display: 'flex', color: C.bone }}>Turn on</div>
+              <div style={{ display: 'flex', color: C.dim }}>ZAO</div>
+              <div style={{ display: 'flex', color: C.dim }}>auto-likes.</div>
             </div>
 
             <div style={{ display: 'flex', gap: '38px', marginTop: '44px' }}>
