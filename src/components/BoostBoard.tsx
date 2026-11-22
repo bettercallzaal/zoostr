@@ -140,7 +140,7 @@ export default function BoostBoard({ initial }: { initial: BoostrStats | null })
               <Avatar src={leader.pfp_url} name={leader.username} size={88} />
               <div className="min-w-0">
                 <a
-                  href={`https://farcaster.xyz/${leader.username}`}
+                  href={leader.profileUrl}
                   target="_blank"
                   rel="noreferrer"
                   className={`block break-all font-display font-extrabold leading-[0.95] tracking-tight text-zoostr-bone transition-colors hover:text-zoostr-acid ${
@@ -189,7 +189,7 @@ export default function BoostBoard({ initial }: { initial: BoostrStats | null })
                     style={{ width: `${width}%` }}
                   />
                   <a
-                    href={`https://farcaster.xyz/${c.username}`}
+                    href={c.profileUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="relative grid grid-cols-[2.25rem_auto_1fr_auto] items-center gap-3 py-3 sm:gap-4"

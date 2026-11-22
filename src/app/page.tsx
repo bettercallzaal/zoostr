@@ -33,19 +33,34 @@ export default async function Home() {
         {/* Hero */}
         <section className="pb-12 pt-14 sm:pt-20">
           <p className="font-mono text-[0.625rem] uppercase tracking-[0.24em] text-zoostr-acid">
-            The first Sparkz launch
+            The first Creator Hearth on Sparkz
           </p>
           <h1 className="mt-5 font-display text-[2.5rem] font-extrabold leading-[0.92] tracking-tight sm:text-[5rem]">
-            The empire,
+            Turn on
             <br />
-            <span className="text-zoostr-dim">before the token.</span>
+            <span className="text-zoostr-dim">ZAO auto-likes.</span>
           </h1>
           <p className="mt-7 max-w-xl font-mono text-sm leading-relaxed text-zoostr-dim">
-            Zoostr is tokenless-first. No supply, no splits, nothing to buy - the splits are still
-            open and being crowdsourced. What exists today is the people boosting ZABAL Gamez posts
-            on Boostr. They <span className="text-zoostr-bone">are</span> the empire. This is them,
-            live.
+            Zoostr is ZABAL x Boostr, the first Creator Hearth on Sparkz. Turn on ZAO auto-likes in
+            Boostr and boost the people making things in The ZAO. Free to join, no token, nothing to
+            buy. The numbers on this page come live from Boostr.
           </p>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="https://boostr.sahban.dev"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block border border-zoostr-acid px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-zoostr-acid transition-colors hover:bg-zoostr-acid hover:text-zoostr-ink"
+            >
+              Turn on ZAO auto-likes
+            </a>
+            <a
+              href="https://trysparkz.com/c/zoostr"
+              className="font-mono text-xs text-zoostr-dim underline underline-offset-4 transition-colors hover:text-zoostr-bone"
+            >
+              The Zoostr Hearth on Sparkz
+            </a>
+          </div>
         </section>
 
         <BoostBoard initial={stats} />

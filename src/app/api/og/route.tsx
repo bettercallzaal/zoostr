@@ -14,10 +14,15 @@ const C = {
 
 type User = {
   fid: number
-  username: string
+  username: string | null
   zabalLikesCount: number
   followers_count: number
   zabalEnabled: boolean
+}
+
+// Boostr can send username null (FID 1052964, 2026-11-19); show the FID instead.
+function handle(u: User): string {
+  return typeof u.username === 'string' && u.username.trim() ? u.username.trim() : `fid-${u.fid}`
 }
 
 function initial(username: string): string {
@@ -113,7 +118,7 @@ export async function GET(request: Request) {
               alignItems: 'center',
             }}
           >
-            <div style={{ fontSize: '16px', color: C.dim }}>zoostr.xyz</div>
+            <div style={{ fontSize: '16px', color: C.dim }}>zoostr.vercel.app</div>
             <div
               style={{
                 display: 'flex',
@@ -157,7 +162,7 @@ export async function GET(request: Request) {
 
   try {
     const statsUrl =
-      process.env.BOOSTR_STATS_URL ?? 'https://boostr.itscashless.com/api/zabaal/stats'
+      process.env.BOOSTR_STATS_URL ?? 'https://boostr.sahban.dev/api/zabal/stats'
     const res = await fetch(statsUrl, {
       headers: { Accept: 'application/json' },
     })
@@ -247,9 +252,9 @@ export async function GET(request: Request) {
                 letterSpacing: '-2px',
               }}
             >
-              <div style={{ display: 'flex', color: C.bone }}>The empire,</div>
-              <div style={{ display: 'flex', color: C.dim }}>before</div>
-              <div style={{ display: 'flex', color: C.dim }}>the token.</div>
+              <div style={{ display: 'flex', color: C.bone }}>Turn on</div>
+              <div style={{ display: 'flex', color: C.dim }}>ZAO</div>
+              <div style={{ display: 'flex', color: C.dim }}>auto-likes.</div>
             </div>
 
             <div style={{ display: 'flex', gap: '38px', marginTop: '44px' }}>
@@ -330,7 +335,7 @@ export async function GET(request: Request) {
                     color: C.dim,
                   }}
                 >
-                  {initial(u.username)}
+                  {initial(handle(u))}
                 </div>
                 <div
                   style={{
@@ -340,7 +345,7 @@ export async function GET(request: Request) {
                     color: C.bone,
                   }}
                 >
-                  @{u.username}
+                  @{handle(u)}
                 </div>
                 <div
                   style={{
@@ -371,8 +376,8 @@ export async function GET(request: Request) {
             letterSpacing: '2px',
           }}
         >
-          <div style={{ display: 'flex' }}>TOKENLESS-FIRST · SPLITS STILL OPEN</div>
-          <div style={{ display: 'flex' }}>ZOOSTR.XYZ</div>
+          <div style={{ display: 'flex' }}>LIVE FROM BOOSTR</div>
+          <div style={{ display: 'flex' }}>ZOOSTR.VERCEL.APP</div>
         </div>
       </div>
     ),
