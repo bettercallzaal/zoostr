@@ -1,5 +1,8 @@
 # Zoostr  -  Deploy Config & Launch Checklist
 
+> **SUPERSEDED (2026-11-24 wording cleanup).** Internal draft only, not for any public surface. There is no token. Free to join and optional. Points and rank on the leaderboard. No payouts or fee sharing are promised. Not live yet.
+> Lines below on lock size, placeholder split weights and the weekly ops loop are superseded history. The snapshot, receipt and meme-engine scripts they mention were deleted.
+
 > Status: draft · all prep done here · ONE human clicks deploy on clanker.world
 > Deployer: TBD  -  Zaal decision (likely Aziz/cashlessman on the Boostr rail)
 
@@ -305,7 +308,6 @@ After all 272 PRs are merged to `main`:
 | `NEYNAR_API_KEY` | `...` | `npm run post-cast`, `npm run track-remix`, `/api/zol/post` direct posting |
 | `NEYNAR_SIGNER_UUID` | `...` | `npm run post-cast`, `/api/zol/post` (Neynar developer portal) |
 | `NEXT_PUBLIC_SPARKZ_URL` | `https://trysparkz.com` | /launch page "See Zoostr leaderboard" Frame button |
-| `NEXT_PUBLIC_COMMUNITY_SHARE_PCT` | `50` (Zoostr launches at 50/25/25) | Leaderboard earnings calc, receipt page, ZOL cast drafts  -  must match the live on-chain split |
 | `ZOL_ASSUMED_VOLUME` | `10000` (optional) | /zol admin page earnings projection; defaults to $10k/day if not set |
 | `TOKEN_ADDRESS` | same as NEXT_PUBLIC_TOKEN_ADDRESS | CLI scripts only (meme-engine.ts): activates `token-launch` first-cast detection on first `npm run detect-moment` after deploy |
 | `STRIPE_SECRET_KEY` | `sk_live_...` (Stripe dashboard) | /back card checkout  -  omit to show Boostr fallback mode |
@@ -315,9 +317,6 @@ After all 272 PRs are merged to `main`:
 The site deploys and runs in pre-token mode without `NEXT_PUBLIC_TOKEN_ADDRESS`.
 Set that env var after the Clanker deploy and redeploy Vercel.
 
-> **NEXT_PUBLIC_COMMUNITY_SHARE_PCT note:** Zoostr launches at **50% community** (50/25/25 split) from day 1  -  set this to `50` before the first deploy. If the on-chain split ever changes, update this Vercel env var to match and redeploy. Otherwise the leaderboard and receipt page show wrong earnings.
->
-> For CLI scripts (`npm run receipt`, `npm run detect-moment`), use the local `COMMUNITY_PCT` env var: `COMMUNITY_PCT=50 npm run receipt`.
 
 ---
 
@@ -420,7 +419,7 @@ Fill in these exact values:
 |-------|-------|
 | **Token Name** | `Zoostr` |
 | **Symbol** | `ZOOSTR` |
-| **Description** | `Back the empire. 50% of every $ZOOSTR trading fee goes to the Boostr leaderboard by points  -  the community that built ZABAL earns from every trade. No token required to boost. A Sparkz launch.` |
+| **Description** | (to be rewritten if a token is ever deployed; no fee or earnings wording) |
 | **Image** | Upload the 1000×1000 PNG from Step 2 |
 | **Fee Tier** | **1%** (select 1% in the fee tier dropdown) |
 | **Fee Recipient** | `[0xSplits contract address from Step 1]` |

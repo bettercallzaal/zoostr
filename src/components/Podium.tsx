@@ -1,5 +1,5 @@
 import type { Contributor } from '@/lib/types'
-import { feeSharePct } from '@/lib/boostr'
+import { pointsSharePct } from '@/lib/boostr'
 
 type Props = {
   top3: Contributor[]
@@ -19,7 +19,7 @@ function PodiumCard({
   rank: number
   totalPoints: number
 }) {
-  const shareStr = feeSharePct(contributor.zabalLikesCount, totalPoints)
+  const shareStr = pointsSharePct(contributor.zabalLikesCount, totalPoints)
 
   return (
     <div className={`flex flex-col items-center gap-2 ${ORDERS[rank - 1]}`}>
@@ -50,7 +50,7 @@ function PodiumCard({
         <div className="mt-1 text-sm font-bold text-gradient-gold">
           {contributor.zabalLikesCount.toLocaleString()} pts
         </div>
-        <div className="text-xs text-zao-violet">{shareStr}% fee share</div>
+        <div className="text-xs text-zao-violet">{shareStr}% of points</div>
       </div>
 
       <div

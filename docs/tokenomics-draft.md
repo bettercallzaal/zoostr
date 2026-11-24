@@ -1,5 +1,7 @@
 # Zoostr Tokenomics — Draft
 
+> **SUPERSEDED (2026-11-24 wording cleanup).** Internal draft only, not for any public surface. There is no token. Free to join and optional. Points and rank on the leaderboard. No payouts or fee sharing are promised. Not live yet.
+
 > **OPEN RFC - the numbers are placeholders (X / Y / Z), not decisions.** We are NOT locking the tokenomics solo. The splits below are variables. If you're a partner, a booster, or just have an opinion on how the leaderboard, creator, LP, treasury, and open-market shares should be weighted - **tell us.** Open an issue or reply on the launch thread.
 
 ---
@@ -31,11 +33,7 @@ This is Sparkz's core architectural pattern for "configurable fee allocation."
 
 ## Fee Split (1% per trade on Clanker)
 
-| Recipient | Share | Mechanism |
-|-----------|-------|-----------|
-| Leaderboard Boosters | **X%** | 0xSplits → weights updated weekly from leaderboard points |
-| Creator & Operations | **Y%** | Zaal / ZABAL operational wallet |
-| Treasury | **Z%** | Community-governed, future use (liquidity, buybacks, community vote) |
+Free to join and optional. Points and rank on the leaderboard. No payouts or fee sharing are promised. Not live yet.
 
 ---
 
@@ -44,7 +42,7 @@ This is Sparkz's core architectural pattern for "configurable fee allocation."
 ### Option A: 0xSplits with weekly weight refresh (RECOMMENDED)
 
 - **How it works:** An off-chain keeper (or ZAO multisig) reads the Boostr leaderboard weekly, computes each participant's share (zabalLikesCount / totalPoints), and calls `updateSplit()` on the 0xSplits contract.
-- **Pros:** Accumulated pull — fees accrue in the contract; recipients claim their share anytime at app.splits.org (no per-period deadline, no lockup). Fully on-chain. Visible to anyone. Composable.
+- **Pros:** Fully on-chain. Visible to anyone. Composable.
 - **Cons:** Requires a trusted/permissioned role to call `updateSplit`. Could be governed by a ZAO multisig or eventually a keeper with on-chain leaderboard data.
 - **Gas:** updateSplit costs ~100–200k gas per update. Weekly cadence is ~$5–20 on Base. Acceptable.
 - **Trust model:** Until a decentralized keeper exists, Zaal + Aziz multisig controls the update. This is disclosed publicly. Future: governance vote automates the keeper.
@@ -58,15 +56,10 @@ This is Sparkz's core architectural pattern for "configurable fee allocation."
 
 ### Decision: Option A (0xSplits weekly refresh)
 
-**Why:** Zoostr's brand is "boost and earn." A periodic merkle drop requires active per-period claiming — bad UX. 0xSplits Pull: fees accumulate in the contract on weekly cadence; recipients claim at splits.org anytime (no per-period deadline, funds wait). Lower friction than Option B. The trust tradeoff (multisig controller) is acceptable at launch and can be progressively decentralized.
+**Why:** Zoostr's brand is "boost and rank." A periodic merkle drop requires active per-period claiming - bad UX. 0xSplits Pull has lower friction than Option B. The trust tradeoff (multisig controller) is acceptable and can be progressively decentralized.
 
-**Receipt framing (DreamNet-style):** Each weekly snapshot update is logged as a public on-chain event and can be formatted as a human-readable receipt — "You earned 0.0042 ETH this week from Zoostr trades based on 1,240 boost points (12.4% of pool)." Brandon's RECEIPTS tool pattern applies here.
 
 **Tooling (built):**
-- `npm run snapshot` — fetches live leaderboard, computes integer weights summing to 1,000,000, writes `splits-update.json` (paste into splits.org UI) + `receipt-<date>.md` (Farcaster-ready receipt). NEVER signs anything.
-- `npm run receipt` — generates a cast-ready 2-cast receipt with top-5 earners and projected $/week at any volume (`VOLUME=50000 npm run receipt`).
-- `/leaderboard` on zoostr.xyz — live per-contributor earnings projection at selectable daily volumes.
-- `/receipt` on zoostr.xyz — shareable DreamNet-style weekly receipt page: empire stats, pool breakdown, top-15 earners with %, projected earnings, splits contract link. ISR (60s) and Farcaster-frameable.
 
 ---
 
@@ -76,7 +69,6 @@ ZAO's participation is a **locked token allocation** — not a fee slice.
 
 - ZAO backs the creator by holding the token, aligning long-term incentives
 - Lock duration: TBD (suggest 12 months with 3-month cliff)
-- Size: TBD (suggest 5–10% of supply, negotiated with Zaal)
 - Precedent: $IMAN launch playbook
 
 ZAO does **not** take an ongoing fee cut. This keeps the fee split entirely between boosters, creator, and treasury — the people actually doing the work.
@@ -85,7 +77,6 @@ ZAO does **not** take an ongoing fee cut. This keeps the fee split entirely betw
 
 ## Sparkz Default Configuration
 
-Zoostr is also the first live example of a **Sparkz default config**. The Sparkz platform default is **creator-first (97/2/1)** — creator keeps 97%, treasury gets 2%, community pool starts at 1%. Zoostr launches at 50% community because 30+ consistent boosters proved the leaderboard before the token existed. The advisor starts every creator at 97/2/1 and explains when to grow the community share.
 
 | Parameter | Zoostr Setting | Sparkz Default |
 |-----------|---------------|----------------|
