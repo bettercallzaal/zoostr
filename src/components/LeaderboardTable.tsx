@@ -1,6 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import type { Contributor } from '@/lib/types'
-import { feeSharePct, isEligible } from '@/lib/boostr'
+import { pointsSharePct, isEligible } from '@/lib/boostr'
 
 type Props = {
   contributors: Contributor[]
@@ -20,7 +22,7 @@ export default function LeaderboardTable({ contributors, totalPoints, showAll = 
             <th className="text-left py-3 px-4">Booster</th>
             <th className="text-right py-3 px-4">Points</th>
             <th className="text-right py-3 px-4">Followers</th>
-            <th className="text-right py-3 px-4">Fee Share</th>
+            <th className="text-right py-3 px-4">Share of points</th>
           </tr>
         </thead>
         <tbody>
@@ -60,7 +62,7 @@ export default function LeaderboardTable({ contributors, totalPoints, showAll = 
               </td>
               <td className="py-3 px-4 text-right font-medium tabular-nums">
                 {isEligible(c)
-                  ? <span className="text-zao-violet">{feeSharePct(c.zabalLikesCount, totalPoints)}%</span>
+                  ? <span className="text-zao-violet">{pointsSharePct(c.zabalLikesCount, totalPoints)}%</span>
                   : <span className="text-slate-600">—</span>}
               </td>
             </tr>
@@ -70,7 +72,7 @@ export default function LeaderboardTable({ contributors, totalPoints, showAll = 
       {!showAll && contributors.length > 20 && (
         <p className="text-center text-slate-500 text-xs py-4">
           <Link href="/leaderboard" className="hover:text-gold-400 transition-colors">
-            + {contributors.length - 20} more boosters — see earnings projections →
+            + {contributors.length - 20} more boosters — see the full leaderboard →
           </Link>
         </p>
       )}

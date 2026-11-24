@@ -91,7 +91,7 @@ export function eligibleTotalPoints(stats: BoostrStats): number {
     .reduce((sum, c) => sum + (c.zabalLikesCount ?? 0), 0)
 }
 
-export function feeSharePct(points: number, total: number): string {
+export function pointsSharePct(points: number, total: number): string {
   if (total === 0) return '0.00'
   return ((points / total) * 100).toFixed(2)
 }

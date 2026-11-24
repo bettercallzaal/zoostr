@@ -1,5 +1,7 @@
 # Sparkz for Creators
 
+> **SUPERSEDED (2026-11-24 wording cleanup).** Internal draft only, not for any public surface. There is no token. Free to join and optional. Points and rank on the leaderboard. No payouts or fee sharing are promised. Not live yet.
+
 > Who this is for: a creator with an existing community who wants to give them a real financial stake
 > Status: draft · use this as the pitch doc when creators ask "how do I do what ZABAL did?"
 > Frame: feature-first, community-first. Never price, never speculation.
@@ -41,9 +43,9 @@ The Sparkz AI advisor (trysparkz.com/advisor) asks 3 questions and gives you a c
 2. **Token now, later, or never?**  -  start tokenless if the community isn't proven yet
 3. **What volume range are you expecting?**  -  sizes the fee model honestly for your stage
 
-The **default is creator-first: 97% creator, 1% community, 2% treasury.** The community share grows as real contributors show up. You don't give away share before the community exists. Zoostr launches at 50% because 30+ consistent boosters proved the community before the token existed  -  the advisor shows you where to start and when to grow it.
+The **default is creator-first.** The community share grows as real contributors show up. You don't give away share before the community exists.
 
-The advisor calculates real dollar projections: *"At $10k daily volume, your community pool at 50% is $350/week. Your top supporter earns ~$32/week."* You export the config, open the split wizard, and click deploy. ZAO stake (5%, locked 12 months) is pre-filled in your deploy config  -  a separate post-deploy token transfer to ZAO's lock contract completes it.
+You export the config, open the split wizard, and click deploy.
 
 ### 4. ZAO backing
 
@@ -106,8 +108,6 @@ ZABAL (Farcaster creator) + Boostr (boost platform) → Zoostr
 - [ALL_TIME_COUNT] people boosted ZABAL on Boostr before any token existed
 - They earned Boostr points by liking ZABAL's casts and getting others to like them
 - At launch: $ZOOSTR deployed on Clanker → 0xSplits contract as fee recipient → weekly snapshot from Boostr API → ZOL computes weights, Zaal reviews and calls `updateSplit()` on-chain
-- Every trade: 50% to the leaderboard by points, 25% to ZABAL/operations, 25% to treasury
-- The people who showed up first accrue fees from every trade, forever  -  claim their share at splits.org
 
 *That community was already real. The token just made it pay.*
 

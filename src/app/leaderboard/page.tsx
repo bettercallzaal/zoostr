@@ -1,5 +1,5 @@
-import { fetchBoostrStats, sortedContributors, eligibleTotalPoints, MIN_POINTS } from '@/lib/boostr'
-import EarningsCalc from '@/components/EarningsCalc'
+import { fetchBoostrStats, sortedContributors, eligibleTotalPoints } from '@/lib/boostr'
+import LeaderboardTable from '@/components/LeaderboardTable'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -11,10 +11,10 @@ const OG_IMAGE = `${BASE_URL}/api/og`
 export const metadata: Metadata = {
   title: 'Empire Leaderboard — Zoostr',
   description:
-    'Every ZABAL booster ranked by points with projected $ZOOSTR weekly earnings at your chosen trading volume.',
+    'Every ZABAL booster ranked by points. Free to join and optional. Not live yet.',
   openGraph: {
     title: 'Empire Leaderboard — Zoostr',
-    description: 'See your fee share and projected weekly earnings from $ZOOSTR trading fees.',
+    description: 'See your points and rank on the Zoostr leaderboard.',
     type: 'website',
     url: `${BASE_URL}/leaderboard`,
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Zoostr Live Leaderboard' }],
@@ -22,17 +22,17 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Zoostr Leaderboard',
-    description: 'See your fee share and projected weekly earnings.',
+    description: 'See your points and rank.',
     images: [OG_IMAGE],
   },
   other: {
     'fc:frame': 'vNext',
     'fc:frame:image': OG_IMAGE,
     'fc:frame:image:aspect_ratio': '1.91:1',
-    'fc:frame:button:1': '📊 Earnings calculator',
+    'fc:frame:button:1': '📊 Points and rank',
     'fc:frame:button:1:action': 'link',
     'fc:frame:button:1:target': `${BASE_URL}/leaderboard`,
-    'fc:frame:button:2': '⚡ Boost to earn',
+    'fc:frame:button:2': '⚡ Boost on Boostr',
     'fc:frame:button:2:action': 'link',
     'fc:frame:button:2:target': 'https://boostr.itscashless.com',
   },
@@ -64,25 +64,13 @@ export default async function LeaderboardPage() {
             <span className="text-white">STR</span>
           </Link>
           <div className="flex items-center gap-4 text-sm">
-            <Link
-              href="/receipt"
-              className="text-slate-400 hover:text-gold-400 transition-colors hidden sm:inline"
-            >
-              Weekly receipt
-            </Link>
-            <Link
-              href="/#tokenomics"
-              className="text-slate-400 hover:text-white transition-colors hidden sm:inline"
-            >
-              How it works
-            </Link>
             <a
               href="https://boostr.itscashless.com"
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1.5 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500/20 text-xs font-semibold transition-colors"
             >
-              Boost to earn ↗
+              Boost on Boostr ↗
             </a>
           </div>
         </div>
@@ -101,13 +89,10 @@ export default async function LeaderboardPage() {
           <div>
             <h1 className="text-3xl sm:text-4xl font-black text-white mb-2">Empire Leaderboard</h1>
             <p className="text-slate-400 max-w-xl leading-relaxed">
-              Every booster ranked by points. Your share of the leaderboard pool = your points ÷ total
-              points. Claim your share anytime at app.splits.org — funds accumulate, no deadline.
+              Every booster ranked by points. Free to join and optional. Points and rank on the
+              leaderboard. No payouts or fee sharing are promised. Not live yet.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-medium">
-                ⚡ 50% of every trading fee
-              </span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zao-violet/10 border border-zao-violet/20 text-zao-violet text-xs font-medium">
                 🎖 Weekly proof-of-contribution collectable (v2)
               </span>
@@ -135,7 +120,7 @@ export default async function LeaderboardPage() {
 
       <section className="max-w-5xl mx-auto px-4 pb-16">
         {contributors.length > 0 ? (
-          <EarningsCalc contributors={contributors} totalPoints={total} minPoints={MIN_POINTS} />
+          <LeaderboardTable contributors={contributors} totalPoints={total} showAll />
         ) : (
           <div className="text-center py-20 text-slate-500">
             {apiDown
@@ -144,44 +129,6 @@ export default async function LeaderboardPage() {
           </div>
         )}
       </section>
-
-      {/* Bottom CTA strip */}
-      <div className="border-t border-zao-border bg-zao-card/40">
-        <div className="max-w-5xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <p className="text-sm font-semibold text-white">Not on the leaderboard yet?</p>
-            <p className="text-xs text-slate-500 mt-0.5">
-              Back the empire with a card — no wallet or gas needed. Points start accumulating immediately.
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link href="/faq" className="text-xs text-slate-400 hover:text-white transition-colors">
-              FAQ →
-            </Link>
-            <Link href="/receipt" className="text-xs text-slate-400 hover:text-white transition-colors">
-              Weekly receipt →
-            </Link>
-            <Link
-              href="/back"
-              className="px-4 py-2 rounded-lg bg-gold-500 hover:bg-gold-400 text-black text-xs font-bold transition-colors"
-            >
-              Back the empire
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Footer nav */}
-      <div className="border-t border-zao-border">
-        <div className="max-w-5xl mx-auto px-4 py-6 flex flex-wrap gap-4 text-xs text-slate-500">
-          <Link href="/token" className="hover:text-slate-400 transition-colors">$ZOOSTR token</Link>
-          <Link href="/receipt" className="hover:text-slate-400 transition-colors">Weekly receipt</Link>
-          <Link href="/rewards" className="hover:text-slate-400 transition-colors">Rewards</Link>
-          <Link href="/how-it-works" className="hover:text-slate-400 transition-colors">How it works</Link>
-          <Link href="/faq" className="hover:text-slate-400 transition-colors">FAQ</Link>
-          <Link href="/back" className="hover:text-slate-400 transition-colors">Back it</Link>
-        </div>
-      </div>
     </main>
   )
 }
