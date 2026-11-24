@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Syne, IBM_Plex_Mono } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 // Type pairing: Syne (Bonjour Monde) for display, IBM Plex Mono for every number and label.
@@ -59,7 +60,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${syne.variable} ${plexMono.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        {/* Ask Zoostr: answers from Zoostr facts + live Boostr numbers, no keys, never asks for wallets */}
+        <Script src="https://zoostr-bot.vercel.app/widget.js" strategy="afterInteractive" />
+      </body>
     </html>
   )
 }
