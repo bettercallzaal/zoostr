@@ -90,7 +90,7 @@ export default function LiveLeaderboard({ initialData }: Props) {
             href="/leaderboard"
             className="text-xs text-gold-400 hover:text-gold-300 font-semibold transition-colors"
           >
-            See the full leaderboard →
+            See the full leaderboard
           </Link>
         </div>
         <LeaderboardTable contributors={sorted} totalPoints={total} />

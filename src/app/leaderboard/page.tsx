@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     'fc:frame': 'vNext',
     'fc:frame:image': OG_IMAGE,
     'fc:frame:image:aspect_ratio': '1.91:1',
-    'fc:frame:button:1': '📊 Points and rank',
+    'fc:frame:button:1': 'Points and rank',
     'fc:frame:button:1:action': 'link',
     'fc:frame:button:1:target': `${BASE_URL}/leaderboard`,
-    'fc:frame:button:2': '⚡ Boost on Boostr',
+    'fc:frame:button:2': 'Boost on Boostr',
     'fc:frame:button:2:action': 'link',
     'fc:frame:button:2:target': 'https://boostr.itscashless.com',
   },
@@ -70,7 +70,7 @@ export default async function LeaderboardPage() {
               rel="noopener noreferrer"
               className="px-3 py-1.5 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500/20 text-xs font-semibold transition-colors"
             >
-              Boost on Boostr ↗
+              Boost on Boostr
             </a>
           </div>
         </div>

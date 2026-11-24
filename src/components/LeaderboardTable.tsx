@@ -72,7 +72,7 @@ export default function LeaderboardTable({ contributors, totalPoints, showAll = 
       {!showAll && contributors.length > 20 && (
         <p className="text-center text-slate-500 text-xs py-4">
           <Link href="/leaderboard" className="hover:text-gold-400 transition-colors">
-            + {contributors.length - 20} more boosters — see the full leaderboard →
+            + {contributors.length - 20} more boosters - see the full leaderboard
           </Link>
         </p>
       )}
