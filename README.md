@@ -1,5 +1,12 @@
 # Zoostr
 
+## Links
+
+- [Zoostr Hearth on Sparkz](https://trysparkz.com/c/zoostr)
+- [Zoostr bot](https://zoostr-bot.vercel.app)
+- [Sparkz](https://trysparkz.com)
+- [The ZAO](https://thezao.com)
+
 > **Status (2026-09-10): the $ZOOSTR token is on hold.** It has not launched, so
 > there are no $ZOOSTR trading fees and no fee split paying out yet. For now,
 > tipping and weekly allowances run on the existing ZABAL token. The launch and
@@ -7,7 +14,7 @@
 
 **Zoostr is the first Sparkz launch  -  ZABAL × Boostr.**
 
-A live Boostr leaderboard + weekly fee allocation for the people who built the empire. A share of every $ZOOSTR trading fee accumulates for leaderboard participants by points, weekly, on-chain  -  claim your share at splits.org, no lockups, no deadline.
+A live Boostr leaderboard ranks contributors by points. The fee split is a plan, not live yet (see the status note above and `docs/tokenomics-draft.md`). Zoostr is optional and free to join.
 
 Built and marketed by ZOL. Deployed by humans. [trysparkz.com](https://trysparkz.com)
 
