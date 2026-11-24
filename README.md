@@ -1,5 +1,12 @@
 # Zoostr
 
+## Links
+
+- [Zoostr Hearth on Sparkz](https://trysparkz.com/c/zoostr)
+- [Zoostr bot](https://zoostr-bot.vercel.app)
+- [Sparkz](https://trysparkz.com)
+- [The ZAO](https://thezao.com)
+
 > **Status (2026-09-10): the $ZOOSTR token is on hold.** It has not launched, so
 > there are no $ZOOSTR trading fees and no fee split paying out yet. For now,
 > tipping and weekly allowances run on the existing ZABAL token. The launch and

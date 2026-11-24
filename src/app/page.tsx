@@ -63,6 +63,30 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Links: one click to everything Zoostr */}
+        <nav aria-label="Zoostr links" className="pb-12">
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {[
+              { label: 'Zoostr Hearth on Sparkz', href: 'https://trysparkz.com/c/zoostr' },
+              { label: 'Zoostr bot', href: 'https://zoostr-bot.vercel.app' },
+              { label: 'Sparkz', href: 'https://trysparkz.com' },
+              { label: 'The ZAO', href: 'https://thezao.com' },
+            ].map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-11 items-center justify-between border border-zoostr-line px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-zoostr-bone transition-colors hover:border-zoostr-acid hover:text-zoostr-acid"
+                >
+                  {link.label}
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <BoostBoard initial={stats} />
       </div>
     </main>
