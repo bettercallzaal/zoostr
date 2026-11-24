@@ -19,7 +19,7 @@ Built and marketed by ZOL. Deployed by humans. [trysparkz.com](https://trysparkz
 
 ## What it does
 
-- **Live leaderboard**  -  pulls from the Boostr API (`/api/zabaal/stats`), ranks contributors by points (ISR, refreshes every 60s)
+- **Live leaderboard**  -  pulls from the Boostr API (`boostr.sahban.dev/api/zabal/stats`), ranks contributors by points (ISR, refreshes every 60s)
 - **Machine-readable context**  -  `GET /llm.txt` describes the site for AI agents
 
 ## Pages
