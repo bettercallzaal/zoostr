@@ -21,8 +21,11 @@ export default async function Home() {
       <div className="mx-auto w-full max-w-3xl px-5 pb-24 pt-6 sm:px-8">
         {/* Masthead */}
         <header className="flex items-center justify-between border-b border-zoostr-line pb-5">
-          <span className="font-display text-xl font-extrabold tracking-tight">
-            ZOOSTR<span className="text-zoostr-acid">.</span>
+          <span className="inline-flex items-center gap-2 font-display text-xl font-extrabold tracking-tight">
+            <img src="/brand/zoostr-mark.svg" alt="" width={28} height={28} className="h-7 w-7" />
+            <span>
+              ZOOSTR<span className="text-zoostr-acid">.</span>
+            </span>
           </span>
           <span className="shrink-0 pl-4 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-zoostr-dim sm:tracking-[0.22em]">
             Sparkz 001
